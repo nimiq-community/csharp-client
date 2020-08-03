@@ -1,0 +1,29 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NimiqClient", "NimiqClient\NimiqClient.csproj", "{D6921730-19D6-40C7-93C3-BA5AA8EC2E7D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NimicClientTest", "NimicClientTest\NimicClientTest.csproj", "{522FB1A6-2608-4D8E-A329-5988AB7B88AB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShowCase", "ShowCase\ShowCase.csproj", "{9D44D6A0-88D6-4BE7-8A64-0912B2854E84}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D6921730-19D6-40C7-93C3-BA5AA8EC2E7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6921730-19D6-40C7-93C3-BA5AA8EC2E7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6921730-19D6-40C7-93C3-BA5AA8EC2E7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6921730-19D6-40C7-93C3-BA5AA8EC2E7D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{522FB1A6-2608-4D8E-A329-5988AB7B88AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{522FB1A6-2608-4D8E-A329-5988AB7B88AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{522FB1A6-2608-4D8E-A329-5988AB7B88AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{522FB1A6-2608-4D8E-A329-5988AB7B88AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9D44D6A0-88D6-4BE7-8A64-0912B2854E84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D44D6A0-88D6-4BE7-8A64-0912B2854E84}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D44D6A0-88D6-4BE7-8A64-0912B2854E84}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D44D6A0-88D6-4BE7-8A64-0912B2854E84}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

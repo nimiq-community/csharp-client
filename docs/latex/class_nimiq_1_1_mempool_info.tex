@@ -1,0 +1,59 @@
+\hypertarget{class_nimiq_1_1_mempool_info}{}\doxysection{Nimiq.\+Mempool\+Info Class Reference}
+\label{class_nimiq_1_1_mempool_info}\index{Nimiq.MempoolInfo@{Nimiq.MempoolInfo}}
+
+
+Mempool information returned by the server.  
+
+
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+long \mbox{\hyperlink{class_nimiq_1_1_mempool_info_aafc5ebff32b0348de1466e31a9ec384a}{Total}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Total number of pending transactions in mempool. \end{DoxyCompactList}\item 
+long\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_nimiq_1_1_mempool_info_aa482e2ec4815a807e5f4011c20eb4f75}{Buckets}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Array containing a subset of fee per byte buckets from {\ttfamily \mbox{[}10000, 5000, 2000, 1000, 500, 200, 100, 50, 20, 10, 5, 2, 1, 0\mbox{]}} that currently have more than one transaction. \end{DoxyCompactList}\item 
+Dictionary$<$ long, long $>$ \mbox{\hyperlink{class_nimiq_1_1_mempool_info_ab1434bcb450ab373d1903d6f7caef12a}{Transactions\+Per\+Bucket}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Number of transaction in the bucket. A transaction is assigned to the highest bucket of a value lower than its fee per byte value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Mempool information returned by the server. 
+
+
+
+\doxysubsection{Property Documentation}
+\mbox{\Hypertarget{class_nimiq_1_1_mempool_info_aa482e2ec4815a807e5f4011c20eb4f75}\label{class_nimiq_1_1_mempool_info_aa482e2ec4815a807e5f4011c20eb4f75}} 
+\index{Nimiq.MempoolInfo@{Nimiq.MempoolInfo}!Buckets@{Buckets}}
+\index{Buckets@{Buckets}!Nimiq.MempoolInfo@{Nimiq.MempoolInfo}}
+\doxysubsubsection{\texorpdfstring{Buckets}{Buckets}}
+{\footnotesize\ttfamily long \mbox{[}$\,$\mbox{]} Nimiq.\+Mempool\+Info.\+Buckets\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Array containing a subset of fee per byte buckets from {\ttfamily \mbox{[}10000, 5000, 2000, 1000, 500, 200, 100, 50, 20, 10, 5, 2, 1, 0\mbox{]}} that currently have more than one transaction. 
+
+\mbox{\Hypertarget{class_nimiq_1_1_mempool_info_aafc5ebff32b0348de1466e31a9ec384a}\label{class_nimiq_1_1_mempool_info_aafc5ebff32b0348de1466e31a9ec384a}} 
+\index{Nimiq.MempoolInfo@{Nimiq.MempoolInfo}!Total@{Total}}
+\index{Total@{Total}!Nimiq.MempoolInfo@{Nimiq.MempoolInfo}}
+\doxysubsubsection{\texorpdfstring{Total}{Total}}
+{\footnotesize\ttfamily long Nimiq.\+Mempool\+Info.\+Total\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Total number of pending transactions in mempool. 
+
+\mbox{\Hypertarget{class_nimiq_1_1_mempool_info_ab1434bcb450ab373d1903d6f7caef12a}\label{class_nimiq_1_1_mempool_info_ab1434bcb450ab373d1903d6f7caef12a}} 
+\index{Nimiq.MempoolInfo@{Nimiq.MempoolInfo}!TransactionsPerBucket@{TransactionsPerBucket}}
+\index{TransactionsPerBucket@{TransactionsPerBucket}!Nimiq.MempoolInfo@{Nimiq.MempoolInfo}}
+\doxysubsubsection{\texorpdfstring{TransactionsPerBucket}{TransactionsPerBucket}}
+{\footnotesize\ttfamily Dictionary$<$long, long$>$ Nimiq.\+Mempool\+Info.\+Transactions\+Per\+Bucket\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Number of transaction in the bucket. A transaction is assigned to the highest bucket of a value lower than its fee per byte value. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Nimiq\+Client/Nimiq\+Client.\+cs\end{DoxyCompactItemize}

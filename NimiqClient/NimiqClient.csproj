@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <PackageVersion>0.0.4</PackageVersion>
+    <Authors>Nimiq Community</Authors>
+    <Copyright>Copyright (c) 2020 Nimiq Community</Copyright>
+    <Owners>Nimiq Community</Owners>
+    <PackageProjectUrl>https://github.com/rraallvv/NimiqClientSharp</PackageProjectUrl>
+    <Summary>https://github.com/rraallvv/NimiqClientSharp/blob/master/README.md</Summary>
+    <PackageTags>Nimiq, JSON-RPC Client</PackageTags>
+    <Title>Nimiq Client</Title>
+    <Description>A .Net client for the Nimiq JSON-RPC API</Description>
+    <PackageId>NimiqClient</PackageId>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Text.Json" Version="4.7.2" />
+  </ItemGroup>
+</Project>
