@@ -36,7 +36,7 @@ namespace ShowCase
                     {
                         // Show basic account address
                         var basicAccount = account as Account;
-                        if (basicAccount != null)
+                        if (basicAccount != null && basicAccount.Type == AccountType.basic)
                         {
                             Console.WriteLine(basicAccount.Address);
                         }
