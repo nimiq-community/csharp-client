@@ -139,12 +139,40 @@ namespace Nimiq
 
         public static bool operator ==(ConsensusState a, ConsensusState b)
         {
+            if (b is null)
+            {
+                return false;
+            }
             return a.Value == b.Value;
         }
 
         public static bool operator !=(ConsensusState a, ConsensusState b)
         {
+            if (b is null)
+            {
+                return true;
+            }
             return a.Value != b.Value;
+        }
+
+        public override bool Equals(object obj)
+        {
+            var cs = obj as ConsensusState;
+            if (cs != null)
+            {
+                return this == cs;
+            }
+            var s = obj as string;
+            if (s != null)
+            {
+                return Value == s;
+            }
+            return false;
+        }
+
+        public override int GetHashCode()
+        {
+            return Value.GetHashCode();
         }
     }
 
@@ -470,12 +498,40 @@ namespace Nimiq
 
         public static bool operator ==(LogLevel a, LogLevel b)
         {
+            if (b is null)
+            {
+                return false;
+            }
             return a.Value == b.Value;
         }
 
         public static bool operator !=(LogLevel a, LogLevel b)
         {
+            if (b is null)
+            {
+                return true;
+            }
             return a.Value != b.Value;
+        }
+
+        public override bool Equals(object obj)
+        {
+            var cs = obj as LogLevel;
+            if (cs != null)
+            {
+                return this == cs;
+            }
+            var s = obj as string;
+            if (s != null)
+            {
+                return Value == s;
+            }
+            return false;
+        }
+
+        public override int GetHashCode()
+        {
+            return Value.GetHashCode();
         }
     }
 
@@ -666,14 +722,41 @@ namespace Nimiq
 
         public static bool operator ==(PeerStateCommand a, PeerStateCommand b)
         {
+            if (b is null)
+            {
+                return false;
+            }
             return a.Value == b.Value;
         }
 
         public static bool operator !=(PeerStateCommand a, PeerStateCommand b)
         {
+            if (b is null)
+            {
+                return true;
+            }
             return a.Value != b.Value;
         }
 
+        public override bool Equals(object obj)
+        {
+            var cs = obj as PeerStateCommand;
+            if (cs != null)
+            {
+                return this == cs;
+            }
+            var s = obj as string;
+            if (s != null)
+            {
+                return Value == s;
+            }
+            return false;
+        }
+
+        public override int GetHashCode()
+        {
+            return Value.GetHashCode();
+        }
     }
 
     /// <summary>Pool connection state information returned by the server.</summary>
