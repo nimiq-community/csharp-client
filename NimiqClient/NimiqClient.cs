@@ -136,6 +136,16 @@ namespace Nimiq
         {
             return Value;
         }
+
+        public static bool operator ==(ConsensusState a, ConsensusState b)
+        {
+            return a.Value == b.Value;
+        }
+
+        public static bool operator !=(ConsensusState a, ConsensusState b)
+        {
+            return a.Value != b.Value;
+        }
     }
 
     /// <summary>Nimiq wallet returned by the server.</summary>
@@ -457,6 +467,16 @@ namespace Nimiq
         {
             return Value;
         }
+
+        public static bool operator ==(LogLevel a, LogLevel b)
+        {
+            return a.Value == b.Value;
+        }
+
+        public static bool operator !=(LogLevel a, LogLevel b)
+        {
+            return a.Value != b.Value;
+        }
     }
 
     /// <summary>Mempool information returned by the server.</summary>
@@ -643,6 +663,17 @@ namespace Nimiq
         {
             return Value;
         }
+
+        public static bool operator ==(PeerStateCommand a, PeerStateCommand b)
+        {
+            return a.Value == b.Value;
+        }
+
+        public static bool operator !=(PeerStateCommand a, PeerStateCommand b)
+        {
+            return a.Value != b.Value;
+        }
+
     }
 
     /// <summary>Pool connection state information returned by the server.</summary>

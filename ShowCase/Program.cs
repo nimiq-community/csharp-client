@@ -13,18 +13,38 @@ namespace ShowCase
 
         private static async Task MainAsync()
         {
-            var client = new NimiqClient();
+			// Create Nimiq RPC client
+			var client = new NimiqClient(
+				scheme: "http",
+				user: "luna",
+				password: "moon",
+				host: "127.0.0.1",
+				port: 8648
+			);
 
-            Console.WriteLine(await client.Consensus());
-
-            var accounts = await client.Accounts();
-
-            Console.WriteLine(accounts.Length);
-
-            foreach(var account in accounts)
-            {
-                Console.WriteLine(account);
-            }
-        }
+			try
+			{
+				// Get consensus
+				var consensus = await client.Consensus();
+				if (consensus == ConsensusState.Established)
+                {
+					// Get accounts
+					Console.WriteLine("Getting basic accounts:");
+					foreach(var account in await client.Accounts())
+                    {
+						if (account is Account)
+                        {
+							// Show basic account address
+							var basicAccount = account as Account;
+							Console.WriteLine(basicAccount.Address);
+						}
+					}
+				}
+			}
+			catch (InternalErrorException error)
+			{
+				Console.WriteLine($"Got error when trying to connect to the RPC server: {error.Message}");
+			}
+		}
     }
 }
