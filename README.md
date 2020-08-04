@@ -52,7 +52,7 @@ Refer to the [issue tracker](https://github.com/nimiq-community/csharp-client/is
 
 ### Develop
 
-After cloning the repository, open the solucion file in the repository root folder.
+After cloning the repository, open the solucion file `NimiqClientProjects.sln` located in the repository root folder on Visual Studio.
 
 All done, happy coding!
 

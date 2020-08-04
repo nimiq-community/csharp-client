@@ -26,16 +26,18 @@ namespace ShowCase
 			{
 				// Get consensus
 				var consensus = await client.Consensus();
+				Console.WriteLine($"Consensus: {consensus}");
+
 				if (consensus == ConsensusState.Established)
                 {
 					// Get accounts
 					Console.WriteLine("Getting basic accounts:");
 					foreach(var account in await client.Accounts())
                     {
-						if (account is Account)
+						// Show basic account address
+						var basicAccount = account as Account;
+						if (basicAccount != null)
                         {
-							// Show basic account address
-							var basicAccount = account as Account;
 							Console.WriteLine(basicAccount.Address);
 						}
 					}
