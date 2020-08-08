@@ -20,4 +20,7 @@
   <ItemGroup>
     <ProjectReference Include="..\NimiqClient\NimiqClient.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Fixtures\" />
+  </ItemGroup>
 </Project>

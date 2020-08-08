@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 using Nimiq;
+using Nimiq.Models;
 
 namespace ShowCase
 {

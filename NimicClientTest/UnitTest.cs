@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NimicClientTest.Fixtures;
 using Nimiq;
+using Nimiq.Models;
 
 namespace NimiqClientTest
 {
@@ -37,7 +39,7 @@ namespace NimiqClientTest
         [TestMethod]
         public async Task TestPeerCount()
         {
-            HttpMessageHandlerStub.TestData = Fixtures.PeerCount();
+            HttpMessageHandlerStub.TestData = PeerFixtures.PeerCount();
 
             var result = await client.PeerCount();
 
@@ -49,7 +51,7 @@ namespace NimiqClientTest
         [TestMethod]
         public async Task TestSyncingStateWhenSyncing()
         {
-            HttpMessageHandlerStub.TestData = Fixtures.Syncing();
+            HttpMessageHandlerStub.TestData = NodeFixtures.Syncing();
 
             var result = await client.Syncing();
 
@@ -65,7 +67,7 @@ namespace NimiqClientTest
         [TestMethod]
         public async Task TestSyncingStateWhenNotSyncing()
         {
-            HttpMessageHandlerStub.TestData = Fixtures.SyncingNotSyncing();
+            HttpMessageHandlerStub.TestData = NodeFixtures.SyncingNotSyncing();
 
             var result = await client.Syncing();
 
@@ -80,7 +82,7 @@ namespace NimiqClientTest
         [TestMethod]
         public async Task TestConsensusState()
         {
-            HttpMessageHandlerStub.TestData = Fixtures.ConsensusSyncing();
+            HttpMessageHandlerStub.TestData = NodeFixtures.ConsensusSyncing();
 
             var result = await client.Consensus();
 
@@ -92,7 +94,7 @@ namespace NimiqClientTest
         [TestMethod]
         public async Task TestPeerListWithPeers()
         {
-            HttpMessageHandlerStub.TestData = Fixtures.PeerList();
+            HttpMessageHandlerStub.TestData = PeerFixtures.PeerList();
 
             var result = await client.PeerList();
 
@@ -115,7 +117,7 @@ namespace NimiqClientTest
         [TestMethod]
         public async Task TestPeerListWhenEmpty()
         {
-            HttpMessageHandlerStub.TestData = Fixtures.PeerListEmpty();
+            HttpMessageHandlerStub.TestData = PeerFixtures.PeerListEmpty();
 
             var result = await client.PeerList();
 
@@ -127,7 +129,7 @@ namespace NimiqClientTest
         [TestMethod]
         public async Task TestPeerNormal()
         {
-            HttpMessageHandlerStub.TestData = Fixtures.PeerStateNormal();
+            HttpMessageHandlerStub.TestData = PeerFixtures.PeerStateNormal();
 
             var result = await client.PeerState("wss://seed1.nimiq-testnet.com:8080/b99034c552e9c0fd34eb95c1cdf17f5e");
 
@@ -144,7 +146,7 @@ namespace NimiqClientTest
         [TestMethod]
         public async Task TestPeerFailed()
         {
-            HttpMessageHandlerStub.TestData = Fixtures.PeerStateFailed();
+            HttpMessageHandlerStub.TestData = PeerFixtures.PeerStateFailed();
 
             var result = await client.PeerState("wss://seed4.nimiq-testnet.com:8080/e37dca72802c972d45b37735e9595cf0");
 
@@ -161,7 +163,7 @@ namespace NimiqClientTest
         [TestMethod]
         public async Task TestPeerError()
         {
-            HttpMessageHandlerStub.TestData = Fixtures.PeerStateError();
+            HttpMessageHandlerStub.TestData = PeerFixtures.PeerStateError();
 
             try
             {
@@ -176,7 +178,7 @@ namespace NimiqClientTest
         [TestMethod]
         public async Task TestSetPeerNormal()
         {
-            HttpMessageHandlerStub.TestData = Fixtures.PeerStateNormal();
+            HttpMessageHandlerStub.TestData = PeerFixtures.PeerStateNormal();
 
             var result = await client.PeerState("wss://seed1.nimiq-testnet.com:8080/b99034c552e9c0fd34eb95c1cdf17f5e", PeerStateCommand.Connect);
 
@@ -194,7 +196,7 @@ namespace NimiqClientTest
         [TestMethod]
         public async Task TestSendRawTransaction()
         {
-            HttpMessageHandlerStub.TestData = Fixtures.SendTransaction();
+            HttpMessageHandlerStub.TestData = TransactionFixtures.SendTransaction();
 
             var result = await client.SendRawTransaction("00c3c0d1af80b84c3b3de4e3d79d5c8cc950e044098c969953d68bf9cee68d7b53305dbaac7514a06dae935e40d599caf1bd8a243c00000000000000010000000000000001000dc2e201b5a1755aec80aa4227d5afc6b0de0fcfede8541f31b3c07b9a85449ea9926c1c958628d85a2b481556034ab3d67ff7de28772520813c84aaaf8108f6297c580c");
 
@@ -207,7 +209,7 @@ namespace NimiqClientTest
         [TestMethod]
         public async Task TestCreateRawTransaction()
         {
-            HttpMessageHandlerStub.TestData = Fixtures.CreateRawTransactionBasic();
+            HttpMessageHandlerStub.TestData = TransactionFixtures.CreateRawTransactionBasic();
 
             var transaction = new OutgoingTransaction()
             {
@@ -241,7 +243,7 @@ namespace NimiqClientTest
         [TestMethod]
         public async Task TestSendTransaction()
         {
-            HttpMessageHandlerStub.TestData = Fixtures.SendTransaction();
+            HttpMessageHandlerStub.TestData = TransactionFixtures.SendTransaction();
 
             var transaction = new OutgoingTransaction()
             {
@@ -275,7 +277,7 @@ namespace NimiqClientTest
         [TestMethod]
         public async Task TestGetRawTransactionInfo()
         {
-            HttpMessageHandlerStub.TestData = Fixtures.GetRawTransactionInfoBasic();
+            HttpMessageHandlerStub.TestData = TransactionFixtures.GetRawTransactionInfoBasic();
 
             var result = await client.GetRawTransactionInfo("00c3c0d1af80b84c3b3de4e3d79d5c8cc950e044098c969953d68bf9cee68d7b53305dbaac7514a06dae935e40d599caf1bd8a243c00000000000186a00000000000000001000af84c01239b16cee089836c2af5c7b1dbb22cdc0b4864349f7f3805909aa8cf24e4c1ff0461832e86f3624778a867d5f2ba318f92918ada7ae28d70d40c4ef1d6413802");
 
@@ -295,7 +297,7 @@ namespace NimiqClientTest
         [TestMethod]
         public async Task TestGetTransactionByBlockHashAndIndex()
         {
-            HttpMessageHandlerStub.TestData = Fixtures.GetTransactionFull();
+            HttpMessageHandlerStub.TestData = TransactionFixtures.GetTransactionFull();
 
             var result = await client.GetTransactionByBlockHashAndIndex("bc3945d22c9f6441409a6e539728534a4fc97859bda87333071fad9dad942786", 0);
 
@@ -318,7 +320,7 @@ namespace NimiqClientTest
         [TestMethod]
         public async Task TestGetTransactionByBlockHashAndIndexWhenNotFound()
         {
-            HttpMessageHandlerStub.TestData = Fixtures.GetTransactionNotFound();
+            HttpMessageHandlerStub.TestData = TransactionFixtures.GetTransactionNotFound();
 
             var result = await client.GetTransactionByBlockHashAndIndex("bc3945d22c9f6441409a6e539728534a4fc97859bda87333071fad9dad942786", 5);
 
@@ -332,7 +334,7 @@ namespace NimiqClientTest
         [TestMethod]
         public async Task TestGetTransactionByBlockNumberAndIndex()
         {
-            HttpMessageHandlerStub.TestData = Fixtures.GetTransactionFull();
+            HttpMessageHandlerStub.TestData = TransactionFixtures.GetTransactionFull();
 
             var result = await client.GetTransactionByBlockNumberAndIndex(11608, 0);
 
@@ -355,7 +357,7 @@ namespace NimiqClientTest
         [TestMethod]
         public async Task TestGetTransactionByBlockNumberAndIndexWhenNotFound()
         {
-            HttpMessageHandlerStub.TestData = Fixtures.GetTransactionNotFound();
+            HttpMessageHandlerStub.TestData = TransactionFixtures.GetTransactionNotFound();
 
             var result = await client.GetTransactionByBlockNumberAndIndex(11608, 0);
 
@@ -369,7 +371,7 @@ namespace NimiqClientTest
         [TestMethod]
         public async Task TestGetTransactionByHash()
         {
-            HttpMessageHandlerStub.TestData = Fixtures.GetTransactionFull();
+            HttpMessageHandlerStub.TestData = TransactionFixtures.GetTransactionFull();
 
             var result = await client.GetTransactionByHash("78957b87ab5546e11e9540ce5a37ebbf93a0ebd73c0ce05f137288f30ee9f430");
 
@@ -390,7 +392,7 @@ namespace NimiqClientTest
         [TestMethod]
         public async Task TestGetTransactionByHashWhenNotFound()
         {
-            HttpMessageHandlerStub.TestData = Fixtures.GetTransactionNotFound();
+            HttpMessageHandlerStub.TestData = TransactionFixtures.GetTransactionNotFound();
 
             var result = await client.GetTransactionByHash("78957b87ab5546e11e9540ce5a37ebbf93a0ebd73c0ce05f137288f30ee9f430");
 
@@ -403,7 +405,7 @@ namespace NimiqClientTest
         [TestMethod]
         public async Task TestGetTransactionByHashForContractCreation()
         {
-            HttpMessageHandlerStub.TestData = Fixtures.GetTransactionContractCreation();
+            HttpMessageHandlerStub.TestData = TransactionFixtures.GetTransactionContractCreation();
 
             var result = await client.GetTransactionByHash("539f6172b19f63be376ab7e962c368bb5f611deff6b159152c4cdf509f7daad2");
 
@@ -429,7 +431,7 @@ namespace NimiqClientTest
         [TestMethod]
         public async Task TestGetTransactionReceipt()
         {
-            HttpMessageHandlerStub.TestData = Fixtures.GetTransactionReceiptFound();
+            HttpMessageHandlerStub.TestData = TransactionFixtures.GetTransactionReceiptFound();
 
             var result = await client.GetTransactionReceipt("fd8e46ae55c5b8cd7cb086cf8d6c81f941a516d6148021d55f912fb2ca75cc8e");
 
@@ -448,7 +450,7 @@ namespace NimiqClientTest
         [TestMethod]
         public async Task TestGetTransactionReceiptWhenNotFound()
         {
-            HttpMessageHandlerStub.TestData = Fixtures.GetTransactionReceiptNotFound();
+            HttpMessageHandlerStub.TestData = TransactionFixtures.GetTransactionReceiptNotFound();
 
             var result = await client.GetTransactionReceipt("unknown");
 
@@ -461,7 +463,7 @@ namespace NimiqClientTest
         [TestMethod]
         public async Task TestGetTransactionsByAddress()
         {
-            HttpMessageHandlerStub.TestData = Fixtures.GetTransactionsFound();
+            HttpMessageHandlerStub.TestData = TransactionFixtures.GetTransactionsFound();
 
             var result = await client.GetTransactionsByAddress("NQ05 9VGU 0TYE NXBH MVLR E4JY UG6N 5701 MX9F");
 
@@ -480,7 +482,7 @@ namespace NimiqClientTest
         [TestMethod]
         public async Task TestGetTransactionsByAddressWhenNoFound()
         {
-            HttpMessageHandlerStub.TestData = Fixtures.GetTransactionsNotFound();
+            HttpMessageHandlerStub.TestData = TransactionFixtures.GetTransactionsNotFound();
 
             var result = await client.GetTransactionsByAddress("NQ10 9VGU 0TYE NXBH MVLR E4JY UG6N 5701 MX9F");
 
@@ -493,7 +495,7 @@ namespace NimiqClientTest
         [TestMethod]
         public async Task TestMempoolContentHashesOnly()
         {
-            HttpMessageHandlerStub.TestData = Fixtures.MempoolContentHashesOnly();
+            HttpMessageHandlerStub.TestData = MemPoolFixtures.MempoolContentHashesOnly();
 
             var result = await client.MempoolContent();
 
@@ -512,7 +514,7 @@ namespace NimiqClientTest
         [TestMethod]
         public async Task TestMempoolContentFullTransactions()
         {
-            HttpMessageHandlerStub.TestData = Fixtures.MempoolContentFullTransactions();
+            HttpMessageHandlerStub.TestData = MemPoolFixtures.MempoolContentFullTransactions();
 
             var result = await client.MempoolContent(true);
 
@@ -531,7 +533,7 @@ namespace NimiqClientTest
         [TestMethod]
         public async Task TestMempoolWhenFull()
         {
-            HttpMessageHandlerStub.TestData = Fixtures.Mempool();
+            HttpMessageHandlerStub.TestData = MemPoolFixtures.Mempool();
 
             var result = await client.Mempool();
 
@@ -546,7 +548,7 @@ namespace NimiqClientTest
         [TestMethod]
         public async Task TestMempoolWhenEmpty()
         {
-            HttpMessageHandlerStub.TestData = Fixtures.MempoolEmpty();
+            HttpMessageHandlerStub.TestData = MemPoolFixtures.MempoolEmpty();
 
             var result = await client.Mempool();
 
@@ -561,7 +563,7 @@ namespace NimiqClientTest
         [TestMethod]
         public async Task TestMinFeePerByte()
         {
-            HttpMessageHandlerStub.TestData = Fixtures.MinFeePerByte();
+            HttpMessageHandlerStub.TestData = NodeFixtures.MinFeePerByte();
 
             var result = await client.MinFeePerByte();
 
@@ -573,7 +575,7 @@ namespace NimiqClientTest
         [TestMethod]
         public async Task TestSetMinFeePerByte()
         {
-            HttpMessageHandlerStub.TestData = Fixtures.MinFeePerByte();
+            HttpMessageHandlerStub.TestData = NodeFixtures.MinFeePerByte();
 
             var result = await client.MinFeePerByte(0);
 
@@ -586,7 +588,7 @@ namespace NimiqClientTest
         [TestMethod]
         public async Task TestMining()
         {
-            HttpMessageHandlerStub.TestData = Fixtures.MiningState();
+            HttpMessageHandlerStub.TestData = MinerFixtures.MiningState();
 
             var result = await client.Mining();
 
@@ -598,7 +600,7 @@ namespace NimiqClientTest
         [TestMethod]
         public async Task TestSetMining()
         {
-            HttpMessageHandlerStub.TestData = Fixtures.MiningState();
+            HttpMessageHandlerStub.TestData = MinerFixtures.MiningState();
 
             var result = await client.Mining(false);
 
@@ -611,7 +613,7 @@ namespace NimiqClientTest
         [TestMethod]
         public async Task TestHashrate()
         {
-            HttpMessageHandlerStub.TestData = Fixtures.Hashrate();
+            HttpMessageHandlerStub.TestData = MinerFixtures.Hashrate();
 
             var result = await client.Hashrate();
 
@@ -623,7 +625,7 @@ namespace NimiqClientTest
         [TestMethod]
         public async Task TestMinerThreads()
         {
-            HttpMessageHandlerStub.TestData = Fixtures.MinerThreads();
+            HttpMessageHandlerStub.TestData = MinerFixtures.MinerThreads();
 
             var result = await client.MinerThreads();
 
@@ -635,7 +637,7 @@ namespace NimiqClientTest
         [TestMethod]
         public async Task TestSetMinerThreads()
         {
-            HttpMessageHandlerStub.TestData = Fixtures.MinerThreads();
+            HttpMessageHandlerStub.TestData = MinerFixtures.MinerThreads();
 
             var result = await client.MinerThreads(2);
 
@@ -648,7 +650,7 @@ namespace NimiqClientTest
         [TestMethod]
         public async Task TestMinerAddress()
         {
-            HttpMessageHandlerStub.TestData = Fixtures.MinerAddress();
+            HttpMessageHandlerStub.TestData = MinerFixtures.MinerAddress();
 
             var result = await client.MinerAddress();
 
@@ -660,7 +662,7 @@ namespace NimiqClientTest
         [TestMethod]
         public async Task TestPool()
         {
-            HttpMessageHandlerStub.TestData = Fixtures.PoolSushipool();
+            HttpMessageHandlerStub.TestData = MinerFixtures.PoolSushipool();
 
             var result = await client.Pool();
 
@@ -672,7 +674,7 @@ namespace NimiqClientTest
         [TestMethod]
         public async Task TestSetPool()
         {
-            HttpMessageHandlerStub.TestData = Fixtures.PoolSushipool();
+            HttpMessageHandlerStub.TestData = MinerFixtures.PoolSushipool();
 
             var result = await client.Pool("us.sushipool.com:443");
 
@@ -685,7 +687,7 @@ namespace NimiqClientTest
         [TestMethod]
         public async Task TestGetPoolWhenNoPool()
         {
-            HttpMessageHandlerStub.TestData = Fixtures.PoolNoPool();
+            HttpMessageHandlerStub.TestData = MinerFixtures.PoolNoPool();
 
             var result = await client.Pool();
 
@@ -697,7 +699,7 @@ namespace NimiqClientTest
         [TestMethod]
         public async Task TestPoolConnectionState()
         {
-            HttpMessageHandlerStub.TestData = Fixtures.PoolConnectionState();
+            HttpMessageHandlerStub.TestData = MinerFixtures.PoolConnectionState();
 
             var result = await client.PoolConnectionState();
 
@@ -709,7 +711,7 @@ namespace NimiqClientTest
         [TestMethod]
         public async Task TestPoolConfirmedBalance()
         {
-            HttpMessageHandlerStub.TestData = Fixtures.PoolConfirmedBalance();
+            HttpMessageHandlerStub.TestData = MinerFixtures.PoolConfirmedBalance();
 
             var result = await client.PoolConfirmedBalance();
 
@@ -721,7 +723,7 @@ namespace NimiqClientTest
         [TestMethod]
         public async Task TestGetWork()
         {
-            HttpMessageHandlerStub.TestData = Fixtures.GetWork();
+            HttpMessageHandlerStub.TestData = MinerFixtures.GetWork();
 
             var result = await client.GetWork();
 
@@ -736,7 +738,7 @@ namespace NimiqClientTest
         [TestMethod]
         public async Task TestGetWorkWithOverride()
         {
-            HttpMessageHandlerStub.TestData = Fixtures.GetWork();
+            HttpMessageHandlerStub.TestData = MinerFixtures.GetWork();
 
             var result = await client.GetWork("NQ46 NTNU QX94 MVD0 BBT0 GXAR QUHK VGNF 39ET", "");
 
@@ -753,7 +755,7 @@ namespace NimiqClientTest
         [TestMethod]
         public async Task TestGetBlockTemplate()
         {
-            HttpMessageHandlerStub.TestData = Fixtures.GetWorkBlockTemplate();
+            HttpMessageHandlerStub.TestData = MinerFixtures.GetWorkBlockTemplate();
 
             var result = await client.GetBlockTemplate();
 
@@ -767,7 +769,7 @@ namespace NimiqClientTest
         [TestMethod]
         public async Task TestGetBlockTemplateWithOverride()
         {
-            HttpMessageHandlerStub.TestData = Fixtures.GetWorkBlockTemplate();
+            HttpMessageHandlerStub.TestData = MinerFixtures.GetWorkBlockTemplate();
 
             var result = await client.GetBlockTemplate("NQ46 NTNU QX94 MVD0 BBT0 GXAR QUHK VGNF 39ET", "");
 
@@ -783,7 +785,7 @@ namespace NimiqClientTest
         [TestMethod]
         public async Task TestSubmitBlock()
         {
-            HttpMessageHandlerStub.TestData = Fixtures.SubmitBlock();
+            HttpMessageHandlerStub.TestData = BlockFixtures.SubmitBlock();
 
             var blockHex = "000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000f6ba2bbf7e1478a209057000471d73fbdc28df0b717747d929cfde829c4120f62e02da3d162e20fa982029dbde9cc20f6b431ab05df1764f34af4c62a4f2b33f1f010000000000015ac3185f000134990001000000000000000000000000000000000000000007546573744e657400000000";
 
@@ -796,7 +798,7 @@ namespace NimiqClientTest
         [TestMethod]
         public async Task TestAccounts()
         {
-            HttpMessageHandlerStub.TestData = Fixtures.Accounts();
+            HttpMessageHandlerStub.TestData = AccountFixtures.Accounts();
 
             var result = await client.Accounts();
 
@@ -844,7 +846,7 @@ namespace NimiqClientTest
         [TestMethod]
         public async Task TestCreateAccount()
         {
-            HttpMessageHandlerStub.TestData = Fixtures.CreateAccount();
+            HttpMessageHandlerStub.TestData = AccountFixtures.CreateAccount();
 
             var result = await client.CreateAccount();
 
@@ -859,7 +861,7 @@ namespace NimiqClientTest
         [TestMethod]
         public async Task TestGetBalance()
         {
-            HttpMessageHandlerStub.TestData = Fixtures.GetBalance();
+            HttpMessageHandlerStub.TestData = AccountFixtures.GetBalance();
 
             var result = await client.GetBalance("NQ46 NTNU QX94 MVD0 BBT0 GXAR QUHK VGNF 39ET");
 
@@ -872,7 +874,7 @@ namespace NimiqClientTest
         [TestMethod]
         public async Task TestGetAccount()
         {
-            HttpMessageHandlerStub.TestData = Fixtures.GetAccountBasic();
+            HttpMessageHandlerStub.TestData = AccountFixtures.GetAccountBasic();
 
             var result = await client.GetAccount("NQ46 NTNU QX94 MVD0 BBT0 GXAR QUHK VGNF 39ET");
 
@@ -890,7 +892,7 @@ namespace NimiqClientTest
         [TestMethod]
         public async Task TestGetAccountForVestingContract()
         {
-            HttpMessageHandlerStub.TestData = Fixtures.GetAccountVesting();
+            HttpMessageHandlerStub.TestData = AccountFixtures.GetAccountVesting();
 
             var result = await client.GetAccount("NQ09 VF5Y 1PKV MRM4 5LE1 55KV P6R2 GXYJ XYQF");
 
@@ -914,7 +916,7 @@ namespace NimiqClientTest
         [TestMethod]
         public async Task TestGetAccountForHashedTimeLockedContract()
         {
-            HttpMessageHandlerStub.TestData = Fixtures.GetAccountVestingHtlc();
+            HttpMessageHandlerStub.TestData = AccountFixtures.GetAccountVestingHtlc();
 
             var result = await client.GetAccount("NQ46 NTNU QX94 MVD0 BBT0 GXAR QUHK VGNF 39ET");
 
@@ -941,7 +943,7 @@ namespace NimiqClientTest
         [TestMethod]
         public async Task TestBlockNumber()
         {
-            HttpMessageHandlerStub.TestData = Fixtures.BlockNumber();
+            HttpMessageHandlerStub.TestData = BlockFixtures.BlockNumber();
 
             var result = await client.BlockNumber();
 
@@ -953,7 +955,7 @@ namespace NimiqClientTest
         [TestMethod]
         public async Task TestGetBlockTransactionCountByHash()
         {
-            HttpMessageHandlerStub.TestData = Fixtures.BlockTransactionCountFound();
+            HttpMessageHandlerStub.TestData = BlockFixtures.BlockTransactionCountFound();
 
             var result = await client.GetBlockTransactionCountByHash("bc3945d22c9f6441409a6e539728534a4fc97859bda87333071fad9dad942786");
 
@@ -966,7 +968,7 @@ namespace NimiqClientTest
         [TestMethod]
         public async Task TestGetBlockTransactionCountByHashWhenNotFound()
         {
-            HttpMessageHandlerStub.TestData = Fixtures.BlockTransactionCountNotFound();
+            HttpMessageHandlerStub.TestData = BlockFixtures.BlockTransactionCountNotFound();
 
             var result = await client.GetBlockTransactionCountByHash("bc3945d22c9f6441409a6e539728534a4fc97859bda87333071fad9dad942786");
 
@@ -979,7 +981,7 @@ namespace NimiqClientTest
         [TestMethod]
         public async Task TestGetBlockTransactionCountByNumber()
         {
-            HttpMessageHandlerStub.TestData = Fixtures.BlockTransactionCountFound();
+            HttpMessageHandlerStub.TestData = BlockFixtures.BlockTransactionCountFound();
 
             var result = await client.GetBlockTransactionCountByNumber(11608);
 
@@ -992,7 +994,7 @@ namespace NimiqClientTest
         [TestMethod]
         public async Task TestGetBlockTransactionCountByNumberWhenNotFound()
         {
-            HttpMessageHandlerStub.TestData = Fixtures.BlockTransactionCountNotFound();
+            HttpMessageHandlerStub.TestData = BlockFixtures.BlockTransactionCountNotFound();
 
             var result = await client.GetBlockTransactionCountByNumber(11608);
 
@@ -1005,7 +1007,7 @@ namespace NimiqClientTest
         [TestMethod]
         public async Task TestGetBlockByHash()
         {
-            HttpMessageHandlerStub.TestData = Fixtures.GetBlockFound();
+            HttpMessageHandlerStub.TestData = BlockFixtures.GetBlockFound();
 
             var result = await client.GetBlockByHash("bc3945d22c9f6441409a6e539728534a4fc97859bda87333071fad9dad942786");
 
@@ -1026,7 +1028,7 @@ namespace NimiqClientTest
         [TestMethod]
         public async Task TestGetBlockByHashWithTransactions()
         {
-            HttpMessageHandlerStub.TestData = Fixtures.GetBlockWithTransactions();
+            HttpMessageHandlerStub.TestData = BlockFixtures.GetBlockWithTransactions();
 
             var result = await client.GetBlockByHash("bc3945d22c9f6441409a6e539728534a4fc97859bda87333071fad9dad942786", true);
 
@@ -1047,7 +1049,7 @@ namespace NimiqClientTest
         [TestMethod]
         public async Task TestGetBlockByHashNotFound()
         {
-            HttpMessageHandlerStub.TestData = Fixtures.GetBlockNotFound();
+            HttpMessageHandlerStub.TestData = BlockFixtures.GetBlockNotFound();
 
             var result = await client.GetBlockByHash("bc3945d22c9f6441409a6e539728534a4fc97859bda87333071fad9dad942786");
 
@@ -1061,7 +1063,7 @@ namespace NimiqClientTest
         [TestMethod]
         public async Task TestGetBlockByNumber()
         {
-            HttpMessageHandlerStub.TestData = Fixtures.GetBlockFound();
+            HttpMessageHandlerStub.TestData = BlockFixtures.GetBlockFound();
 
             var result = await client.GetBlockByNumber(11608);
 
@@ -1082,7 +1084,7 @@ namespace NimiqClientTest
         [TestMethod]
         public async Task TestGetBlockByNumberWithTransactions()
         {
-            HttpMessageHandlerStub.TestData = Fixtures.GetBlockWithTransactions();
+            HttpMessageHandlerStub.TestData = BlockFixtures.GetBlockWithTransactions();
 
             var result = await client.GetBlockByNumber(11608, true);
 
@@ -1103,7 +1105,7 @@ namespace NimiqClientTest
         [TestMethod]
         public async Task TestGetBlockByNumberNotFound()
         {
-            HttpMessageHandlerStub.TestData = Fixtures.GetBlockNotFound();
+            HttpMessageHandlerStub.TestData = BlockFixtures.GetBlockNotFound();
 
             var result = await client.GetBlockByNumber(11608);
 
@@ -1117,7 +1119,7 @@ namespace NimiqClientTest
         [TestMethod]
         public async Task TestConstant()
         {
-            HttpMessageHandlerStub.TestData = Fixtures.Constant();
+            HttpMessageHandlerStub.TestData = NodeFixtures.Constant();
 
             var result = await client.Constant("BaseConsensus.MAX_ATTEMPTS_TO_FETCH");
 
@@ -1130,7 +1132,7 @@ namespace NimiqClientTest
         [TestMethod]
         public async Task TestSetConstant()
         {
-            HttpMessageHandlerStub.TestData = Fixtures.Constant();
+            HttpMessageHandlerStub.TestData = NodeFixtures.Constant();
 
             var result = await client.Constant("BaseConsensus.MAX_ATTEMPTS_TO_FETCH", 10);
 
@@ -1144,7 +1146,7 @@ namespace NimiqClientTest
         [TestMethod]
         public async Task TestResetConstant()
         {
-            HttpMessageHandlerStub.TestData = Fixtures.Constant();
+            HttpMessageHandlerStub.TestData = NodeFixtures.Constant();
 
             var result = await client.ResetConstant("BaseConsensus.MAX_ATTEMPTS_TO_FETCH");
 
@@ -1158,7 +1160,7 @@ namespace NimiqClientTest
         [TestMethod]
         public async Task TestLog()
         {
-            HttpMessageHandlerStub.TestData = Fixtures.Log();
+            HttpMessageHandlerStub.TestData = NodeFixtures.Log();
 
             var result = await client.Log("*", LogLevel.Verbose);
 
