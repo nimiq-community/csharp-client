@@ -263,14 +263,14 @@ namespace Nimiq
         /// <param name="method">JSONRPC method.</param>
         /// <param name="parameters">Parameters used by the request.</param>
         /// <returns>If succesfull, returns the model reperestation of the result, <c>null</c> otherwise.</returns>
-        private async Task<T> Call<T>(string method, object[] parameters = null)
+        private async Task<T> Call<T>(string method, params object[] parameters)
         {
             Root<T> responseObject = null;
             Exception clientError = null;
             try
             {
                 // prepare the request
-                var serializedParams = JsonSerializer.Serialize(parameters ?? new object[0]);
+                var serializedParams = JsonSerializer.Serialize(parameters);
                 var contentData = new StringContent($@"{{""jsonrpc"": ""2.0"", ""method"": ""{method}"", ""params"": {serializedParams}, ""id"": {Id}}}", Encoding.UTF8, "application/json");
                 Client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", Auth);
                 // send the request
@@ -364,7 +364,7 @@ namespace Nimiq
                 { "fee", transaction.Fee },
                 { "data", transaction.Data }
             };
-            return await Call<string>("createRawTransaction", new object[] { parameters });
+            return await Call<string>("createRawTransaction", parameters);
         }
 
         /// <summary>Returns details for the account of given address.</summary>
@@ -372,7 +372,7 @@ namespace Nimiq
         /// <returns>Details about the account. Returns the default empty basic account for non-existing accounts.</returns>
         public async Task<object> GetAccount(Address address)
         {
-            var result = await Call<RawAccount>("getAccount", new object[] { address });
+            var result = await Call<RawAccount>("getAccount", address);
             return result.Account;
         }
 
@@ -381,7 +381,7 @@ namespace Nimiq
         /// <returns>The current balance at the specified address (in smalest unit).</returns>
         public async Task<long> GetBalance(Address address)
         {
-            return await Call<long>("getBalance", new object[] { address });
+            return await Call<long>("getBalance", address);
         }
 
         /// <summary>Returns information about a block by hash.</summary>
@@ -390,7 +390,7 @@ namespace Nimiq
         /// <returns>A block object or <c>null</c> when no block was found.</returns>
         public async Task<Block> GetBlockByHash(Hash hash, bool fullTransactions = false)
         {
-            return await Call<Block>("getBlockByHash", new object[] { hash, fullTransactions });
+            return await Call<Block>("getBlockByHash", hash, fullTransactions);
         }
 
         /// <summary>Returns information about a block by block number.</summary>
@@ -399,7 +399,7 @@ namespace Nimiq
         /// <returns>A block object or <c>null</c> when no block was found.</returns>
         public async Task<Block> GetBlockByNumber(int height, bool fullTransactions = false)
         {
-            return await Call<Block>("getBlockByNumber", new object[] { height, fullTransactions });
+            return await Call<Block>("getBlockByNumber", height, fullTransactions);
         }
 
         /// <summary>Returns a template to build the next block for mining.
@@ -410,13 +410,14 @@ namespace Nimiq
         /// <returns>A block template object.</returns>
         public async Task<BlockTemplate> GetBlockTemplate(Address address = null, string extraData = "")
         {
-            var parameters = new List<object>();
             if (address != null)
             {
-                parameters.Add(address);
-                parameters.Add(extraData);
+                return await Call<BlockTemplate>("getBlockTemplate", address, extraData);
             }
-            return await Call<BlockTemplate>("getBlockTemplate", parameters.ToArray());
+            else
+            {
+                return await Call<BlockTemplate>("getBlockTemplate");
+            }
         }
 
         /// <summary>Returns the number of transactions in a block from a block matching the given block hash.</summary>
@@ -424,7 +425,7 @@ namespace Nimiq
         /// <returns>Number of transactions in the block found, or <c>null</c>, when no block was found.</returns>
         public async Task<long?> GetBlockTransactionCountByHash(Hash hash)
         {
-            return await Call<long?>("getBlockTransactionCountByHash", new object[] { hash });
+            return await Call<long?>("getBlockTransactionCountByHash", hash);
         }
 
         /// <summary>Returns the number of transactions in a block matching the given block number.</summary>
@@ -432,7 +433,7 @@ namespace Nimiq
         /// <returns>Number of transactions in the block found, or <c>null</c>, when no block was found.</returns>
         public async Task<long?> GetBlockTransactionCountByNumber(long height)
         {
-            return await Call<long?>("getBlockTransactionCountByNumber", new object[] { height });
+            return await Call<long?>("getBlockTransactionCountByNumber", height);
         }
 
         /// <summary>Returns information about a transaction by block hash and transaction index position.</summary>
@@ -441,7 +442,7 @@ namespace Nimiq
         /// <returns>A transaction object or <c>null</c> when no transaction was found.<returns>
         public async Task<Transaction> GetTransactionByBlockHashAndIndex(Hash hash, long index)
         {
-            return await Call<Transaction>("getTransactionByBlockHashAndIndex", new object[] { hash, index });
+            return await Call<Transaction>("getTransactionByBlockHashAndIndex", hash, index);
         }
 
         /// <summary>Returns information about a transaction by block number and transaction index position.</summary>
@@ -450,7 +451,7 @@ namespace Nimiq
         /// <returns>A transaction object or <c>null</c> when no transaction was found.<returns>
         public async Task<Transaction> GetTransactionByBlockNumberAndIndex(long height, long index)
         {
-            return await Call<Transaction>("getTransactionByBlockNumberAndIndex", new object[] { height, index });
+            return await Call<Transaction>("getTransactionByBlockNumberAndIndex", height, index);
         }
 
         /// <summary>Returns the information about a transaction requested by transaction hash.</summary>
@@ -458,7 +459,7 @@ namespace Nimiq
         /// <returns>A transaction object or <c>null</c> when no transaction was found.</returns>
         public async Task<Transaction> GetTransactionByHash(Hash hash)
         {
-            return await Call<Transaction>("getTransactionByHash", new object[] { hash });
+            return await Call<Transaction>("getTransactionByHash", hash);
         }
 
         /// <summary>Returns the receipt of a transaction by transaction hash.</summary>
@@ -466,7 +467,7 @@ namespace Nimiq
         /// <returns>A transaction receipt object, or <c>null</c> when no receipt was found.<returns>
         public async Task<TransactionReceipt> GetTransactionReceipt(Hash hash)
         {
-            return await Call<TransactionReceipt>("getTransactionReceipt", new object[] { hash });
+            return await Call<TransactionReceipt>("getTransactionReceipt", hash);
         }
 
         /// <summary>Returns the latest transactions successfully performed by or for an address.
@@ -476,7 +477,7 @@ namespace Nimiq
         /// <returns>Array of transactions linked to the requested address.</returns>
         public async Task<Transaction[]> GetTransactionsByAddress(Address address, long numberOfTransactions = 1000)
         {
-            return await Call<Transaction[]>("getTransactionsByAddress", new object[] { address, numberOfTransactions });
+            return await Call<Transaction[]>("getTransactionsByAddress", address, numberOfTransactions);
         }
 
         /// <summary>Returns instructions to mine the next block. This will consider pool instructions when connected to a pool.</summary>
@@ -485,13 +486,14 @@ namespace Nimiq
         /// <returns>Mining work instructions.</returns>
         public async Task<WorkInstructions> GetWork(Address address = null, string extraData = "")
         {
-            var parameters = new List<object>();
             if (address != null)
             {
-                parameters.Add(address);
-                parameters.Add(extraData);
+                return await Call<WorkInstructions>("getWork", address, extraData);
             }
-            return await Call<WorkInstructions>("getWork", parameters.ToArray());
+            else
+            {
+                return await Call<WorkInstructions>("getWork");
+            }
         }
 
         /// <summary>Returns the number of hashes per second that the node is mining with.</summary>
@@ -507,7 +509,7 @@ namespace Nimiq
         /// <returns><c>true</c> if the log level was changed, <c>false</c> otherwise.</returns>
         public async Task<bool> Log(string tag, LogLevel level)
         {
-            return await Call<bool>("log", new object[] { tag, level });
+            return await Call<bool>("log", tag, level);
         }
 
         /// <summary>Returns information on the current mempool situation. This will provide an overview of the number of transactions sorted into buckets based on their fee per byte (in smallest unit).</summary>
@@ -520,15 +522,15 @@ namespace Nimiq
         /// <summary>Returns transactions that are currently in the mempool.</summary>
         /// <param name="fullTransactions">If <c>true</c> includes full transactions, if <c>false</c> includes only transaction hashes.</param>
         /// <returns>Array of transactions (either represented by the transaction hash or a transaction object).</returns>
-        public async Task<object[]> MempoolContent(bool fullTransactions = false)
+        public async Task<object[]> MempoolContent(bool? fullTransactions = null)
         {
-            if (fullTransactions)
+            if (fullTransactions != null)
             {
-                return await Call<Transaction[]>("mempoolContent", new object[] { fullTransactions });
+                return await Call<Transaction[]>("mempoolContent", fullTransactions);
             }
             else
             {
-                return await Call<string[]>("mempoolContent", new object[] { fullTransactions });
+                return await Call<string[]>("mempoolContent");
             }
         }
 
@@ -546,12 +548,14 @@ namespace Nimiq
         /// <returns>The number of threads allocated for mining.</returns>
         public async Task<int> MinerThreads(long? threads = null)
         {
-            var parameters = new List<object>();
             if (threads != null)
             {
-                parameters.Add(threads);
+                return await Call<int>("minerThreads", threads);
             }
-            return await Call<int>("minerThreads", parameters.ToArray());
+            else
+            {
+                return await Call<int>("minerThreads");
+            }
         }
 
         /// <summary>Returns or sets the minimum fee per byte.
@@ -561,12 +565,14 @@ namespace Nimiq
         /// <returns>The new minimum fee per byte.</returns>
         public async Task<int> MinFeePerByte(int? fee = null)
         {
-            var parameters = new List<object>();
             if (fee != null)
             {
-                parameters.Add(fee);
+                return await Call<int>("minFeePerByte", fee);
             }
-            return await Call<int>("minFeePerByte", parameters.ToArray());
+            else
+            {
+                return await Call<int>("minFeePerByte");
+            }
         }
 
         /// <summary>Returns true if client is actively mining new blocks.
@@ -576,12 +582,14 @@ namespace Nimiq
         /// <returns><c>true</c> if the client is mining, otherwise <c>false</c>.</returns>
         public async Task<bool> Mining(bool? state = null)
         {
-            var parameters = new List<object>();
             if (state != null)
             {
-                parameters.Add(state);
+                return await Call<bool>("mining", state);
             }
-            return await Call<bool>("mining", parameters.ToArray());
+            else
+            {
+                return await Call<bool>("mining");
+            }
         }
 
         /// <summary>Returns number of peers currently connected to the client.</summary>
@@ -606,13 +614,14 @@ namespace Nimiq
         /// <returns>The current state of the peer.</returns>
         public async Task<Peer> PeerState(string address, PeerStateCommand command = null)
         {
-            var parameters = new List<object>();
-            parameters.Add(address);
             if (command != null)
             {
-                parameters.Add(command);
+                return await Call<Peer>("peerState", address, command);
             }
-            return await Call<Peer>("peerState", parameters.ToArray());
+            else
+            {
+                return await Call<Peer>("peerState", address);
+            }
         }
 
         /// <summary>Returns or sets the mining pool.
@@ -622,12 +631,14 @@ namespace Nimiq
         /// <returns>The mining pool connection string, or <c>null</c> if not enabled.</returns>
         public async Task<string> Pool(object address = null)
         {
-            var parameters = new List<object>();
             if (address is string || address is bool)
             {
-                parameters.Add(address);
+                return await Call<string>("pool", address);
             }
-            return await Call<string>("pool", parameters.ToArray());
+            else
+            {
+                return await Call<string>("pool");
+            }
         }
 
         /// <summary>Returns the confirmed mining pool balance.</summary>
@@ -649,7 +660,7 @@ namespace Nimiq
         /// <returns>The Hex-encoded transaction hash.</returns>
         public async Task<Hash> SendRawTransaction(string transaction)
         {
-            return await Call<Hash>("sendRawTransaction", new object[] { transaction });
+            return await Call<Hash>("sendRawTransaction", transaction);
         }
 
         /// <summary>Creates new message call transaction or a contract creation, if the data field contains code.</summary>
@@ -667,14 +678,14 @@ namespace Nimiq
                 { "fee", transaction.Fee },
                 { "data", transaction.Data }
             };
-            return await Call<Hash>(method: "sendTransaction", new object[] { parameters });
+            return await Call<Hash>(method: "sendTransaction", parameters);
         }
 
         /// <summary>Submits a block to the node. When the block is valid, the node will forward it to other nodes in the network.</summary>
         /// <param name="block">Hex-encoded full block (including header, interlink and body). When submitting work from getWork, remember to include the suffix.</param>
         public async Task SubmitBlock(string block)
         {
-            await Call<string>("submitBlock", new object[] { block });
+            await Call<string>("submitBlock", block);
         }
 
         /// <summary>Returns an object with data about the sync status or <c>false</c>.</summary>
@@ -697,7 +708,7 @@ namespace Nimiq
         /// <returns>The transaction object.</returns>
         public async Task<Transaction> GetRawTransactionInfo(string transaction)
         {
-            return await Call<Transaction>("getRawTransactionInfo", new object[] { transaction });
+            return await Call<Transaction>("getRawTransactionInfo", transaction);
         }
 
         /// <summary>Resets the constant to default value.</summary>
@@ -705,7 +716,7 @@ namespace Nimiq
         /// <returns>The new value of the constant.</returns>
         public async Task<long> ResetConstant(string constant)
         {
-            return await Call<long>("constant", new object[] { constant, "reset" });
+            return await Call<long>("constant", constant, "reset");
         }
     }
 }

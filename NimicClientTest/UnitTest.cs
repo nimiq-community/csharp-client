@@ -500,7 +500,7 @@ namespace NimiqClientTest
             var result = await client.MempoolContent();
 
             Assert.AreEqual("mempoolContent", HttpMessageHandlerStub.LatestRequestMethod);
-            Assert.AreEqual(false, HttpMessageHandlerStub.LatestRequestParams[0]);
+            Assert.AreEqual(0, HttpMessageHandlerStub.LatestRequestParams.Length);
 
             Assert.AreEqual(3, result.Length);
             Assert.IsNotNull(result[0]);
