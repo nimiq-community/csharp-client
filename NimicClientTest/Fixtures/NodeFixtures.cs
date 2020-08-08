@@ -1,5 +1,4 @@
-﻿using System;
-namespace NimicClientTest.Fixtures
+﻿namespace NimicClientTest.Fixtures
 {
     public class NodeFixtures
     {

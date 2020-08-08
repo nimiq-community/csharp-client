@@ -44,16 +44,16 @@ namespace Nimiq.Models
     /// <summary>Commands to change the state of a peer.</summary>
     [Serializable]
     [JsonConverter(typeof(PeerStateCommandConverter))]
-    public class PeerStateCommand
+    public class PeerStateCommand : StringEnum
     {
         /// <summary>Connect.</summary>
-        public static PeerStateCommand Connect { get { return new PeerStateCommand("connect"); } }
+        public static readonly PeerStateCommand Connect = new PeerStateCommand("connect");
         /// <summary>Disconnect.</summary>
-        public static PeerStateCommand Disconnect { get { return new PeerStateCommand("disconnect"); } }
+        public static readonly PeerStateCommand Disconnect = new PeerStateCommand("disconnect");
         /// <summary>Ban.</summary>
-        public static PeerStateCommand Ban { get { return new PeerStateCommand("ban"); } }
+        public static readonly  PeerStateCommand Ban = new PeerStateCommand("ban");
         /// <summary>Unban.</summary>
-        public static PeerStateCommand Unban { get { return new PeerStateCommand("unban"); } }
+        public static readonly PeerStateCommand Unban = new PeerStateCommand("unban");
 
         private class PeerStateCommandConverter : JsonConverter<PeerStateCommand>
         {
@@ -68,62 +68,7 @@ namespace Nimiq.Models
             }
         }
 
-        private PeerStateCommand(string value) { Value = value; }
-
-        private string Value { get; set; }
-
-        public static implicit operator string(PeerStateCommand level)
-        {
-            return level.Value;
-        }
-
-        public static explicit operator PeerStateCommand(string level)
-        {
-            return new PeerStateCommand(level);
-        }
-
-        public override string ToString()
-        {
-            return Value;
-        }
-
-        public static bool operator ==(PeerStateCommand a, PeerStateCommand b)
-        {
-            if (b is null)
-            {
-                return false;
-            }
-            return a.Value == b.Value;
-        }
-
-        public static bool operator !=(PeerStateCommand a, PeerStateCommand b)
-        {
-            if (b is null)
-            {
-                return true;
-            }
-            return a.Value != b.Value;
-        }
-
-        public override bool Equals(object obj)
-        {
-            var cs = obj as PeerStateCommand;
-            if (cs != null)
-            {
-                return this == cs;
-            }
-            var s = obj as string;
-            if (s != null)
-            {
-                return Value == s;
-            }
-            return false;
-        }
-
-        public override int GetHashCode()
-        {
-            return Value.GetHashCode();
-        }
+        public PeerStateCommand(string value) : base(value) { }
     }
 
     /// <summary>Peer information returned by the server.</summary>

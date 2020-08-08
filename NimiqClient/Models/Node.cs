@@ -7,14 +7,14 @@ namespace Nimiq.Models
     /// <summary>Consensus state returned by the server.</summary>
     [Serializable]
     [JsonConverter(typeof(ConsensusStateConverter))]
-    public class ConsensusState
+    public class ConsensusState : StringEnum
     {
         /// <summary>Connecting.</summary>
-        public static ConsensusState Connecting { get { return new ConsensusState("connecting"); } }
+        public static readonly ConsensusState Connecting = new ConsensusState("connecting");
         /// <summary>Syncing blocks.</summary>
-        public static ConsensusState Syncing { get { return new ConsensusState("syncing"); } }
+        public static readonly ConsensusState Syncing = new ConsensusState("syncing");
         /// <summary>Consensus established.</summary>
-        public static ConsensusState Established { get { return new ConsensusState("established"); } }
+        public static readonly ConsensusState Established = new ConsensusState("established");
 
         private class ConsensusStateConverter : JsonConverter<ConsensusState>
         {
@@ -29,62 +29,7 @@ namespace Nimiq.Models
             }
         }
 
-        private ConsensusState(string value) { Value = value; }
-
-        private string Value { get; set; }
-
-        public static implicit operator string(ConsensusState level)
-        {
-            return level.Value;
-        }
-
-        public static explicit operator ConsensusState(string level)
-        {
-            return new ConsensusState(level);
-        }
-
-        public override string ToString()
-        {
-            return Value;
-        }
-
-        public static bool operator ==(ConsensusState a, ConsensusState b)
-        {
-            if (b is null)
-            {
-                return false;
-            }
-            return a.Value == b.Value;
-        }
-
-        public static bool operator !=(ConsensusState a, ConsensusState b)
-        {
-            if (b is null)
-            {
-                return true;
-            }
-            return a.Value != b.Value;
-        }
-
-        public override bool Equals(object obj)
-        {
-            var cs = obj as ConsensusState;
-            if (cs != null)
-            {
-                return this == cs;
-            }
-            var s = obj as string;
-            if (s != null)
-            {
-                return Value == s;
-            }
-            return false;
-        }
-
-        public override int GetHashCode()
-        {
-            return Value.GetHashCode();
-        }
+        public ConsensusState(string value) : base(value) { }
     }
 
     /// <summary>Syncing status returned by the server.</summary>

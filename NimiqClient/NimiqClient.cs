@@ -20,22 +20,22 @@ namespace Nimiq
     /// <summary>Used to set the log level in the JSONRPC server.</summary>
     [Serializable]
     [JsonConverter(typeof(LogLevelConverter))]
-    public class LogLevel
+    public class LogLevel : StringEnum
     {
         /// <summary>Trace level log.</summary>
-        public static LogLevel Trace { get { return new LogLevel("trace"); } }
+        public static readonly LogLevel Trace = new LogLevel("trace");
         /// <summary>Verbose level log.</summary>
-        public static LogLevel Verbose { get { return new LogLevel("verbose"); } }
+        public static readonly LogLevel Verbose = new LogLevel("verbose");
         /// <summary>Debugging level log.</summary>
-        public static LogLevel Debug { get { return new LogLevel("debug"); } }
+        public static readonly LogLevel Debug = new LogLevel("debug");
         /// <summary>Info level log.</summary>
-        public static LogLevel Info { get { return new LogLevel("info"); } }
+        public static readonly LogLevel Info = new LogLevel("info");
         /// <summary>Warning level log.</summary>
-        public static LogLevel Warn { get { return new LogLevel("warn"); } }
+        public static readonly LogLevel Warn = new LogLevel("warn");
         /// <summary>Error level log.</summary>
-        public static LogLevel Error { get { return new LogLevel("error"); } }
+        public static readonly LogLevel Error = new LogLevel("error");
         /// <summary>Assertions level log.</summary>
-        public static LogLevel Assert { get { return new LogLevel("assert"); } }
+        public static readonly LogLevel Assert = new LogLevel("assert");
 
         private class LogLevelConverter : JsonConverter<LogLevel>
         {
@@ -50,62 +50,7 @@ namespace Nimiq
             }
         }
 
-        private LogLevel(string value) { Value = value; }
-
-        private string Value { get; set; }
-
-        public static implicit operator string(LogLevel level)
-        {
-            return level.Value;
-        }
-
-        public static explicit operator LogLevel(string level)
-        {
-            return new LogLevel(level);
-        }
-
-        public override string ToString()
-        {
-            return Value;
-        }
-
-        public static bool operator ==(LogLevel a, LogLevel b)
-        {
-            if (b is null)
-            {
-                return false;
-            }
-            return a.Value == b.Value;
-        }
-
-        public static bool operator !=(LogLevel a, LogLevel b)
-        {
-            if (b is null)
-            {
-                return true;
-            }
-            return a.Value != b.Value;
-        }
-
-        public override bool Equals(object obj)
-        {
-            var cs = obj as LogLevel;
-            if (cs != null)
-            {
-                return this == cs;
-            }
-            var s = obj as string;
-            if (s != null)
-            {
-                return Value == s;
-            }
-            return false;
-        }
-
-        public override int GetHashCode()
-        {
-            return Value.GetHashCode();
-        }
+        public LogLevel(string value) : base(value) { }
     }
 
     /// <summary>Error returned in the response for the JSONRPC the server.</summary>
