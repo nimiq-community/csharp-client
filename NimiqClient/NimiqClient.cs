@@ -333,12 +333,14 @@ namespace Nimiq
         /// <returns>The value of the constant.</returns>
         public async Task<long> Constant(string constant, long? value = null)
         {
-            var parameters = new List<object>() { constant };
             if (value != null)
             {
-                parameters.Add(value.Value);
+                return await Call<long>("constant", constant, value);
             }
-            return await Call<long>("constant", parameters.ToArray());
+            else
+            {
+                return await Call<long>("constant", constant);
+            }
         }
 
         /// <summary>Creates a new account and stores its private key in the client store.</summary>
