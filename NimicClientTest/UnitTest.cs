@@ -1013,7 +1013,7 @@ namespace NimiqClientTest
 
             Assert.AreEqual("getBlockByHash", HttpMessageHandlerStub.LatestRequestMethod);
             Assert.AreEqual("bc3945d22c9f6441409a6e539728534a4fc97859bda87333071fad9dad942786", (string)HttpMessageHandlerStub.LatestRequestParams[0]);
-            Assert.AreEqual(false, (bool)HttpMessageHandlerStub.LatestRequestParams[1]);
+            Assert.AreEqual(1, HttpMessageHandlerStub.LatestRequestParams.Length);
 
             Assert.IsNotNull(result);
             Assert.AreEqual(11608, result.Number);
@@ -1055,7 +1055,7 @@ namespace NimiqClientTest
 
             Assert.AreEqual("getBlockByHash", HttpMessageHandlerStub.LatestRequestMethod);
             Assert.AreEqual("bc3945d22c9f6441409a6e539728534a4fc97859bda87333071fad9dad942786", HttpMessageHandlerStub.LatestRequestParams[0]);
-            Assert.AreEqual(false, HttpMessageHandlerStub.LatestRequestParams[1]);
+            Assert.AreEqual(1, HttpMessageHandlerStub.LatestRequestParams.Length);
 
             Assert.IsNull(result);
         }
@@ -1069,7 +1069,7 @@ namespace NimiqClientTest
 
             Assert.AreEqual("getBlockByNumber", HttpMessageHandlerStub.LatestRequestMethod);
             Assert.AreEqual(11608, HttpMessageHandlerStub.LatestRequestParams[0]);
-            Assert.AreEqual(false, HttpMessageHandlerStub.LatestRequestParams[1]);
+            Assert.AreEqual(1, HttpMessageHandlerStub.LatestRequestParams.Length);
 
             Assert.IsNotNull(result);
             Assert.AreEqual(11608, result.Number);
@@ -1111,7 +1111,7 @@ namespace NimiqClientTest
 
             Assert.AreEqual("getBlockByNumber", HttpMessageHandlerStub.LatestRequestMethod);
             Assert.AreEqual(11608, HttpMessageHandlerStub.LatestRequestParams[0]);
-            Assert.AreEqual(false, HttpMessageHandlerStub.LatestRequestParams[1]);
+            Assert.AreEqual(1, HttpMessageHandlerStub.LatestRequestParams.Length);
 
             Assert.IsNull(result);
         }

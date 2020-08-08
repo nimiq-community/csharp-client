@@ -7,7 +7,7 @@ namespace Nimiq.Models
     /// <summary>Consensus state returned by the server.</summary>
     [Serializable]
     [JsonConverter(typeof(ConsensusStateConverter))]
-    public class ConsensusState : StringEnum
+    public class ConsensusState : StringEnumeration
     {
         /// <summary>Connecting.</summary>
         public static readonly ConsensusState Connecting = new ConsensusState("connecting");

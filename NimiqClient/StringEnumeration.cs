@@ -1,13 +1,13 @@
 ﻿namespace Nimiq
 {
     /// <summary>Abstract base class used in string enumerations</summary>
-    public abstract class StringEnum
+    public abstract class StringEnumeration
     {
         public string Value { get; set; }
 
-        public StringEnum(string value) { Value = value; }
+        public StringEnumeration(string value) { Value = value; }
 
-        public static implicit operator string(StringEnum obj)
+        public static implicit operator string(StringEnumeration obj)
         {
             return obj.Value;
         }
@@ -17,9 +17,9 @@
             return Value;
         }
 
-        public static bool operator ==(StringEnum a, object b)
+        public static bool operator ==(StringEnumeration a, object b)
         {
-            var other = b as StringEnum;
+            var other = b as StringEnumeration;
             if (other is null)
             {
                 return false;
@@ -27,9 +27,9 @@
             return a.Value == other.Value;
         }
 
-        public static bool operator !=(StringEnum a, object b)
+        public static bool operator !=(StringEnumeration a, object b)
         {
-            var other = b as StringEnum;
+            var other = b as StringEnumeration;
             if (other is null)
             {
                 return true;
@@ -39,7 +39,7 @@
 
         public override bool Equals(object obj)
         {
-            var other = obj as StringEnum;
+            var other = obj as StringEnumeration;
             if (other == null)
             {
                 return false;

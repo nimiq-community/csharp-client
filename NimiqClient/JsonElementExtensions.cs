@@ -4,7 +4,7 @@ using System.Text.Json;
 namespace Nimiq
 {
     /// <summary>Class Extensions</summary>
-    static public class Extensions
+    static public class JsonElementExtensions
     {
         /// <summary>Convert a JsonElement into its underlying objects.</summary>
         public static object GetObject(this JsonElement jsonElement)

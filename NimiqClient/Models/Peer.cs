@@ -44,7 +44,7 @@ namespace Nimiq.Models
     /// <summary>Commands to change the state of a peer.</summary>
     [Serializable]
     [JsonConverter(typeof(PeerStateCommandConverter))]
-    public class PeerStateCommand : StringEnum
+    public class PeerStateCommand : StringEnumeration
     {
         /// <summary>Connect.</summary>
         public static readonly PeerStateCommand Connect = new PeerStateCommand("connect");

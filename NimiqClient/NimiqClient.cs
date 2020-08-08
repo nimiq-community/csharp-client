@@ -20,7 +20,7 @@ namespace Nimiq
     /// <summary>Used to set the log level in the JSONRPC server.</summary>
     [Serializable]
     [JsonConverter(typeof(LogLevelConverter))]
-    public class LogLevel : StringEnum
+    public class LogLevel : StringEnumeration
     {
         /// <summary>Trace level log.</summary>
         public static readonly LogLevel Trace = new LogLevel("trace");
@@ -267,6 +267,10 @@ namespace Nimiq
         {
             Root<T> responseObject = null;
             Exception clientError = null;
+
+            // increase the JSONRPC client request id
+            Id += 1;
+
             try
             {
                 // prepare the request
@@ -296,9 +300,6 @@ namespace Nimiq
                 var responseError = responseObject.Error;
                 throw new RemoteErrorException($"{responseError.Message} (Code: {responseError.Code})");
             }
-
-            // increase the JSONRPC client request id for the next request
-            Id = Id + 1;
 
             return responseObject.Result;
         }
@@ -390,18 +391,32 @@ namespace Nimiq
         /// <param name="hash">Hash of the block to gather information on.</param>
         /// <param name="fullTransactions">If <c>true</c> it returns the full transaction objects, if <c>false</c> only the hashes of the transactions.</param>
         /// <returns>A block object or <c>null</c> when no block was found.</returns>
-        public async Task<Block> GetBlockByHash(Hash hash, bool fullTransactions = false)
+        public async Task<Block> GetBlockByHash(Hash hash, bool? fullTransactions = null)
         {
-            return await Call<Block>("getBlockByHash", hash, fullTransactions);
+            if (fullTransactions != null)
+            {
+                return await Call<Block>("getBlockByHash", hash, fullTransactions);
+            }
+            else
+            {
+                return await Call<Block>("getBlockByHash", hash);
+            }
         }
 
         /// <summary>Returns information about a block by block number.</summary>
         /// <param name="height">The height of the block to gather information on.</param>
         /// <param name="fullTransactions">If <c>true</c> it returns the full transaction objects, if <c>false</c> only the hashes of the transactions.</param>
         /// <returns>A block object or <c>null</c> when no block was found.</returns>
-        public async Task<Block> GetBlockByNumber(int height, bool fullTransactions = false)
+        public async Task<Block> GetBlockByNumber(int height, bool? fullTransactions = null)
         {
-            return await Call<Block>("getBlockByNumber", height, fullTransactions);
+            if (fullTransactions != null)
+            {
+                return await Call<Block>("getBlockByNumber", height, fullTransactions);
+            }
+            else
+            {
+                return await Call<Block>("getBlockByNumber", height);
+            }
         }
 
         /// <summary>Returns a template to build the next block for mining.
@@ -477,9 +492,16 @@ namespace Nimiq
         /// <param name="address">Address of which transactions should be gathered.</param>
         /// <param name="numberOfTransactions">Number of transactions that shall be returned.</param>
         /// <returns>Array of transactions linked to the requested address.</returns>
-        public async Task<Transaction[]> GetTransactionsByAddress(Address address, long numberOfTransactions = 1000)
+        public async Task<Transaction[]> GetTransactionsByAddress(Address address, long? numberOfTransactions = null)
         {
-            return await Call<Transaction[]>("getTransactionsByAddress", address, numberOfTransactions);
+            if (numberOfTransactions != null)
+            {
+                return await Call<Transaction[]>("getTransactionsByAddress", address, numberOfTransactions);
+            }
+            else
+            {
+                return await Call<Transaction[]>("getTransactionsByAddress", address);
+            }
         }
 
         /// <summary>Returns instructions to mine the next block. This will consider pool instructions when connected to a pool.</summary>
@@ -697,11 +719,11 @@ namespace Nimiq
             var result = (JsonElement) await Call<object>("syncing");
             try
             {
-                return result.GetBoolean();
+                return result.GetObject<SyncStatus>();
             }
             catch
             {
-                return result.GetObject<SyncStatus>();
+                return result.GetBoolean();
             }
         }
 
