@@ -29,7 +29,7 @@ namespace Nimiq.Models
             }
         }
 
-        public ConsensusState(string value) : base(value) { }
+        private ConsensusState(string value) : base(value) { }
     }
 
     /// <summary>Syncing status returned by the server.</summary>

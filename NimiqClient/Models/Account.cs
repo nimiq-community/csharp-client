@@ -3,15 +3,15 @@ using System.Text.Json.Serialization;
 
 namespace Nimiq.Models
 {
-    /// <summaryType of a Nimiq account.</summary>
+    /// <summary>Type of a Nimiq account.</summary>
     [Serializable]
     public enum AccountType : long
     {
-        /// <summaryNormal Nimiq account.</summary>
+        /// <summary>Normal Nimiq account.</summary>
         basic = 0,
-        /// <summaryVesting contract.</summary>
+        /// <summary>Vesting contract.</summary>
         vesting = 1,
-        /// <summaryHashed Timelock Contract.</summary>
+        /// <summary>Hashed Timelock Contract.</summary>
         htlc = 2,
     }
 
@@ -45,7 +45,7 @@ namespace Nimiq.Models
         public long VestingTotalAmount { get; set; }
     }
 
-    /// <summary>Hashed Timelock Contract object returned by the server.
+    /// <summary>Hashed Timelock Contract object returned by the server.</summary>
     public class HTLC : Account
     {
         /// <summary>Hex-encoded 20 byte address of the sender of the HTLC.</summary>

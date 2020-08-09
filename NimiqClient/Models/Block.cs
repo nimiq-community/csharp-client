@@ -4,12 +4,6 @@ using System.Text.Json.Serialization;
 
 namespace Nimiq.Models
 {
-    /// <summary>Can be both a hexadecimal representation or a human readable address.</summary>
-    using Address = String;
-
-    /// <summary>Hexadecimal string containing a hash value.</summary>
-    using Hash = String;
-
     /// <summary>Block returned by the server.</summary>
     [Serializable]
     public class Block
@@ -19,22 +13,22 @@ namespace Nimiq.Models
         public long Number { get; set; }
         /// <summary>Hex-encoded 32-byte hash of the block.</summary>
         [JsonPropertyName("hash")]
-        public Hash Hash { get; set; }
+        public string Hash { get; set; }
         /// <summary>Hex-encoded 32-byte Proof-of-Work hash of the block.</summary>
         [JsonPropertyName("pow")]
-        public Hash Pow { get; set; }
+        public string Pow { get; set; }
         /// <summary>Hex-encoded 32-byte hash of the predecessor block.</summary>
         [JsonPropertyName("parentHash")]
-        public Hash ParentHash { get; set; }
+        public string ParentHash { get; set; }
         /// <summary>The nonce of the block used to fulfill the Proof-of-Work.</summary>
         [JsonPropertyName("nonce")]
         public long Nonce { get; set; }
         /// <summary>Hex-encoded 32-byte hash of the block body Merkle root.</summary>
         [JsonPropertyName("bodyHash")]
-        public Hash BodyHash { get; set; }
+        public string BodyHash { get; set; }
         /// <summary>Hex-encoded 32-byte hash of the accounts tree root.</summary>
         [JsonPropertyName("accountsHash")]
-        public Hash AccountsHash { get; set; }
+        public string AccountsHash { get; set; }
         /// <summary>Block difficulty, encoded as decimal number in string.</summary>
         [JsonPropertyName("difficulty")]
         public string Difficulty { get; set; }
@@ -49,7 +43,7 @@ namespace Nimiq.Models
         public string Miner { get; set; }
         /// <summary>User friendly address (NQ-address) of the miner of the block.</summary>
         [JsonPropertyName("minerAddress")]
-        public Address MinerAddress { get; set; }
+        public string MinerAddress { get; set; }
         /// <summary>Hex-encoded value of the extra data field, maximum of 255 bytes.</summary>
         [JsonPropertyName("extraData")]
         public string ExtraData { get; set; }
@@ -91,13 +85,13 @@ namespace Nimiq.Models
         public long Version { get; set; }
         /// <summary>32-byte hex-encoded hash of the previous block.</summary>
         [JsonPropertyName("prevHash")]
-        public Hash PrevHash { get; set; }
+        public string PrevHash { get; set; }
         /// <summary>32-byte hex-encoded hash of the interlink.</summary>
         [JsonPropertyName("interlinkHash")]
-        public Hash InterlinkHash { get; set; }
+        public string InterlinkHash { get; set; }
         /// <summary>32-byte hex-encoded hash of the accounts tree.</summary>
         [JsonPropertyName("accountsHash")]
-        public Hash AccountsHash { get; set; }
+        public string AccountsHash { get; set; }
         /// <summary>Compact form of the hash target for this block.</summary>
         [JsonPropertyName("nBits")]
         public long NBits { get; set; }
@@ -112,7 +106,7 @@ namespace Nimiq.Models
     {
         /// <summary>32-byte hex-encoded hash of the block body.</summary>
         [JsonPropertyName("hash")]
-        public Hash Hash { get; set; }
+        public string Hash { get; set; }
         /// <summary>20-byte hex-encoded miner address.</summary>
         [JsonPropertyName("minerAddr")]
         public string MinerAddr { get; set; }
@@ -128,7 +122,7 @@ namespace Nimiq.Models
         /// <summary>Array of hex-encoded hashes that verify the path of the miner address in the merkle tree.
         /// This can be used to change the miner address easily.</summary>
         [JsonPropertyName("merkleHashes")]
-        public Hash[] MerkleHashes { get; set; }
+        public string[] MerkleHashes { get; set; }
     }
 
     /// <summary>Block template returned by the server.</summary>

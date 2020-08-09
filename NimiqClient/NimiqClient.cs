@@ -11,12 +11,6 @@ using Nimiq.Models;
 
 namespace Nimiq
 {
-    /// <summary>Can be both a hexadecimal representation or a human readable address.</summary>
-    using Address = String;
-
-    /// <summary>Hexadecimal string containing a hash value.</summary>
-    using Hash = String;
-
     /// <summary>Used to set the log level in the JSONRPC server.</summary>
     [Serializable]
     [JsonConverter(typeof(LogLevelConverter))]
@@ -50,15 +44,17 @@ namespace Nimiq
             }
         }
 
-        public LogLevel(string value) : base(value) { }
+        private LogLevel(string value) : base(value) { }
     }
 
     /// <summary>Error returned in the response for the JSONRPC the server.</summary>
     [Serializable]
     public class ResponseError
     {
+        /// <summary>Code of the returned error.</summary>
         [JsonPropertyName("code")]
         public long Code { get; set; }
+        /// <summary>Message of the returned error.</summary>
         [JsonPropertyName("message")]
         public string Message { get; set; }
     }
@@ -79,6 +75,12 @@ namespace Nimiq
         /// <summary>Host port.</summary>
         public long Port { get; set; }
 
+        /// <summary>Constructor.</summary>
+        /// <param name="scheme">Protocol squeme, <c>"http"</c> or <c>"https"</c>.</param>
+        /// <param name="user">Authorized user.</param>
+        /// <param name="password">Password for the authorized user.</param>
+        /// <param name="host">Host IP address.</param>
+        /// <param name="port">Host port.</param>
         public Config(string scheme = "http", string user = "", string password = "", string host = "127.0.0.1", long port = 8648)
         {
             Scheme = scheme;
@@ -90,14 +92,18 @@ namespace Nimiq
     }
 
     /// <summary>Internal error during a JSON RPC request.</summary>
-    public class InternalErrorException : System.Exception
+    public class InternalErrorException : Exception
     {
+        /// <summary>Constructor.</summary>
+        /// <param name="message">Meessage for the error.</param>
         public InternalErrorException(string message) : base(message) { }
     }
 
     /// <summary>Exception on the remote server.</summary>
-    public class RemoteErrorException : System.Exception
+    public class RemoteErrorException : Exception
     {
+        /// <summary>Constructor.</summary>
+        /// <param name="message">Meessage for the error.</param>
         public RemoteErrorException(string message) : base(message) { }
     }
 
@@ -118,7 +124,7 @@ namespace Nimiq
             public ResponseError Error { get; set; }
         }
 
-        /// <summary>Nimiq account returned by the server. The especific type can obtained with the cast operator.<summary>
+        /// <summary>Nimiq account returned by the server. The especific type can obtained with the cast operator.</summary>
         [Serializable]
         private class RawAccount
         {
@@ -216,7 +222,7 @@ namespace Nimiq
         /// <summary>Number in the sequence for the next request.</summary>
         public long Id { get; set; } = 0;
 
-        /// <summary>URL of the JSONRPC server.
+        /// <summary>URL of the JSONRPC server.</summary>
         private string Url { get; set; }
 
         /// <summary>Base64 string containing authentication parameters.</summary>
@@ -328,9 +334,9 @@ namespace Nimiq
 
         /// <summary>Returns or overrides a constant value.
         /// When no parameter is given, it returns the value of the constant. When giving a value as parameter,
-        /// it sets the constant to the given value. To reset the constant use <c>resetConstant()</c> instead.<summary>
-        /// <param name="string">The class and name of the constant (format should be <c>"Class.CONSTANT"</c>).</parameter>
-        /// <param name="value">The new value of the constant.</parameter>
+        /// it sets the constant to the given value. To reset the constant use <c>resetConstant()</c> instead.</summary>
+        /// <param name="constant">The class and name of the constant (format should be <c>"Class.CONSTANT"</c>).</param>
+        /// <param name="value">The new value of the constant.</param>
         /// <returns>The value of the constant.</returns>
         public async Task<long> Constant(string constant, long? value = null)
         {
@@ -353,7 +359,7 @@ namespace Nimiq
 
         /// <summary>Creates and signs a transaction without sending it.
         /// The transaction can then be send via <c>sendRawTransaction()</c> without accidentally replaying it.</summary>
-        /// <param name="transaction">The transaction object.</parameter>
+        /// <param name="transaction">The transaction object.</param>
         /// <returns>Hex-encoded transaction.</returns>
         public async Task<string> CreateRawTransaction(OutgoingTransaction transaction)
         {
@@ -373,7 +379,7 @@ namespace Nimiq
         /// <summary>Returns details for the account of given address.</summary>
         /// <param name="address">Address to get account details.</param>
         /// <returns>Details about the account. Returns the default empty basic account for non-existing accounts.</returns>
-        public async Task<object> GetAccount(Address address)
+        public async Task<object> GetAccount(string address)
         {
             var result = await Call<RawAccount>("getAccount", address);
             return result.Account;
@@ -382,7 +388,7 @@ namespace Nimiq
         /// <summary>Returns the balance of the account of given address.</summary>
         /// <param name="address">Address to check for balance.</param>
         /// <returns>The current balance at the specified address (in smalest unit).</returns>
-        public async Task<long> GetBalance(Address address)
+        public async Task<long> GetBalance(string address)
         {
             return await Call<long>("getBalance", address);
         }
@@ -391,7 +397,7 @@ namespace Nimiq
         /// <param name="hash">Hash of the block to gather information on.</param>
         /// <param name="fullTransactions">If <c>true</c> it returns the full transaction objects, if <c>false</c> only the hashes of the transactions.</param>
         /// <returns>A block object or <c>null</c> when no block was found.</returns>
-        public async Task<Block> GetBlockByHash(Hash hash, bool? fullTransactions = null)
+        public async Task<Block> GetBlockByHash(string hash, bool? fullTransactions = null)
         {
             if (fullTransactions != null)
             {
@@ -425,7 +431,7 @@ namespace Nimiq
         /// <param name="address">The address to use as a miner for this block. This overrides the address provided during startup or from the pool.</param>
         /// <param name="extraData">Hex-encoded value for the extra data field. This overrides the extra data provided during startup or from the pool.</param>
         /// <returns>A block template object.</returns>
-        public async Task<BlockTemplate> GetBlockTemplate(Address address = null, string extraData = "")
+        public async Task<BlockTemplate> GetBlockTemplate(string address = null, string extraData = "")
         {
             if (address != null)
             {
@@ -440,7 +446,7 @@ namespace Nimiq
         /// <summary>Returns the number of transactions in a block from a block matching the given block hash.</summary>
         /// <param name="hash">Hash of the block.</param>
         /// <returns>Number of transactions in the block found, or <c>null</c>, when no block was found.</returns>
-        public async Task<long?> GetBlockTransactionCountByHash(Hash hash)
+        public async Task<long?> GetBlockTransactionCountByHash(string hash)
         {
             return await Call<long?>("getBlockTransactionCountByHash", hash);
         }
@@ -456,8 +462,8 @@ namespace Nimiq
         /// <summary>Returns information about a transaction by block hash and transaction index position.</summary>
         /// <param name="hash">Hash of the block containing the transaction.</param>
         /// <param name="index">Index of the transaction in the block.</param>
-        /// <returns>A transaction object or <c>null</c> when no transaction was found.<returns>
-        public async Task<Transaction> GetTransactionByBlockHashAndIndex(Hash hash, long index)
+        /// <returns>A transaction object or <c>null</c> when no transaction was found.</returns>
+        public async Task<Transaction> GetTransactionByBlockHashAndIndex(string hash, long index)
         {
             return await Call<Transaction>("getTransactionByBlockHashAndIndex", hash, index);
         }
@@ -465,7 +471,7 @@ namespace Nimiq
         /// <summary>Returns information about a transaction by block number and transaction index position.</summary>
         /// <param name="height">Height of the block containing the transaction.</param>
         /// <param name="index">Index of the transaction in the block.</param>
-        /// <returns>A transaction object or <c>null</c> when no transaction was found.<returns>
+        /// <returns>A transaction object or <c>null</c> when no transaction was found.</returns>
         public async Task<Transaction> GetTransactionByBlockNumberAndIndex(long height, long index)
         {
             return await Call<Transaction>("getTransactionByBlockNumberAndIndex", height, index);
@@ -474,15 +480,15 @@ namespace Nimiq
         /// <summary>Returns the information about a transaction requested by transaction hash.</summary>
         /// <param name="hash">Hash of a transaction.</param>
         /// <returns>A transaction object or <c>null</c> when no transaction was found.</returns>
-        public async Task<Transaction> GetTransactionByHash(Hash hash)
+        public async Task<Transaction> GetTransactionByHash(string hash)
         {
             return await Call<Transaction>("getTransactionByHash", hash);
         }
 
         /// <summary>Returns the receipt of a transaction by transaction hash.</summary>
         /// <param name="hash">Hash of a transaction.</param>
-        /// <returns>A transaction receipt object, or <c>null</c> when no receipt was found.<returns>
-        public async Task<TransactionReceipt> GetTransactionReceipt(Hash hash)
+        /// <returns>A transaction receipt object, or <c>null</c> when no receipt was found.</returns>
+        public async Task<TransactionReceipt> GetTransactionReceipt(string hash)
         {
             return await Call<TransactionReceipt>("getTransactionReceipt", hash);
         }
@@ -492,7 +498,7 @@ namespace Nimiq
         /// <param name="address">Address of which transactions should be gathered.</param>
         /// <param name="numberOfTransactions">Number of transactions that shall be returned.</param>
         /// <returns>Array of transactions linked to the requested address.</returns>
-        public async Task<Transaction[]> GetTransactionsByAddress(Address address, long? numberOfTransactions = null)
+        public async Task<Transaction[]> GetTransactionsByAddress(string address, long? numberOfTransactions = null)
         {
             if (numberOfTransactions != null)
             {
@@ -508,7 +514,7 @@ namespace Nimiq
         /// <param name="address">The address to use as a miner for this block. This overrides the address provided during startup or from the pool.</param>
         /// <param name="extraData">Hex-encoded value for the extra data field. This overrides the extra data provided during startup or from the pool.</param>
         /// <returns>Mining work instructions.</returns>
-        public async Task<WorkInstructions> GetWork(Address address = null, string extraData = "")
+        public async Task<WorkInstructions> GetWork(string address = null, string extraData = "")
         {
             if (address != null)
             {
@@ -568,7 +574,7 @@ namespace Nimiq
         /// <summary>Returns or sets the number of CPU threads for the miner.
         /// When no parameter is given, it returns the current number of miner threads.
         /// When a value is given as parameter, it sets the number of miner threads to that value.</summary>
-        /// <param name="threads">The number of threads to allocate for mining.</parameter>
+        /// <param name="threads">The number of threads to allocate for mining.</param>
         /// <returns>The number of threads allocated for mining.</returns>
         public async Task<int> MinerThreads(long? threads = null)
         {
@@ -680,17 +686,17 @@ namespace Nimiq
         }
 
         /// <summary>Sends a signed message call transaction or a contract creation, if the data field contains code.</summary>
-        /// <param name"transaction">The hex encoded signed transaction</param>
+        /// <param name="transaction">The hex encoded signed transaction</param>
         /// <returns>The Hex-encoded transaction hash.</returns>
-        public async Task<Hash> SendRawTransaction(string transaction)
+        public async Task<string> SendRawTransaction(string transaction)
         {
-            return await Call<Hash>("sendRawTransaction", transaction);
+            return await Call<string>("sendRawTransaction", transaction);
         }
 
         /// <summary>Creates new message call transaction or a contract creation, if the data field contains code.</summary>
-        /// <param name"transaction">The hex encoded signed transaction</param>
+        /// <param name="transaction">The hex encoded signed transaction</param>
         /// <returns>The Hex-encoded transaction hash.</returns>
-        public async Task<Hash> SendTransaction(OutgoingTransaction transaction)
+        public async Task<string> SendTransaction(OutgoingTransaction transaction)
         {
             var parameters = new Dictionary<string, object>
             {
@@ -702,7 +708,7 @@ namespace Nimiq
                 { "fee", transaction.Fee },
                 { "data", transaction.Data }
             };
-            return await Call<Hash>(method: "sendTransaction", parameters);
+            return await Call<string>(method: "sendTransaction", parameters);
         }
 
         /// <summary>Submits a block to the node. When the block is valid, the node will forward it to other nodes in the network.</summary>

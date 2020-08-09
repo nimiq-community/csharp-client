@@ -4,9 +4,6 @@ using System.Text.Json.Serialization;
 
 namespace Nimiq.Models
 {
-    /// <summary>Hexadecimal string containing a hash value.</summary>
-    using Hash = String;
-
     /// <summary>Peer address state returned by the server.</summary>
     [Serializable]
     public enum PeerAddressState
@@ -23,7 +20,7 @@ namespace Nimiq.Models
         banned = 5
     }
 
-    /// <summary>Peer connection state returned by the server.
+    /// <summary>Peer connection state returned by the server.</summary>
     [Serializable]
     public enum PeerConnectionState
     {
@@ -68,7 +65,7 @@ namespace Nimiq.Models
             }
         }
 
-        public PeerStateCommand(string value) : base(value) { }
+        private PeerStateCommand(string value) : base(value) { }
     }
 
     /// <summary>Peer information returned by the server.</summary>
@@ -95,7 +92,7 @@ namespace Nimiq.Models
         public int? TimeOffset { get; set; }
         /// <summary>Hash of the head block of the peer.</summary>
         [JsonPropertyName("headHash")]
-        public Hash HeadHash { get; set; }
+        public string HeadHash { get; set; }
         /// <summary>Latency to the peer.</summary>
         [JsonPropertyName("latency")]
         public int? Latency { get; set; }

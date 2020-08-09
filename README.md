@@ -62,11 +62,7 @@ Tests are stored in the `/NimiqClientTest` folder and can be run from the Visual
 
 ### Documentation
 
-The documentation is generated automatically running [Doxygen](https://www.doxygen.nl/download.html#srcbin) from the repository root directory.
-
-```sh
-doxygen doxygenfile
-```
+The documentation in XML format is automatically generated when enabling the option for the NimiqClient project under Project Options > Build > Compiler > Generate XML documentation. To automatically build the Mardown documentation file add the NuGet package [Vsxmd](https://www.nuget.org/packages/Vsxmd/) to the NimiqClient dependency project.
 
 ## License
 
