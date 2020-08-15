@@ -1,0 +1,203 @@
+\hypertarget{class_nimiq_1_1_models_1_1_block}{}\doxysection{Nimiq.\+Models.\+Block Class Reference}
+\label{class_nimiq_1_1_models_1_1_block}\index{Nimiq.Models.Block@{Nimiq.Models.Block}}
+
+
+\mbox{\hyperlink{class_nimiq_1_1_models_1_1_block}{Block}} returned by the server.  
+
+
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+long \mbox{\hyperlink{class_nimiq_1_1_models_1_1_block_a345a55b1459aa4f8489cf35a041fed0e}{Number}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Height of the block. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_nimiq_1_1_models_1_1_block_a9660b83cdabf7a588b1bd4d2e484d363}{Hash}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Hex-\/encoded 32-\/byte hash of the block. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_nimiq_1_1_models_1_1_block_af382fec5b0469319d888289d851a8e89}{Pow}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Hex-\/encoded 32-\/byte Proof-\/of-\/\+Work hash of the block. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_nimiq_1_1_models_1_1_block_a9143b5d41774921423cc0d60b64a5cc2}{Parent\+Hash}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Hex-\/encoded 32-\/byte hash of the predecessor block. \end{DoxyCompactList}\item 
+long \mbox{\hyperlink{class_nimiq_1_1_models_1_1_block_a2ab135cb08f744b99fa419469b661cfa}{Nonce}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The nonce of the block used to fulfill the Proof-\/of-\/\+Work. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_nimiq_1_1_models_1_1_block_a3546402b9cee4e1cf2fb6dab3e71f2be}{Body\+Hash}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Hex-\/encoded 32-\/byte hash of the block body Merkle root. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_nimiq_1_1_models_1_1_block_aa52f62ef5e6a3ee0f6c6a0cd517d6e97}{Accounts\+Hash}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Hex-\/encoded 32-\/byte hash of the accounts tree root. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_nimiq_1_1_models_1_1_block_a4699c4216d8e2117227068930eb3902e}{Difficulty}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_nimiq_1_1_models_1_1_block}{Block}} difficulty, encoded as decimal number in string. \end{DoxyCompactList}\item 
+long \mbox{\hyperlink{class_nimiq_1_1_models_1_1_block_a64ac2366964e98a3e267c94daf17f499}{Timestamp}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em U\+N\+IX timestamp of the block \end{DoxyCompactList}\item 
+long \mbox{\hyperlink{class_nimiq_1_1_models_1_1_block_a7373d2affbe6c8c06b16bf1c66fd262e}{Confirmations}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Number of confirmations for this transaction (number of blocks on top of the block where this transaction was in). \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_nimiq_1_1_models_1_1_block_a2842251b6e6df2c9dbd56298aaf5bee5}{Miner}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Hex-\/encoded 20 byte address of the miner of the block. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_nimiq_1_1_models_1_1_block_a4acb1aa76e967cae5221ab12c9f8271c}{Miner\+Address}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em User friendly address (N\+Q-\/address) of the miner of the block. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_nimiq_1_1_models_1_1_block_ab6251ff5bf6033e4daaecd265e488396}{Extra\+Data}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Hex-\/encoded value of the extra data field, maximum of 255 bytes. \end{DoxyCompactList}\item 
+long \mbox{\hyperlink{class_nimiq_1_1_models_1_1_block_ac0dd78ee1518aadea6363f0c92ee37a3}{Size}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_nimiq_1_1_models_1_1_block}{Block}} size in byte. \end{DoxyCompactList}\item 
+object\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_nimiq_1_1_models_1_1_block_a59dd0116a2ae6fb1497315275601a22c}{Transactions}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Array of transactions. Either represented by the transaction hash or a \mbox{\hyperlink{class_nimiq_1_1_models_1_1_transaction}{Transaction}} object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{class_nimiq_1_1_models_1_1_block}{Block}} returned by the server. 
+
+
+
+\doxysubsection{Property Documentation}
+\mbox{\Hypertarget{class_nimiq_1_1_models_1_1_block_aa52f62ef5e6a3ee0f6c6a0cd517d6e97}\label{class_nimiq_1_1_models_1_1_block_aa52f62ef5e6a3ee0f6c6a0cd517d6e97}} 
+\index{Nimiq.Models.Block@{Nimiq.Models.Block}!AccountsHash@{AccountsHash}}
+\index{AccountsHash@{AccountsHash}!Nimiq.Models.Block@{Nimiq.Models.Block}}
+\doxysubsubsection{\texorpdfstring{AccountsHash}{AccountsHash}}
+{\footnotesize\ttfamily string Nimiq.\+Models.\+Block.\+Accounts\+Hash\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Hex-\/encoded 32-\/byte hash of the accounts tree root. 
+
+\mbox{\Hypertarget{class_nimiq_1_1_models_1_1_block_a3546402b9cee4e1cf2fb6dab3e71f2be}\label{class_nimiq_1_1_models_1_1_block_a3546402b9cee4e1cf2fb6dab3e71f2be}} 
+\index{Nimiq.Models.Block@{Nimiq.Models.Block}!BodyHash@{BodyHash}}
+\index{BodyHash@{BodyHash}!Nimiq.Models.Block@{Nimiq.Models.Block}}
+\doxysubsubsection{\texorpdfstring{BodyHash}{BodyHash}}
+{\footnotesize\ttfamily string Nimiq.\+Models.\+Block.\+Body\+Hash\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Hex-\/encoded 32-\/byte hash of the block body Merkle root. 
+
+\mbox{\Hypertarget{class_nimiq_1_1_models_1_1_block_a7373d2affbe6c8c06b16bf1c66fd262e}\label{class_nimiq_1_1_models_1_1_block_a7373d2affbe6c8c06b16bf1c66fd262e}} 
+\index{Nimiq.Models.Block@{Nimiq.Models.Block}!Confirmations@{Confirmations}}
+\index{Confirmations@{Confirmations}!Nimiq.Models.Block@{Nimiq.Models.Block}}
+\doxysubsubsection{\texorpdfstring{Confirmations}{Confirmations}}
+{\footnotesize\ttfamily long Nimiq.\+Models.\+Block.\+Confirmations\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Number of confirmations for this transaction (number of blocks on top of the block where this transaction was in). 
+
+\mbox{\Hypertarget{class_nimiq_1_1_models_1_1_block_a4699c4216d8e2117227068930eb3902e}\label{class_nimiq_1_1_models_1_1_block_a4699c4216d8e2117227068930eb3902e}} 
+\index{Nimiq.Models.Block@{Nimiq.Models.Block}!Difficulty@{Difficulty}}
+\index{Difficulty@{Difficulty}!Nimiq.Models.Block@{Nimiq.Models.Block}}
+\doxysubsubsection{\texorpdfstring{Difficulty}{Difficulty}}
+{\footnotesize\ttfamily string Nimiq.\+Models.\+Block.\+Difficulty\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+\mbox{\hyperlink{class_nimiq_1_1_models_1_1_block}{Block}} difficulty, encoded as decimal number in string. 
+
+\mbox{\Hypertarget{class_nimiq_1_1_models_1_1_block_ab6251ff5bf6033e4daaecd265e488396}\label{class_nimiq_1_1_models_1_1_block_ab6251ff5bf6033e4daaecd265e488396}} 
+\index{Nimiq.Models.Block@{Nimiq.Models.Block}!ExtraData@{ExtraData}}
+\index{ExtraData@{ExtraData}!Nimiq.Models.Block@{Nimiq.Models.Block}}
+\doxysubsubsection{\texorpdfstring{ExtraData}{ExtraData}}
+{\footnotesize\ttfamily string Nimiq.\+Models.\+Block.\+Extra\+Data\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Hex-\/encoded value of the extra data field, maximum of 255 bytes. 
+
+\mbox{\Hypertarget{class_nimiq_1_1_models_1_1_block_a9660b83cdabf7a588b1bd4d2e484d363}\label{class_nimiq_1_1_models_1_1_block_a9660b83cdabf7a588b1bd4d2e484d363}} 
+\index{Nimiq.Models.Block@{Nimiq.Models.Block}!Hash@{Hash}}
+\index{Hash@{Hash}!Nimiq.Models.Block@{Nimiq.Models.Block}}
+\doxysubsubsection{\texorpdfstring{Hash}{Hash}}
+{\footnotesize\ttfamily string Nimiq.\+Models.\+Block.\+Hash\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Hex-\/encoded 32-\/byte hash of the block. 
+
+\mbox{\Hypertarget{class_nimiq_1_1_models_1_1_block_a2842251b6e6df2c9dbd56298aaf5bee5}\label{class_nimiq_1_1_models_1_1_block_a2842251b6e6df2c9dbd56298aaf5bee5}} 
+\index{Nimiq.Models.Block@{Nimiq.Models.Block}!Miner@{Miner}}
+\index{Miner@{Miner}!Nimiq.Models.Block@{Nimiq.Models.Block}}
+\doxysubsubsection{\texorpdfstring{Miner}{Miner}}
+{\footnotesize\ttfamily string Nimiq.\+Models.\+Block.\+Miner\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Hex-\/encoded 20 byte address of the miner of the block. 
+
+\mbox{\Hypertarget{class_nimiq_1_1_models_1_1_block_a4acb1aa76e967cae5221ab12c9f8271c}\label{class_nimiq_1_1_models_1_1_block_a4acb1aa76e967cae5221ab12c9f8271c}} 
+\index{Nimiq.Models.Block@{Nimiq.Models.Block}!MinerAddress@{MinerAddress}}
+\index{MinerAddress@{MinerAddress}!Nimiq.Models.Block@{Nimiq.Models.Block}}
+\doxysubsubsection{\texorpdfstring{MinerAddress}{MinerAddress}}
+{\footnotesize\ttfamily string Nimiq.\+Models.\+Block.\+Miner\+Address\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+User friendly address (N\+Q-\/address) of the miner of the block. 
+
+\mbox{\Hypertarget{class_nimiq_1_1_models_1_1_block_a2ab135cb08f744b99fa419469b661cfa}\label{class_nimiq_1_1_models_1_1_block_a2ab135cb08f744b99fa419469b661cfa}} 
+\index{Nimiq.Models.Block@{Nimiq.Models.Block}!Nonce@{Nonce}}
+\index{Nonce@{Nonce}!Nimiq.Models.Block@{Nimiq.Models.Block}}
+\doxysubsubsection{\texorpdfstring{Nonce}{Nonce}}
+{\footnotesize\ttfamily long Nimiq.\+Models.\+Block.\+Nonce\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+The nonce of the block used to fulfill the Proof-\/of-\/\+Work. 
+
+\mbox{\Hypertarget{class_nimiq_1_1_models_1_1_block_a345a55b1459aa4f8489cf35a041fed0e}\label{class_nimiq_1_1_models_1_1_block_a345a55b1459aa4f8489cf35a041fed0e}} 
+\index{Nimiq.Models.Block@{Nimiq.Models.Block}!Number@{Number}}
+\index{Number@{Number}!Nimiq.Models.Block@{Nimiq.Models.Block}}
+\doxysubsubsection{\texorpdfstring{Number}{Number}}
+{\footnotesize\ttfamily long Nimiq.\+Models.\+Block.\+Number\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Height of the block. 
+
+\mbox{\Hypertarget{class_nimiq_1_1_models_1_1_block_a9143b5d41774921423cc0d60b64a5cc2}\label{class_nimiq_1_1_models_1_1_block_a9143b5d41774921423cc0d60b64a5cc2}} 
+\index{Nimiq.Models.Block@{Nimiq.Models.Block}!ParentHash@{ParentHash}}
+\index{ParentHash@{ParentHash}!Nimiq.Models.Block@{Nimiq.Models.Block}}
+\doxysubsubsection{\texorpdfstring{ParentHash}{ParentHash}}
+{\footnotesize\ttfamily string Nimiq.\+Models.\+Block.\+Parent\+Hash\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Hex-\/encoded 32-\/byte hash of the predecessor block. 
+
+\mbox{\Hypertarget{class_nimiq_1_1_models_1_1_block_af382fec5b0469319d888289d851a8e89}\label{class_nimiq_1_1_models_1_1_block_af382fec5b0469319d888289d851a8e89}} 
+\index{Nimiq.Models.Block@{Nimiq.Models.Block}!Pow@{Pow}}
+\index{Pow@{Pow}!Nimiq.Models.Block@{Nimiq.Models.Block}}
+\doxysubsubsection{\texorpdfstring{Pow}{Pow}}
+{\footnotesize\ttfamily string Nimiq.\+Models.\+Block.\+Pow\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Hex-\/encoded 32-\/byte Proof-\/of-\/\+Work hash of the block. 
+
+\mbox{\Hypertarget{class_nimiq_1_1_models_1_1_block_ac0dd78ee1518aadea6363f0c92ee37a3}\label{class_nimiq_1_1_models_1_1_block_ac0dd78ee1518aadea6363f0c92ee37a3}} 
+\index{Nimiq.Models.Block@{Nimiq.Models.Block}!Size@{Size}}
+\index{Size@{Size}!Nimiq.Models.Block@{Nimiq.Models.Block}}
+\doxysubsubsection{\texorpdfstring{Size}{Size}}
+{\footnotesize\ttfamily long Nimiq.\+Models.\+Block.\+Size\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+\mbox{\hyperlink{class_nimiq_1_1_models_1_1_block}{Block}} size in byte. 
+
+\mbox{\Hypertarget{class_nimiq_1_1_models_1_1_block_a64ac2366964e98a3e267c94daf17f499}\label{class_nimiq_1_1_models_1_1_block_a64ac2366964e98a3e267c94daf17f499}} 
+\index{Nimiq.Models.Block@{Nimiq.Models.Block}!Timestamp@{Timestamp}}
+\index{Timestamp@{Timestamp}!Nimiq.Models.Block@{Nimiq.Models.Block}}
+\doxysubsubsection{\texorpdfstring{Timestamp}{Timestamp}}
+{\footnotesize\ttfamily long Nimiq.\+Models.\+Block.\+Timestamp\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+U\+N\+IX timestamp of the block 
+
+\mbox{\Hypertarget{class_nimiq_1_1_models_1_1_block_a59dd0116a2ae6fb1497315275601a22c}\label{class_nimiq_1_1_models_1_1_block_a59dd0116a2ae6fb1497315275601a22c}} 
+\index{Nimiq.Models.Block@{Nimiq.Models.Block}!Transactions@{Transactions}}
+\index{Transactions@{Transactions}!Nimiq.Models.Block@{Nimiq.Models.Block}}
+\doxysubsubsection{\texorpdfstring{Transactions}{Transactions}}
+{\footnotesize\ttfamily object \mbox{[}$\,$\mbox{]} Nimiq.\+Models.\+Block.\+Transactions\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Array of transactions. Either represented by the transaction hash or a \mbox{\hyperlink{class_nimiq_1_1_models_1_1_transaction}{Transaction}} object. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Nimiq\+Client/\+Models/Block.\+cs\end{DoxyCompactItemize}

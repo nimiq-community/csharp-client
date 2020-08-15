@@ -1,0 +1,71 @@
+\hypertarget{class_nimiq_1_1_models_1_1_work_instructions}{}\doxysection{Nimiq.\+Models.\+Work\+Instructions Class Reference}
+\label{class_nimiq_1_1_models_1_1_work_instructions}\index{Nimiq.Models.WorkInstructions@{Nimiq.Models.WorkInstructions}}
+
+
+Work instructions receipt returned by the server.  
+
+
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{class_nimiq_1_1_models_1_1_work_instructions_afe62ba2da2f19ff0590b9001d07e5e0a}{Data}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Hex-\/encoded block header. This is what should be passed through the hash function. The last 4 bytes describe the nonce, the 4 bytes before are the current timestamp. Most implementations allow the miner to arbitrarily choose the nonce and to update the timestamp without requesting new work instructions. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_nimiq_1_1_models_1_1_work_instructions_a2604165193d1cc03744e0f1d99f0827a}{Suffix}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Hex-\/encoded block without the header. When passing a mining result to submit\+Block, append the suffix to the data string with selected nonce. \end{DoxyCompactList}\item 
+long \mbox{\hyperlink{class_nimiq_1_1_models_1_1_work_instructions_a94f1bba3404bf7735d9407fe773eeb97}{Target}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Compact form of the hash target to submit a block to this client. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_nimiq_1_1_models_1_1_work_instructions_a1bb542fdbbafa19ef6276b9d2ed1c169}{Algorithm}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Field to describe the algorithm used to mine the block. Always nimiq-\/argon2 for now. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Work instructions receipt returned by the server. 
+
+
+
+\doxysubsection{Property Documentation}
+\mbox{\Hypertarget{class_nimiq_1_1_models_1_1_work_instructions_a1bb542fdbbafa19ef6276b9d2ed1c169}\label{class_nimiq_1_1_models_1_1_work_instructions_a1bb542fdbbafa19ef6276b9d2ed1c169}} 
+\index{Nimiq.Models.WorkInstructions@{Nimiq.Models.WorkInstructions}!Algorithm@{Algorithm}}
+\index{Algorithm@{Algorithm}!Nimiq.Models.WorkInstructions@{Nimiq.Models.WorkInstructions}}
+\doxysubsubsection{\texorpdfstring{Algorithm}{Algorithm}}
+{\footnotesize\ttfamily string Nimiq.\+Models.\+Work\+Instructions.\+Algorithm\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Field to describe the algorithm used to mine the block. Always nimiq-\/argon2 for now. 
+
+\mbox{\Hypertarget{class_nimiq_1_1_models_1_1_work_instructions_afe62ba2da2f19ff0590b9001d07e5e0a}\label{class_nimiq_1_1_models_1_1_work_instructions_afe62ba2da2f19ff0590b9001d07e5e0a}} 
+\index{Nimiq.Models.WorkInstructions@{Nimiq.Models.WorkInstructions}!Data@{Data}}
+\index{Data@{Data}!Nimiq.Models.WorkInstructions@{Nimiq.Models.WorkInstructions}}
+\doxysubsubsection{\texorpdfstring{Data}{Data}}
+{\footnotesize\ttfamily string Nimiq.\+Models.\+Work\+Instructions.\+Data\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Hex-\/encoded block header. This is what should be passed through the hash function. The last 4 bytes describe the nonce, the 4 bytes before are the current timestamp. Most implementations allow the miner to arbitrarily choose the nonce and to update the timestamp without requesting new work instructions. 
+
+\mbox{\Hypertarget{class_nimiq_1_1_models_1_1_work_instructions_a2604165193d1cc03744e0f1d99f0827a}\label{class_nimiq_1_1_models_1_1_work_instructions_a2604165193d1cc03744e0f1d99f0827a}} 
+\index{Nimiq.Models.WorkInstructions@{Nimiq.Models.WorkInstructions}!Suffix@{Suffix}}
+\index{Suffix@{Suffix}!Nimiq.Models.WorkInstructions@{Nimiq.Models.WorkInstructions}}
+\doxysubsubsection{\texorpdfstring{Suffix}{Suffix}}
+{\footnotesize\ttfamily string Nimiq.\+Models.\+Work\+Instructions.\+Suffix\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Hex-\/encoded block without the header. When passing a mining result to submit\+Block, append the suffix to the data string with selected nonce. 
+
+\mbox{\Hypertarget{class_nimiq_1_1_models_1_1_work_instructions_a94f1bba3404bf7735d9407fe773eeb97}\label{class_nimiq_1_1_models_1_1_work_instructions_a94f1bba3404bf7735d9407fe773eeb97}} 
+\index{Nimiq.Models.WorkInstructions@{Nimiq.Models.WorkInstructions}!Target@{Target}}
+\index{Target@{Target}!Nimiq.Models.WorkInstructions@{Nimiq.Models.WorkInstructions}}
+\doxysubsubsection{\texorpdfstring{Target}{Target}}
+{\footnotesize\ttfamily long Nimiq.\+Models.\+Work\+Instructions.\+Target\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Compact form of the hash target to submit a block to this client. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Nimiq\+Client/\+Models/Miner.\+cs\end{DoxyCompactItemize}

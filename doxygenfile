@@ -1,0 +1,7 @@
+OUTPUT_DIRECTORY       = docs
+HTML_OUTPUT            = .
+PROJECT_NAME           = "Nimiq Client"
+RECURSIVE              = YES
+FILE_PATTERNS          = *.cs
+INPUT                  = README.md NimiqClient
+USE_MDFILE_AS_MAINPAGE = README.md

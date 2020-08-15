@@ -34,7 +34,7 @@ Console.WriteLine(blockNumber) // displays the block number, for example 748883
 
 ## API
 
-The complete [API documentation](docs) is available in the `/docs` folder.
+The complete API documentation is available [here](https://rraallvv.github.io/csharp-client/).
 
 Check out the [Nimiq RPC specs](https://github.com/nimiq/core-js/wiki/JSON-RPC-API) for behind the scene RPC calls.
 
@@ -62,7 +62,13 @@ Tests are stored in the `/NimiqClientTest` folder and can be run from the Visual
 
 ### Documentation
 
-The documentation in XML format is automatically generated when enabling the option for the NimiqClient project under Project Options > Build > Compiler > Generate XML documentation. To automatically build the Mardown documentation file add the NuGet package [Vsxmd](https://www.nuget.org/packages/Vsxmd/) to the NimiqClient project dependencies.
+The documentation is generated automatically running [Doxygen](https://www.doxygen.nl/download.html#srcbin).
+
+To generate the documentation run `doxygen` with the configuration file `doxygenfile` from the repository root directory:
+
+```sh
+doxygen doxygenfile
+```
 
 ## License
 
