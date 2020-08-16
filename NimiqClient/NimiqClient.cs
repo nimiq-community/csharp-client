@@ -13,7 +13,7 @@ namespace Nimiq
 {
     /// <summary>Used to set the log level in the JSONRPC server.</summary>
     [Serializable]
-    [JsonConverter(typeof(LogLevelConverter))]
+    [JsonConverter(typeof(StringEnumerationConverter<LogLevel>))]
     public class LogLevel : StringEnumeration
     {
         /// <summary>Trace level log.</summary>
@@ -30,19 +30,6 @@ namespace Nimiq
         public static readonly LogLevel Error = new LogLevel("error");
         /// <summary>Assertions level log.</summary>
         public static readonly LogLevel Assert = new LogLevel("assert");
-
-        private class LogLevelConverter : JsonConverter<LogLevel>
-        {
-            public override LogLevel Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
-            {
-                return new LogLevel(reader.GetString());
-            }
-
-            public override void Write(Utf8JsonWriter writer, LogLevel value, JsonSerializerOptions options)
-            {
-                writer.WriteStringValue(value);
-            }
-        }
 
         private LogLevel(string value) : base(value) { }
     }
@@ -75,7 +62,7 @@ namespace Nimiq
         /// <summary>Host port.</summary>
         public long Port { get; set; }
 
-        /// <summary>Constructor.</summary>
+        /// <summary>Initializes the configuration object from arbitrary parameters.</summary>
         /// <param name="scheme">Protocol squeme, <c>"http"</c> or <c>"https"</c>.</param>
         /// <param name="user">Authorized user.</param>
         /// <param name="password">Password for the authorized user.</param>
@@ -94,7 +81,7 @@ namespace Nimiq
     /// <summary>Internal error during a JSON RPC request.</summary>
     public class InternalErrorException : Exception
     {
-        /// <summary>Constructor.</summary>
+        /// <summary>Initializes internal exception from a string.</summary>
         /// <param name="message">Meessage for the error.</param>
         public InternalErrorException(string message) : base(message) { }
     }
@@ -102,7 +89,7 @@ namespace Nimiq
     /// <summary>Exception on the remote server.</summary>
     public class RemoteErrorException : Exception
     {
-        /// <summary>Constructor.</summary>
+        /// <summary>Initializes remote exception from a string.</summary>
         /// <param name="message">Meessage for the error.</param>
         public RemoteErrorException(string message) : base(message) { }
     }

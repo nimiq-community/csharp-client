@@ -6,7 +6,7 @@ namespace Nimiq.Models
 {
     /// <summary>Consensus state returned by the server.</summary>
     [Serializable]
-    [JsonConverter(typeof(ConsensusStateConverter))]
+    [JsonConverter(typeof(StringEnumerationConverter<ConsensusState>))]
     public class ConsensusState : StringEnumeration
     {
         /// <summary>Connecting.</summary>
@@ -15,19 +15,6 @@ namespace Nimiq.Models
         public static readonly ConsensusState Syncing = new ConsensusState("syncing");
         /// <summary>Consensus established.</summary>
         public static readonly ConsensusState Established = new ConsensusState("established");
-
-        private class ConsensusStateConverter : JsonConverter<ConsensusState>
-        {
-            public override ConsensusState Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
-            {
-                return new ConsensusState(reader.GetString());
-            }
-
-            public override void Write(Utf8JsonWriter writer, ConsensusState value, JsonSerializerOptions options)
-            {
-                writer.WriteStringValue(value);
-            }
-        }
 
         private ConsensusState(string value) : base(value) { }
     }

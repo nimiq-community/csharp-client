@@ -11,10 +11,8 @@ namespace Nimiq.Models
     public class MempoolInfo
     {
         /// <summary>Total number of pending transactions in mempool.</summary>
-        [JsonPropertyName("total")]
         public long Total { get; set; }
         /// <summary>Array containing a subset of fee per byte buckets from <c>[10000, 5000, 2000, 1000, 500, 200, 100, 50, 20, 10, 5, 2, 1, 0]</c> that currently have more than one transaction.</summary>
-        [JsonPropertyName("buckets")]
         public long[] Buckets { get; set; }
         /// <summary>Number of transaction in the bucket. A transaction is assigned to the highest bucket of a value lower than its fee per byte value.</summary>
         public Dictionary<long, long> TransactionsPerBucket { get; set; }

@@ -40,7 +40,7 @@ namespace Nimiq.Models
 
     /// <summary>Commands to change the state of a peer.</summary>
     [Serializable]
-    [JsonConverter(typeof(PeerStateCommandConverter))]
+    [JsonConverter(typeof(StringEnumerationConverter<PeerStateCommand>))]
     public class PeerStateCommand : StringEnumeration
     {
         /// <summary>Connect.</summary>
@@ -51,19 +51,6 @@ namespace Nimiq.Models
         public static readonly  PeerStateCommand Ban = new PeerStateCommand("ban");
         /// <summary>Unban.</summary>
         public static readonly PeerStateCommand Unban = new PeerStateCommand("unban");
-
-        private class PeerStateCommandConverter : JsonConverter<PeerStateCommand>
-        {
-            public override PeerStateCommand Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
-            {
-                return new PeerStateCommand(reader.GetString());
-            }
-
-            public override void Write(Utf8JsonWriter writer, PeerStateCommand value, JsonSerializerOptions options)
-            {
-                writer.WriteStringValue(value);
-            }
-        }
 
         private PeerStateCommand(string value) : base(value) { }
     }
