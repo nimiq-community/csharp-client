@@ -6,25 +6,33 @@ using System.Text.Json.Serialization;
 namespace Nimiq
 {
     /// <summary>JsonConverter used in string enumeration serialization.</summary>
-    public class StringEnumerationConverter<T> : JsonConverter<T>
+    public class StringEnumerationConverter : JsonConverter<StringEnumeration>
     {
+        /// <summary>Whether a type is a subclass of <c>StringEnumeration</c>.</summary>
+        /// <param name="typeToConvert">Type to check.</param>
+        /// <returns>True if is a subclass.</returns>
+        public override bool CanConvert(Type typeToConvert)
+        {
+            return typeof(StringEnumeration).IsAssignableFrom(typeToConvert);
+        }
+
         /// <summary>Read the string value.</summary>
         /// <param name="reader">Reader to access the encoded JSON text.</param>
         /// <param name="typeToConvert">Type of the object to deserialize.</param>
         /// <param name="options">Options for the deserialization.</param>
         /// <returns>Underlying string enumeration type.</returns>
-        public override T Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        public override StringEnumeration Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            return (T)Activator.CreateInstance(typeof(T), BindingFlags.Instance | BindingFlags.NonPublic, null, new object[] { reader.GetString() }, null, null);
+            return (StringEnumeration)Activator.CreateInstance(typeToConvert, BindingFlags.Instance | BindingFlags.NonPublic, null, new object[] { reader.GetString() }, null, null);
         }
 
         /// <summary>Write the string value.</summary>
         /// <param name="writer">Writer to encode the JSON text.</param>
         /// <param name="value">Object to serialize.</param>
         /// <param name="options">Options for the serialization.</param>
-        public override void Write(Utf8JsonWriter writer, T value, JsonSerializerOptions options)
+        public override void Write(Utf8JsonWriter writer, StringEnumeration value, JsonSerializerOptions options)
         {
-            writer.WriteStringValue((string)typeof(T).GetProperty("Value").GetValue(value, null));
+            writer.WriteStringValue(value);
         }
     }
 

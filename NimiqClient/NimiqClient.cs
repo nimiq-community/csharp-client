@@ -13,7 +13,7 @@ namespace Nimiq
 {
     /// <summary>Used to set the log level in the JSONRPC server.</summary>
     [Serializable]
-    [JsonConverter(typeof(StringEnumerationConverter<LogLevel>))]
+    [JsonConverter(typeof(StringEnumerationConverter))]
     public class LogLevel : StringEnumeration
     {
         /// <summary>Trace level log.</summary>
