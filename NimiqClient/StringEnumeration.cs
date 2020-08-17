@@ -43,7 +43,11 @@ namespace Nimiq
         /// <returns>string object.</returns>
         public static implicit operator string(StringEnumeration obj)
         {
-            return obj.Value;
+            if (obj is null)
+            {
+                return null;
+            }
+            return obj.ToString();
         }
 
         /// <summary>Get the string associated value.</summary>
@@ -59,12 +63,11 @@ namespace Nimiq
         /// <returns>true if the two objects are equal.</returns>
         public static bool operator ==(StringEnumeration a, object b)
         {
-            var other = b as StringEnumeration;
-            if (other is null)
+            if (a is null)
             {
-                return false;
+                return b is null;
             }
-            return a.Value == other.Value;
+            return !(b is null) && a.Value == b.ToString();
         }
 
         /// <summary>Test whether a StringEnumeration is different to other object.</summary>
@@ -73,12 +76,7 @@ namespace Nimiq
         /// <returns>true if the two objects are different.</returns>
         public static bool operator !=(StringEnumeration a, object b)
         {
-            var other = b as StringEnumeration;
-            if (other is null)
-            {
-                return true;
-            }
-            return a.Value != other.Value;
+            return !(a == b);
         }
 
         /// <summary>Test whether a StringEnumeration is equal to another object.</summary>
@@ -86,12 +84,7 @@ namespace Nimiq
         /// <returns>true if the objects are equal.</returns>
         public override bool Equals(object obj)
         {
-            var other = obj as StringEnumeration;
-            if (other is null)
-            {
-                return false;
-            }
-            return Value == other.Value;
+            return this == obj;
         }
 
         /// <summary>Get the hash code of the associated value.</summary>
