@@ -11,43 +11,6 @@ using Nimiq.Models;
 
 namespace Nimiq
 {
-    /// <summary>Used to set the log level in the JSONRPC server.</summary>
-    [Serializable]
-    [JsonConverter(typeof(StringEnumerationConverter))]
-    public class LogLevel : StringEnumeration
-    {
-        /// <summary>Trace level log.</summary>
-        public static readonly LogLevel Trace = new LogLevel("trace");
-        /// <summary>Verbose level log.</summary>
-        public static readonly LogLevel Verbose = new LogLevel("verbose");
-        /// <summary>Debugging level log.</summary>
-        public static readonly LogLevel Debug = new LogLevel("debug");
-        /// <summary>Info level log.</summary>
-        public static readonly LogLevel Info = new LogLevel("info");
-        /// <summary>Warning level log.</summary>
-        public static readonly LogLevel Warn = new LogLevel("warn");
-        /// <summary>Error level log.</summary>
-        public static readonly LogLevel Error = new LogLevel("error");
-        /// <summary>Assertions level log.</summary>
-        public static readonly LogLevel Assert = new LogLevel("assert");
-
-        private LogLevel(string value) : base(value) { }
-    }
-
-    /// <summary>Error returned in the response for the JSONRPC the server.</summary>
-    [Serializable]
-    public class ResponseError
-    {
-        /// <summary>Code of the returned error.</summary>
-        [JsonPropertyName("code")]
-        public long Code { get; set; }
-        /// <summary>Message of the returned error.</summary>
-        [JsonPropertyName("message")]
-        public string Message { get; set; }
-    }
-
-    // JSONRPC Client
-
     /// <summary>Used in initialization of NimiqClient class.</summary>
     public class Config
     {
@@ -97,6 +60,18 @@ namespace Nimiq
     /// <summary>Nimiq JSONRPC Client</summary>
     public class NimiqClient
     {
+        /// <summary>Error returned in the response for the JSONRPC the server.</summary>
+        [Serializable]
+        private class ResponseError
+        {
+            /// <summary>Code of the returned error.</summary>
+            [JsonPropertyName("code")]
+            public long Code { get; set; }
+            /// <summary>Message of the returned error.</summary>
+            [JsonPropertyName("message")]
+            public string Message { get; set; }
+        }
+
         /// <summary>Used to decode the JSONRPC response returned by the server.</summary>
         [Serializable]
         private class Root<T>
@@ -109,101 +84,6 @@ namespace Nimiq
             public long Id { get; set; }
             [JsonPropertyName("error")]
             public ResponseError Error { get; set; }
-        }
-
-        /// <summary>Nimiq account returned by the server. The especific type can obtained with the cast operator.</summary>
-        [Serializable]
-        private class RawAccount
-        {
-            [JsonPropertyName("id")]
-            public string Id { get; set; }
-            [JsonPropertyName("address")]
-            public string Address { get; set; }
-            [JsonPropertyName("balance")]
-            public long Balance { get; set; }
-            [JsonPropertyName("type")]
-            public AccountType Type { get; set; }
-            [JsonPropertyName("owner")]
-            public string Owner { get; set; }
-            [JsonPropertyName("ownerAddress")]
-            public string OwnerAddress { get; set; }
-            [JsonPropertyName("vestingStart")]
-            public long VestingStart { get; set; }
-            [JsonPropertyName("vestingStepBlocks")]
-            public long VestingStepBlocks { get; set; }
-            [JsonPropertyName("vestingStepAmount")]
-            public long VestingStepAmount { get; set; }
-            [JsonPropertyName("vestingTotalAmount")]
-            public long VestingTotalAmount { get; set; }
-            [JsonPropertyName("sender")]
-            public string Sender { get; set; }
-            [JsonPropertyName("senderAddress")]
-            public string SenderAddress { get; set; }
-            [JsonPropertyName("recipient")]
-            public string Recipient { get; set; }
-            [JsonPropertyName("recipientAddress")]
-            public string RecipientAddress { get; set; }
-            [JsonPropertyName("hashRoot")]
-            public string HashRoot { get; set; }
-            [JsonPropertyName("hashAlgorithm")]
-            public long HashAlgorithm { get; set; }
-            [JsonPropertyName("hashCount")]
-            public long HashCount { get; set; }
-            [JsonPropertyName("timeout")]
-            public long Timeout { get; set; }
-            [JsonPropertyName("totalAmount")]
-            public long TotalAmount { get; set; }
-
-            public object Account
-            {
-                get
-                {
-                    switch (Type)
-                    {
-                        case AccountType.basic:
-                            return new Account()
-                            {
-                                Id = Id,
-                                Address = Address,
-                                Balance = Balance,
-                                Type = Type,
-                            };
-                        case AccountType.vesting:
-                            return new VestingContract()
-                            {
-                                Id = Id,
-                                Address = Address,
-                                Balance = Balance,
-                                Type = Type,
-                                Owner = Owner,
-                                OwnerAddress = OwnerAddress,
-                                VestingStart = VestingStart,
-                                VestingStepBlocks = VestingStepBlocks,
-                                VestingStepAmount = VestingStepAmount,
-                                VestingTotalAmount = VestingTotalAmount
-                            };
-
-                        case AccountType.htlc:
-                            return new HTLC()
-                            {
-                                Id = Id,
-                                Address = Address,
-                                Balance = Balance,
-                                Type = Type,
-                                Sender = Sender,
-                                SenderAddress = SenderAddress,
-                                Recipient = Recipient,
-                                RecipientAddress = RecipientAddress,
-                                HashRoot = HashRoot,
-                                HashAlgorithm = HashAlgorithm,
-                                HashCount = HashCount,
-                                Timeout = Timeout,
-                                TotalAmount = TotalAmount
-                            };
-                    }
-                    return null;
-                }
-            }
         }
 
         /// <summary>Number in the sequence for the next request.</summary>
@@ -299,10 +179,9 @@ namespace Nimiq
 
         /// <summary>Returns a list of addresses owned by client.</summary>
         /// <returns>Array of Accounts owned by the client.</returns>
-        public async Task<object[]> Accounts()
+        public async Task<Account[]> Accounts()
         {
-            var result = await Call<RawAccount[]>("accounts");
-            return result.Select(o => o.Account).ToArray();
+            return await Call<Account[]>("accounts");
         }
 
         /// <summary>Returns the height of most recent block.</summary>
@@ -366,10 +245,9 @@ namespace Nimiq
         /// <summary>Returns details for the account of given address.</summary>
         /// <param name="address">Address to get account details.</param>
         /// <returns>Details about the account. Returns the default empty basic account for non-existing accounts.</returns>
-        public async Task<object> GetAccount(string address)
+        public async Task<Account> GetAccount(string address)
         {
-            var result = await Call<RawAccount>("getAccount", address);
-            return result.Account;
+            return await Call<Account>("getAccount", address);
         }
 
         /// <summary>Returns the balance of the account of given address.</summary>

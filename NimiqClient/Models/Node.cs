@@ -33,4 +33,27 @@ namespace Nimiq.Models
         [JsonPropertyName("highestBlock")]
         public long HighestBlock { get; set; }
     }
+
+    /// <summary>Used to set the log level in the JSONRPC server.</summary>
+    [Serializable]
+    [JsonConverter(typeof(StringEnumerationConverter))]
+    public class LogLevel : StringEnumeration
+    {
+        /// <summary>Trace level log.</summary>
+        public static readonly LogLevel Trace = new LogLevel("trace");
+        /// <summary>Verbose level log.</summary>
+        public static readonly LogLevel Verbose = new LogLevel("verbose");
+        /// <summary>Debugging level log.</summary>
+        public static readonly LogLevel Debug = new LogLevel("debug");
+        /// <summary>Info level log.</summary>
+        public static readonly LogLevel Info = new LogLevel("info");
+        /// <summary>Warning level log.</summary>
+        public static readonly LogLevel Warn = new LogLevel("warn");
+        /// <summary>Error level log.</summary>
+        public static readonly LogLevel Error = new LogLevel("error");
+        /// <summary>Assertions level log.</summary>
+        public static readonly LogLevel Assert = new LogLevel("assert");
+
+        private LogLevel(string value) : base(value) { }
+    }
 }

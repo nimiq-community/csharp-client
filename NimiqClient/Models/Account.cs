@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text.Json;
 using System.Text.Json.Serialization;
 
 namespace Nimiq.Models
@@ -16,6 +17,8 @@ namespace Nimiq.Models
     }
 
     /// <summary>Normal Nimiq account object returned by the server.</summary>
+    [Serializable]
+    [JsonConverter(typeof(AccountConverter))]
     public class Account
     {
         /// <summary>Hex-encoded 20 byte address.</summary>
@@ -26,6 +29,64 @@ namespace Nimiq.Models
         public long Balance { get; set; }
         /// <summary>The account type associated with the account.</summary>
         public AccountType Type { get; set; }
+
+        private class AccountConverter : JsonConverter<Account>
+        {
+            public override Account Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+            {
+                using (var doc = JsonDocument.ParseValue(ref reader))
+                {
+                    var type = doc.RootElement.GetProperty("type").GetObject<AccountType>();
+                    switch (type)
+                    {
+                        case AccountType.htlc:
+                            return new HTLC()
+                            {
+                                Id = doc.RootElement.GetProperty("id").GetObject<string>(),
+                                Address = doc.RootElement.GetProperty("address").GetObject<string>(),
+                                Balance = doc.RootElement.GetProperty("balance").GetObject<long>(),
+                                Type = type,
+                                Sender = doc.RootElement.GetProperty("sender").GetObject<string>(),
+                                SenderAddress = doc.RootElement.GetProperty("senderAddress").GetObject<string>(),
+                                Recipient = doc.RootElement.GetProperty("recipient").GetObject<string>(),
+                                RecipientAddress = doc.RootElement.GetProperty("recipientAddress").GetObject<string>(),
+                                HashRoot = doc.RootElement.GetProperty("hashRoot").GetObject<string>(),
+                                HashAlgorithm = doc.RootElement.GetProperty("hashAlgorithm").GetObject<long>(),
+                                HashCount = doc.RootElement.GetProperty("hashCount").GetObject<long>(),
+                                Timeout = doc.RootElement.GetProperty("timeout").GetObject<long>(),
+                                TotalAmount = doc.RootElement.GetProperty("totalAmount").GetObject<long>()
+                            };
+                        case AccountType.vesting:
+                            return new VestingContract()
+                            {
+                                Id = doc.RootElement.GetProperty("id").GetObject<string>(),
+                                Address = doc.RootElement.GetProperty("address").GetObject<string>(),
+                                Balance = doc.RootElement.GetProperty("balance").GetObject<long>(),
+                                Type = type,
+                                Owner = doc.RootElement.GetProperty("owner").GetObject<string>(),
+                                OwnerAddress = doc.RootElement.GetProperty("ownerAddress").GetObject<string>(),
+                                VestingStart = doc.RootElement.GetProperty("vestingStart").GetObject<long>(),
+                                VestingStepBlocks = doc.RootElement.GetProperty("vestingStepBlocks").GetObject<long>(),
+                                VestingStepAmount = doc.RootElement.GetProperty("vestingStepAmount").GetObject<long>(),
+                                VestingTotalAmount = doc.RootElement.GetProperty("vestingTotalAmount").GetObject<long>()
+                            };
+                        default:
+                            return new Account()
+                            {
+                                Id = doc.RootElement.GetProperty("id").GetObject<string>(),
+                                Address = doc.RootElement.GetProperty("address").GetObject<string>(),
+                                Balance = doc.RootElement.GetProperty("balance").GetObject<long>(),
+                                Type = type,
+                            };
+                    }
+                }
+            }
+
+            public override void Write(Utf8JsonWriter writer, Account value, JsonSerializerOptions options)
+            {
+                throw new NotImplementedException();
+            }
+        }
     }
 
     /// <summary>Vesting contract object returned by the server.</summary>
