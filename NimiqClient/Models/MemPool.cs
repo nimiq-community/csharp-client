@@ -21,48 +21,28 @@ namespace Nimiq.Models
         {
             public override MempoolInfo Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
             {
-                if (reader.TokenType != JsonTokenType.StartObject)
-                {
-                    throw new JsonException();
-                }
-
                 var result = new MempoolInfo();
                 result.TransactionsPerBucket = new Dictionary<long, long>();
-
-                while (reader.Read())
+                using (var doc = JsonDocument.ParseValue(ref reader))
                 {
-                    if (reader.TokenType == JsonTokenType.EndObject)
+                    foreach (var element in doc.RootElement.EnumerateObject())
                     {
-                        return result;
-                    }
-
-                    if (reader.TokenType != JsonTokenType.PropertyName)
-                    {
-                        throw new JsonException();
-                    }
-
-                    string propertyName = reader.GetString();
-
-                    if (long.TryParse(propertyName, out long key))
-                    {
-                        long value = JsonSerializer.Deserialize<long>(ref reader, options);
-                        result.TransactionsPerBucket.Add(key, value);
-                    }
-                    else if (propertyName == "total")
-                    {
-                        result.Total = JsonSerializer.Deserialize<long>(ref reader, options);
-                    }
-                    else if (propertyName == "buckets")
-                    {
-                        result.Buckets = JsonSerializer.Deserialize<long[]>(ref reader, options);
-                    }
-                    else
-                    {
-                        throw new JsonException($"Unable to convert \"{propertyName}\"");
+                        if (long.TryParse(element.Name, out long key))
+                        {
+                            long value = element.Value.GetObject<long>();
+                            result.TransactionsPerBucket.Add(key, value);
+                        }
+                        else if (element.Name == "total")
+                        {
+                            result.Total = element.Value.GetObject<long>();
+                        }
+                        else if (element.Name == "buckets")
+                        {
+                            result.Buckets = element.Value.GetObject<long[]>();
+                        }
                     }
                 }
-
-                throw new JsonException();
+                return result;
             }
 
             public override void Write(Utf8JsonWriter writer, MempoolInfo value, JsonSerializerOptions options)
