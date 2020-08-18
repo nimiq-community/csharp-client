@@ -168,6 +168,7 @@ namespace NimiqClientTest
             try
             {
                 await client.PeerState("unknown");
+                Assert.Fail();
             }
             catch(Exception error)
             {
