@@ -10,13 +10,14 @@ namespace Nimiq.Models
     public class ConsensusState : StringEnumeration
     {
         /// <summary>Connecting.</summary>
-        public static readonly ConsensusState Connecting = new ConsensusState("connecting");
+        [JsonStringValue("connecting")]
+        public static ConsensusState Connecting;
         /// <summary>Syncing blocks.</summary>
-        public static readonly ConsensusState Syncing = new ConsensusState("syncing");
+        [JsonStringValue("syncing")]
+        public static ConsensusState Syncing;
         /// <summary>Consensus established.</summary>
-        public static readonly ConsensusState Established = new ConsensusState("established");
-
-        private ConsensusState(string value) : base(value) { }
+        [JsonStringValue("established")]
+        public static ConsensusState Established;
     }
 
     /// <summary>Syncing status returned by the server.</summary>
@@ -40,20 +41,25 @@ namespace Nimiq.Models
     public class LogLevel : StringEnumeration
     {
         /// <summary>Trace level log.</summary>
-        public static readonly LogLevel Trace = new LogLevel("trace");
+        [JsonStringValue("trace")]
+        public static LogLevel Trace;
         /// <summary>Verbose level log.</summary>
-        public static readonly LogLevel Verbose = new LogLevel("verbose");
+        [JsonStringValue("verbose")]
+        public static LogLevel Verbose;
         /// <summary>Debugging level log.</summary>
-        public static readonly LogLevel Debug = new LogLevel("debug");
+        [JsonStringValue("debug")]
+        public static LogLevel Debug;
         /// <summary>Info level log.</summary>
-        public static readonly LogLevel Info = new LogLevel("info");
+        [JsonStringValue("info")]
+        public static LogLevel Info;
         /// <summary>Warning level log.</summary>
-        public static readonly LogLevel Warn = new LogLevel("warn");
+        [JsonStringValue("warn")]
+        public static LogLevel Warn;
         /// <summary>Error level log.</summary>
-        public static readonly LogLevel Error = new LogLevel("error");
+        [JsonStringValue("error")]
+        public static LogLevel Error;
         /// <summary>Assertions level log.</summary>
-        public static readonly LogLevel Assert = new LogLevel("assert");
-
-        private LogLevel(string value) : base(value) { }
+        [JsonStringValue("assert")]
+        public static LogLevel Assert;
     }
 }

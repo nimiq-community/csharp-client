@@ -1,10 +1,25 @@
 ﻿using System;
 using System.Reflection;
+using System.Runtime.Serialization;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
 namespace Nimiq
 {
+    /// <summary>Attribute to assign the string value of fields in StringEnumeration.</summary>
+    [AttributeUsage(AttributeTargets.Field)]
+    public class JsonStringValue : Attribute
+    {
+        /// <summary>String value.</summary>
+        public string Value;
+
+        /// <summary>Initializes the Attribute instance to a given value.</summary>
+        public JsonStringValue(string value)
+        {
+            Value = value;
+        }
+    }
+
     /// <summary>JsonConverter used in string enumeration serialization.</summary>
     public class StringEnumerationConverter : JsonConverter<StringEnumeration>
     {
@@ -23,7 +38,9 @@ namespace Nimiq
         /// <returns>Underlying string enumeration type.</returns>
         public override StringEnumeration Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            return (StringEnumeration)Activator.CreateInstance(typeToConvert, BindingFlags.Instance | BindingFlags.NonPublic, null, new object[] { reader.GetString() }, null, null);
+            var obj = (StringEnumeration)FormatterServices.GetUninitializedObject(typeToConvert);
+            obj.Value = reader.GetString();
+            return obj;
         }
 
         /// <summary>Write the string value.</summary>
@@ -42,9 +59,26 @@ namespace Nimiq
         /// <summary>Associated value.</summary>
         public string Value { get; set; }
 
-        /// <summary>Initializes the enumeration from a string.</summary>
-        /// <param name="value">The associated value.</param>
-        public StringEnumeration(string value) { Value = value; }
+        /// <summary>Initializes all static fields in subclasses.</summary>
+        static StringEnumeration()
+        {
+            var types = typeof(StringEnumeration).Assembly.GetTypes();
+            foreach (var type in types)
+            {
+                if (type.BaseType == typeof(StringEnumeration))
+                {
+                    var fields = type.GetFields(BindingFlags.Public | BindingFlags.Static);
+                    foreach (var field in fields)
+                    {
+                        var attribute = field.GetCustomAttribute<JsonStringValue>();
+                        var name = attribute is null ? field.Name : attribute.Value;
+                        var value = (StringEnumeration)FormatterServices.GetUninitializedObject(type);
+                        value.Value = name;
+                        field.SetValue(null, value);
+                    }
+                }
+            }
+        }
 
         /// <summary>Implicit conversion to string.</summary>
         /// <param name="obj">And StringEnumeration object.</param>

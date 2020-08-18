@@ -44,15 +44,17 @@ namespace Nimiq.Models
     public class PeerStateCommand : StringEnumeration
     {
         /// <summary>Connect.</summary>
-        public static readonly PeerStateCommand Connect = new PeerStateCommand("connect");
+        [JsonStringValue("connect")]
+        public static PeerStateCommand Connect;
         /// <summary>Disconnect.</summary>
-        public static readonly PeerStateCommand Disconnect = new PeerStateCommand("disconnect");
+        [JsonStringValue("disconnect")]
+        public static PeerStateCommand Disconnect;
         /// <summary>Ban.</summary>
-        public static readonly  PeerStateCommand Ban = new PeerStateCommand("ban");
+        [JsonStringValue("ban")]
+        public static  PeerStateCommand Ban;
         /// <summary>Unban.</summary>
-        public static readonly PeerStateCommand Unban = new PeerStateCommand("unban");
-
-        private PeerStateCommand(string value) : base(value) { }
+        [JsonStringValue("unban")]
+        public static PeerStateCommand Unban;
     }
 
     /// <summary>Peer information returned by the server.</summary>
