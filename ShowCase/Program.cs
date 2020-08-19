@@ -9,11 +9,6 @@ namespace ShowCase
     {
         static void Main(string[] args)
         {
-            MainAsync().GetAwaiter().GetResult();
-        }
-
-        private static async Task MainAsync()
-        {
             // Create Nimiq RPC client
             var client = new NimiqClient(
                 scheme: "http",
@@ -26,14 +21,14 @@ namespace ShowCase
             try
             {
                 // Get consensus
-                var consensus = await client.Consensus();
+                var consensus = client.Consensus();
                 Console.WriteLine($"Consensus: {consensus}");
 
                 if (consensus == ConsensusState.Established)
                 {
                     // Get accounts
                     Console.WriteLine("Getting basic accounts:");
-                    foreach(var account in await client.Accounts())
+                    foreach (var account in client.Accounts())
                     {
                         // Show basic account address
                         var basicAccount = account as Account;
