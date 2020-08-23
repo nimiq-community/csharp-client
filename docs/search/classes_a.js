@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['remoteerrorexception_194',['RemoteErrorException',['../class_nimiq_1_1_remote_error_exception.html',1,'Nimiq']]],
-  ['responseerror_195',['ResponseError',['../class_nimiq_1_1_response_error.html',1,'Nimiq']]]
+  ['peer_201',['Peer',['../class_nimiq_1_1_models_1_1_peer.html',1,'Nimiq::Models']]],
+  ['peerstatecommand_202',['PeerStateCommand',['../class_nimiq_1_1_models_1_1_peer_state_command.html',1,'Nimiq::Models']]]
 ];

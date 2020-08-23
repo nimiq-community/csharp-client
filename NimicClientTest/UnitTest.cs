@@ -181,7 +181,7 @@ namespace NimiqClientTest
         {
             HttpMessageHandlerStub.TestData = PeerFixtures.PeerStateNormal();
 
-            var result = client.PeerState("wss://seed1.nimiq-testnet.com:8080/b99034c552e9c0fd34eb95c1cdf17f5e", PeerStateCommand.Connect);
+            var result = client.SetPeerState("wss://seed1.nimiq-testnet.com:8080/b99034c552e9c0fd34eb95c1cdf17f5e", PeerStateCommand.Connect);
 
             Assert.AreEqual("peerState", HttpMessageHandlerStub.LatestRequestMethod);
             Assert.AreEqual("wss://seed1.nimiq-testnet.com:8080/b99034c552e9c0fd34eb95c1cdf17f5e", HttpMessageHandlerStub.LatestRequestParams[0]);
@@ -578,7 +578,7 @@ namespace NimiqClientTest
         {
             HttpMessageHandlerStub.TestData = NodeFixtures.MinFeePerByte();
 
-            var result = client.MinFeePerByte(0);
+            var result = client.SetMinFeePerByte(0);
 
             Assert.AreEqual("minFeePerByte", HttpMessageHandlerStub.LatestRequestMethod);
             Assert.AreEqual(0, HttpMessageHandlerStub.LatestRequestParams[0]);
@@ -591,7 +591,7 @@ namespace NimiqClientTest
         {
             HttpMessageHandlerStub.TestData = MinerFixtures.MiningState();
 
-            var result = client.Mining();
+            var result = client.IsMining();
 
             Assert.AreEqual("mining", HttpMessageHandlerStub.LatestRequestMethod);
 
@@ -603,7 +603,7 @@ namespace NimiqClientTest
         {
             HttpMessageHandlerStub.TestData = MinerFixtures.MiningState();
 
-            var result = client.Mining(false);
+            var result = client.SetMining(false);
 
             Assert.AreEqual("mining", HttpMessageHandlerStub.LatestRequestMethod);
             Assert.AreEqual(false, HttpMessageHandlerStub.LatestRequestParams[0]);
@@ -640,7 +640,7 @@ namespace NimiqClientTest
         {
             HttpMessageHandlerStub.TestData = MinerFixtures.MinerThreads();
 
-            var result = client.MinerThreads(2);
+            var result = client.SetMinerThreads(2);
 
             Assert.AreEqual("minerThreads", HttpMessageHandlerStub.LatestRequestMethod);
             Assert.AreEqual(2, HttpMessageHandlerStub.LatestRequestParams[0]);
@@ -677,7 +677,7 @@ namespace NimiqClientTest
         {
             HttpMessageHandlerStub.TestData = MinerFixtures.PoolSushipool();
 
-            var result = client.Pool("us.sushipool.com:443");
+            var result = client.SetPool("us.sushipool.com:443");
 
             Assert.AreEqual("pool", HttpMessageHandlerStub.LatestRequestMethod);
             Assert.AreEqual("us.sushipool.com:443", HttpMessageHandlerStub.LatestRequestParams[0]);
@@ -1135,7 +1135,7 @@ namespace NimiqClientTest
         {
             HttpMessageHandlerStub.TestData = NodeFixtures.Constant();
 
-            var result = client.Constant("BaseConsensus.MAX_ATTEMPTS_TO_FETCH", 10);
+            var result = client.SetConstant("BaseConsensus.MAX_ATTEMPTS_TO_FETCH", 10);
 
             Assert.AreEqual("constant", HttpMessageHandlerStub.LatestRequestMethod);
             Assert.AreEqual("BaseConsensus.MAX_ATTEMPTS_TO_FETCH", HttpMessageHandlerStub.LatestRequestParams[0]);
@@ -1163,7 +1163,7 @@ namespace NimiqClientTest
         {
             HttpMessageHandlerStub.TestData = NodeFixtures.Log();
 
-            var result = client.Log("*", LogLevel.Verbose);
+            var result = client.SetLog("*", LogLevel.Verbose);
 
             Assert.AreEqual("log", HttpMessageHandlerStub.LatestRequestMethod);
             Assert.AreEqual("*", HttpMessageHandlerStub.LatestRequestParams[0]);

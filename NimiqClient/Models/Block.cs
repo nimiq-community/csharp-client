@@ -32,7 +32,7 @@ namespace Nimiq.Models
         /// <summary>Block difficulty, encoded as decimal number in string.</summary>
         [JsonPropertyName("difficulty")]
         public string Difficulty { get; set; }
-        /// <summary>UNIX timestamp of the block</summary>
+        /// <summary>UNIX timestamp of the block.</summary>
         [JsonPropertyName("timestamp")]
         public long Timestamp { get; set; }
         /// <summary>Number of confirmations for this transaction (number of blocks on top of the block where this transaction was in).</summary>

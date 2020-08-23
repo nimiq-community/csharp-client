@@ -33,7 +33,7 @@ When no {\ttfamily config} object is passed in the initialization it will use th
 \DoxyCodeLine{Console.WriteLine(blockNumber) // displays the block number, for example 748883}
 \end{DoxyCode}
 \hypertarget{index_autotoc_md1}{}\doxysection{A\+PI}\label{index_autotoc_md1}
-The complete \mbox{[}A\+PI documentation\mbox{]}(docs) is available in the {\ttfamily /docs} folder.
+The complete A\+PI documentation is available \href{https://rraallvv.github.io/csharp-client/}{\texttt{ here}}.
 
 Check out the \href{https://github.com/nimiq/core-js/wiki/JSON-RPC-API}{\texttt{ Nimiq R\+PC specs}} for behind the scene R\+PC calls.\hypertarget{index_autotoc_md2}{}\doxysection{Installation}\label{index_autotoc_md2}
 To install Nimi\+Client add the Nuget package as a dependency to your project from Visual Studio I\+DE.\hypertarget{index_autotoc_md3}{}\doxysection{Contributions}\label{index_autotoc_md3}
@@ -46,5 +46,13 @@ After cloning the repository, open the solucion file {\ttfamily Nimiq\+Client\+P
 
 All done, happy coding!\hypertarget{index_autotoc_md5}{}\doxysubsection{Testing}\label{index_autotoc_md5}
 Tests are stored in the {\ttfamily /\+Nimiq\+Client\+Test} folder and can be run from the Visual Studio I\+DE.\hypertarget{index_autotoc_md6}{}\doxysubsection{Documentation}\label{index_autotoc_md6}
-The documentation in X\+ML format is automatically generated when enabling the option for the Nimiq\+Client project under Project Options $>$ Build $>$ Compiler $>$ Generate X\+ML documentation. To automatically build the Mardown documentation file add the Nu\+Get package \href{https://www.nuget.org/packages/Vsxmd/}{\texttt{ Vsxmd}} to the Nimiq\+Client project dependencies.\hypertarget{index_autotoc_md7}{}\doxysection{License}\label{index_autotoc_md7}
+The documentation is generated automatically running \href{https://www.doxygen.nl/download.html\#srcbin}{\texttt{ Doxygen}}.
+
+To generate the documentation run {\ttfamily doxygen} with the configuration file {\ttfamily doxygenfile} from the repository root directory\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{doxygen doxygenfile}
+\end{DoxyCode}
+\hypertarget{index_autotoc_md7}{}\doxysection{License}\label{index_autotoc_md7}
 Apache 2.0 

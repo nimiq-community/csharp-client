@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['transaction_198',['Transaction',['../class_nimiq_1_1_models_1_1_transaction.html',1,'Nimiq::Models']]],
-  ['transactionreceipt_199',['TransactionReceipt',['../class_nimiq_1_1_models_1_1_transaction_receipt.html',1,'Nimiq::Models']]]
+  ['stringenumeration_204',['StringEnumeration',['../class_nimiq_1_1_string_enumeration.html',1,'Nimiq']]],
+  ['stringenumerationconverter_205',['StringEnumerationConverter',['../class_nimiq_1_1_string_enumeration_converter.html',1,'Nimiq']]],
+  ['syncstatus_206',['SyncStatus',['../class_nimiq_1_1_models_1_1_sync_status.html',1,'Nimiq::Models']]]
 ];

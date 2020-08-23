@@ -1,9 +1,9 @@
 var searchData=
 [
-  ['peercount_241',['PeerCount',['../class_nimiq_1_1_nimiq_client.html#a343f1d3cd57ff2d34191728df40e4bf2',1,'Nimiq::NimiqClient']]],
-  ['peerlist_242',['PeerList',['../class_nimiq_1_1_nimiq_client.html#a476735aa6573a401339f2551f7fb6a11',1,'Nimiq::NimiqClient']]],
-  ['peerstate_243',['PeerState',['../class_nimiq_1_1_nimiq_client.html#a08e4bece54d34b46932228bdc63a6968',1,'Nimiq::NimiqClient']]],
-  ['pool_244',['Pool',['../class_nimiq_1_1_nimiq_client.html#a0a0a461eeaf5f62a0367bfee91a799b0',1,'Nimiq::NimiqClient']]],
-  ['poolconfirmedbalance_245',['PoolConfirmedBalance',['../class_nimiq_1_1_nimiq_client.html#aa8644c02b9283e12678326efe6ed8eb9',1,'Nimiq::NimiqClient']]],
-  ['poolconnectionstate_246',['PoolConnectionState',['../class_nimiq_1_1_nimiq_client.html#a8babf8c4772e964fa5d3937e9956bcd7',1,'Nimiq::NimiqClient']]]
+  ['peercount_251',['PeerCount',['../class_nimiq_1_1_nimiq_client.html#a36829a0773d4161a2e877c31c7bb7f25',1,'Nimiq::NimiqClient']]],
+  ['peerlist_252',['PeerList',['../class_nimiq_1_1_nimiq_client.html#a3313e6c25c3528926ec713954d406df6',1,'Nimiq::NimiqClient']]],
+  ['peerstate_253',['PeerState',['../class_nimiq_1_1_nimiq_client.html#a8cf25ae1161dccf2a31ae137cfa2787f',1,'Nimiq::NimiqClient']]],
+  ['pool_254',['Pool',['../class_nimiq_1_1_nimiq_client.html#a405a2c394c1c76214dac82dfdafae12b',1,'Nimiq::NimiqClient']]],
+  ['poolconfirmedbalance_255',['PoolConfirmedBalance',['../class_nimiq_1_1_nimiq_client.html#a5ab56b71e1018e5a3c320c63f3b6dc97',1,'Nimiq::NimiqClient']]],
+  ['poolconnectionstate_256',['PoolConnectionState',['../class_nimiq_1_1_nimiq_client.html#afeb2163c9cca06dd7b4a2e4aa994bc85',1,'Nimiq::NimiqClient']]]
 ];

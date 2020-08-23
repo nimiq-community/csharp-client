@@ -1,0 +1,94 @@
+\hypertarget{class_nimiq_1_1_string_enumeration_converter}{}\doxysection{Nimiq.\+String\+Enumeration\+Converter Class Reference}
+\label{class_nimiq_1_1_string_enumeration_converter}\index{Nimiq.StringEnumerationConverter@{Nimiq.StringEnumerationConverter}}
+
+
+Json\+Converter used in string enumeration serialization.  
+
+
+Inheritance diagram for Nimiq.\+String\+Enumeration\+Converter\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_nimiq_1_1_string_enumeration_converter}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override bool \mbox{\hyperlink{class_nimiq_1_1_string_enumeration_converter_a1c599319ff57b0fdf61331f581c42321}{Can\+Convert}} (Type type\+To\+Convert)
+\begin{DoxyCompactList}\small\item\em Whether a type is a subclass of {\ttfamily \mbox{\hyperlink{class_nimiq_1_1_string_enumeration}{String\+Enumeration}}}. \end{DoxyCompactList}\item 
+override \mbox{\hyperlink{class_nimiq_1_1_string_enumeration}{String\+Enumeration}} \mbox{\hyperlink{class_nimiq_1_1_string_enumeration_converter_a5fc26df73e3127f643746216f277cfcd}{Read}} (ref Utf8\+Json\+Reader reader, Type type\+To\+Convert, Json\+Serializer\+Options options)
+\begin{DoxyCompactList}\small\item\em Read the string value. \end{DoxyCompactList}\item 
+override void \mbox{\hyperlink{class_nimiq_1_1_string_enumeration_converter_aaad6ce01a59a9fd02b88704f0534f415}{Write}} (Utf8\+Json\+Writer writer, \mbox{\hyperlink{class_nimiq_1_1_string_enumeration}{String\+Enumeration}} value, Json\+Serializer\+Options options)
+\begin{DoxyCompactList}\small\item\em Write the string value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Json\+Converter used in string enumeration serialization. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_nimiq_1_1_string_enumeration_converter_a1c599319ff57b0fdf61331f581c42321}\label{class_nimiq_1_1_string_enumeration_converter_a1c599319ff57b0fdf61331f581c42321}} 
+\index{Nimiq.StringEnumerationConverter@{Nimiq.StringEnumerationConverter}!CanConvert@{CanConvert}}
+\index{CanConvert@{CanConvert}!Nimiq.StringEnumerationConverter@{Nimiq.StringEnumerationConverter}}
+\doxysubsubsection{\texorpdfstring{CanConvert()}{CanConvert()}}
+{\footnotesize\ttfamily override bool Nimiq.\+String\+Enumeration\+Converter.\+Can\+Convert (\begin{DoxyParamCaption}\item[{Type}]{type\+To\+Convert }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Whether a type is a subclass of {\ttfamily \mbox{\hyperlink{class_nimiq_1_1_string_enumeration}{String\+Enumeration}}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em type\+To\+Convert} & Type to check.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if is a subclass.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_nimiq_1_1_string_enumeration_converter_a5fc26df73e3127f643746216f277cfcd}\label{class_nimiq_1_1_string_enumeration_converter_a5fc26df73e3127f643746216f277cfcd}} 
+\index{Nimiq.StringEnumerationConverter@{Nimiq.StringEnumerationConverter}!Read@{Read}}
+\index{Read@{Read}!Nimiq.StringEnumerationConverter@{Nimiq.StringEnumerationConverter}}
+\doxysubsubsection{\texorpdfstring{Read()}{Read()}}
+{\footnotesize\ttfamily override \mbox{\hyperlink{class_nimiq_1_1_string_enumeration}{String\+Enumeration}} Nimiq.\+String\+Enumeration\+Converter.\+Read (\begin{DoxyParamCaption}\item[{ref Utf8\+Json\+Reader}]{reader,  }\item[{Type}]{type\+To\+Convert,  }\item[{Json\+Serializer\+Options}]{options }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Read the string value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em reader} & Reader to access the encoded J\+S\+ON text.\\
+\hline
+{\em type\+To\+Convert} & Type of the object to deserialize.\\
+\hline
+{\em options} & Options for the deserialization.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Underlying string enumeration type.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_nimiq_1_1_string_enumeration_converter_aaad6ce01a59a9fd02b88704f0534f415}\label{class_nimiq_1_1_string_enumeration_converter_aaad6ce01a59a9fd02b88704f0534f415}} 
+\index{Nimiq.StringEnumerationConverter@{Nimiq.StringEnumerationConverter}!Write@{Write}}
+\index{Write@{Write}!Nimiq.StringEnumerationConverter@{Nimiq.StringEnumerationConverter}}
+\doxysubsubsection{\texorpdfstring{Write()}{Write()}}
+{\footnotesize\ttfamily override void Nimiq.\+String\+Enumeration\+Converter.\+Write (\begin{DoxyParamCaption}\item[{Utf8\+Json\+Writer}]{writer,  }\item[{\mbox{\hyperlink{class_nimiq_1_1_string_enumeration}{String\+Enumeration}}}]{value,  }\item[{Json\+Serializer\+Options}]{options }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Write the string value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em writer} & Writer to encode the J\+S\+ON text.\\
+\hline
+{\em value} & Object to serialize.\\
+\hline
+{\em options} & Options for the serialization.\\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Nimiq\+Client/String\+Enumeration.\+cs\end{DoxyCompactItemize}

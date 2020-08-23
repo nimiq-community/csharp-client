@@ -56,7 +56,7 @@ namespace Nimiq
         public RemoteErrorException(string message) : base(message) { }
     }
 
-    /// <summary>Nimiq JSONRPC Client</summary>
+    /// <summary>Nimiq JSONRPC Client.</summary>
     public class NimiqClient
     {
         /// <summary>Error returned in the response for the JSONRPC the server.</summary>
@@ -199,22 +199,21 @@ namespace Nimiq
             return Call<ConsensusState>("consensus");
         }
 
-        /// <summary>Returns or overrides a constant value.
-        /// When no parameter is given, it returns the value of the constant. When giving a value as parameter,
-        /// it sets the constant to the given value. To reset the constant use <c>resetConstant()</c> instead.</summary>
+        /// <summary>Returns or a constant value.</summary>
+        /// <param name="constant">The class and name of the constant (format should be <c>"Class.CONSTANT"</c>).</param>
+        /// <returns>The value of the constant.</returns>
+        public long Constant(string constant)
+        {
+            return Call<long>("constant", constant);
+        }
+
+        /// <summary>Sets the constant to the given value. To reset the constant use <c>ResetConstant()</c> instead.</summary>
         /// <param name="constant">The class and name of the constant (format should be <c>"Class.CONSTANT"</c>).</param>
         /// <param name="value">The new value of the constant.</param>
         /// <returns>The value of the constant.</returns>
-        public long Constant(string constant, long? value = null)
+        public long SetConstant(string constant, long value)
         {
-            if (value != null)
-            {
-                return Call<long>("constant", constant, value);
-            }
-            else
-            {
-                return Call<long>("constant", constant);
-            }
+            return Call<long>("constant", constant, value);
         }
 
         /// <summary>Creates a new account and stores its private key in the client store.</summary>
@@ -261,13 +260,13 @@ namespace Nimiq
 
         /// <summary>Returns information about a block by hash.</summary>
         /// <param name="hash">Hash of the block to gather information on.</param>
-        /// <param name="fullTransactions">If <c>true</c> it returns the full transaction objects, if <c>false</c> only the hashes of the transactions.</param>
+        /// <param name="includeTransactions">If <c>true</c> it returns the full transaction objects, if <c>false</c> only the hashes of the transactions.</param>
         /// <returns>A block object or <c>null</c> when no block was found.</returns>
-        public Block GetBlockByHash(string hash, bool? fullTransactions = null)
+        public Block GetBlockByHash(string hash, bool? includeTransactions = null)
         {
-            if (fullTransactions != null)
+            if (includeTransactions != null)
             {
-                return Call<Block>("getBlockByHash", hash, fullTransactions);
+                return Call<Block>("getBlockByHash", hash, includeTransactions);
             }
             else
             {
@@ -277,13 +276,13 @@ namespace Nimiq
 
         /// <summary>Returns information about a block by block number.</summary>
         /// <param name="height">The height of the block to gather information on.</param>
-        /// <param name="fullTransactions">If <c>true</c> it returns the full transaction objects, if <c>false</c> only the hashes of the transactions.</param>
+        /// <param name="includeTransactions">If <c>true</c> it returns the full transaction objects, if <c>false</c> only the hashes of the transactions.</param>
         /// <returns>A block object or <c>null</c> when no block was found.</returns>
-        public Block GetBlockByNumber(int height, bool? fullTransactions = null)
+        public Block GetBlockByNumber(int height, bool? includeTransactions = null)
         {
-            if (fullTransactions != null)
+            if (includeTransactions != null)
             {
-                return Call<Block>("getBlockByNumber", height, fullTransactions);
+                return Call<Block>("getBlockByNumber", height, includeTransactions);
             }
             else
             {
@@ -403,7 +402,7 @@ namespace Nimiq
         /// <param name="tag">Tag: If <c>"*"</c> the log level is set globally, otherwise the log level is applied only on this tag.</param>
         /// <param name="level">Minimum log level to display.</param>
         /// <returns><c>true</c> if the log level was changed, <c>false</c> otherwise.</returns>
-        public bool Log(string tag, LogLevel level)
+        public bool SetLog(string tag, LogLevel level)
         {
             return Call<bool>("log", tag, level);
         }
@@ -416,13 +415,13 @@ namespace Nimiq
         }
 
         /// <summary>Returns transactions that are currently in the mempool.</summary>
-        /// <param name="fullTransactions">If <c>true</c> includes full transactions, if <c>false</c> includes only transaction hashes.</param>
+        /// <param name="includeTransactions">If <c>true</c> includes full transactions, if <c>false</c> includes only transaction hashes.</param>
         /// <returns>Array of transactions (either represented by the transaction hash or a transaction object).</returns>
-        public object[] MempoolContent(bool? fullTransactions = null)
+        public object[] MempoolContent(bool? includeTransactions = null)
         {
-            if (fullTransactions != null)
+            if (includeTransactions != null)
             {
-                return Call<Transaction[]>("mempoolContent", fullTransactions);
+                return Call<Transaction[]>("mempoolContent", includeTransactions);
             }
             else
             {
@@ -437,55 +436,49 @@ namespace Nimiq
             return Call<string>("minerAddress");
         }
 
-        /// <summary>Returns or sets the number of CPU threads for the miner.
-        /// When no parameter is given, it returns the current number of miner threads.
-        /// When a value is given as parameter, it sets the number of miner threads to that value.</summary>
-        /// <param name="threads">The number of threads to allocate for mining.</param>
+        /// <summary>Returns the number of CPU threads for the miner.</param>
         /// <returns>The number of threads allocated for mining.</returns>
-        public int MinerThreads(long? threads = null)
+        public int MinerThreads()
         {
-            if (threads != null)
-            {
-                return Call<int>("minerThreads", threads);
-            }
-            else
-            {
-                return Call<int>("minerThreads");
-            }
+            return Call<int>("minerThreads");
         }
 
-        /// <summary>Returns or sets the minimum fee per byte.
-        /// When no parameter is given, it returns the current minimum fee per byte.
-        /// When a value is given as parameter, it sets the minimum fee per byte to that value.</summary>
+        /// <summary>Sets the number of CPU threads for the miner.</summary>
+        /// <param name="threads">The new number of threads to allocate for mining.</param>
+        /// <returns>The number of threads allocated for mining.</returns>
+        public int SetMinerThreads(long threads)
+        {
+            return Call<int>("minerThreads", threads);
+        }
+
+        /// <summary>Returns the minimum fee per byte.</summary>
+        /// <returns>The minimum fee per byte.</returns>
+        public int MinFeePerByte()
+        {
+            return Call<int>("minFeePerByte");
+        }
+
+        /// <summary>Sets the minimum fee per byte.</summary>
         /// <param name="fee">The new minimum fee per byte.</param>
         /// <returns>The new minimum fee per byte.</returns>
-        public int MinFeePerByte(int? fee = null)
+        public int SetMinFeePerByte(int fee)
         {
-            if (fee != null)
-            {
-                return Call<int>("minFeePerByte", fee);
-            }
-            else
-            {
-                return Call<int>("minFeePerByte");
-            }
+            return Call<int>("minFeePerByte", fee);
         }
 
-        /// <summary>Returns true if client is actively mining new blocks.
-        /// When no parameter is given, it returns the current state.
-        /// When a value is given as parameter, it sets the current state to that value.</summary>
-        /// <param name="state">The state to be set.</param>
+        /// <summary>Returns true if client is actively mining new blocks.</summary>
         /// <returns><c>true</c> if the client is mining, otherwise <c>false</c>.</returns>
-        public bool Mining(bool? state = null)
+        public bool IsMining()
         {
-            if (state != null)
-            {
-                return Call<bool>("mining", state);
-            }
-            else
-            {
-                return Call<bool>("mining");
-            }
+            return Call<bool>("mining");
+        }
+
+        /// <summary>Sets the current mining state to that value.</summary>
+        /// <param name="state">The new state to be set.</param>
+        /// <returns><c>true</c> if the client is mining, otherwise <c>false</c>.</returns>
+        public bool SetMining(bool state)
+        {
+            return Call<bool>("mining", state);
         }
 
         /// <summary>Returns number of peers currently connected to the client.</summary>
@@ -502,39 +495,36 @@ namespace Nimiq
             return Call<Peer[]>("peerList");
         }
 
-        /// <summary>Returns the state of the peer.
-        /// When no command is given, it returns peer state.
-        /// When a value is given for command, it sets the peer state to that value.</summary>
+        /// <summary>Returns the state of the peer.</summary>
         /// <param name="address">The address of the peer.</param>
-        /// <param name="command">The command to send.</param>
         /// <returns>The current state of the peer.</returns>
-        public Peer PeerState(string address, PeerStateCommand command = null)
+        public Peer PeerState(string address)
         {
-            if (command != null)
-            {
-                return Call<Peer>("peerState", address, command);
-            }
-            else
-            {
-                return Call<Peer>("peerState", address);
-            }
+            return Call<Peer>("peerState", address);
         }
 
-        /// <summary>Returns or sets the mining pool.
-        /// When no parameter is given, it returns the current mining pool.
-        /// When a value is given as parameter, it sets the mining pool to that value.</summary>
+        /// <summary>Sets the state of the peer.</summary>
+        /// <param name="address">The address of the peer.</param>
+        /// <param name="command">The new command to send.</param>
+        /// <returns>The current state of the peer.</returns>
+        public Peer SetPeerState(string address, PeerStateCommand command)
+        {
+            return Call<Peer>("peerState", address, command);
+        }
+
+        /// <summary>Returns mining pool.</summary>
+        /// <returns>The mining pool connection string, or <c>null</c> if not enabled.</returns>
+        public string Pool()
+        {
+            return Call<string>("pool");
+        }
+
+        /// <summary>Sets the mining pool.</summary>
         /// <param name="address">The mining pool connection string (<c>url:port</c>) or boolean to enable/disable pool mining.</param>
         /// <returns>The mining pool connection string, or <c>null</c> if not enabled.</returns>
-        public string Pool(object address = null)
+        public string SetPool(object address)
         {
-            if (address is string || address is bool)
-            {
-                return Call<string>("pool", address);
-            }
-            else
-            {
-                return Call<string>("pool");
-            }
+            return Call<string>("pool", address);
         }
 
         /// <summary>Returns the confirmed mining pool balance.</summary>

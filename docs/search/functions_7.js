@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['log_230',['Log',['../class_nimiq_1_1_nimiq_client.html#a3d2643eb8363e9103af9452b861ba35b',1,'Nimiq::NimiqClient']]]
+  ['jsonstringvalue_241',['JsonStringValue',['../class_nimiq_1_1_json_string_value.html#a9491b89ca680fac70e97c53c044b3d96',1,'Nimiq::JsonStringValue']]]
 ];

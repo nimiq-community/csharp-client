@@ -1,9 +1,21 @@
 var searchData=
 [
-  ['recipient_127',['Recipient',['../class_nimiq_1_1_models_1_1_h_t_l_c.html#a2f7058511bf29051a00496a7aa1c5cf4',1,'Nimiq::Models::HTLC']]],
-  ['recipientaddress_128',['RecipientAddress',['../class_nimiq_1_1_models_1_1_h_t_l_c.html#a96b766cb544cce03d5ee2ad415cd995b',1,'Nimiq::Models::HTLC']]],
-  ['remoteerrorexception_129',['RemoteErrorException',['../class_nimiq_1_1_remote_error_exception.html',1,'Nimiq.RemoteErrorException'],['../class_nimiq_1_1_remote_error_exception.html#afe93a6a9170f2f9b7b4981543f44e5c5',1,'Nimiq.RemoteErrorException.RemoteErrorException()']]],
-  ['resetconstant_130',['ResetConstant',['../class_nimiq_1_1_nimiq_client.html#ae7d8f40894551df89a6780be4dda33df',1,'Nimiq::NimiqClient']]],
-  ['responseerror_131',['ResponseError',['../class_nimiq_1_1_response_error.html',1,'Nimiq']]],
-  ['rx_132',['Rx',['../class_nimiq_1_1_models_1_1_peer.html#a06a107190bde71892d6678fd8b726942',1,'Nimiq::Models::Peer']]]
+  ['parenthash_108',['ParentHash',['../class_nimiq_1_1_models_1_1_block.html#a9143b5d41774921423cc0d60b64a5cc2',1,'Nimiq::Models::Block']]],
+  ['password_109',['Password',['../class_nimiq_1_1_config.html#a56e8786eda22eed1ffa81d6d6e6bd339',1,'Nimiq::Config']]],
+  ['peer_110',['Peer',['../class_nimiq_1_1_models_1_1_peer.html',1,'Nimiq::Models']]],
+  ['peeraddressstate_111',['PeerAddressState',['../namespace_nimiq_1_1_models.html#a2e03103d1d8e78169366f404690be7e7',1,'Nimiq::Models']]],
+  ['peerconnectionstate_112',['PeerConnectionState',['../namespace_nimiq_1_1_models.html#aac6b1ceeab2ccb0c90e6584ea2c87610',1,'Nimiq::Models']]],
+  ['peercount_113',['PeerCount',['../class_nimiq_1_1_nimiq_client.html#a36829a0773d4161a2e877c31c7bb7f25',1,'Nimiq::NimiqClient']]],
+  ['peerlist_114',['PeerList',['../class_nimiq_1_1_nimiq_client.html#a3313e6c25c3528926ec713954d406df6',1,'Nimiq::NimiqClient']]],
+  ['peerstate_115',['PeerState',['../class_nimiq_1_1_nimiq_client.html#a8cf25ae1161dccf2a31ae137cfa2787f',1,'Nimiq::NimiqClient']]],
+  ['peerstatecommand_116',['PeerStateCommand',['../class_nimiq_1_1_models_1_1_peer_state_command.html',1,'Nimiq::Models']]],
+  ['pool_117',['Pool',['../class_nimiq_1_1_nimiq_client.html#a405a2c394c1c76214dac82dfdafae12b',1,'Nimiq::NimiqClient']]],
+  ['poolconfirmedbalance_118',['PoolConfirmedBalance',['../class_nimiq_1_1_nimiq_client.html#a5ab56b71e1018e5a3c320c63f3b6dc97',1,'Nimiq::NimiqClient']]],
+  ['poolconnectionstate_119',['PoolConnectionState',['../class_nimiq_1_1_nimiq_client.html#afeb2163c9cca06dd7b4a2e4aa994bc85',1,'Nimiq.NimiqClient.PoolConnectionState()'],['../namespace_nimiq_1_1_models.html#ae75833b733e900ddc9b0d49b3e1957b9',1,'Nimiq.Models.PoolConnectionState()']]],
+  ['port_120',['Port',['../class_nimiq_1_1_config.html#a368afceba7c381a574040f28b31f0ad6',1,'Nimiq::Config']]],
+  ['pow_121',['Pow',['../class_nimiq_1_1_models_1_1_block.html#af382fec5b0469319d888289d851a8e89',1,'Nimiq::Models::Block']]],
+  ['prevhash_122',['PrevHash',['../class_nimiq_1_1_models_1_1_block_template_header.html#ac273ea5933c398bc5d352c7da296f15b',1,'Nimiq::Models::BlockTemplateHeader']]],
+  ['privatekey_123',['PrivateKey',['../class_nimiq_1_1_models_1_1_wallet.html#a7887912e89daffdc6838a1724c251c40',1,'Nimiq::Models::Wallet']]],
+  ['prunedaccounts_124',['PrunedAccounts',['../class_nimiq_1_1_models_1_1_block_template_body.html#acf7d8501d9c137bce202988d33e5a0f5',1,'Nimiq::Models::BlockTemplateBody']]],
+  ['publickey_125',['PublicKey',['../class_nimiq_1_1_models_1_1_wallet.html#a4ac5f92e4ee278301acd34b12d6c2cc3',1,'Nimiq::Models::Wallet']]]
 ];

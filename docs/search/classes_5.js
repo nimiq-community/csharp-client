@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['loglevel_188',['LogLevel',['../class_nimiq_1_1_log_level.html',1,'Nimiq']]]
+  ['jsonstringvalue_196',['JsonStringValue',['../class_nimiq_1_1_json_string_value.html',1,'Nimiq']]]
 ];

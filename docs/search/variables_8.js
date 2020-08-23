@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['unban_266',['Unban',['../class_nimiq_1_1_models_1_1_peer_state_command.html#acfba732bbffff26cef3215e853aa8106',1,'Nimiq::Models::PeerStateCommand']]]
+  ['unban_284',['Unban',['../class_nimiq_1_1_models_1_1_peer_state_command.html#ad98c6ba44a53d15bee49863ffa73d69b',1,'Nimiq::Models::PeerStateCommand']]]
 ];

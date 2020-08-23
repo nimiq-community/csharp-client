@@ -2,7 +2,7 @@
 \label{class_nimiq_1_1_nimiq_client}\index{Nimiq.NimiqClient@{Nimiq.NimiqClient}}
 
 
-\mbox{\hyperlink{namespace_nimiq}{Nimiq}} J\+S\+O\+N\+R\+PC Client  
+\mbox{\hyperlink{namespace_nimiq}{Nimiq}} J\+S\+O\+N\+R\+PC Client.  
 
 
 \doxysubsection*{Public Member Functions}
@@ -12,83 +12,101 @@
 \begin{DoxyCompactList}\small\item\em Client initialization from a \mbox{\hyperlink{class_nimiq_1_1_config}{Config}} structure. When no parameter is given, it uses de default configuration in the server ({\ttfamily \href{http://:@127.0.0.1:8648}{\texttt{ http\+://\+:@127.\+0.\+0.\+1\+:8648}}}). \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_nimiq_1_1_nimiq_client_a53524f49b0063062cceaf47c928929d8}{Nimiq\+Client}} (string scheme=\char`\"{}http\char`\"{}, string user=\char`\"{}\char`\"{}, string password=\char`\"{}\char`\"{}, string host=\char`\"{}127.\+0.\+0.\+1\char`\"{}, long port=8648, Http\+Client client=null)
 \begin{DoxyCompactList}\small\item\em Initialization. \end{DoxyCompactList}\item 
-async Task$<$ object\mbox{[}$\,$\mbox{]}$>$ \mbox{\hyperlink{class_nimiq_1_1_nimiq_client_a9ec1afa7cdbc74525e678d1b5b64f3cb}{Accounts}} ()
+\mbox{\hyperlink{class_nimiq_1_1_models_1_1_account}{Account}}\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_nimiq_1_1_nimiq_client_af49b809729f28bfd216b8f77038977d2}{Accounts}} ()
 \begin{DoxyCompactList}\small\item\em Returns a list of addresses owned by client. \end{DoxyCompactList}\item 
-async Task$<$ long $>$ \mbox{\hyperlink{class_nimiq_1_1_nimiq_client_a9f83936cefe0635cbe3ec6b88a039665}{Block\+Number}} ()
+long \mbox{\hyperlink{class_nimiq_1_1_nimiq_client_ad9e01f428371db9265af38acc3eb853b}{Block\+Number}} ()
 \begin{DoxyCompactList}\small\item\em Returns the height of most recent block. \end{DoxyCompactList}\item 
-async Task$<$ \mbox{\hyperlink{class_nimiq_1_1_models_1_1_consensus_state}{Consensus\+State}} $>$ \mbox{\hyperlink{class_nimiq_1_1_nimiq_client_a874afb8220ea5d6dd440282c70a8c59c}{Consensus}} ()
+\mbox{\hyperlink{class_nimiq_1_1_models_1_1_consensus_state}{Consensus\+State}} \mbox{\hyperlink{class_nimiq_1_1_nimiq_client_ab71744c279e46188392ec95d87f2f269}{Consensus}} ()
 \begin{DoxyCompactList}\small\item\em Returns information on the current consensus state. \end{DoxyCompactList}\item 
-async Task$<$ long $>$ \mbox{\hyperlink{class_nimiq_1_1_nimiq_client_a495a7cabb906032d3d7090168ec79fdf}{Constant}} (string constant, long? value=null)
-\begin{DoxyCompactList}\small\item\em Returns or overrides a constant value. When no parameter is given, it returns the value of the constant. When giving a value as parameter, it sets the constant to the given value. To reset the constant use {\ttfamily reset\+Constant()} instead. \end{DoxyCompactList}\item 
-async Task$<$ \mbox{\hyperlink{class_nimiq_1_1_models_1_1_wallet}{Wallet}} $>$ \mbox{\hyperlink{class_nimiq_1_1_nimiq_client_a08f45a56e9850a4b62b84433db2ea2c8}{Create\+Account}} ()
+long \mbox{\hyperlink{class_nimiq_1_1_nimiq_client_ad402a4c6f50e429fbe9f37cbce01dbd1}{Constant}} (string constant)
+\begin{DoxyCompactList}\small\item\em Returns or a constant value. \end{DoxyCompactList}\item 
+long \mbox{\hyperlink{class_nimiq_1_1_nimiq_client_a3c3cb56265da8f027a6c4c385e5b8bad}{Set\+Constant}} (string constant, long value)
+\begin{DoxyCompactList}\small\item\em Sets the constant to the given value. To reset the constant use {\ttfamily \mbox{\hyperlink{class_nimiq_1_1_nimiq_client_a520d250356447888a80c06c5abb5a3c5}{Reset\+Constant()}}} instead. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_nimiq_1_1_models_1_1_wallet}{Wallet}} \mbox{\hyperlink{class_nimiq_1_1_nimiq_client_aaf4154bc8ca35ff09bca16da815517f4}{Create\+Account}} ()
 \begin{DoxyCompactList}\small\item\em Creates a new account and stores its private key in the client store. \end{DoxyCompactList}\item 
-async Task$<$ string $>$ \mbox{\hyperlink{class_nimiq_1_1_nimiq_client_a51509a5d5ca01406e9124145cb38d3fe}{Create\+Raw\+Transaction}} (\mbox{\hyperlink{class_nimiq_1_1_models_1_1_outgoing_transaction}{Outgoing\+Transaction}} transaction)
+string \mbox{\hyperlink{class_nimiq_1_1_nimiq_client_a0944b0b18ef10070ce7b0b010d1e2eb2}{Create\+Raw\+Transaction}} (\mbox{\hyperlink{class_nimiq_1_1_models_1_1_outgoing_transaction}{Outgoing\+Transaction}} transaction)
 \begin{DoxyCompactList}\small\item\em Creates and signs a transaction without sending it. The transaction can then be send via {\ttfamily send\+Raw\+Transaction()} without accidentally replaying it. \end{DoxyCompactList}\item 
-async Task$<$ object $>$ \mbox{\hyperlink{class_nimiq_1_1_nimiq_client_a4e09f0be8c831d5119a8c61f2d6e033b}{Get\+Account}} (string address)
+\mbox{\hyperlink{class_nimiq_1_1_models_1_1_account}{Account}} \mbox{\hyperlink{class_nimiq_1_1_nimiq_client_ab7738e16a445607e15c4c4835bc38c0e}{Get\+Account}} (string address)
 \begin{DoxyCompactList}\small\item\em Returns details for the account of given address. \end{DoxyCompactList}\item 
-async Task$<$ long $>$ \mbox{\hyperlink{class_nimiq_1_1_nimiq_client_adc578b2bcf2296ab7a13c550ed87cd7b}{Get\+Balance}} (string address)
+long \mbox{\hyperlink{class_nimiq_1_1_nimiq_client_a007efe96dadcfbd564784d357ea5bd51}{Get\+Balance}} (string address)
 \begin{DoxyCompactList}\small\item\em Returns the balance of the account of given address. \end{DoxyCompactList}\item 
-async Task$<$ \mbox{\hyperlink{class_nimiq_1_1_models_1_1_block}{Block}} $>$ \mbox{\hyperlink{class_nimiq_1_1_nimiq_client_adedd89491cd044fcf4bb81a387ba89bc}{Get\+Block\+By\+Hash}} (string hash, bool? full\+Transactions=null)
+\mbox{\hyperlink{class_nimiq_1_1_models_1_1_block}{Block}} \mbox{\hyperlink{class_nimiq_1_1_nimiq_client_af6ec48de94a80e6e4275dd9b0c2974b5}{Get\+Block\+By\+Hash}} (string hash, bool? include\+Transactions=null)
 \begin{DoxyCompactList}\small\item\em Returns information about a block by hash. \end{DoxyCompactList}\item 
-async Task$<$ \mbox{\hyperlink{class_nimiq_1_1_models_1_1_block}{Block}} $>$ \mbox{\hyperlink{class_nimiq_1_1_nimiq_client_abc844794e90e0187f6f9bd4cc7c404c5}{Get\+Block\+By\+Number}} (int height, bool? full\+Transactions=null)
+\mbox{\hyperlink{class_nimiq_1_1_models_1_1_block}{Block}} \mbox{\hyperlink{class_nimiq_1_1_nimiq_client_a74df0279ffb270c0c99550fff5c9a75d}{Get\+Block\+By\+Number}} (int height, bool? include\+Transactions=null)
 \begin{DoxyCompactList}\small\item\em Returns information about a block by block number. \end{DoxyCompactList}\item 
-async Task$<$ \mbox{\hyperlink{class_nimiq_1_1_models_1_1_block_template}{Block\+Template}} $>$ \mbox{\hyperlink{class_nimiq_1_1_nimiq_client_a5aafb71b86064896e0e3bc8ce6b7ee54}{Get\+Block\+Template}} (string address=null, string extra\+Data=\char`\"{}\char`\"{})
+\mbox{\hyperlink{class_nimiq_1_1_models_1_1_block_template}{Block\+Template}} \mbox{\hyperlink{class_nimiq_1_1_nimiq_client_a10c665603dfb71da62ec25fbe7c24bbf}{Get\+Block\+Template}} (string address=null, string extra\+Data=\char`\"{}\char`\"{})
 \begin{DoxyCompactList}\small\item\em Returns a template to build the next block for mining. This will consider pool instructions when connected to a pool. If {\ttfamily address} and {\ttfamily extra\+Data} are provided the values are overriden. \end{DoxyCompactList}\item 
-async Task$<$ long?$>$ \mbox{\hyperlink{class_nimiq_1_1_nimiq_client_af35c8aa1e414bc728a1596eef40b2f76}{Get\+Block\+Transaction\+Count\+By\+Hash}} (string hash)
+long? \mbox{\hyperlink{class_nimiq_1_1_nimiq_client_a9892cea9491e7fcf06220199d9fbaeed}{Get\+Block\+Transaction\+Count\+By\+Hash}} (string hash)
 \begin{DoxyCompactList}\small\item\em Returns the number of transactions in a block from a block matching the given block hash. \end{DoxyCompactList}\item 
-async Task$<$ long?$>$ \mbox{\hyperlink{class_nimiq_1_1_nimiq_client_af5396c24dd3c59499b81d5b217ea7a9a}{Get\+Block\+Transaction\+Count\+By\+Number}} (long height)
+long? \mbox{\hyperlink{class_nimiq_1_1_nimiq_client_a0795e4f7682b1857e006587173ef37bc}{Get\+Block\+Transaction\+Count\+By\+Number}} (long height)
 \begin{DoxyCompactList}\small\item\em Returns the number of transactions in a block matching the given block number. \end{DoxyCompactList}\item 
-async Task$<$ \mbox{\hyperlink{class_nimiq_1_1_models_1_1_transaction}{Transaction}} $>$ \mbox{\hyperlink{class_nimiq_1_1_nimiq_client_ab8eed7e4fbb482618fcd791fa9aaa8ee}{Get\+Transaction\+By\+Block\+Hash\+And\+Index}} (string hash, long index)
+\mbox{\hyperlink{class_nimiq_1_1_models_1_1_transaction}{Transaction}} \mbox{\hyperlink{class_nimiq_1_1_nimiq_client_a917a4d94038867d86a3c79d55269f06a}{Get\+Transaction\+By\+Block\+Hash\+And\+Index}} (string hash, long index)
 \begin{DoxyCompactList}\small\item\em Returns information about a transaction by block hash and transaction index position. \end{DoxyCompactList}\item 
-async Task$<$ \mbox{\hyperlink{class_nimiq_1_1_models_1_1_transaction}{Transaction}} $>$ \mbox{\hyperlink{class_nimiq_1_1_nimiq_client_ad8e43453367e3890242c3884c326d8f3}{Get\+Transaction\+By\+Block\+Number\+And\+Index}} (long height, long index)
+\mbox{\hyperlink{class_nimiq_1_1_models_1_1_transaction}{Transaction}} \mbox{\hyperlink{class_nimiq_1_1_nimiq_client_a3171b8cc6e7b4accc739c311971ae32a}{Get\+Transaction\+By\+Block\+Number\+And\+Index}} (long height, long index)
 \begin{DoxyCompactList}\small\item\em Returns information about a transaction by block number and transaction index position. \end{DoxyCompactList}\item 
-async Task$<$ \mbox{\hyperlink{class_nimiq_1_1_models_1_1_transaction}{Transaction}} $>$ \mbox{\hyperlink{class_nimiq_1_1_nimiq_client_aa235af325251828cca93f96c8cd41969}{Get\+Transaction\+By\+Hash}} (string hash)
+\mbox{\hyperlink{class_nimiq_1_1_models_1_1_transaction}{Transaction}} \mbox{\hyperlink{class_nimiq_1_1_nimiq_client_aca802d03b4f5634c89c36a177765fb21}{Get\+Transaction\+By\+Hash}} (string hash)
 \begin{DoxyCompactList}\small\item\em Returns the information about a transaction requested by transaction hash. \end{DoxyCompactList}\item 
-async Task$<$ \mbox{\hyperlink{class_nimiq_1_1_models_1_1_transaction_receipt}{Transaction\+Receipt}} $>$ \mbox{\hyperlink{class_nimiq_1_1_nimiq_client_a2b037b2f0a6e2739dc07555363c297ce}{Get\+Transaction\+Receipt}} (string hash)
+\mbox{\hyperlink{class_nimiq_1_1_models_1_1_transaction_receipt}{Transaction\+Receipt}} \mbox{\hyperlink{class_nimiq_1_1_nimiq_client_a2d05d1ca7bbac1afad6f6a9e52f70cfd}{Get\+Transaction\+Receipt}} (string hash)
 \begin{DoxyCompactList}\small\item\em Returns the receipt of a transaction by transaction hash. \end{DoxyCompactList}\item 
-async Task$<$ \mbox{\hyperlink{class_nimiq_1_1_models_1_1_transaction}{Transaction}}\mbox{[}$\,$\mbox{]}$>$ \mbox{\hyperlink{class_nimiq_1_1_nimiq_client_af2b459bd7373c7a156639b3313052730}{Get\+Transactions\+By\+Address}} (string address, long? number\+Of\+Transactions=null)
+\mbox{\hyperlink{class_nimiq_1_1_models_1_1_transaction}{Transaction}}\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_nimiq_1_1_nimiq_client_ade2747056887c15a3f994df8f798de53}{Get\+Transactions\+By\+Address}} (string address, long? number\+Of\+Transactions=null)
 \begin{DoxyCompactList}\small\item\em Returns the latest transactions successfully performed by or for an address. Note that this information might change when blocks are rewinded on the local state due to forks. \end{DoxyCompactList}\item 
-async Task$<$ \mbox{\hyperlink{class_nimiq_1_1_models_1_1_work_instructions}{Work\+Instructions}} $>$ \mbox{\hyperlink{class_nimiq_1_1_nimiq_client_a57b8673c46b9c490f33176f0990a8653}{Get\+Work}} (string address=null, string extra\+Data=\char`\"{}\char`\"{})
+\mbox{\hyperlink{class_nimiq_1_1_models_1_1_work_instructions}{Work\+Instructions}} \mbox{\hyperlink{class_nimiq_1_1_nimiq_client_a66543dc2215166dcb9fc34fba760738f}{Get\+Work}} (string address=null, string extra\+Data=\char`\"{}\char`\"{})
 \begin{DoxyCompactList}\small\item\em Returns instructions to mine the next block. This will consider pool instructions when connected to a pool. \end{DoxyCompactList}\item 
-async Task$<$ double $>$ \mbox{\hyperlink{class_nimiq_1_1_nimiq_client_a849a76a69a15b99deed0d3d6a29384f9}{Hashrate}} ()
+double \mbox{\hyperlink{class_nimiq_1_1_nimiq_client_afdeed8433c9383568f8d6ccf8472fb9a}{Hashrate}} ()
 \begin{DoxyCompactList}\small\item\em Returns the number of hashes per second that the node is mining with. \end{DoxyCompactList}\item 
-async Task$<$ bool $>$ \mbox{\hyperlink{class_nimiq_1_1_nimiq_client_a3d2643eb8363e9103af9452b861ba35b}{Log}} (string tag, \mbox{\hyperlink{class_nimiq_1_1_log_level}{Log\+Level}} level)
+bool \mbox{\hyperlink{class_nimiq_1_1_nimiq_client_a1d7bbee99a15ab60dc4b119a341198b7}{Set\+Log}} (string tag, \mbox{\hyperlink{class_nimiq_1_1_models_1_1_log_level}{Log\+Level}} level)
 \begin{DoxyCompactList}\small\item\em Sets the log level of the node. \end{DoxyCompactList}\item 
-async Task$<$ \mbox{\hyperlink{class_nimiq_1_1_models_1_1_mempool_info}{Mempool\+Info}} $>$ \mbox{\hyperlink{class_nimiq_1_1_nimiq_client_ac5905b71554025ca9e4129142310463b}{Mempool}} ()
+\mbox{\hyperlink{class_nimiq_1_1_models_1_1_mempool_info}{Mempool\+Info}} \mbox{\hyperlink{class_nimiq_1_1_nimiq_client_a406cee011062c530d61cdc7df202d507}{Mempool}} ()
 \begin{DoxyCompactList}\small\item\em Returns information on the current mempool situation. This will provide an overview of the number of transactions sorted into buckets based on their fee per byte (in smallest unit). \end{DoxyCompactList}\item 
-async Task$<$ object\mbox{[}$\,$\mbox{]}$>$ \mbox{\hyperlink{class_nimiq_1_1_nimiq_client_a85a5d3bf2ea9e9404fe8088ad787f8d4}{Mempool\+Content}} (bool? full\+Transactions=null)
+object\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_nimiq_1_1_nimiq_client_af1783f55e36c428ee914526a6fa14c29}{Mempool\+Content}} (bool? include\+Transactions=null)
 \begin{DoxyCompactList}\small\item\em Returns transactions that are currently in the mempool. \end{DoxyCompactList}\item 
-async Task$<$ string $>$ \mbox{\hyperlink{class_nimiq_1_1_nimiq_client_a6f437f7cd19ef57cd9535e5e0b8f7b37}{Miner\+Address}} ()
+string \mbox{\hyperlink{class_nimiq_1_1_nimiq_client_a81eed994630b5edcdb3870d137d5c1e2}{Miner\+Address}} ()
 \begin{DoxyCompactList}\small\item\em Returns the miner address. \end{DoxyCompactList}\item 
-async Task$<$ int $>$ \mbox{\hyperlink{class_nimiq_1_1_nimiq_client_a9e6e80ee69961d6bcf9d981814b50cd1}{Miner\+Threads}} (long? threads=null)
-\begin{DoxyCompactList}\small\item\em Returns or sets the number of C\+PU threads for the miner. When no parameter is given, it returns the current number of miner threads. When a value is given as parameter, it sets the number of miner threads to that value. \end{DoxyCompactList}\item 
-async Task$<$ int $>$ \mbox{\hyperlink{class_nimiq_1_1_nimiq_client_a9683dd6758d88eaa5427eefde77e60b2}{Min\+Fee\+Per\+Byte}} (int? fee=null)
-\begin{DoxyCompactList}\small\item\em Returns or sets the minimum fee per byte. When no parameter is given, it returns the current minimum fee per byte. When a value is given as parameter, it sets the minimum fee per byte to that value. \end{DoxyCompactList}\item 
-async Task$<$ bool $>$ \mbox{\hyperlink{class_nimiq_1_1_nimiq_client_a595c18d437face55f1fc2b3476d45750}{Mining}} (bool? state=null)
-\begin{DoxyCompactList}\small\item\em Returns true if client is actively mining new blocks. When no parameter is given, it returns the current state. When a value is given as parameter, it sets the current state to that value. \end{DoxyCompactList}\item 
-async Task$<$ int $>$ \mbox{\hyperlink{class_nimiq_1_1_nimiq_client_a343f1d3cd57ff2d34191728df40e4bf2}{Peer\+Count}} ()
+\mbox{\Hypertarget{class_nimiq_1_1_nimiq_client_aa710b87ec8d867754ecf3ceaece17c1a}\label{class_nimiq_1_1_nimiq_client_aa710b87ec8d867754ecf3ceaece17c1a}} 
+int \mbox{\hyperlink{class_nimiq_1_1_nimiq_client_aa710b87ec8d867754ecf3ceaece17c1a}{Miner\+Threads}} ()
+\begin{DoxyCompactList}\small\item\em Returns the number of C\+PU threads for the miner.
+
+\begin{DoxyReturn}{Returns}
+The number of threads allocated for mining.
+\end{DoxyReturn}
+\end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_nimiq_1_1_nimiq_client_a7e35a382ec2d040c858b05331d022e3b}{Set\+Miner\+Threads}} (long threads)
+\begin{DoxyCompactList}\small\item\em Sets the number of C\+PU threads for the miner. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_nimiq_1_1_nimiq_client_a6bffd36089a6ae6c6af41834e17c97ac}{Min\+Fee\+Per\+Byte}} ()
+\begin{DoxyCompactList}\small\item\em Returns the minimum fee per byte. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_nimiq_1_1_nimiq_client_ae9c610f8f60ee2e9eca200d746371d4c}{Set\+Min\+Fee\+Per\+Byte}} (int fee)
+\begin{DoxyCompactList}\small\item\em Sets the minimum fee per byte. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_nimiq_1_1_nimiq_client_a681e8e470f65c529745f29352fdc5fc8}{Is\+Mining}} ()
+\begin{DoxyCompactList}\small\item\em Returns true if client is actively mining new blocks. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_nimiq_1_1_nimiq_client_ad460dbd39414fa97b0c39b0e2727692e}{Set\+Mining}} (bool state)
+\begin{DoxyCompactList}\small\item\em Sets the current mining state to that value. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_nimiq_1_1_nimiq_client_a36829a0773d4161a2e877c31c7bb7f25}{Peer\+Count}} ()
 \begin{DoxyCompactList}\small\item\em Returns number of peers currently connected to the client. \end{DoxyCompactList}\item 
-async Task$<$ \mbox{\hyperlink{class_nimiq_1_1_models_1_1_peer}{Peer}}\mbox{[}$\,$\mbox{]}$>$ \mbox{\hyperlink{class_nimiq_1_1_nimiq_client_a476735aa6573a401339f2551f7fb6a11}{Peer\+List}} ()
+\mbox{\hyperlink{class_nimiq_1_1_models_1_1_peer}{Peer}}\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_nimiq_1_1_nimiq_client_a3313e6c25c3528926ec713954d406df6}{Peer\+List}} ()
 \begin{DoxyCompactList}\small\item\em Returns list of peers known to the client. \end{DoxyCompactList}\item 
-async Task$<$ \mbox{\hyperlink{class_nimiq_1_1_models_1_1_peer}{Peer}} $>$ \mbox{\hyperlink{class_nimiq_1_1_nimiq_client_a08e4bece54d34b46932228bdc63a6968}{Peer\+State}} (string address, \mbox{\hyperlink{class_nimiq_1_1_models_1_1_peer_state_command}{Peer\+State\+Command}} command=null)
-\begin{DoxyCompactList}\small\item\em Returns the state of the peer. When no command is given, it returns peer state. When a value is given for command, it sets the peer state to that value. \end{DoxyCompactList}\item 
-async Task$<$ string $>$ \mbox{\hyperlink{class_nimiq_1_1_nimiq_client_a0a0a461eeaf5f62a0367bfee91a799b0}{Pool}} (object address=null)
-\begin{DoxyCompactList}\small\item\em Returns or sets the mining pool. When no parameter is given, it returns the current mining pool. When a value is given as parameter, it sets the mining pool to that value. \end{DoxyCompactList}\item 
-async Task$<$ int $>$ \mbox{\hyperlink{class_nimiq_1_1_nimiq_client_aa8644c02b9283e12678326efe6ed8eb9}{Pool\+Confirmed\+Balance}} ()
+\mbox{\hyperlink{class_nimiq_1_1_models_1_1_peer}{Peer}} \mbox{\hyperlink{class_nimiq_1_1_nimiq_client_a8cf25ae1161dccf2a31ae137cfa2787f}{Peer\+State}} (string address)
+\begin{DoxyCompactList}\small\item\em Returns the state of the peer. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_nimiq_1_1_models_1_1_peer}{Peer}} \mbox{\hyperlink{class_nimiq_1_1_nimiq_client_ad1cebae8723e6c3be9a40f7dc04fefda}{Set\+Peer\+State}} (string address, \mbox{\hyperlink{class_nimiq_1_1_models_1_1_peer_state_command}{Peer\+State\+Command}} command)
+\begin{DoxyCompactList}\small\item\em Sets the state of the peer. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_nimiq_1_1_nimiq_client_a405a2c394c1c76214dac82dfdafae12b}{Pool}} ()
+\begin{DoxyCompactList}\small\item\em Returns mining pool. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_nimiq_1_1_nimiq_client_adacc40a12efc34fdaed575fe26367589}{Set\+Pool}} (object address)
+\begin{DoxyCompactList}\small\item\em Sets the mining pool. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_nimiq_1_1_nimiq_client_a5ab56b71e1018e5a3c320c63f3b6dc97}{Pool\+Confirmed\+Balance}} ()
 \begin{DoxyCompactList}\small\item\em Returns the confirmed mining pool balance. \end{DoxyCompactList}\item 
-async Task$<$ \mbox{\hyperlink{namespace_nimiq_1_1_models_ae75833b733e900ddc9b0d49b3e1957b9}{Pool\+Connection\+State}} $>$ \mbox{\hyperlink{class_nimiq_1_1_nimiq_client_a8babf8c4772e964fa5d3937e9956bcd7}{Pool\+Connection\+State}} ()
+\mbox{\hyperlink{namespace_nimiq_1_1_models_ae75833b733e900ddc9b0d49b3e1957b9}{Pool\+Connection\+State}} \mbox{\hyperlink{class_nimiq_1_1_nimiq_client_afeb2163c9cca06dd7b4a2e4aa994bc85}{Pool\+Connection\+State}} ()
 \begin{DoxyCompactList}\small\item\em Returns the connection state to mining pool. \end{DoxyCompactList}\item 
-async Task$<$ string $>$ \mbox{\hyperlink{class_nimiq_1_1_nimiq_client_a9b045cc5f70dbc14b0da4bcbf3c39e68}{Send\+Raw\+Transaction}} (string transaction)
+string \mbox{\hyperlink{class_nimiq_1_1_nimiq_client_a8d883e595cc5e598d1716cc867959073}{Send\+Raw\+Transaction}} (string transaction)
 \begin{DoxyCompactList}\small\item\em Sends a signed message call transaction or a contract creation, if the data field contains code. \end{DoxyCompactList}\item 
-async Task$<$ string $>$ \mbox{\hyperlink{class_nimiq_1_1_nimiq_client_a9ec9a38ffc70f67b46b3f6f804e5a32f}{Send\+Transaction}} (\mbox{\hyperlink{class_nimiq_1_1_models_1_1_outgoing_transaction}{Outgoing\+Transaction}} transaction)
+string \mbox{\hyperlink{class_nimiq_1_1_nimiq_client_a2e986d6092137a05d1199b9bd55c8b92}{Send\+Transaction}} (\mbox{\hyperlink{class_nimiq_1_1_models_1_1_outgoing_transaction}{Outgoing\+Transaction}} transaction)
 \begin{DoxyCompactList}\small\item\em Creates new message call transaction or a contract creation, if the data field contains code. \end{DoxyCompactList}\item 
-async Task \mbox{\hyperlink{class_nimiq_1_1_nimiq_client_a3a09644bafb1154a526d900d0f495c20}{Submit\+Block}} (string block)
+void \mbox{\hyperlink{class_nimiq_1_1_nimiq_client_a53b9b261a9f1984a5c200e0cb1ca64e1}{Submit\+Block}} (string block)
 \begin{DoxyCompactList}\small\item\em Submits a block to the node. When the block is valid, the node will forward it to other nodes in the network. \end{DoxyCompactList}\item 
-async Task$<$ object $>$ \mbox{\hyperlink{class_nimiq_1_1_nimiq_client_a195e508255fdf85582ddc35490cabd0d}{Syncing}} ()
+object \mbox{\hyperlink{class_nimiq_1_1_nimiq_client_ac30600e4e0dc7d7dee57815db2644ae9}{Syncing}} ()
 \begin{DoxyCompactList}\small\item\em Returns an object with data about the sync status or {\ttfamily false}. \end{DoxyCompactList}\item 
-async Task$<$ \mbox{\hyperlink{class_nimiq_1_1_models_1_1_transaction}{Transaction}} $>$ \mbox{\hyperlink{class_nimiq_1_1_nimiq_client_aac5ec11ef65561744bf50e682c89bd73}{Get\+Raw\+Transaction\+Info}} (string transaction)
+\mbox{\hyperlink{class_nimiq_1_1_models_1_1_transaction}{Transaction}} \mbox{\hyperlink{class_nimiq_1_1_nimiq_client_a36d590c4faff583a3b9dd7a792951c6b}{Get\+Raw\+Transaction\+Info}} (string transaction)
 \begin{DoxyCompactList}\small\item\em Deserializes hex-\/encoded transaction and returns a transaction object. \end{DoxyCompactList}\item 
-async Task$<$ long $>$ \mbox{\hyperlink{class_nimiq_1_1_nimiq_client_ae7d8f40894551df89a6780be4dda33df}{Reset\+Constant}} (string constant)
+long \mbox{\hyperlink{class_nimiq_1_1_nimiq_client_a520d250356447888a80c06c5abb5a3c5}{Reset\+Constant}} (string constant)
 \begin{DoxyCompactList}\small\item\em Resets the constant to default value. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Properties}
 \begin{DoxyCompactItemize}
@@ -98,7 +116,7 @@ long \mbox{\hyperlink{class_nimiq_1_1_nimiq_client_a24af172886ccb42b34464b67099c
 
 
 \doxysubsection{Detailed Description}
-\mbox{\hyperlink{namespace_nimiq}{Nimiq}} J\+S\+O\+N\+R\+PC Client 
+\mbox{\hyperlink{namespace_nimiq}{Nimiq}} J\+S\+O\+N\+R\+PC Client. 
 
 
 
@@ -146,11 +164,11 @@ Initialization.
 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{class_nimiq_1_1_nimiq_client_a9ec1afa7cdbc74525e678d1b5b64f3cb}\label{class_nimiq_1_1_nimiq_client_a9ec1afa7cdbc74525e678d1b5b64f3cb}} 
+\mbox{\Hypertarget{class_nimiq_1_1_nimiq_client_af49b809729f28bfd216b8f77038977d2}\label{class_nimiq_1_1_nimiq_client_af49b809729f28bfd216b8f77038977d2}} 
 \index{Nimiq.NimiqClient@{Nimiq.NimiqClient}!Accounts@{Accounts}}
 \index{Accounts@{Accounts}!Nimiq.NimiqClient@{Nimiq.NimiqClient}}
 \doxysubsubsection{\texorpdfstring{Accounts()}{Accounts()}}
-{\footnotesize\ttfamily async Task$<$object\mbox{[}$\,$\mbox{]}$>$ Nimiq.\+Nimiq\+Client.\+Accounts (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_nimiq_1_1_models_1_1_account}{Account}} \mbox{[}$\,$\mbox{]} Nimiq.\+Nimiq\+Client.\+Accounts (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -159,11 +177,11 @@ Returns a list of addresses owned by client.
 \begin{DoxyReturn}{Returns}
 Array of Accounts owned by the client.
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_nimiq_1_1_nimiq_client_a9f83936cefe0635cbe3ec6b88a039665}\label{class_nimiq_1_1_nimiq_client_a9f83936cefe0635cbe3ec6b88a039665}} 
+\mbox{\Hypertarget{class_nimiq_1_1_nimiq_client_ad9e01f428371db9265af38acc3eb853b}\label{class_nimiq_1_1_nimiq_client_ad9e01f428371db9265af38acc3eb853b}} 
 \index{Nimiq.NimiqClient@{Nimiq.NimiqClient}!BlockNumber@{BlockNumber}}
 \index{BlockNumber@{BlockNumber}!Nimiq.NimiqClient@{Nimiq.NimiqClient}}
 \doxysubsubsection{\texorpdfstring{BlockNumber()}{BlockNumber()}}
-{\footnotesize\ttfamily async Task$<$long$>$ Nimiq.\+Nimiq\+Client.\+Block\+Number (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily long Nimiq.\+Nimiq\+Client.\+Block\+Number (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -172,11 +190,11 @@ Returns the height of most recent block.
 \begin{DoxyReturn}{Returns}
 The current block height the client is on.
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_nimiq_1_1_nimiq_client_a874afb8220ea5d6dd440282c70a8c59c}\label{class_nimiq_1_1_nimiq_client_a874afb8220ea5d6dd440282c70a8c59c}} 
+\mbox{\Hypertarget{class_nimiq_1_1_nimiq_client_ab71744c279e46188392ec95d87f2f269}\label{class_nimiq_1_1_nimiq_client_ab71744c279e46188392ec95d87f2f269}} 
 \index{Nimiq.NimiqClient@{Nimiq.NimiqClient}!Consensus@{Consensus}}
 \index{Consensus@{Consensus}!Nimiq.NimiqClient@{Nimiq.NimiqClient}}
 \doxysubsubsection{\texorpdfstring{Consensus()}{Consensus()}}
-{\footnotesize\ttfamily async Task$<$\mbox{\hyperlink{class_nimiq_1_1_models_1_1_consensus_state}{Consensus\+State}}$>$ Nimiq.\+Nimiq\+Client.\+Consensus (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_nimiq_1_1_models_1_1_consensus_state}{Consensus\+State}} Nimiq.\+Nimiq\+Client.\+Consensus (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -185,31 +203,29 @@ Returns information on the current consensus state.
 \begin{DoxyReturn}{Returns}
 Consensus state. {\ttfamily \char`\"{}established\char`\"{}} is the value for a good state, other values indicate bad.
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_nimiq_1_1_nimiq_client_a495a7cabb906032d3d7090168ec79fdf}\label{class_nimiq_1_1_nimiq_client_a495a7cabb906032d3d7090168ec79fdf}} 
+\mbox{\Hypertarget{class_nimiq_1_1_nimiq_client_ad402a4c6f50e429fbe9f37cbce01dbd1}\label{class_nimiq_1_1_nimiq_client_ad402a4c6f50e429fbe9f37cbce01dbd1}} 
 \index{Nimiq.NimiqClient@{Nimiq.NimiqClient}!Constant@{Constant}}
 \index{Constant@{Constant}!Nimiq.NimiqClient@{Nimiq.NimiqClient}}
 \doxysubsubsection{\texorpdfstring{Constant()}{Constant()}}
-{\footnotesize\ttfamily async Task$<$long$>$ Nimiq.\+Nimiq\+Client.\+Constant (\begin{DoxyParamCaption}\item[{string}]{constant,  }\item[{long?}]{value = {\ttfamily null} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily long Nimiq.\+Nimiq\+Client.\+Constant (\begin{DoxyParamCaption}\item[{string}]{constant }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
-Returns or overrides a constant value. When no parameter is given, it returns the value of the constant. When giving a value as parameter, it sets the constant to the given value. To reset the constant use {\ttfamily reset\+Constant()} instead. 
+Returns or a constant value. 
 
 
 \begin{DoxyParams}{Parameters}
 {\em constant} & The class and name of the constant (format should be {\ttfamily \char`\"{}\+Class.\+C\+O\+N\+S\+T\+A\+N\+T\char`\"{}}).\\
 \hline
-{\em value} & The new value of the constant.\\
-\hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 The value of the constant.
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_nimiq_1_1_nimiq_client_a08f45a56e9850a4b62b84433db2ea2c8}\label{class_nimiq_1_1_nimiq_client_a08f45a56e9850a4b62b84433db2ea2c8}} 
+\mbox{\Hypertarget{class_nimiq_1_1_nimiq_client_aaf4154bc8ca35ff09bca16da815517f4}\label{class_nimiq_1_1_nimiq_client_aaf4154bc8ca35ff09bca16da815517f4}} 
 \index{Nimiq.NimiqClient@{Nimiq.NimiqClient}!CreateAccount@{CreateAccount}}
 \index{CreateAccount@{CreateAccount}!Nimiq.NimiqClient@{Nimiq.NimiqClient}}
 \doxysubsubsection{\texorpdfstring{CreateAccount()}{CreateAccount()}}
-{\footnotesize\ttfamily async Task$<$\mbox{\hyperlink{class_nimiq_1_1_models_1_1_wallet}{Wallet}}$>$ Nimiq.\+Nimiq\+Client.\+Create\+Account (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_nimiq_1_1_models_1_1_wallet}{Wallet}} Nimiq.\+Nimiq\+Client.\+Create\+Account (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -218,11 +234,11 @@ Creates a new account and stores its private key in the client store.
 \begin{DoxyReturn}{Returns}
 Information on the wallet that was created using the command.
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_nimiq_1_1_nimiq_client_a51509a5d5ca01406e9124145cb38d3fe}\label{class_nimiq_1_1_nimiq_client_a51509a5d5ca01406e9124145cb38d3fe}} 
+\mbox{\Hypertarget{class_nimiq_1_1_nimiq_client_a0944b0b18ef10070ce7b0b010d1e2eb2}\label{class_nimiq_1_1_nimiq_client_a0944b0b18ef10070ce7b0b010d1e2eb2}} 
 \index{Nimiq.NimiqClient@{Nimiq.NimiqClient}!CreateRawTransaction@{CreateRawTransaction}}
 \index{CreateRawTransaction@{CreateRawTransaction}!Nimiq.NimiqClient@{Nimiq.NimiqClient}}
 \doxysubsubsection{\texorpdfstring{CreateRawTransaction()}{CreateRawTransaction()}}
-{\footnotesize\ttfamily async Task$<$string$>$ Nimiq.\+Nimiq\+Client.\+Create\+Raw\+Transaction (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_nimiq_1_1_models_1_1_outgoing_transaction}{Outgoing\+Transaction}}}]{transaction }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily string Nimiq.\+Nimiq\+Client.\+Create\+Raw\+Transaction (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_nimiq_1_1_models_1_1_outgoing_transaction}{Outgoing\+Transaction}}}]{transaction }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -236,11 +252,11 @@ Creates and signs a transaction without sending it. The transaction can then be 
 \begin{DoxyReturn}{Returns}
 Hex-\/encoded transaction.
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_nimiq_1_1_nimiq_client_a4e09f0be8c831d5119a8c61f2d6e033b}\label{class_nimiq_1_1_nimiq_client_a4e09f0be8c831d5119a8c61f2d6e033b}} 
+\mbox{\Hypertarget{class_nimiq_1_1_nimiq_client_ab7738e16a445607e15c4c4835bc38c0e}\label{class_nimiq_1_1_nimiq_client_ab7738e16a445607e15c4c4835bc38c0e}} 
 \index{Nimiq.NimiqClient@{Nimiq.NimiqClient}!GetAccount@{GetAccount}}
 \index{GetAccount@{GetAccount}!Nimiq.NimiqClient@{Nimiq.NimiqClient}}
 \doxysubsubsection{\texorpdfstring{GetAccount()}{GetAccount()}}
-{\footnotesize\ttfamily async Task$<$object$>$ Nimiq.\+Nimiq\+Client.\+Get\+Account (\begin{DoxyParamCaption}\item[{string}]{address }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_nimiq_1_1_models_1_1_account}{Account}} Nimiq.\+Nimiq\+Client.\+Get\+Account (\begin{DoxyParamCaption}\item[{string}]{address }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -254,11 +270,11 @@ Returns details for the account of given address.
 \begin{DoxyReturn}{Returns}
 Details about the account. Returns the default empty basic account for non-\/existing accounts.
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_nimiq_1_1_nimiq_client_adc578b2bcf2296ab7a13c550ed87cd7b}\label{class_nimiq_1_1_nimiq_client_adc578b2bcf2296ab7a13c550ed87cd7b}} 
+\mbox{\Hypertarget{class_nimiq_1_1_nimiq_client_a007efe96dadcfbd564784d357ea5bd51}\label{class_nimiq_1_1_nimiq_client_a007efe96dadcfbd564784d357ea5bd51}} 
 \index{Nimiq.NimiqClient@{Nimiq.NimiqClient}!GetBalance@{GetBalance}}
 \index{GetBalance@{GetBalance}!Nimiq.NimiqClient@{Nimiq.NimiqClient}}
 \doxysubsubsection{\texorpdfstring{GetBalance()}{GetBalance()}}
-{\footnotesize\ttfamily async Task$<$long$>$ Nimiq.\+Nimiq\+Client.\+Get\+Balance (\begin{DoxyParamCaption}\item[{string}]{address }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily long Nimiq.\+Nimiq\+Client.\+Get\+Balance (\begin{DoxyParamCaption}\item[{string}]{address }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -272,11 +288,11 @@ Returns the balance of the account of given address.
 \begin{DoxyReturn}{Returns}
 The current balance at the specified address (in smalest unit).
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_nimiq_1_1_nimiq_client_adedd89491cd044fcf4bb81a387ba89bc}\label{class_nimiq_1_1_nimiq_client_adedd89491cd044fcf4bb81a387ba89bc}} 
+\mbox{\Hypertarget{class_nimiq_1_1_nimiq_client_af6ec48de94a80e6e4275dd9b0c2974b5}\label{class_nimiq_1_1_nimiq_client_af6ec48de94a80e6e4275dd9b0c2974b5}} 
 \index{Nimiq.NimiqClient@{Nimiq.NimiqClient}!GetBlockByHash@{GetBlockByHash}}
 \index{GetBlockByHash@{GetBlockByHash}!Nimiq.NimiqClient@{Nimiq.NimiqClient}}
 \doxysubsubsection{\texorpdfstring{GetBlockByHash()}{GetBlockByHash()}}
-{\footnotesize\ttfamily async Task$<$\mbox{\hyperlink{class_nimiq_1_1_models_1_1_block}{Block}}$>$ Nimiq.\+Nimiq\+Client.\+Get\+Block\+By\+Hash (\begin{DoxyParamCaption}\item[{string}]{hash,  }\item[{bool?}]{full\+Transactions = {\ttfamily null} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_nimiq_1_1_models_1_1_block}{Block}} Nimiq.\+Nimiq\+Client.\+Get\+Block\+By\+Hash (\begin{DoxyParamCaption}\item[{string}]{hash,  }\item[{bool?}]{include\+Transactions = {\ttfamily null} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -286,17 +302,17 @@ Returns information about a block by hash.
 \begin{DoxyParams}{Parameters}
 {\em hash} & Hash of the block to gather information on.\\
 \hline
-{\em full\+Transactions} & If {\ttfamily true} it returns the full transaction objects, if {\ttfamily false} only the hashes of the transactions.\\
+{\em include\+Transactions} & If {\ttfamily true} it returns the full transaction objects, if {\ttfamily false} only the hashes of the transactions.\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 A block object or {\ttfamily null} when no block was found.
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_nimiq_1_1_nimiq_client_abc844794e90e0187f6f9bd4cc7c404c5}\label{class_nimiq_1_1_nimiq_client_abc844794e90e0187f6f9bd4cc7c404c5}} 
+\mbox{\Hypertarget{class_nimiq_1_1_nimiq_client_a74df0279ffb270c0c99550fff5c9a75d}\label{class_nimiq_1_1_nimiq_client_a74df0279ffb270c0c99550fff5c9a75d}} 
 \index{Nimiq.NimiqClient@{Nimiq.NimiqClient}!GetBlockByNumber@{GetBlockByNumber}}
 \index{GetBlockByNumber@{GetBlockByNumber}!Nimiq.NimiqClient@{Nimiq.NimiqClient}}
 \doxysubsubsection{\texorpdfstring{GetBlockByNumber()}{GetBlockByNumber()}}
-{\footnotesize\ttfamily async Task$<$\mbox{\hyperlink{class_nimiq_1_1_models_1_1_block}{Block}}$>$ Nimiq.\+Nimiq\+Client.\+Get\+Block\+By\+Number (\begin{DoxyParamCaption}\item[{int}]{height,  }\item[{bool?}]{full\+Transactions = {\ttfamily null} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_nimiq_1_1_models_1_1_block}{Block}} Nimiq.\+Nimiq\+Client.\+Get\+Block\+By\+Number (\begin{DoxyParamCaption}\item[{int}]{height,  }\item[{bool?}]{include\+Transactions = {\ttfamily null} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -306,17 +322,17 @@ Returns information about a block by block number.
 \begin{DoxyParams}{Parameters}
 {\em height} & The height of the block to gather information on.\\
 \hline
-{\em full\+Transactions} & If {\ttfamily true} it returns the full transaction objects, if {\ttfamily false} only the hashes of the transactions.\\
+{\em include\+Transactions} & If {\ttfamily true} it returns the full transaction objects, if {\ttfamily false} only the hashes of the transactions.\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 A block object or {\ttfamily null} when no block was found.
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_nimiq_1_1_nimiq_client_a5aafb71b86064896e0e3bc8ce6b7ee54}\label{class_nimiq_1_1_nimiq_client_a5aafb71b86064896e0e3bc8ce6b7ee54}} 
+\mbox{\Hypertarget{class_nimiq_1_1_nimiq_client_a10c665603dfb71da62ec25fbe7c24bbf}\label{class_nimiq_1_1_nimiq_client_a10c665603dfb71da62ec25fbe7c24bbf}} 
 \index{Nimiq.NimiqClient@{Nimiq.NimiqClient}!GetBlockTemplate@{GetBlockTemplate}}
 \index{GetBlockTemplate@{GetBlockTemplate}!Nimiq.NimiqClient@{Nimiq.NimiqClient}}
 \doxysubsubsection{\texorpdfstring{GetBlockTemplate()}{GetBlockTemplate()}}
-{\footnotesize\ttfamily async Task$<$\mbox{\hyperlink{class_nimiq_1_1_models_1_1_block_template}{Block\+Template}}$>$ Nimiq.\+Nimiq\+Client.\+Get\+Block\+Template (\begin{DoxyParamCaption}\item[{string}]{address = {\ttfamily null},  }\item[{string}]{extra\+Data = {\ttfamily \char`\"{}\char`\"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_nimiq_1_1_models_1_1_block_template}{Block\+Template}} Nimiq.\+Nimiq\+Client.\+Get\+Block\+Template (\begin{DoxyParamCaption}\item[{string}]{address = {\ttfamily null},  }\item[{string}]{extra\+Data = {\ttfamily \char`\"{}\char`\"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -332,11 +348,11 @@ Returns a template to build the next block for mining. This will consider pool i
 \begin{DoxyReturn}{Returns}
 A block template object.
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_nimiq_1_1_nimiq_client_af35c8aa1e414bc728a1596eef40b2f76}\label{class_nimiq_1_1_nimiq_client_af35c8aa1e414bc728a1596eef40b2f76}} 
+\mbox{\Hypertarget{class_nimiq_1_1_nimiq_client_a9892cea9491e7fcf06220199d9fbaeed}\label{class_nimiq_1_1_nimiq_client_a9892cea9491e7fcf06220199d9fbaeed}} 
 \index{Nimiq.NimiqClient@{Nimiq.NimiqClient}!GetBlockTransactionCountByHash@{GetBlockTransactionCountByHash}}
 \index{GetBlockTransactionCountByHash@{GetBlockTransactionCountByHash}!Nimiq.NimiqClient@{Nimiq.NimiqClient}}
 \doxysubsubsection{\texorpdfstring{GetBlockTransactionCountByHash()}{GetBlockTransactionCountByHash()}}
-{\footnotesize\ttfamily async Task$<$long?$>$ Nimiq.\+Nimiq\+Client.\+Get\+Block\+Transaction\+Count\+By\+Hash (\begin{DoxyParamCaption}\item[{string}]{hash }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily long? Nimiq.\+Nimiq\+Client.\+Get\+Block\+Transaction\+Count\+By\+Hash (\begin{DoxyParamCaption}\item[{string}]{hash }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -350,11 +366,11 @@ Returns the number of transactions in a block from a block matching the given bl
 \begin{DoxyReturn}{Returns}
 Number of transactions in the block found, or {\ttfamily null}, when no block was found.
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_nimiq_1_1_nimiq_client_af5396c24dd3c59499b81d5b217ea7a9a}\label{class_nimiq_1_1_nimiq_client_af5396c24dd3c59499b81d5b217ea7a9a}} 
+\mbox{\Hypertarget{class_nimiq_1_1_nimiq_client_a0795e4f7682b1857e006587173ef37bc}\label{class_nimiq_1_1_nimiq_client_a0795e4f7682b1857e006587173ef37bc}} 
 \index{Nimiq.NimiqClient@{Nimiq.NimiqClient}!GetBlockTransactionCountByNumber@{GetBlockTransactionCountByNumber}}
 \index{GetBlockTransactionCountByNumber@{GetBlockTransactionCountByNumber}!Nimiq.NimiqClient@{Nimiq.NimiqClient}}
 \doxysubsubsection{\texorpdfstring{GetBlockTransactionCountByNumber()}{GetBlockTransactionCountByNumber()}}
-{\footnotesize\ttfamily async Task$<$long?$>$ Nimiq.\+Nimiq\+Client.\+Get\+Block\+Transaction\+Count\+By\+Number (\begin{DoxyParamCaption}\item[{long}]{height }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily long? Nimiq.\+Nimiq\+Client.\+Get\+Block\+Transaction\+Count\+By\+Number (\begin{DoxyParamCaption}\item[{long}]{height }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -368,11 +384,11 @@ Returns the number of transactions in a block matching the given block number.
 \begin{DoxyReturn}{Returns}
 Number of transactions in the block found, or {\ttfamily null}, when no block was found.
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_nimiq_1_1_nimiq_client_aac5ec11ef65561744bf50e682c89bd73}\label{class_nimiq_1_1_nimiq_client_aac5ec11ef65561744bf50e682c89bd73}} 
+\mbox{\Hypertarget{class_nimiq_1_1_nimiq_client_a36d590c4faff583a3b9dd7a792951c6b}\label{class_nimiq_1_1_nimiq_client_a36d590c4faff583a3b9dd7a792951c6b}} 
 \index{Nimiq.NimiqClient@{Nimiq.NimiqClient}!GetRawTransactionInfo@{GetRawTransactionInfo}}
 \index{GetRawTransactionInfo@{GetRawTransactionInfo}!Nimiq.NimiqClient@{Nimiq.NimiqClient}}
 \doxysubsubsection{\texorpdfstring{GetRawTransactionInfo()}{GetRawTransactionInfo()}}
-{\footnotesize\ttfamily async Task$<$\mbox{\hyperlink{class_nimiq_1_1_models_1_1_transaction}{Transaction}}$>$ Nimiq.\+Nimiq\+Client.\+Get\+Raw\+Transaction\+Info (\begin{DoxyParamCaption}\item[{string}]{transaction }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_nimiq_1_1_models_1_1_transaction}{Transaction}} Nimiq.\+Nimiq\+Client.\+Get\+Raw\+Transaction\+Info (\begin{DoxyParamCaption}\item[{string}]{transaction }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -386,11 +402,11 @@ Deserializes hex-\/encoded transaction and returns a transaction object.
 \begin{DoxyReturn}{Returns}
 The transaction object.
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_nimiq_1_1_nimiq_client_ab8eed7e4fbb482618fcd791fa9aaa8ee}\label{class_nimiq_1_1_nimiq_client_ab8eed7e4fbb482618fcd791fa9aaa8ee}} 
+\mbox{\Hypertarget{class_nimiq_1_1_nimiq_client_a917a4d94038867d86a3c79d55269f06a}\label{class_nimiq_1_1_nimiq_client_a917a4d94038867d86a3c79d55269f06a}} 
 \index{Nimiq.NimiqClient@{Nimiq.NimiqClient}!GetTransactionByBlockHashAndIndex@{GetTransactionByBlockHashAndIndex}}
 \index{GetTransactionByBlockHashAndIndex@{GetTransactionByBlockHashAndIndex}!Nimiq.NimiqClient@{Nimiq.NimiqClient}}
 \doxysubsubsection{\texorpdfstring{GetTransactionByBlockHashAndIndex()}{GetTransactionByBlockHashAndIndex()}}
-{\footnotesize\ttfamily async Task$<$\mbox{\hyperlink{class_nimiq_1_1_models_1_1_transaction}{Transaction}}$>$ Nimiq.\+Nimiq\+Client.\+Get\+Transaction\+By\+Block\+Hash\+And\+Index (\begin{DoxyParamCaption}\item[{string}]{hash,  }\item[{long}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_nimiq_1_1_models_1_1_transaction}{Transaction}} Nimiq.\+Nimiq\+Client.\+Get\+Transaction\+By\+Block\+Hash\+And\+Index (\begin{DoxyParamCaption}\item[{string}]{hash,  }\item[{long}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -406,11 +422,11 @@ Returns information about a transaction by block hash and transaction index posi
 \begin{DoxyReturn}{Returns}
 A transaction object or {\ttfamily null} when no transaction was found.
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_nimiq_1_1_nimiq_client_ad8e43453367e3890242c3884c326d8f3}\label{class_nimiq_1_1_nimiq_client_ad8e43453367e3890242c3884c326d8f3}} 
+\mbox{\Hypertarget{class_nimiq_1_1_nimiq_client_a3171b8cc6e7b4accc739c311971ae32a}\label{class_nimiq_1_1_nimiq_client_a3171b8cc6e7b4accc739c311971ae32a}} 
 \index{Nimiq.NimiqClient@{Nimiq.NimiqClient}!GetTransactionByBlockNumberAndIndex@{GetTransactionByBlockNumberAndIndex}}
 \index{GetTransactionByBlockNumberAndIndex@{GetTransactionByBlockNumberAndIndex}!Nimiq.NimiqClient@{Nimiq.NimiqClient}}
 \doxysubsubsection{\texorpdfstring{GetTransactionByBlockNumberAndIndex()}{GetTransactionByBlockNumberAndIndex()}}
-{\footnotesize\ttfamily async Task$<$\mbox{\hyperlink{class_nimiq_1_1_models_1_1_transaction}{Transaction}}$>$ Nimiq.\+Nimiq\+Client.\+Get\+Transaction\+By\+Block\+Number\+And\+Index (\begin{DoxyParamCaption}\item[{long}]{height,  }\item[{long}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_nimiq_1_1_models_1_1_transaction}{Transaction}} Nimiq.\+Nimiq\+Client.\+Get\+Transaction\+By\+Block\+Number\+And\+Index (\begin{DoxyParamCaption}\item[{long}]{height,  }\item[{long}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -426,11 +442,11 @@ Returns information about a transaction by block number and transaction index po
 \begin{DoxyReturn}{Returns}
 A transaction object or {\ttfamily null} when no transaction was found.
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_nimiq_1_1_nimiq_client_aa235af325251828cca93f96c8cd41969}\label{class_nimiq_1_1_nimiq_client_aa235af325251828cca93f96c8cd41969}} 
+\mbox{\Hypertarget{class_nimiq_1_1_nimiq_client_aca802d03b4f5634c89c36a177765fb21}\label{class_nimiq_1_1_nimiq_client_aca802d03b4f5634c89c36a177765fb21}} 
 \index{Nimiq.NimiqClient@{Nimiq.NimiqClient}!GetTransactionByHash@{GetTransactionByHash}}
 \index{GetTransactionByHash@{GetTransactionByHash}!Nimiq.NimiqClient@{Nimiq.NimiqClient}}
 \doxysubsubsection{\texorpdfstring{GetTransactionByHash()}{GetTransactionByHash()}}
-{\footnotesize\ttfamily async Task$<$\mbox{\hyperlink{class_nimiq_1_1_models_1_1_transaction}{Transaction}}$>$ Nimiq.\+Nimiq\+Client.\+Get\+Transaction\+By\+Hash (\begin{DoxyParamCaption}\item[{string}]{hash }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_nimiq_1_1_models_1_1_transaction}{Transaction}} Nimiq.\+Nimiq\+Client.\+Get\+Transaction\+By\+Hash (\begin{DoxyParamCaption}\item[{string}]{hash }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -444,11 +460,11 @@ Returns the information about a transaction requested by transaction hash.
 \begin{DoxyReturn}{Returns}
 A transaction object or {\ttfamily null} when no transaction was found.
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_nimiq_1_1_nimiq_client_a2b037b2f0a6e2739dc07555363c297ce}\label{class_nimiq_1_1_nimiq_client_a2b037b2f0a6e2739dc07555363c297ce}} 
+\mbox{\Hypertarget{class_nimiq_1_1_nimiq_client_a2d05d1ca7bbac1afad6f6a9e52f70cfd}\label{class_nimiq_1_1_nimiq_client_a2d05d1ca7bbac1afad6f6a9e52f70cfd}} 
 \index{Nimiq.NimiqClient@{Nimiq.NimiqClient}!GetTransactionReceipt@{GetTransactionReceipt}}
 \index{GetTransactionReceipt@{GetTransactionReceipt}!Nimiq.NimiqClient@{Nimiq.NimiqClient}}
 \doxysubsubsection{\texorpdfstring{GetTransactionReceipt()}{GetTransactionReceipt()}}
-{\footnotesize\ttfamily async Task$<$\mbox{\hyperlink{class_nimiq_1_1_models_1_1_transaction_receipt}{Transaction\+Receipt}}$>$ Nimiq.\+Nimiq\+Client.\+Get\+Transaction\+Receipt (\begin{DoxyParamCaption}\item[{string}]{hash }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_nimiq_1_1_models_1_1_transaction_receipt}{Transaction\+Receipt}} Nimiq.\+Nimiq\+Client.\+Get\+Transaction\+Receipt (\begin{DoxyParamCaption}\item[{string}]{hash }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -462,11 +478,11 @@ Returns the receipt of a transaction by transaction hash.
 \begin{DoxyReturn}{Returns}
 A transaction receipt object, or {\ttfamily null} when no receipt was found.
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_nimiq_1_1_nimiq_client_af2b459bd7373c7a156639b3313052730}\label{class_nimiq_1_1_nimiq_client_af2b459bd7373c7a156639b3313052730}} 
+\mbox{\Hypertarget{class_nimiq_1_1_nimiq_client_ade2747056887c15a3f994df8f798de53}\label{class_nimiq_1_1_nimiq_client_ade2747056887c15a3f994df8f798de53}} 
 \index{Nimiq.NimiqClient@{Nimiq.NimiqClient}!GetTransactionsByAddress@{GetTransactionsByAddress}}
 \index{GetTransactionsByAddress@{GetTransactionsByAddress}!Nimiq.NimiqClient@{Nimiq.NimiqClient}}
 \doxysubsubsection{\texorpdfstring{GetTransactionsByAddress()}{GetTransactionsByAddress()}}
-{\footnotesize\ttfamily async Task$<$\mbox{\hyperlink{class_nimiq_1_1_models_1_1_transaction}{Transaction}}\mbox{[}$\,$\mbox{]}$>$ Nimiq.\+Nimiq\+Client.\+Get\+Transactions\+By\+Address (\begin{DoxyParamCaption}\item[{string}]{address,  }\item[{long?}]{number\+Of\+Transactions = {\ttfamily null} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_nimiq_1_1_models_1_1_transaction}{Transaction}} \mbox{[}$\,$\mbox{]} Nimiq.\+Nimiq\+Client.\+Get\+Transactions\+By\+Address (\begin{DoxyParamCaption}\item[{string}]{address,  }\item[{long?}]{number\+Of\+Transactions = {\ttfamily null} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -482,11 +498,11 @@ Returns the latest transactions successfully performed by or for an address. Not
 \begin{DoxyReturn}{Returns}
 Array of transactions linked to the requested address.
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_nimiq_1_1_nimiq_client_a57b8673c46b9c490f33176f0990a8653}\label{class_nimiq_1_1_nimiq_client_a57b8673c46b9c490f33176f0990a8653}} 
+\mbox{\Hypertarget{class_nimiq_1_1_nimiq_client_a66543dc2215166dcb9fc34fba760738f}\label{class_nimiq_1_1_nimiq_client_a66543dc2215166dcb9fc34fba760738f}} 
 \index{Nimiq.NimiqClient@{Nimiq.NimiqClient}!GetWork@{GetWork}}
 \index{GetWork@{GetWork}!Nimiq.NimiqClient@{Nimiq.NimiqClient}}
 \doxysubsubsection{\texorpdfstring{GetWork()}{GetWork()}}
-{\footnotesize\ttfamily async Task$<$\mbox{\hyperlink{class_nimiq_1_1_models_1_1_work_instructions}{Work\+Instructions}}$>$ Nimiq.\+Nimiq\+Client.\+Get\+Work (\begin{DoxyParamCaption}\item[{string}]{address = {\ttfamily null},  }\item[{string}]{extra\+Data = {\ttfamily \char`\"{}\char`\"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_nimiq_1_1_models_1_1_work_instructions}{Work\+Instructions}} Nimiq.\+Nimiq\+Client.\+Get\+Work (\begin{DoxyParamCaption}\item[{string}]{address = {\ttfamily null},  }\item[{string}]{extra\+Data = {\ttfamily \char`\"{}\char`\"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -502,11 +518,11 @@ Returns instructions to mine the next block. This will consider pool instruction
 \begin{DoxyReturn}{Returns}
 Mining work instructions.
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_nimiq_1_1_nimiq_client_a849a76a69a15b99deed0d3d6a29384f9}\label{class_nimiq_1_1_nimiq_client_a849a76a69a15b99deed0d3d6a29384f9}} 
+\mbox{\Hypertarget{class_nimiq_1_1_nimiq_client_afdeed8433c9383568f8d6ccf8472fb9a}\label{class_nimiq_1_1_nimiq_client_afdeed8433c9383568f8d6ccf8472fb9a}} 
 \index{Nimiq.NimiqClient@{Nimiq.NimiqClient}!Hashrate@{Hashrate}}
 \index{Hashrate@{Hashrate}!Nimiq.NimiqClient@{Nimiq.NimiqClient}}
 \doxysubsubsection{\texorpdfstring{Hashrate()}{Hashrate()}}
-{\footnotesize\ttfamily async Task$<$double$>$ Nimiq.\+Nimiq\+Client.\+Hashrate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily double Nimiq.\+Nimiq\+Client.\+Hashrate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -515,11 +531,238 @@ Returns the number of hashes per second that the node is mining with.
 \begin{DoxyReturn}{Returns}
 Number of hashes per second.
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_nimiq_1_1_nimiq_client_a3d2643eb8363e9103af9452b861ba35b}\label{class_nimiq_1_1_nimiq_client_a3d2643eb8363e9103af9452b861ba35b}} 
-\index{Nimiq.NimiqClient@{Nimiq.NimiqClient}!Log@{Log}}
-\index{Log@{Log}!Nimiq.NimiqClient@{Nimiq.NimiqClient}}
-\doxysubsubsection{\texorpdfstring{Log()}{Log()}}
-{\footnotesize\ttfamily async Task$<$bool$>$ Nimiq.\+Nimiq\+Client.\+Log (\begin{DoxyParamCaption}\item[{string}]{tag,  }\item[{\mbox{\hyperlink{class_nimiq_1_1_log_level}{Log\+Level}}}]{level }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+\mbox{\Hypertarget{class_nimiq_1_1_nimiq_client_a681e8e470f65c529745f29352fdc5fc8}\label{class_nimiq_1_1_nimiq_client_a681e8e470f65c529745f29352fdc5fc8}} 
+\index{Nimiq.NimiqClient@{Nimiq.NimiqClient}!IsMining@{IsMining}}
+\index{IsMining@{IsMining}!Nimiq.NimiqClient@{Nimiq.NimiqClient}}
+\doxysubsubsection{\texorpdfstring{IsMining()}{IsMining()}}
+{\footnotesize\ttfamily bool Nimiq.\+Nimiq\+Client.\+Is\+Mining (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns true if client is actively mining new blocks. 
+
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if the client is mining, otherwise {\ttfamily false}.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_nimiq_1_1_nimiq_client_a406cee011062c530d61cdc7df202d507}\label{class_nimiq_1_1_nimiq_client_a406cee011062c530d61cdc7df202d507}} 
+\index{Nimiq.NimiqClient@{Nimiq.NimiqClient}!Mempool@{Mempool}}
+\index{Mempool@{Mempool}!Nimiq.NimiqClient@{Nimiq.NimiqClient}}
+\doxysubsubsection{\texorpdfstring{Mempool()}{Mempool()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_nimiq_1_1_models_1_1_mempool_info}{Mempool\+Info}} Nimiq.\+Nimiq\+Client.\+Mempool (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns information on the current mempool situation. This will provide an overview of the number of transactions sorted into buckets based on their fee per byte (in smallest unit). 
+
+\begin{DoxyReturn}{Returns}
+Mempool information.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_nimiq_1_1_nimiq_client_af1783f55e36c428ee914526a6fa14c29}\label{class_nimiq_1_1_nimiq_client_af1783f55e36c428ee914526a6fa14c29}} 
+\index{Nimiq.NimiqClient@{Nimiq.NimiqClient}!MempoolContent@{MempoolContent}}
+\index{MempoolContent@{MempoolContent}!Nimiq.NimiqClient@{Nimiq.NimiqClient}}
+\doxysubsubsection{\texorpdfstring{MempoolContent()}{MempoolContent()}}
+{\footnotesize\ttfamily object \mbox{[}$\,$\mbox{]} Nimiq.\+Nimiq\+Client.\+Mempool\+Content (\begin{DoxyParamCaption}\item[{bool?}]{include\+Transactions = {\ttfamily null} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns transactions that are currently in the mempool. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em include\+Transactions} & If {\ttfamily true} includes full transactions, if {\ttfamily false} includes only transaction hashes.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Array of transactions (either represented by the transaction hash or a transaction object).
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_nimiq_1_1_nimiq_client_a81eed994630b5edcdb3870d137d5c1e2}\label{class_nimiq_1_1_nimiq_client_a81eed994630b5edcdb3870d137d5c1e2}} 
+\index{Nimiq.NimiqClient@{Nimiq.NimiqClient}!MinerAddress@{MinerAddress}}
+\index{MinerAddress@{MinerAddress}!Nimiq.NimiqClient@{Nimiq.NimiqClient}}
+\doxysubsubsection{\texorpdfstring{MinerAddress()}{MinerAddress()}}
+{\footnotesize\ttfamily string Nimiq.\+Nimiq\+Client.\+Miner\+Address (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the miner address. 
+
+\begin{DoxyReturn}{Returns}
+The miner address configured on the node.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_nimiq_1_1_nimiq_client_a6bffd36089a6ae6c6af41834e17c97ac}\label{class_nimiq_1_1_nimiq_client_a6bffd36089a6ae6c6af41834e17c97ac}} 
+\index{Nimiq.NimiqClient@{Nimiq.NimiqClient}!MinFeePerByte@{MinFeePerByte}}
+\index{MinFeePerByte@{MinFeePerByte}!Nimiq.NimiqClient@{Nimiq.NimiqClient}}
+\doxysubsubsection{\texorpdfstring{MinFeePerByte()}{MinFeePerByte()}}
+{\footnotesize\ttfamily int Nimiq.\+Nimiq\+Client.\+Min\+Fee\+Per\+Byte (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the minimum fee per byte. 
+
+\begin{DoxyReturn}{Returns}
+The minimum fee per byte.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_nimiq_1_1_nimiq_client_a36829a0773d4161a2e877c31c7bb7f25}\label{class_nimiq_1_1_nimiq_client_a36829a0773d4161a2e877c31c7bb7f25}} 
+\index{Nimiq.NimiqClient@{Nimiq.NimiqClient}!PeerCount@{PeerCount}}
+\index{PeerCount@{PeerCount}!Nimiq.NimiqClient@{Nimiq.NimiqClient}}
+\doxysubsubsection{\texorpdfstring{PeerCount()}{PeerCount()}}
+{\footnotesize\ttfamily int Nimiq.\+Nimiq\+Client.\+Peer\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns number of peers currently connected to the client. 
+
+\begin{DoxyReturn}{Returns}
+Number of connected peers.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_nimiq_1_1_nimiq_client_a3313e6c25c3528926ec713954d406df6}\label{class_nimiq_1_1_nimiq_client_a3313e6c25c3528926ec713954d406df6}} 
+\index{Nimiq.NimiqClient@{Nimiq.NimiqClient}!PeerList@{PeerList}}
+\index{PeerList@{PeerList}!Nimiq.NimiqClient@{Nimiq.NimiqClient}}
+\doxysubsubsection{\texorpdfstring{PeerList()}{PeerList()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_nimiq_1_1_models_1_1_peer}{Peer}} \mbox{[}$\,$\mbox{]} Nimiq.\+Nimiq\+Client.\+Peer\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns list of peers known to the client. 
+
+\begin{DoxyReturn}{Returns}
+The list of peers.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_nimiq_1_1_nimiq_client_a8cf25ae1161dccf2a31ae137cfa2787f}\label{class_nimiq_1_1_nimiq_client_a8cf25ae1161dccf2a31ae137cfa2787f}} 
+\index{Nimiq.NimiqClient@{Nimiq.NimiqClient}!PeerState@{PeerState}}
+\index{PeerState@{PeerState}!Nimiq.NimiqClient@{Nimiq.NimiqClient}}
+\doxysubsubsection{\texorpdfstring{PeerState()}{PeerState()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_nimiq_1_1_models_1_1_peer}{Peer}} Nimiq.\+Nimiq\+Client.\+Peer\+State (\begin{DoxyParamCaption}\item[{string}]{address }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the state of the peer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em address} & The address of the peer.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The current state of the peer.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_nimiq_1_1_nimiq_client_a405a2c394c1c76214dac82dfdafae12b}\label{class_nimiq_1_1_nimiq_client_a405a2c394c1c76214dac82dfdafae12b}} 
+\index{Nimiq.NimiqClient@{Nimiq.NimiqClient}!Pool@{Pool}}
+\index{Pool@{Pool}!Nimiq.NimiqClient@{Nimiq.NimiqClient}}
+\doxysubsubsection{\texorpdfstring{Pool()}{Pool()}}
+{\footnotesize\ttfamily string Nimiq.\+Nimiq\+Client.\+Pool (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns mining pool. 
+
+\begin{DoxyReturn}{Returns}
+The mining pool connection string, or {\ttfamily null} if not enabled.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_nimiq_1_1_nimiq_client_a5ab56b71e1018e5a3c320c63f3b6dc97}\label{class_nimiq_1_1_nimiq_client_a5ab56b71e1018e5a3c320c63f3b6dc97}} 
+\index{Nimiq.NimiqClient@{Nimiq.NimiqClient}!PoolConfirmedBalance@{PoolConfirmedBalance}}
+\index{PoolConfirmedBalance@{PoolConfirmedBalance}!Nimiq.NimiqClient@{Nimiq.NimiqClient}}
+\doxysubsubsection{\texorpdfstring{PoolConfirmedBalance()}{PoolConfirmedBalance()}}
+{\footnotesize\ttfamily int Nimiq.\+Nimiq\+Client.\+Pool\+Confirmed\+Balance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the confirmed mining pool balance. 
+
+\begin{DoxyReturn}{Returns}
+The confirmed mining pool balance (in smallest unit).
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_nimiq_1_1_nimiq_client_afeb2163c9cca06dd7b4a2e4aa994bc85}\label{class_nimiq_1_1_nimiq_client_afeb2163c9cca06dd7b4a2e4aa994bc85}} 
+\index{Nimiq.NimiqClient@{Nimiq.NimiqClient}!PoolConnectionState@{PoolConnectionState}}
+\index{PoolConnectionState@{PoolConnectionState}!Nimiq.NimiqClient@{Nimiq.NimiqClient}}
+\doxysubsubsection{\texorpdfstring{PoolConnectionState()}{PoolConnectionState()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespace_nimiq_1_1_models_ae75833b733e900ddc9b0d49b3e1957b9}{Pool\+Connection\+State}} Nimiq.\+Nimiq\+Client.\+Pool\+Connection\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the connection state to mining pool. 
+
+\begin{DoxyReturn}{Returns}
+The mining pool connection state.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_nimiq_1_1_nimiq_client_a520d250356447888a80c06c5abb5a3c5}\label{class_nimiq_1_1_nimiq_client_a520d250356447888a80c06c5abb5a3c5}} 
+\index{Nimiq.NimiqClient@{Nimiq.NimiqClient}!ResetConstant@{ResetConstant}}
+\index{ResetConstant@{ResetConstant}!Nimiq.NimiqClient@{Nimiq.NimiqClient}}
+\doxysubsubsection{\texorpdfstring{ResetConstant()}{ResetConstant()}}
+{\footnotesize\ttfamily long Nimiq.\+Nimiq\+Client.\+Reset\+Constant (\begin{DoxyParamCaption}\item[{string}]{constant }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Resets the constant to default value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em constant} & Name of the constant.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The new value of the constant.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_nimiq_1_1_nimiq_client_a8d883e595cc5e598d1716cc867959073}\label{class_nimiq_1_1_nimiq_client_a8d883e595cc5e598d1716cc867959073}} 
+\index{Nimiq.NimiqClient@{Nimiq.NimiqClient}!SendRawTransaction@{SendRawTransaction}}
+\index{SendRawTransaction@{SendRawTransaction}!Nimiq.NimiqClient@{Nimiq.NimiqClient}}
+\doxysubsubsection{\texorpdfstring{SendRawTransaction()}{SendRawTransaction()}}
+{\footnotesize\ttfamily string Nimiq.\+Nimiq\+Client.\+Send\+Raw\+Transaction (\begin{DoxyParamCaption}\item[{string}]{transaction }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sends a signed message call transaction or a contract creation, if the data field contains code. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em transaction} & The hex encoded signed transaction\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The Hex-\/encoded transaction hash.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_nimiq_1_1_nimiq_client_a2e986d6092137a05d1199b9bd55c8b92}\label{class_nimiq_1_1_nimiq_client_a2e986d6092137a05d1199b9bd55c8b92}} 
+\index{Nimiq.NimiqClient@{Nimiq.NimiqClient}!SendTransaction@{SendTransaction}}
+\index{SendTransaction@{SendTransaction}!Nimiq.NimiqClient@{Nimiq.NimiqClient}}
+\doxysubsubsection{\texorpdfstring{SendTransaction()}{SendTransaction()}}
+{\footnotesize\ttfamily string Nimiq.\+Nimiq\+Client.\+Send\+Transaction (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_nimiq_1_1_models_1_1_outgoing_transaction}{Outgoing\+Transaction}}}]{transaction }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Creates new message call transaction or a contract creation, if the data field contains code. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em transaction} & The hex encoded signed transaction\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The Hex-\/encoded transaction hash.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_nimiq_1_1_nimiq_client_a3c3cb56265da8f027a6c4c385e5b8bad}\label{class_nimiq_1_1_nimiq_client_a3c3cb56265da8f027a6c4c385e5b8bad}} 
+\index{Nimiq.NimiqClient@{Nimiq.NimiqClient}!SetConstant@{SetConstant}}
+\index{SetConstant@{SetConstant}!Nimiq.NimiqClient@{Nimiq.NimiqClient}}
+\doxysubsubsection{\texorpdfstring{SetConstant()}{SetConstant()}}
+{\footnotesize\ttfamily long Nimiq.\+Nimiq\+Client.\+Set\+Constant (\begin{DoxyParamCaption}\item[{string}]{constant,  }\item[{long}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the constant to the given value. To reset the constant use {\ttfamily \mbox{\hyperlink{class_nimiq_1_1_nimiq_client_a520d250356447888a80c06c5abb5a3c5}{Reset\+Constant()}}} instead. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em constant} & The class and name of the constant (format should be {\ttfamily \char`\"{}\+Class.\+C\+O\+N\+S\+T\+A\+N\+T\char`\"{}}).\\
+\hline
+{\em value} & The new value of the constant.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The value of the constant.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_nimiq_1_1_nimiq_client_a1d7bbee99a15ab60dc4b119a341198b7}\label{class_nimiq_1_1_nimiq_client_a1d7bbee99a15ab60dc4b119a341198b7}} 
+\index{Nimiq.NimiqClient@{Nimiq.NimiqClient}!SetLog@{SetLog}}
+\index{SetLog@{SetLog}!Nimiq.NimiqClient@{Nimiq.NimiqClient}}
+\doxysubsubsection{\texorpdfstring{SetLog()}{SetLog()}}
+{\footnotesize\ttfamily bool Nimiq.\+Nimiq\+Client.\+Set\+Log (\begin{DoxyParamCaption}\item[{string}]{tag,  }\item[{\mbox{\hyperlink{class_nimiq_1_1_models_1_1_log_level}{Log\+Level}}}]{level }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -535,77 +778,33 @@ Sets the log level of the node.
 \begin{DoxyReturn}{Returns}
 {\ttfamily true} if the log level was changed, {\ttfamily false} otherwise.
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_nimiq_1_1_nimiq_client_ac5905b71554025ca9e4129142310463b}\label{class_nimiq_1_1_nimiq_client_ac5905b71554025ca9e4129142310463b}} 
-\index{Nimiq.NimiqClient@{Nimiq.NimiqClient}!Mempool@{Mempool}}
-\index{Mempool@{Mempool}!Nimiq.NimiqClient@{Nimiq.NimiqClient}}
-\doxysubsubsection{\texorpdfstring{Mempool()}{Mempool()}}
-{\footnotesize\ttfamily async Task$<$\mbox{\hyperlink{class_nimiq_1_1_models_1_1_mempool_info}{Mempool\+Info}}$>$ Nimiq.\+Nimiq\+Client.\+Mempool (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+\mbox{\Hypertarget{class_nimiq_1_1_nimiq_client_a7e35a382ec2d040c858b05331d022e3b}\label{class_nimiq_1_1_nimiq_client_a7e35a382ec2d040c858b05331d022e3b}} 
+\index{Nimiq.NimiqClient@{Nimiq.NimiqClient}!SetMinerThreads@{SetMinerThreads}}
+\index{SetMinerThreads@{SetMinerThreads}!Nimiq.NimiqClient@{Nimiq.NimiqClient}}
+\doxysubsubsection{\texorpdfstring{SetMinerThreads()}{SetMinerThreads()}}
+{\footnotesize\ttfamily int Nimiq.\+Nimiq\+Client.\+Set\+Miner\+Threads (\begin{DoxyParamCaption}\item[{long}]{threads }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
-Returns information on the current mempool situation. This will provide an overview of the number of transactions sorted into buckets based on their fee per byte (in smallest unit). 
-
-\begin{DoxyReturn}{Returns}
-Mempool information.
-\end{DoxyReturn}
-\mbox{\Hypertarget{class_nimiq_1_1_nimiq_client_a85a5d3bf2ea9e9404fe8088ad787f8d4}\label{class_nimiq_1_1_nimiq_client_a85a5d3bf2ea9e9404fe8088ad787f8d4}} 
-\index{Nimiq.NimiqClient@{Nimiq.NimiqClient}!MempoolContent@{MempoolContent}}
-\index{MempoolContent@{MempoolContent}!Nimiq.NimiqClient@{Nimiq.NimiqClient}}
-\doxysubsubsection{\texorpdfstring{MempoolContent()}{MempoolContent()}}
-{\footnotesize\ttfamily async Task$<$object\mbox{[}$\,$\mbox{]}$>$ Nimiq.\+Nimiq\+Client.\+Mempool\+Content (\begin{DoxyParamCaption}\item[{bool?}]{full\+Transactions = {\ttfamily null} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
-
-
-
-Returns transactions that are currently in the mempool. 
+Sets the number of C\+PU threads for the miner. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em full\+Transactions} & If {\ttfamily true} includes full transactions, if {\ttfamily false} includes only transaction hashes.\\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-Array of transactions (either represented by the transaction hash or a transaction object).
-\end{DoxyReturn}
-\mbox{\Hypertarget{class_nimiq_1_1_nimiq_client_a6f437f7cd19ef57cd9535e5e0b8f7b37}\label{class_nimiq_1_1_nimiq_client_a6f437f7cd19ef57cd9535e5e0b8f7b37}} 
-\index{Nimiq.NimiqClient@{Nimiq.NimiqClient}!MinerAddress@{MinerAddress}}
-\index{MinerAddress@{MinerAddress}!Nimiq.NimiqClient@{Nimiq.NimiqClient}}
-\doxysubsubsection{\texorpdfstring{MinerAddress()}{MinerAddress()}}
-{\footnotesize\ttfamily async Task$<$string$>$ Nimiq.\+Nimiq\+Client.\+Miner\+Address (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
-
-
-
-Returns the miner address. 
-
-\begin{DoxyReturn}{Returns}
-The miner address configured on the node.
-\end{DoxyReturn}
-\mbox{\Hypertarget{class_nimiq_1_1_nimiq_client_a9e6e80ee69961d6bcf9d981814b50cd1}\label{class_nimiq_1_1_nimiq_client_a9e6e80ee69961d6bcf9d981814b50cd1}} 
-\index{Nimiq.NimiqClient@{Nimiq.NimiqClient}!MinerThreads@{MinerThreads}}
-\index{MinerThreads@{MinerThreads}!Nimiq.NimiqClient@{Nimiq.NimiqClient}}
-\doxysubsubsection{\texorpdfstring{MinerThreads()}{MinerThreads()}}
-{\footnotesize\ttfamily async Task$<$int$>$ Nimiq.\+Nimiq\+Client.\+Miner\+Threads (\begin{DoxyParamCaption}\item[{long?}]{threads = {\ttfamily null} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
-
-
-
-Returns or sets the number of C\+PU threads for the miner. When no parameter is given, it returns the current number of miner threads. When a value is given as parameter, it sets the number of miner threads to that value. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em threads} & The number of threads to allocate for mining.\\
+{\em threads} & The new number of threads to allocate for mining.\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 The number of threads allocated for mining.
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_nimiq_1_1_nimiq_client_a9683dd6758d88eaa5427eefde77e60b2}\label{class_nimiq_1_1_nimiq_client_a9683dd6758d88eaa5427eefde77e60b2}} 
-\index{Nimiq.NimiqClient@{Nimiq.NimiqClient}!MinFeePerByte@{MinFeePerByte}}
-\index{MinFeePerByte@{MinFeePerByte}!Nimiq.NimiqClient@{Nimiq.NimiqClient}}
-\doxysubsubsection{\texorpdfstring{MinFeePerByte()}{MinFeePerByte()}}
-{\footnotesize\ttfamily async Task$<$int$>$ Nimiq.\+Nimiq\+Client.\+Min\+Fee\+Per\+Byte (\begin{DoxyParamCaption}\item[{int?}]{fee = {\ttfamily null} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+\mbox{\Hypertarget{class_nimiq_1_1_nimiq_client_ae9c610f8f60ee2e9eca200d746371d4c}\label{class_nimiq_1_1_nimiq_client_ae9c610f8f60ee2e9eca200d746371d4c}} 
+\index{Nimiq.NimiqClient@{Nimiq.NimiqClient}!SetMinFeePerByte@{SetMinFeePerByte}}
+\index{SetMinFeePerByte@{SetMinFeePerByte}!Nimiq.NimiqClient@{Nimiq.NimiqClient}}
+\doxysubsubsection{\texorpdfstring{SetMinFeePerByte()}{SetMinFeePerByte()}}
+{\footnotesize\ttfamily int Nimiq.\+Nimiq\+Client.\+Set\+Min\+Fee\+Per\+Byte (\begin{DoxyParamCaption}\item[{int}]{fee }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
-Returns or sets the minimum fee per byte. When no parameter is given, it returns the current minimum fee per byte. When a value is given as parameter, it sets the minimum fee per byte to that value. 
+Sets the minimum fee per byte. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -615,79 +814,53 @@ Returns or sets the minimum fee per byte. When no parameter is given, it returns
 \begin{DoxyReturn}{Returns}
 The new minimum fee per byte.
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_nimiq_1_1_nimiq_client_a595c18d437face55f1fc2b3476d45750}\label{class_nimiq_1_1_nimiq_client_a595c18d437face55f1fc2b3476d45750}} 
-\index{Nimiq.NimiqClient@{Nimiq.NimiqClient}!Mining@{Mining}}
-\index{Mining@{Mining}!Nimiq.NimiqClient@{Nimiq.NimiqClient}}
-\doxysubsubsection{\texorpdfstring{Mining()}{Mining()}}
-{\footnotesize\ttfamily async Task$<$bool$>$ Nimiq.\+Nimiq\+Client.\+Mining (\begin{DoxyParamCaption}\item[{bool?}]{state = {\ttfamily null} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+\mbox{\Hypertarget{class_nimiq_1_1_nimiq_client_ad460dbd39414fa97b0c39b0e2727692e}\label{class_nimiq_1_1_nimiq_client_ad460dbd39414fa97b0c39b0e2727692e}} 
+\index{Nimiq.NimiqClient@{Nimiq.NimiqClient}!SetMining@{SetMining}}
+\index{SetMining@{SetMining}!Nimiq.NimiqClient@{Nimiq.NimiqClient}}
+\doxysubsubsection{\texorpdfstring{SetMining()}{SetMining()}}
+{\footnotesize\ttfamily bool Nimiq.\+Nimiq\+Client.\+Set\+Mining (\begin{DoxyParamCaption}\item[{bool}]{state }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
-Returns true if client is actively mining new blocks. When no parameter is given, it returns the current state. When a value is given as parameter, it sets the current state to that value. 
+Sets the current mining state to that value. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em state} & The state to be set.\\
+{\em state} & The new state to be set.\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 {\ttfamily true} if the client is mining, otherwise {\ttfamily false}.
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_nimiq_1_1_nimiq_client_a343f1d3cd57ff2d34191728df40e4bf2}\label{class_nimiq_1_1_nimiq_client_a343f1d3cd57ff2d34191728df40e4bf2}} 
-\index{Nimiq.NimiqClient@{Nimiq.NimiqClient}!PeerCount@{PeerCount}}
-\index{PeerCount@{PeerCount}!Nimiq.NimiqClient@{Nimiq.NimiqClient}}
-\doxysubsubsection{\texorpdfstring{PeerCount()}{PeerCount()}}
-{\footnotesize\ttfamily async Task$<$int$>$ Nimiq.\+Nimiq\+Client.\+Peer\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+\mbox{\Hypertarget{class_nimiq_1_1_nimiq_client_ad1cebae8723e6c3be9a40f7dc04fefda}\label{class_nimiq_1_1_nimiq_client_ad1cebae8723e6c3be9a40f7dc04fefda}} 
+\index{Nimiq.NimiqClient@{Nimiq.NimiqClient}!SetPeerState@{SetPeerState}}
+\index{SetPeerState@{SetPeerState}!Nimiq.NimiqClient@{Nimiq.NimiqClient}}
+\doxysubsubsection{\texorpdfstring{SetPeerState()}{SetPeerState()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_nimiq_1_1_models_1_1_peer}{Peer}} Nimiq.\+Nimiq\+Client.\+Set\+Peer\+State (\begin{DoxyParamCaption}\item[{string}]{address,  }\item[{\mbox{\hyperlink{class_nimiq_1_1_models_1_1_peer_state_command}{Peer\+State\+Command}}}]{command }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
-Returns number of peers currently connected to the client. 
-
-\begin{DoxyReturn}{Returns}
-Number of connected peers.
-\end{DoxyReturn}
-\mbox{\Hypertarget{class_nimiq_1_1_nimiq_client_a476735aa6573a401339f2551f7fb6a11}\label{class_nimiq_1_1_nimiq_client_a476735aa6573a401339f2551f7fb6a11}} 
-\index{Nimiq.NimiqClient@{Nimiq.NimiqClient}!PeerList@{PeerList}}
-\index{PeerList@{PeerList}!Nimiq.NimiqClient@{Nimiq.NimiqClient}}
-\doxysubsubsection{\texorpdfstring{PeerList()}{PeerList()}}
-{\footnotesize\ttfamily async Task$<$\mbox{\hyperlink{class_nimiq_1_1_models_1_1_peer}{Peer}}\mbox{[}$\,$\mbox{]}$>$ Nimiq.\+Nimiq\+Client.\+Peer\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
-
-
-
-Returns list of peers known to the client. 
-
-\begin{DoxyReturn}{Returns}
-The list of peers.
-\end{DoxyReturn}
-\mbox{\Hypertarget{class_nimiq_1_1_nimiq_client_a08e4bece54d34b46932228bdc63a6968}\label{class_nimiq_1_1_nimiq_client_a08e4bece54d34b46932228bdc63a6968}} 
-\index{Nimiq.NimiqClient@{Nimiq.NimiqClient}!PeerState@{PeerState}}
-\index{PeerState@{PeerState}!Nimiq.NimiqClient@{Nimiq.NimiqClient}}
-\doxysubsubsection{\texorpdfstring{PeerState()}{PeerState()}}
-{\footnotesize\ttfamily async Task$<$\mbox{\hyperlink{class_nimiq_1_1_models_1_1_peer}{Peer}}$>$ Nimiq.\+Nimiq\+Client.\+Peer\+State (\begin{DoxyParamCaption}\item[{string}]{address,  }\item[{\mbox{\hyperlink{class_nimiq_1_1_models_1_1_peer_state_command}{Peer\+State\+Command}}}]{command = {\ttfamily null} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
-
-
-
-Returns the state of the peer. When no command is given, it returns peer state. When a value is given for command, it sets the peer state to that value. 
+Sets the state of the peer. 
 
 
 \begin{DoxyParams}{Parameters}
 {\em address} & The address of the peer.\\
 \hline
-{\em command} & The command to send.\\
+{\em command} & The new command to send.\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 The current state of the peer.
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_nimiq_1_1_nimiq_client_a0a0a461eeaf5f62a0367bfee91a799b0}\label{class_nimiq_1_1_nimiq_client_a0a0a461eeaf5f62a0367bfee91a799b0}} 
-\index{Nimiq.NimiqClient@{Nimiq.NimiqClient}!Pool@{Pool}}
-\index{Pool@{Pool}!Nimiq.NimiqClient@{Nimiq.NimiqClient}}
-\doxysubsubsection{\texorpdfstring{Pool()}{Pool()}}
-{\footnotesize\ttfamily async Task$<$string$>$ Nimiq.\+Nimiq\+Client.\+Pool (\begin{DoxyParamCaption}\item[{object}]{address = {\ttfamily null} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+\mbox{\Hypertarget{class_nimiq_1_1_nimiq_client_adacc40a12efc34fdaed575fe26367589}\label{class_nimiq_1_1_nimiq_client_adacc40a12efc34fdaed575fe26367589}} 
+\index{Nimiq.NimiqClient@{Nimiq.NimiqClient}!SetPool@{SetPool}}
+\index{SetPool@{SetPool}!Nimiq.NimiqClient@{Nimiq.NimiqClient}}
+\doxysubsubsection{\texorpdfstring{SetPool()}{SetPool()}}
+{\footnotesize\ttfamily string Nimiq.\+Nimiq\+Client.\+Set\+Pool (\begin{DoxyParamCaption}\item[{object}]{address }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
-Returns or sets the mining pool. When no parameter is given, it returns the current mining pool. When a value is given as parameter, it sets the mining pool to that value. 
+Sets the mining pool. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -697,91 +870,11 @@ Returns or sets the mining pool. When no parameter is given, it returns the curr
 \begin{DoxyReturn}{Returns}
 The mining pool connection string, or {\ttfamily null} if not enabled.
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_nimiq_1_1_nimiq_client_aa8644c02b9283e12678326efe6ed8eb9}\label{class_nimiq_1_1_nimiq_client_aa8644c02b9283e12678326efe6ed8eb9}} 
-\index{Nimiq.NimiqClient@{Nimiq.NimiqClient}!PoolConfirmedBalance@{PoolConfirmedBalance}}
-\index{PoolConfirmedBalance@{PoolConfirmedBalance}!Nimiq.NimiqClient@{Nimiq.NimiqClient}}
-\doxysubsubsection{\texorpdfstring{PoolConfirmedBalance()}{PoolConfirmedBalance()}}
-{\footnotesize\ttfamily async Task$<$int$>$ Nimiq.\+Nimiq\+Client.\+Pool\+Confirmed\+Balance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
-
-
-
-Returns the confirmed mining pool balance. 
-
-\begin{DoxyReturn}{Returns}
-The confirmed mining pool balance (in smallest unit).
-\end{DoxyReturn}
-\mbox{\Hypertarget{class_nimiq_1_1_nimiq_client_a8babf8c4772e964fa5d3937e9956bcd7}\label{class_nimiq_1_1_nimiq_client_a8babf8c4772e964fa5d3937e9956bcd7}} 
-\index{Nimiq.NimiqClient@{Nimiq.NimiqClient}!PoolConnectionState@{PoolConnectionState}}
-\index{PoolConnectionState@{PoolConnectionState}!Nimiq.NimiqClient@{Nimiq.NimiqClient}}
-\doxysubsubsection{\texorpdfstring{PoolConnectionState()}{PoolConnectionState()}}
-{\footnotesize\ttfamily async Task$<$\mbox{\hyperlink{namespace_nimiq_1_1_models_ae75833b733e900ddc9b0d49b3e1957b9}{Pool\+Connection\+State}}$>$ Nimiq.\+Nimiq\+Client.\+Pool\+Connection\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
-
-
-
-Returns the connection state to mining pool. 
-
-\begin{DoxyReturn}{Returns}
-The mining pool connection state.
-\end{DoxyReturn}
-\mbox{\Hypertarget{class_nimiq_1_1_nimiq_client_ae7d8f40894551df89a6780be4dda33df}\label{class_nimiq_1_1_nimiq_client_ae7d8f40894551df89a6780be4dda33df}} 
-\index{Nimiq.NimiqClient@{Nimiq.NimiqClient}!ResetConstant@{ResetConstant}}
-\index{ResetConstant@{ResetConstant}!Nimiq.NimiqClient@{Nimiq.NimiqClient}}
-\doxysubsubsection{\texorpdfstring{ResetConstant()}{ResetConstant()}}
-{\footnotesize\ttfamily async Task$<$long$>$ Nimiq.\+Nimiq\+Client.\+Reset\+Constant (\begin{DoxyParamCaption}\item[{string}]{constant }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
-
-
-
-Resets the constant to default value. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em constant} & Name of the constant.\\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-The new value of the constant.
-\end{DoxyReturn}
-\mbox{\Hypertarget{class_nimiq_1_1_nimiq_client_a9b045cc5f70dbc14b0da4bcbf3c39e68}\label{class_nimiq_1_1_nimiq_client_a9b045cc5f70dbc14b0da4bcbf3c39e68}} 
-\index{Nimiq.NimiqClient@{Nimiq.NimiqClient}!SendRawTransaction@{SendRawTransaction}}
-\index{SendRawTransaction@{SendRawTransaction}!Nimiq.NimiqClient@{Nimiq.NimiqClient}}
-\doxysubsubsection{\texorpdfstring{SendRawTransaction()}{SendRawTransaction()}}
-{\footnotesize\ttfamily async Task$<$string$>$ Nimiq.\+Nimiq\+Client.\+Send\+Raw\+Transaction (\begin{DoxyParamCaption}\item[{string}]{transaction }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
-
-
-
-Sends a signed message call transaction or a contract creation, if the data field contains code. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em transaction} & The hex encoded signed transaction\\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-The Hex-\/encoded transaction hash.
-\end{DoxyReturn}
-\mbox{\Hypertarget{class_nimiq_1_1_nimiq_client_a9ec9a38ffc70f67b46b3f6f804e5a32f}\label{class_nimiq_1_1_nimiq_client_a9ec9a38ffc70f67b46b3f6f804e5a32f}} 
-\index{Nimiq.NimiqClient@{Nimiq.NimiqClient}!SendTransaction@{SendTransaction}}
-\index{SendTransaction@{SendTransaction}!Nimiq.NimiqClient@{Nimiq.NimiqClient}}
-\doxysubsubsection{\texorpdfstring{SendTransaction()}{SendTransaction()}}
-{\footnotesize\ttfamily async Task$<$string$>$ Nimiq.\+Nimiq\+Client.\+Send\+Transaction (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_nimiq_1_1_models_1_1_outgoing_transaction}{Outgoing\+Transaction}}}]{transaction }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
-
-
-
-Creates new message call transaction or a contract creation, if the data field contains code. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em transaction} & The hex encoded signed transaction\\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-The Hex-\/encoded transaction hash.
-\end{DoxyReturn}
-\mbox{\Hypertarget{class_nimiq_1_1_nimiq_client_a3a09644bafb1154a526d900d0f495c20}\label{class_nimiq_1_1_nimiq_client_a3a09644bafb1154a526d900d0f495c20}} 
+\mbox{\Hypertarget{class_nimiq_1_1_nimiq_client_a53b9b261a9f1984a5c200e0cb1ca64e1}\label{class_nimiq_1_1_nimiq_client_a53b9b261a9f1984a5c200e0cb1ca64e1}} 
 \index{Nimiq.NimiqClient@{Nimiq.NimiqClient}!SubmitBlock@{SubmitBlock}}
 \index{SubmitBlock@{SubmitBlock}!Nimiq.NimiqClient@{Nimiq.NimiqClient}}
 \doxysubsubsection{\texorpdfstring{SubmitBlock()}{SubmitBlock()}}
-{\footnotesize\ttfamily async Task Nimiq.\+Nimiq\+Client.\+Submit\+Block (\begin{DoxyParamCaption}\item[{string}]{block }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily void Nimiq.\+Nimiq\+Client.\+Submit\+Block (\begin{DoxyParamCaption}\item[{string}]{block }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -792,11 +885,11 @@ Submits a block to the node. When the block is valid, the node will forward it t
 {\em block} & Hex-\/encoded full block (including header, interlink and body). When submitting work from get\+Work, remember to include the suffix.\\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{class_nimiq_1_1_nimiq_client_a195e508255fdf85582ddc35490cabd0d}\label{class_nimiq_1_1_nimiq_client_a195e508255fdf85582ddc35490cabd0d}} 
+\mbox{\Hypertarget{class_nimiq_1_1_nimiq_client_ac30600e4e0dc7d7dee57815db2644ae9}\label{class_nimiq_1_1_nimiq_client_ac30600e4e0dc7d7dee57815db2644ae9}} 
 \index{Nimiq.NimiqClient@{Nimiq.NimiqClient}!Syncing@{Syncing}}
 \index{Syncing@{Syncing}!Nimiq.NimiqClient@{Nimiq.NimiqClient}}
 \doxysubsubsection{\texorpdfstring{Syncing()}{Syncing()}}
-{\footnotesize\ttfamily async Task$<$object$>$ Nimiq.\+Nimiq\+Client.\+Syncing (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily object Nimiq.\+Nimiq\+Client.\+Syncing (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 

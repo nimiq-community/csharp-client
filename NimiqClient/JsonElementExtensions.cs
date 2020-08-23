@@ -3,7 +3,7 @@ using System.Text.Json;
 
 namespace Nimiq
 {
-    /// <summary>Class Extensions</summary>
+    /// <summary>Class Extensions.</summary>
     static public class JsonElementExtensions
     {
         /// <summary>Convert a JsonElement into its underlying objects.</summary>

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['warn_268',['Warn',['../class_nimiq_1_1_log_level.html#a38614a9a6fcc553fb59381070d108795',1,'Nimiq::LogLevel']]]
+  ['warn_287',['Warn',['../class_nimiq_1_1_models_1_1_log_level.html#ac62a3d996a130eeb27b81da5582ab7d3',1,'Nimiq::Models::LogLevel']]]
 ];

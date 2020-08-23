@@ -1,18 +1,18 @@
 var searchData=
 [
-  ['getaccount_49',['GetAccount',['../class_nimiq_1_1_nimiq_client.html#a4e09f0be8c831d5119a8c61f2d6e033b',1,'Nimiq::NimiqClient']]],
-  ['getbalance_50',['GetBalance',['../class_nimiq_1_1_nimiq_client.html#adc578b2bcf2296ab7a13c550ed87cd7b',1,'Nimiq::NimiqClient']]],
-  ['getblockbyhash_51',['GetBlockByHash',['../class_nimiq_1_1_nimiq_client.html#adedd89491cd044fcf4bb81a387ba89bc',1,'Nimiq::NimiqClient']]],
-  ['getblockbynumber_52',['GetBlockByNumber',['../class_nimiq_1_1_nimiq_client.html#abc844794e90e0187f6f9bd4cc7c404c5',1,'Nimiq::NimiqClient']]],
-  ['getblocktemplate_53',['GetBlockTemplate',['../class_nimiq_1_1_nimiq_client.html#a5aafb71b86064896e0e3bc8ce6b7ee54',1,'Nimiq::NimiqClient']]],
-  ['getblocktransactioncountbyhash_54',['GetBlockTransactionCountByHash',['../class_nimiq_1_1_nimiq_client.html#af35c8aa1e414bc728a1596eef40b2f76',1,'Nimiq::NimiqClient']]],
-  ['getblocktransactioncountbynumber_55',['GetBlockTransactionCountByNumber',['../class_nimiq_1_1_nimiq_client.html#af5396c24dd3c59499b81d5b217ea7a9a',1,'Nimiq::NimiqClient']]],
+  ['getaccount_49',['GetAccount',['../class_nimiq_1_1_nimiq_client.html#ab7738e16a445607e15c4c4835bc38c0e',1,'Nimiq::NimiqClient']]],
+  ['getbalance_50',['GetBalance',['../class_nimiq_1_1_nimiq_client.html#a007efe96dadcfbd564784d357ea5bd51',1,'Nimiq::NimiqClient']]],
+  ['getblockbyhash_51',['GetBlockByHash',['../class_nimiq_1_1_nimiq_client.html#af6ec48de94a80e6e4275dd9b0c2974b5',1,'Nimiq::NimiqClient']]],
+  ['getblockbynumber_52',['GetBlockByNumber',['../class_nimiq_1_1_nimiq_client.html#a74df0279ffb270c0c99550fff5c9a75d',1,'Nimiq::NimiqClient']]],
+  ['getblocktemplate_53',['GetBlockTemplate',['../class_nimiq_1_1_nimiq_client.html#a10c665603dfb71da62ec25fbe7c24bbf',1,'Nimiq::NimiqClient']]],
+  ['getblocktransactioncountbyhash_54',['GetBlockTransactionCountByHash',['../class_nimiq_1_1_nimiq_client.html#a9892cea9491e7fcf06220199d9fbaeed',1,'Nimiq::NimiqClient']]],
+  ['getblocktransactioncountbynumber_55',['GetBlockTransactionCountByNumber',['../class_nimiq_1_1_nimiq_client.html#a0795e4f7682b1857e006587173ef37bc',1,'Nimiq::NimiqClient']]],
   ['gethashcode_56',['GetHashCode',['../class_nimiq_1_1_string_enumeration.html#a56a78f9ba1921fbd3b748a05650864d1',1,'Nimiq::StringEnumeration']]],
-  ['getrawtransactioninfo_57',['GetRawTransactionInfo',['../class_nimiq_1_1_nimiq_client.html#aac5ec11ef65561744bf50e682c89bd73',1,'Nimiq::NimiqClient']]],
-  ['gettransactionbyblockhashandindex_58',['GetTransactionByBlockHashAndIndex',['../class_nimiq_1_1_nimiq_client.html#ab8eed7e4fbb482618fcd791fa9aaa8ee',1,'Nimiq::NimiqClient']]],
-  ['gettransactionbyblocknumberandindex_59',['GetTransactionByBlockNumberAndIndex',['../class_nimiq_1_1_nimiq_client.html#ad8e43453367e3890242c3884c326d8f3',1,'Nimiq::NimiqClient']]],
-  ['gettransactionbyhash_60',['GetTransactionByHash',['../class_nimiq_1_1_nimiq_client.html#aa235af325251828cca93f96c8cd41969',1,'Nimiq::NimiqClient']]],
-  ['gettransactionreceipt_61',['GetTransactionReceipt',['../class_nimiq_1_1_nimiq_client.html#a2b037b2f0a6e2739dc07555363c297ce',1,'Nimiq::NimiqClient']]],
-  ['gettransactionsbyaddress_62',['GetTransactionsByAddress',['../class_nimiq_1_1_nimiq_client.html#af2b459bd7373c7a156639b3313052730',1,'Nimiq::NimiqClient']]],
-  ['getwork_63',['GetWork',['../class_nimiq_1_1_nimiq_client.html#a57b8673c46b9c490f33176f0990a8653',1,'Nimiq::NimiqClient']]]
+  ['getrawtransactioninfo_57',['GetRawTransactionInfo',['../class_nimiq_1_1_nimiq_client.html#a36d590c4faff583a3b9dd7a792951c6b',1,'Nimiq::NimiqClient']]],
+  ['gettransactionbyblockhashandindex_58',['GetTransactionByBlockHashAndIndex',['../class_nimiq_1_1_nimiq_client.html#a917a4d94038867d86a3c79d55269f06a',1,'Nimiq::NimiqClient']]],
+  ['gettransactionbyblocknumberandindex_59',['GetTransactionByBlockNumberAndIndex',['../class_nimiq_1_1_nimiq_client.html#a3171b8cc6e7b4accc739c311971ae32a',1,'Nimiq::NimiqClient']]],
+  ['gettransactionbyhash_60',['GetTransactionByHash',['../class_nimiq_1_1_nimiq_client.html#aca802d03b4f5634c89c36a177765fb21',1,'Nimiq::NimiqClient']]],
+  ['gettransactionreceipt_61',['GetTransactionReceipt',['../class_nimiq_1_1_nimiq_client.html#a2d05d1ca7bbac1afad6f6a9e52f70cfd',1,'Nimiq::NimiqClient']]],
+  ['gettransactionsbyaddress_62',['GetTransactionsByAddress',['../class_nimiq_1_1_nimiq_client.html#ade2747056887c15a3f994df8f798de53',1,'Nimiq::NimiqClient']]],
+  ['getwork_63',['GetWork',['../class_nimiq_1_1_nimiq_client.html#a66543dc2215166dcb9fc34fba760738f',1,'Nimiq::NimiqClient']]]
 ];

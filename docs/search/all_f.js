@@ -1,15 +1,9 @@
 var searchData=
 [
-  ['scheme_133',['Scheme',['../class_nimiq_1_1_config.html#a0c1025c257e8429194c8de4403767177',1,'Nimiq::Config']]],
-  ['sender_134',['Sender',['../class_nimiq_1_1_models_1_1_h_t_l_c.html#a264af666e8926ced94ac576dd4b5dea1',1,'Nimiq::Models::HTLC']]],
-  ['senderaddress_135',['SenderAddress',['../class_nimiq_1_1_models_1_1_h_t_l_c.html#aa3bcfb4acc421deebe8f2ca11b8bd48f',1,'Nimiq::Models::HTLC']]],
-  ['sendrawtransaction_136',['SendRawTransaction',['../class_nimiq_1_1_nimiq_client.html#a9b045cc5f70dbc14b0da4bcbf3c39e68',1,'Nimiq::NimiqClient']]],
-  ['sendtransaction_137',['SendTransaction',['../class_nimiq_1_1_nimiq_client.html#a9ec9a38ffc70f67b46b3f6f804e5a32f',1,'Nimiq::NimiqClient']]],
-  ['size_138',['Size',['../class_nimiq_1_1_models_1_1_block.html#ac0dd78ee1518aadea6363f0c92ee37a3',1,'Nimiq::Models::Block']]],
-  ['startingblock_139',['StartingBlock',['../class_nimiq_1_1_models_1_1_sync_status.html#a6063eecfcc3a15c132b21bb507a9e704',1,'Nimiq::Models::SyncStatus']]],
-  ['stringenumeration_140',['StringEnumeration',['../class_nimiq_1_1_string_enumeration.html',1,'Nimiq.StringEnumeration'],['../class_nimiq_1_1_string_enumeration.html#ae96af8bbcadf71d8e2d3aed88dd72841',1,'Nimiq.StringEnumeration.StringEnumeration()']]],
-  ['submitblock_141',['SubmitBlock',['../class_nimiq_1_1_nimiq_client.html#a3a09644bafb1154a526d900d0f495c20',1,'Nimiq::NimiqClient']]],
-  ['suffix_142',['Suffix',['../class_nimiq_1_1_models_1_1_work_instructions.html#a2604165193d1cc03744e0f1d99f0827a',1,'Nimiq::Models::WorkInstructions']]],
-  ['syncing_143',['Syncing',['../class_nimiq_1_1_models_1_1_consensus_state.html#a081bae6724cfdbe4b6c4a5623a365be5',1,'Nimiq.Models.ConsensusState.Syncing()'],['../class_nimiq_1_1_nimiq_client.html#a195e508255fdf85582ddc35490cabd0d',1,'Nimiq.NimiqClient.Syncing()']]],
-  ['syncstatus_144',['SyncStatus',['../class_nimiq_1_1_models_1_1_sync_status.html',1,'Nimiq::Models']]]
+  ['read_126',['Read',['../class_nimiq_1_1_string_enumeration_converter.html#a5fc26df73e3127f643746216f277cfcd',1,'Nimiq::StringEnumerationConverter']]],
+  ['recipient_127',['Recipient',['../class_nimiq_1_1_models_1_1_h_t_l_c.html#a2f7058511bf29051a00496a7aa1c5cf4',1,'Nimiq::Models::HTLC']]],
+  ['recipientaddress_128',['RecipientAddress',['../class_nimiq_1_1_models_1_1_h_t_l_c.html#a96b766cb544cce03d5ee2ad415cd995b',1,'Nimiq::Models::HTLC']]],
+  ['remoteerrorexception_129',['RemoteErrorException',['../class_nimiq_1_1_remote_error_exception.html',1,'Nimiq.RemoteErrorException'],['../class_nimiq_1_1_remote_error_exception.html#afe93a6a9170f2f9b7b4981543f44e5c5',1,'Nimiq.RemoteErrorException.RemoteErrorException()']]],
+  ['resetconstant_130',['ResetConstant',['../class_nimiq_1_1_nimiq_client.html#a520d250356447888a80c06c5abb5a3c5',1,'Nimiq::NimiqClient']]],
+  ['rx_131',['Rx',['../class_nimiq_1_1_models_1_1_peer.html#a06a107190bde71892d6678fd8b726942',1,'Nimiq::Models::Peer']]]
 ];
