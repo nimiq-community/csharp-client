@@ -15,7 +15,7 @@ namespace NimiqClientTest
         [ClassInitialize]
         public static void ClassInit(TestContext context)
         {
-            // Patch the HttpClient class.
+            // Patch the WebClient class.
             Patcher.DoPatching();
 
             // init our JSON RPC client with that
