@@ -1,7 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Net.Http;
-using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NimicClientTest.Fixtures;
 using Nimiq;
@@ -17,8 +15,8 @@ namespace NimiqClientTest
         [ClassInitialize]
         public static void ClassInit(TestContext context)
         {
-            //set up the stub
-            var httpClient = new HttpClient(new HttpMessageHandlerStub());
+            // Patch the HttpClient class.
+            Patcher.DoPatching();
 
             // init our JSON RPC client with that
             client = new NimiqClient(
@@ -26,8 +24,7 @@ namespace NimiqClientTest
                 "user",
                 "password",
                 "127.0.0.1",
-                8648,
-                httpClient
+                8648
             );
         }
 
@@ -39,11 +36,11 @@ namespace NimiqClientTest
         [TestMethod]
         public void TestPeerCount()
         {
-            HttpMessageHandlerStub.TestData = PeerFixtures.PeerCount();
+            Patcher.TestData = PeerFixtures.PeerCount();
 
             var result = client.PeerCount();
 
-            Assert.AreEqual("peerCount", HttpMessageHandlerStub.LatestRequestMethod);
+            Assert.AreEqual("peerCount", Patcher.LatestRequestMethod);
 
             Assert.AreEqual(6, result);
         }
@@ -51,11 +48,11 @@ namespace NimiqClientTest
         [TestMethod]
         public void TestSyncingStateWhenSyncing()
         {
-            HttpMessageHandlerStub.TestData = NodeFixtures.Syncing();
+            Patcher.TestData = NodeFixtures.Syncing();
 
             var result = client.Syncing();
 
-            Assert.AreEqual("syncing", HttpMessageHandlerStub.LatestRequestMethod);
+            Assert.AreEqual("syncing", Patcher.LatestRequestMethod);
 
             Assert.IsTrue(result is SyncStatus);
             var syncing = (SyncStatus)result;
@@ -67,11 +64,11 @@ namespace NimiqClientTest
         [TestMethod]
         public void TestSyncingStateWhenNotSyncing()
         {
-            HttpMessageHandlerStub.TestData = NodeFixtures.SyncingNotSyncing();
+            Patcher.TestData = NodeFixtures.SyncingNotSyncing();
 
             var result = client.Syncing();
 
-            Assert.AreEqual("syncing", HttpMessageHandlerStub.LatestRequestMethod);
+            Assert.AreEqual("syncing", Patcher.LatestRequestMethod);
 
             Assert.IsNotNull(result is bool);
             var syncing = result;
@@ -82,11 +79,11 @@ namespace NimiqClientTest
         [TestMethod]
         public void TestConsensusState()
         {
-            HttpMessageHandlerStub.TestData = NodeFixtures.ConsensusSyncing();
+            Patcher.TestData = NodeFixtures.ConsensusSyncing();
 
             var result = client.Consensus();
 
-            Assert.AreEqual("consensus", HttpMessageHandlerStub.LatestRequestMethod);
+            Assert.AreEqual("consensus", Patcher.LatestRequestMethod);
 
             Assert.AreEqual("syncing", result);
         }
@@ -94,11 +91,11 @@ namespace NimiqClientTest
         [TestMethod]
         public void TestPeerListWithPeers()
         {
-            HttpMessageHandlerStub.TestData = PeerFixtures.PeerList();
+            Patcher.TestData = PeerFixtures.PeerList();
 
             var result = client.PeerList();
 
-            Assert.AreEqual("peerList", HttpMessageHandlerStub.LatestRequestMethod);
+            Assert.AreEqual("peerList", Patcher.LatestRequestMethod);
 
             Assert.AreEqual(result.Length, 2);
             Assert.IsNotNull(result[0]);
@@ -117,11 +114,11 @@ namespace NimiqClientTest
         [TestMethod]
         public void TestPeerListWhenEmpty()
         {
-            HttpMessageHandlerStub.TestData = PeerFixtures.PeerListEmpty();
+            Patcher.TestData = PeerFixtures.PeerListEmpty();
 
             var result = client.PeerList();
 
-            Assert.AreEqual("peerList", HttpMessageHandlerStub.LatestRequestMethod);
+            Assert.AreEqual("peerList", Patcher.LatestRequestMethod);
 
             Assert.AreEqual(result.Length, 0);
         }
@@ -129,12 +126,12 @@ namespace NimiqClientTest
         [TestMethod]
         public void TestPeerNormal()
         {
-            HttpMessageHandlerStub.TestData = PeerFixtures.PeerStateNormal();
+            Patcher.TestData = PeerFixtures.PeerStateNormal();
 
             var result = client.PeerState("wss://seed1.nimiq-testnet.com:8080/b99034c552e9c0fd34eb95c1cdf17f5e");
 
-            Assert.AreEqual("peerState", HttpMessageHandlerStub.LatestRequestMethod);
-            Assert.AreEqual("wss://seed1.nimiq-testnet.com:8080/b99034c552e9c0fd34eb95c1cdf17f5e", HttpMessageHandlerStub.LatestRequestParams[0]);
+            Assert.AreEqual("peerState", Patcher.LatestRequestMethod);
+            Assert.AreEqual("wss://seed1.nimiq-testnet.com:8080/b99034c552e9c0fd34eb95c1cdf17f5e", Patcher.LatestRequestParams[0]);
 
             Assert.IsNotNull(result);
             Assert.AreEqual("b99034c552e9c0fd34eb95c1cdf17f5e", result.Id);
@@ -146,12 +143,12 @@ namespace NimiqClientTest
         [TestMethod]
         public void TestPeerFailed()
         {
-            HttpMessageHandlerStub.TestData = PeerFixtures.PeerStateFailed();
+            Patcher.TestData = PeerFixtures.PeerStateFailed();
 
             var result = client.PeerState("wss://seed4.nimiq-testnet.com:8080/e37dca72802c972d45b37735e9595cf0");
 
-            Assert.AreEqual("peerState", HttpMessageHandlerStub.LatestRequestMethod);
-            Assert.AreEqual("wss://seed4.nimiq-testnet.com:8080/e37dca72802c972d45b37735e9595cf0", HttpMessageHandlerStub.LatestRequestParams[0]);
+            Assert.AreEqual("peerState", Patcher.LatestRequestMethod);
+            Assert.AreEqual("wss://seed4.nimiq-testnet.com:8080/e37dca72802c972d45b37735e9595cf0", Patcher.LatestRequestParams[0]);
 
             Assert.IsNotNull(result);
             Assert.AreEqual("e37dca72802c972d45b37735e9595cf0", result.Id);
@@ -163,7 +160,7 @@ namespace NimiqClientTest
         [TestMethod]
         public void TestPeerError()
         {
-            HttpMessageHandlerStub.TestData = PeerFixtures.PeerStateError();
+            Patcher.TestData = PeerFixtures.PeerStateError();
 
             try
             {
@@ -179,13 +176,13 @@ namespace NimiqClientTest
         [TestMethod]
         public void TestSetPeerNormal()
         {
-            HttpMessageHandlerStub.TestData = PeerFixtures.PeerStateNormal();
+            Patcher.TestData = PeerFixtures.PeerStateNormal();
 
             var result = client.SetPeerState("wss://seed1.nimiq-testnet.com:8080/b99034c552e9c0fd34eb95c1cdf17f5e", PeerStateCommand.Connect);
 
-            Assert.AreEqual("peerState", HttpMessageHandlerStub.LatestRequestMethod);
-            Assert.AreEqual("wss://seed1.nimiq-testnet.com:8080/b99034c552e9c0fd34eb95c1cdf17f5e", HttpMessageHandlerStub.LatestRequestParams[0]);
-            Assert.AreEqual("connect", HttpMessageHandlerStub.LatestRequestParams[1]);
+            Assert.AreEqual("peerState", Patcher.LatestRequestMethod);
+            Assert.AreEqual("wss://seed1.nimiq-testnet.com:8080/b99034c552e9c0fd34eb95c1cdf17f5e", Patcher.LatestRequestParams[0]);
+            Assert.AreEqual("connect", Patcher.LatestRequestParams[1]);
 
             Assert.IsNotNull(result);
             Assert.AreEqual("b99034c552e9c0fd34eb95c1cdf17f5e", result.Id);
@@ -197,12 +194,12 @@ namespace NimiqClientTest
         [TestMethod]
         public void TestSendRawTransaction()
         {
-            HttpMessageHandlerStub.TestData = TransactionFixtures.SendTransaction();
+            Patcher.TestData = TransactionFixtures.SendTransaction();
 
             var result = client.SendRawTransaction("00c3c0d1af80b84c3b3de4e3d79d5c8cc950e044098c969953d68bf9cee68d7b53305dbaac7514a06dae935e40d599caf1bd8a243c00000000000000010000000000000001000dc2e201b5a1755aec80aa4227d5afc6b0de0fcfede8541f31b3c07b9a85449ea9926c1c958628d85a2b481556034ab3d67ff7de28772520813c84aaaf8108f6297c580c");
 
-            Assert.AreEqual("sendRawTransaction", HttpMessageHandlerStub.LatestRequestMethod);
-            Assert.AreEqual("00c3c0d1af80b84c3b3de4e3d79d5c8cc950e044098c969953d68bf9cee68d7b53305dbaac7514a06dae935e40d599caf1bd8a243c00000000000000010000000000000001000dc2e201b5a1755aec80aa4227d5afc6b0de0fcfede8541f31b3c07b9a85449ea9926c1c958628d85a2b481556034ab3d67ff7de28772520813c84aaaf8108f6297c580c", HttpMessageHandlerStub.LatestRequestParams[0]);
+            Assert.AreEqual("sendRawTransaction", Patcher.LatestRequestMethod);
+            Assert.AreEqual("00c3c0d1af80b84c3b3de4e3d79d5c8cc950e044098c969953d68bf9cee68d7b53305dbaac7514a06dae935e40d599caf1bd8a243c00000000000000010000000000000001000dc2e201b5a1755aec80aa4227d5afc6b0de0fcfede8541f31b3c07b9a85449ea9926c1c958628d85a2b481556034ab3d67ff7de28772520813c84aaaf8108f6297c580c", Patcher.LatestRequestParams[0]);
 
             Assert.AreEqual("81cf3f07b6b0646bb16833d57cda801ad5957e264b64705edeef6191fea0ad63", result);
         }
@@ -210,7 +207,7 @@ namespace NimiqClientTest
         [TestMethod]
         public void TestCreateRawTransaction()
         {
-            HttpMessageHandlerStub.TestData = TransactionFixtures.CreateRawTransactionBasic();
+            Patcher.TestData = TransactionFixtures.CreateRawTransactionBasic();
 
             var transaction = new OutgoingTransaction()
             {
@@ -224,9 +221,9 @@ namespace NimiqClientTest
 
             var result = client.CreateRawTransaction(transaction);
 
-            Assert.AreEqual("createRawTransaction", HttpMessageHandlerStub.LatestRequestMethod);
+            Assert.AreEqual("createRawTransaction", Patcher.LatestRequestMethod);
 
-            var param = HttpMessageHandlerStub.LatestRequestParams[0];
+            var param = Patcher.LatestRequestParams[0];
             CollectionAssert.AreEqual((Dictionary<string, object>)param, new Dictionary<string, object>()
             {
                 { "from", "NQ39 NY67 X0F0 UTQE 0YER 4JEU B67L UPP8 G0FM" },
@@ -244,7 +241,7 @@ namespace NimiqClientTest
         [TestMethod]
         public void TestSendTransaction()
         {
-            HttpMessageHandlerStub.TestData = TransactionFixtures.SendTransaction();
+            Patcher.TestData = TransactionFixtures.SendTransaction();
 
             var transaction = new OutgoingTransaction()
             {
@@ -258,9 +255,9 @@ namespace NimiqClientTest
 
             var result = client.SendTransaction(transaction);
 
-            Assert.AreEqual("sendTransaction", HttpMessageHandlerStub.LatestRequestMethod);
+            Assert.AreEqual("sendTransaction", Patcher.LatestRequestMethod);
 
-            var param = HttpMessageHandlerStub.LatestRequestParams[0];
+            var param = Patcher.LatestRequestParams[0];
             CollectionAssert.AreEqual((Dictionary<string, object>)param, new Dictionary<string, object>()
             {
                 { "from", "NQ39 NY67 X0F0 UTQE 0YER 4JEU B67L UPP8 G0FM" },
@@ -278,12 +275,12 @@ namespace NimiqClientTest
         [TestMethod]
         public void TestGetRawTransactionInfo()
         {
-            HttpMessageHandlerStub.TestData = TransactionFixtures.GetRawTransactionInfoBasic();
+            Patcher.TestData = TransactionFixtures.GetRawTransactionInfoBasic();
 
             var result = client.GetRawTransactionInfo("00c3c0d1af80b84c3b3de4e3d79d5c8cc950e044098c969953d68bf9cee68d7b53305dbaac7514a06dae935e40d599caf1bd8a243c00000000000186a00000000000000001000af84c01239b16cee089836c2af5c7b1dbb22cdc0b4864349f7f3805909aa8cf24e4c1ff0461832e86f3624778a867d5f2ba318f92918ada7ae28d70d40c4ef1d6413802");
 
-            Assert.AreEqual("getRawTransactionInfo", HttpMessageHandlerStub.LatestRequestMethod);
-            Assert.AreEqual("00c3c0d1af80b84c3b3de4e3d79d5c8cc950e044098c969953d68bf9cee68d7b53305dbaac7514a06dae935e40d599caf1bd8a243c00000000000186a00000000000000001000af84c01239b16cee089836c2af5c7b1dbb22cdc0b4864349f7f3805909aa8cf24e4c1ff0461832e86f3624778a867d5f2ba318f92918ada7ae28d70d40c4ef1d6413802", HttpMessageHandlerStub.LatestRequestParams[0]);
+            Assert.AreEqual("getRawTransactionInfo", Patcher.LatestRequestMethod);
+            Assert.AreEqual("00c3c0d1af80b84c3b3de4e3d79d5c8cc950e044098c969953d68bf9cee68d7b53305dbaac7514a06dae935e40d599caf1bd8a243c00000000000186a00000000000000001000af84c01239b16cee089836c2af5c7b1dbb22cdc0b4864349f7f3805909aa8cf24e4c1ff0461832e86f3624778a867d5f2ba318f92918ada7ae28d70d40c4ef1d6413802", Patcher.LatestRequestParams[0]);
 
             Assert.IsNotNull(result);
             Assert.AreEqual("7784f2f6eaa076fa5cf0e4d06311ad204b2f485de622231785451181e8129091", result.Hash);
@@ -298,13 +295,13 @@ namespace NimiqClientTest
         [TestMethod]
         public void TestGetTransactionByBlockHashAndIndex()
         {
-            HttpMessageHandlerStub.TestData = TransactionFixtures.GetTransactionFull();
+            Patcher.TestData = TransactionFixtures.GetTransactionFull();
 
             var result = client.GetTransactionByBlockHashAndIndex("bc3945d22c9f6441409a6e539728534a4fc97859bda87333071fad9dad942786", 0);
 
-            Assert.AreEqual("getTransactionByBlockHashAndIndex", HttpMessageHandlerStub.LatestRequestMethod);
-            Assert.AreEqual("bc3945d22c9f6441409a6e539728534a4fc97859bda87333071fad9dad942786", HttpMessageHandlerStub.LatestRequestParams[0]);
-            Assert.AreEqual(0, HttpMessageHandlerStub.LatestRequestParams[1]);
+            Assert.AreEqual("getTransactionByBlockHashAndIndex", Patcher.LatestRequestMethod);
+            Assert.AreEqual("bc3945d22c9f6441409a6e539728534a4fc97859bda87333071fad9dad942786", Patcher.LatestRequestParams[0]);
+            Assert.AreEqual(0, Patcher.LatestRequestParams[1]);
 
             Assert.IsNotNull(result);
             Assert.AreEqual("78957b87ab5546e11e9540ce5a37ebbf93a0ebd73c0ce05f137288f30ee9f430", result.Hash);
@@ -321,13 +318,13 @@ namespace NimiqClientTest
         [TestMethod]
         public void TestGetTransactionByBlockHashAndIndexWhenNotFound()
         {
-            HttpMessageHandlerStub.TestData = TransactionFixtures.GetTransactionNotFound();
+            Patcher.TestData = TransactionFixtures.GetTransactionNotFound();
 
             var result = client.GetTransactionByBlockHashAndIndex("bc3945d22c9f6441409a6e539728534a4fc97859bda87333071fad9dad942786", 5);
 
-            Assert.AreEqual("getTransactionByBlockHashAndIndex", HttpMessageHandlerStub.LatestRequestMethod);
-            Assert.AreEqual("bc3945d22c9f6441409a6e539728534a4fc97859bda87333071fad9dad942786", HttpMessageHandlerStub.LatestRequestParams[0]);
-            Assert.AreEqual(5, HttpMessageHandlerStub.LatestRequestParams[1]);
+            Assert.AreEqual("getTransactionByBlockHashAndIndex", Patcher.LatestRequestMethod);
+            Assert.AreEqual("bc3945d22c9f6441409a6e539728534a4fc97859bda87333071fad9dad942786", Patcher.LatestRequestParams[0]);
+            Assert.AreEqual(5, Patcher.LatestRequestParams[1]);
 
             Assert.IsNull(result);
         }
@@ -335,13 +332,13 @@ namespace NimiqClientTest
         [TestMethod]
         public void TestGetTransactionByBlockNumberAndIndex()
         {
-            HttpMessageHandlerStub.TestData = TransactionFixtures.GetTransactionFull();
+            Patcher.TestData = TransactionFixtures.GetTransactionFull();
 
             var result = client.GetTransactionByBlockNumberAndIndex(11608, 0);
 
-            Assert.AreEqual("getTransactionByBlockNumberAndIndex", HttpMessageHandlerStub.LatestRequestMethod);
-            Assert.AreEqual(11608, HttpMessageHandlerStub.LatestRequestParams[0]);
-            Assert.AreEqual(0, HttpMessageHandlerStub.LatestRequestParams[1]);
+            Assert.AreEqual("getTransactionByBlockNumberAndIndex", Patcher.LatestRequestMethod);
+            Assert.AreEqual(11608, Patcher.LatestRequestParams[0]);
+            Assert.AreEqual(0, Patcher.LatestRequestParams[1]);
 
             Assert.IsNotNull(result);
             Assert.AreEqual("78957b87ab5546e11e9540ce5a37ebbf93a0ebd73c0ce05f137288f30ee9f430", result.Hash);
@@ -358,13 +355,13 @@ namespace NimiqClientTest
         [TestMethod]
         public void TestGetTransactionByBlockNumberAndIndexWhenNotFound()
         {
-            HttpMessageHandlerStub.TestData = TransactionFixtures.GetTransactionNotFound();
+            Patcher.TestData = TransactionFixtures.GetTransactionNotFound();
 
             var result = client.GetTransactionByBlockNumberAndIndex(11608, 0);
 
-            Assert.AreEqual("getTransactionByBlockNumberAndIndex", HttpMessageHandlerStub.LatestRequestMethod);
-            Assert.AreEqual(11608, HttpMessageHandlerStub.LatestRequestParams[0]);
-            Assert.AreEqual(0, HttpMessageHandlerStub.LatestRequestParams[1]);
+            Assert.AreEqual("getTransactionByBlockNumberAndIndex", Patcher.LatestRequestMethod);
+            Assert.AreEqual(11608, Patcher.LatestRequestParams[0]);
+            Assert.AreEqual(0, Patcher.LatestRequestParams[1]);
 
             Assert.IsNull(result);
         }
@@ -372,12 +369,12 @@ namespace NimiqClientTest
         [TestMethod]
         public void TestGetTransactionByHash()
         {
-            HttpMessageHandlerStub.TestData = TransactionFixtures.GetTransactionFull();
+            Patcher.TestData = TransactionFixtures.GetTransactionFull();
 
             var result = client.GetTransactionByHash("78957b87ab5546e11e9540ce5a37ebbf93a0ebd73c0ce05f137288f30ee9f430");
 
-            Assert.AreEqual("getTransactionByHash", HttpMessageHandlerStub.LatestRequestMethod);
-            Assert.AreEqual("78957b87ab5546e11e9540ce5a37ebbf93a0ebd73c0ce05f137288f30ee9f430", HttpMessageHandlerStub.LatestRequestParams[0]);
+            Assert.AreEqual("getTransactionByHash", Patcher.LatestRequestMethod);
+            Assert.AreEqual("78957b87ab5546e11e9540ce5a37ebbf93a0ebd73c0ce05f137288f30ee9f430", Patcher.LatestRequestParams[0]);
 
             Assert.IsNotNull(result);
             Assert.AreEqual("78957b87ab5546e11e9540ce5a37ebbf93a0ebd73c0ce05f137288f30ee9f430", result.Hash);
@@ -393,12 +390,12 @@ namespace NimiqClientTest
         [TestMethod]
         public void TestGetTransactionByHashWhenNotFound()
         {
-            HttpMessageHandlerStub.TestData = TransactionFixtures.GetTransactionNotFound();
+            Patcher.TestData = TransactionFixtures.GetTransactionNotFound();
 
             var result = client.GetTransactionByHash("78957b87ab5546e11e9540ce5a37ebbf93a0ebd73c0ce05f137288f30ee9f430");
 
-            Assert.AreEqual("getTransactionByHash", HttpMessageHandlerStub.LatestRequestMethod);
-            Assert.AreEqual("78957b87ab5546e11e9540ce5a37ebbf93a0ebd73c0ce05f137288f30ee9f430", HttpMessageHandlerStub.LatestRequestParams[0]);
+            Assert.AreEqual("getTransactionByHash", Patcher.LatestRequestMethod);
+            Assert.AreEqual("78957b87ab5546e11e9540ce5a37ebbf93a0ebd73c0ce05f137288f30ee9f430", Patcher.LatestRequestParams[0]);
 
             Assert.IsNull(result);
         }
@@ -406,12 +403,12 @@ namespace NimiqClientTest
         [TestMethod]
         public void TestGetTransactionByHashForContractCreation()
         {
-            HttpMessageHandlerStub.TestData = TransactionFixtures.GetTransactionContractCreation();
+            Patcher.TestData = TransactionFixtures.GetTransactionContractCreation();
 
             var result = client.GetTransactionByHash("539f6172b19f63be376ab7e962c368bb5f611deff6b159152c4cdf509f7daad2");
 
-            Assert.AreEqual("getTransactionByHash", HttpMessageHandlerStub.LatestRequestMethod);
-            Assert.AreEqual("539f6172b19f63be376ab7e962c368bb5f611deff6b159152c4cdf509f7daad2", HttpMessageHandlerStub.LatestRequestParams[0]);
+            Assert.AreEqual("getTransactionByHash", Patcher.LatestRequestMethod);
+            Assert.AreEqual("539f6172b19f63be376ab7e962c368bb5f611deff6b159152c4cdf509f7daad2", Patcher.LatestRequestParams[0]);
 
             Assert.IsNotNull(result);
             Assert.AreEqual("539f6172b19f63be376ab7e962c368bb5f611deff6b159152c4cdf509f7daad2", result.Hash);
@@ -432,12 +429,12 @@ namespace NimiqClientTest
         [TestMethod]
         public void TestGetTransactionReceipt()
         {
-            HttpMessageHandlerStub.TestData = TransactionFixtures.GetTransactionReceiptFound();
+            Patcher.TestData = TransactionFixtures.GetTransactionReceiptFound();
 
             var result = client.GetTransactionReceipt("fd8e46ae55c5b8cd7cb086cf8d6c81f941a516d6148021d55f912fb2ca75cc8e");
 
-            Assert.AreEqual("getTransactionReceipt", HttpMessageHandlerStub.LatestRequestMethod);
-            Assert.AreEqual("fd8e46ae55c5b8cd7cb086cf8d6c81f941a516d6148021d55f912fb2ca75cc8e", HttpMessageHandlerStub.LatestRequestParams[0]);
+            Assert.AreEqual("getTransactionReceipt", Patcher.LatestRequestMethod);
+            Assert.AreEqual("fd8e46ae55c5b8cd7cb086cf8d6c81f941a516d6148021d55f912fb2ca75cc8e", Patcher.LatestRequestParams[0]);
 
             Assert.IsNotNull(result);
             Assert.AreEqual("fd8e46ae55c5b8cd7cb086cf8d6c81f941a516d6148021d55f912fb2ca75cc8e", result.TransactionHash);
@@ -451,12 +448,12 @@ namespace NimiqClientTest
         [TestMethod]
         public void TestGetTransactionReceiptWhenNotFound()
         {
-            HttpMessageHandlerStub.TestData = TransactionFixtures.GetTransactionReceiptNotFound();
+            Patcher.TestData = TransactionFixtures.GetTransactionReceiptNotFound();
 
             var result = client.GetTransactionReceipt("unknown");
 
-            Assert.AreEqual("getTransactionReceipt", HttpMessageHandlerStub.LatestRequestMethod);
-            Assert.AreEqual("unknown", HttpMessageHandlerStub.LatestRequestParams[0]);
+            Assert.AreEqual("getTransactionReceipt", Patcher.LatestRequestMethod);
+            Assert.AreEqual("unknown", Patcher.LatestRequestParams[0]);
 
             Assert.IsNull(result);
         }
@@ -464,12 +461,12 @@ namespace NimiqClientTest
         [TestMethod]
         public void TestGetTransactionsByAddress()
         {
-            HttpMessageHandlerStub.TestData = TransactionFixtures.GetTransactionsFound();
+            Patcher.TestData = TransactionFixtures.GetTransactionsFound();
 
             var result = client.GetTransactionsByAddress("NQ05 9VGU 0TYE NXBH MVLR E4JY UG6N 5701 MX9F");
 
-            Assert.AreEqual("getTransactionsByAddress", HttpMessageHandlerStub.LatestRequestMethod);
-            Assert.AreEqual("NQ05 9VGU 0TYE NXBH MVLR E4JY UG6N 5701 MX9F", HttpMessageHandlerStub.LatestRequestParams[0]);
+            Assert.AreEqual("getTransactionsByAddress", Patcher.LatestRequestMethod);
+            Assert.AreEqual("NQ05 9VGU 0TYE NXBH MVLR E4JY UG6N 5701 MX9F", Patcher.LatestRequestParams[0]);
 
             Assert.AreEqual(3, result.Length);
             Assert.IsNotNull(result[0]);
@@ -483,12 +480,12 @@ namespace NimiqClientTest
         [TestMethod]
         public void TestGetTransactionsByAddressWhenNoFound()
         {
-            HttpMessageHandlerStub.TestData = TransactionFixtures.GetTransactionsNotFound();
+            Patcher.TestData = TransactionFixtures.GetTransactionsNotFound();
 
             var result = client.GetTransactionsByAddress("NQ10 9VGU 0TYE NXBH MVLR E4JY UG6N 5701 MX9F");
 
-            Assert.AreEqual("getTransactionsByAddress", HttpMessageHandlerStub.LatestRequestMethod);
-            Assert.AreEqual("NQ10 9VGU 0TYE NXBH MVLR E4JY UG6N 5701 MX9F", HttpMessageHandlerStub.LatestRequestParams[0]);
+            Assert.AreEqual("getTransactionsByAddress", Patcher.LatestRequestMethod);
+            Assert.AreEqual("NQ10 9VGU 0TYE NXBH MVLR E4JY UG6N 5701 MX9F", Patcher.LatestRequestParams[0]);
 
             Assert.AreEqual(0, result.Length);
         }
@@ -496,12 +493,12 @@ namespace NimiqClientTest
         [TestMethod]
         public void TestMempoolContentHashesOnly()
         {
-            HttpMessageHandlerStub.TestData = MemPoolFixtures.MempoolContentHashesOnly();
+            Patcher.TestData = MemPoolFixtures.MempoolContentHashesOnly();
 
             var result = client.MempoolContent();
 
-            Assert.AreEqual("mempoolContent", HttpMessageHandlerStub.LatestRequestMethod);
-            Assert.AreEqual(0, HttpMessageHandlerStub.LatestRequestParams.Length);
+            Assert.AreEqual("mempoolContent", Patcher.LatestRequestMethod);
+            Assert.AreEqual(0, Patcher.LatestRequestParams.Length);
 
             Assert.AreEqual(3, result.Length);
             Assert.IsNotNull(result[0]);
@@ -515,12 +512,12 @@ namespace NimiqClientTest
         [TestMethod]
         public void TestMempoolContentFullTransactions()
         {
-            HttpMessageHandlerStub.TestData = MemPoolFixtures.MempoolContentFullTransactions();
+            Patcher.TestData = MemPoolFixtures.MempoolContentFullTransactions();
 
             var result = client.MempoolContent(true);
 
-            Assert.AreEqual("mempoolContent", HttpMessageHandlerStub.LatestRequestMethod);
-            Assert.AreEqual(true, HttpMessageHandlerStub.LatestRequestParams[0]);
+            Assert.AreEqual("mempoolContent", Patcher.LatestRequestMethod);
+            Assert.AreEqual(true, Patcher.LatestRequestParams[0]);
 
             Assert.AreEqual(3, result.Length);
             Assert.IsNotNull(result[0]);
@@ -534,11 +531,11 @@ namespace NimiqClientTest
         [TestMethod]
         public void TestMempoolWhenFull()
         {
-            HttpMessageHandlerStub.TestData = MemPoolFixtures.Mempool();
+            Patcher.TestData = MemPoolFixtures.Mempool();
 
             var result = client.Mempool();
 
-            Assert.AreEqual("mempool", HttpMessageHandlerStub.LatestRequestMethod);
+            Assert.AreEqual("mempool", Patcher.LatestRequestMethod);
 
             Assert.IsNotNull(result);
             Assert.AreEqual(3, result.Total);
@@ -549,11 +546,11 @@ namespace NimiqClientTest
         [TestMethod]
         public void TestMempoolWhenEmpty()
         {
-            HttpMessageHandlerStub.TestData = MemPoolFixtures.MempoolEmpty();
+            Patcher.TestData = MemPoolFixtures.MempoolEmpty();
 
             var result = client.Mempool();
 
-            Assert.AreEqual("mempool", HttpMessageHandlerStub.LatestRequestMethod);
+            Assert.AreEqual("mempool", Patcher.LatestRequestMethod);
 
             Assert.IsNotNull(result);
             Assert.AreEqual(0, result.Total);
@@ -564,11 +561,11 @@ namespace NimiqClientTest
         [TestMethod]
         public void TestMinFeePerByte()
         {
-            HttpMessageHandlerStub.TestData = NodeFixtures.MinFeePerByte();
+            Patcher.TestData = NodeFixtures.MinFeePerByte();
 
             var result = client.MinFeePerByte();
 
-            Assert.AreEqual("minFeePerByte", HttpMessageHandlerStub.LatestRequestMethod);
+            Assert.AreEqual("minFeePerByte", Patcher.LatestRequestMethod);
 
             Assert.AreEqual(0, result);
         }
@@ -576,12 +573,12 @@ namespace NimiqClientTest
         [TestMethod]
         public void TestSetMinFeePerByte()
         {
-            HttpMessageHandlerStub.TestData = NodeFixtures.MinFeePerByte();
+            Patcher.TestData = NodeFixtures.MinFeePerByte();
 
             var result = client.SetMinFeePerByte(0);
 
-            Assert.AreEqual("minFeePerByte", HttpMessageHandlerStub.LatestRequestMethod);
-            Assert.AreEqual(0, HttpMessageHandlerStub.LatestRequestParams[0]);
+            Assert.AreEqual("minFeePerByte", Patcher.LatestRequestMethod);
+            Assert.AreEqual(0, Patcher.LatestRequestParams[0]);
 
             Assert.AreEqual(0, result);
         }
@@ -589,11 +586,11 @@ namespace NimiqClientTest
         [TestMethod]
         public void TestMining()
         {
-            HttpMessageHandlerStub.TestData = MinerFixtures.MiningState();
+            Patcher.TestData = MinerFixtures.MiningState();
 
             var result = client.IsMining();
 
-            Assert.AreEqual("mining", HttpMessageHandlerStub.LatestRequestMethod);
+            Assert.AreEqual("mining", Patcher.LatestRequestMethod);
 
             Assert.AreEqual(false, result);
         }
@@ -601,12 +598,12 @@ namespace NimiqClientTest
         [TestMethod]
         public void TestSetMining()
         {
-            HttpMessageHandlerStub.TestData = MinerFixtures.MiningState();
+            Patcher.TestData = MinerFixtures.MiningState();
 
             var result = client.SetMining(false);
 
-            Assert.AreEqual("mining", HttpMessageHandlerStub.LatestRequestMethod);
-            Assert.AreEqual(false, HttpMessageHandlerStub.LatestRequestParams[0]);
+            Assert.AreEqual("mining", Patcher.LatestRequestMethod);
+            Assert.AreEqual(false, Patcher.LatestRequestParams[0]);
 
             Assert.AreEqual(false, result);
         }
@@ -614,11 +611,11 @@ namespace NimiqClientTest
         [TestMethod]
         public void TestHashrate()
         {
-            HttpMessageHandlerStub.TestData = MinerFixtures.Hashrate();
+            Patcher.TestData = MinerFixtures.Hashrate();
 
             var result = client.Hashrate();
 
-            Assert.AreEqual("hashrate", HttpMessageHandlerStub.LatestRequestMethod);
+            Assert.AreEqual("hashrate", Patcher.LatestRequestMethod);
 
             Assert.AreEqual(52982.2731, result);
         }
@@ -626,11 +623,11 @@ namespace NimiqClientTest
         [TestMethod]
         public void TestMinerThreads()
         {
-            HttpMessageHandlerStub.TestData = MinerFixtures.MinerThreads();
+            Patcher.TestData = MinerFixtures.MinerThreads();
 
             var result = client.MinerThreads();
 
-            Assert.AreEqual("minerThreads", HttpMessageHandlerStub.LatestRequestMethod);
+            Assert.AreEqual("minerThreads", Patcher.LatestRequestMethod);
 
             Assert.AreEqual(2, result);
         }
@@ -638,12 +635,12 @@ namespace NimiqClientTest
         [TestMethod]
         public void TestSetMinerThreads()
         {
-            HttpMessageHandlerStub.TestData = MinerFixtures.MinerThreads();
+            Patcher.TestData = MinerFixtures.MinerThreads();
 
             var result = client.SetMinerThreads(2);
 
-            Assert.AreEqual("minerThreads", HttpMessageHandlerStub.LatestRequestMethod);
-            Assert.AreEqual(2, HttpMessageHandlerStub.LatestRequestParams[0]);
+            Assert.AreEqual("minerThreads", Patcher.LatestRequestMethod);
+            Assert.AreEqual(2, Patcher.LatestRequestParams[0]);
 
             Assert.AreEqual(2, result);
         }
@@ -651,11 +648,11 @@ namespace NimiqClientTest
         [TestMethod]
         public void TestMinerAddress()
         {
-            HttpMessageHandlerStub.TestData = MinerFixtures.MinerAddress();
+            Patcher.TestData = MinerFixtures.MinerAddress();
 
             var result = client.MinerAddress();
 
-            Assert.AreEqual("minerAddress", HttpMessageHandlerStub.LatestRequestMethod);
+            Assert.AreEqual("minerAddress", Patcher.LatestRequestMethod);
 
             Assert.AreEqual("NQ39 NY67 X0F0 UTQE 0YER 4JEU B67L UPP8 G0FM", result);
         }
@@ -663,11 +660,11 @@ namespace NimiqClientTest
         [TestMethod]
         public void TestPool()
         {
-            HttpMessageHandlerStub.TestData = MinerFixtures.PoolSushipool();
+            Patcher.TestData = MinerFixtures.PoolSushipool();
 
             var result = client.Pool();
 
-            Assert.AreEqual("pool", HttpMessageHandlerStub.LatestRequestMethod);
+            Assert.AreEqual("pool", Patcher.LatestRequestMethod);
 
             Assert.AreEqual("us.sushipool.com:443", result);
         }
@@ -675,12 +672,12 @@ namespace NimiqClientTest
         [TestMethod]
         public void TestSetPool()
         {
-            HttpMessageHandlerStub.TestData = MinerFixtures.PoolSushipool();
+            Patcher.TestData = MinerFixtures.PoolSushipool();
 
             var result = client.SetPool("us.sushipool.com:443");
 
-            Assert.AreEqual("pool", HttpMessageHandlerStub.LatestRequestMethod);
-            Assert.AreEqual("us.sushipool.com:443", HttpMessageHandlerStub.LatestRequestParams[0]);
+            Assert.AreEqual("pool", Patcher.LatestRequestMethod);
+            Assert.AreEqual("us.sushipool.com:443", Patcher.LatestRequestParams[0]);
 
             Assert.AreEqual("us.sushipool.com:443", result);
         }
@@ -688,11 +685,11 @@ namespace NimiqClientTest
         [TestMethod]
         public void TestGetPoolWhenNoPool()
         {
-            HttpMessageHandlerStub.TestData = MinerFixtures.PoolNoPool();
+            Patcher.TestData = MinerFixtures.PoolNoPool();
 
             var result = client.Pool();
 
-            Assert.AreEqual("pool", HttpMessageHandlerStub.LatestRequestMethod);
+            Assert.AreEqual("pool", Patcher.LatestRequestMethod);
 
             Assert.AreEqual(null, result);
         }
@@ -700,11 +697,11 @@ namespace NimiqClientTest
         [TestMethod]
         public void TestPoolConnectionState()
         {
-            HttpMessageHandlerStub.TestData = MinerFixtures.PoolConnectionState();
+            Patcher.TestData = MinerFixtures.PoolConnectionState();
 
             var result = client.PoolConnectionState();
 
-            Assert.AreEqual("poolConnectionState", HttpMessageHandlerStub.LatestRequestMethod);
+            Assert.AreEqual("poolConnectionState", Patcher.LatestRequestMethod);
 
             Assert.AreEqual(PoolConnectionState.closed, result);
         }
@@ -712,11 +709,11 @@ namespace NimiqClientTest
         [TestMethod]
         public void TestPoolConfirmedBalance()
         {
-            HttpMessageHandlerStub.TestData = MinerFixtures.PoolConfirmedBalance();
+            Patcher.TestData = MinerFixtures.PoolConfirmedBalance();
 
             var result = client.PoolConfirmedBalance();
 
-            Assert.AreEqual("poolConfirmedBalance", HttpMessageHandlerStub.LatestRequestMethod);
+            Assert.AreEqual("poolConfirmedBalance", Patcher.LatestRequestMethod);
 
             Assert.AreEqual(12000, result);
         }
@@ -724,11 +721,11 @@ namespace NimiqClientTest
         [TestMethod]
         public void TestGetWork()
         {
-            HttpMessageHandlerStub.TestData = MinerFixtures.GetWork();
+            Patcher.TestData = MinerFixtures.GetWork();
 
             var result = client.GetWork();
 
-            Assert.AreEqual("getWork", HttpMessageHandlerStub.LatestRequestMethod);
+            Assert.AreEqual("getWork", Patcher.LatestRequestMethod);
 
             Assert.AreEqual("00015a7d47ddf5152a7d06a14ea291831c3fc7af20b88240c5ae839683021bcee3e279877b3de0da8ce8878bf225f6782a2663eff9a03478c15ba839fde9f1dc3dd9e5f0cd4dbc96a30130de130eb52d8160e9197e2ccf435d8d24a09b518a5e05da87a8658ed8c02531f66a7d31757b08c88d283654ed477e5e2fec21a7ca8449241e00d620000dc2fa5e763bda00000000", result.Data);
             Assert.AreEqual("11fad9806b8b4167517c162fa113c09606b44d24f8020804a0f756db085546ff585adfdedad9085d36527a8485b497728446c35b9b6c3db263c07dd0a1f487b1639aa37ff60ba3cf6ed8ab5146fee50a23ebd84ea37dca8c49b31e57d05c9e6c57f09a3b282b71ec2be66c1bc8268b5326bb222b11a0d0a4acd2a93c9e8a8713fe4383e9d5df3b1bf008c535281086b2bcc20e494393aea1475a5c3f13673de2cf7314d201b7cc7f01e0e6f0e07dd9249dc598f4e5ee8801f50000000000", result.Suffix);
@@ -739,13 +736,13 @@ namespace NimiqClientTest
         [TestMethod]
         public void TestGetWorkWithOverride()
         {
-            HttpMessageHandlerStub.TestData = MinerFixtures.GetWork();
+            Patcher.TestData = MinerFixtures.GetWork();
 
             var result = client.GetWork("NQ46 NTNU QX94 MVD0 BBT0 GXAR QUHK VGNF 39ET", "");
 
-            Assert.AreEqual("getWork", HttpMessageHandlerStub.LatestRequestMethod);
-            Assert.AreEqual("NQ46 NTNU QX94 MVD0 BBT0 GXAR QUHK VGNF 39ET", HttpMessageHandlerStub.LatestRequestParams[0]);
-            Assert.AreEqual("", HttpMessageHandlerStub.LatestRequestParams[1]);
+            Assert.AreEqual("getWork", Patcher.LatestRequestMethod);
+            Assert.AreEqual("NQ46 NTNU QX94 MVD0 BBT0 GXAR QUHK VGNF 39ET", Patcher.LatestRequestParams[0]);
+            Assert.AreEqual("", Patcher.LatestRequestParams[1]);
 
             Assert.AreEqual("00015a7d47ddf5152a7d06a14ea291831c3fc7af20b88240c5ae839683021bcee3e279877b3de0da8ce8878bf225f6782a2663eff9a03478c15ba839fde9f1dc3dd9e5f0cd4dbc96a30130de130eb52d8160e9197e2ccf435d8d24a09b518a5e05da87a8658ed8c02531f66a7d31757b08c88d283654ed477e5e2fec21a7ca8449241e00d620000dc2fa5e763bda00000000", result.Data);
             Assert.AreEqual("11fad9806b8b4167517c162fa113c09606b44d24f8020804a0f756db085546ff585adfdedad9085d36527a8485b497728446c35b9b6c3db263c07dd0a1f487b1639aa37ff60ba3cf6ed8ab5146fee50a23ebd84ea37dca8c49b31e57d05c9e6c57f09a3b282b71ec2be66c1bc8268b5326bb222b11a0d0a4acd2a93c9e8a8713fe4383e9d5df3b1bf008c535281086b2bcc20e494393aea1475a5c3f13673de2cf7314d201b7cc7f01e0e6f0e07dd9249dc598f4e5ee8801f50000000000", result.Suffix);
@@ -756,11 +753,11 @@ namespace NimiqClientTest
         [TestMethod]
         public void TestGetBlockTemplate()
         {
-            HttpMessageHandlerStub.TestData = MinerFixtures.GetWorkBlockTemplate();
+            Patcher.TestData = MinerFixtures.GetWorkBlockTemplate();
 
             var result = client.GetBlockTemplate();
 
-            Assert.AreEqual("getBlockTemplate", HttpMessageHandlerStub.LatestRequestMethod);
+            Assert.AreEqual("getBlockTemplate", Patcher.LatestRequestMethod);
 
             Assert.AreEqual(901883, result.Header.Height);
             Assert.AreEqual(503371226, result.Target);
@@ -770,13 +767,13 @@ namespace NimiqClientTest
         [TestMethod]
         public void TestGetBlockTemplateWithOverride()
         {
-            HttpMessageHandlerStub.TestData = MinerFixtures.GetWorkBlockTemplate();
+            Patcher.TestData = MinerFixtures.GetWorkBlockTemplate();
 
             var result = client.GetBlockTemplate("NQ46 NTNU QX94 MVD0 BBT0 GXAR QUHK VGNF 39ET", "");
 
-            Assert.AreEqual("getBlockTemplate", HttpMessageHandlerStub.LatestRequestMethod);
-            Assert.AreEqual("NQ46 NTNU QX94 MVD0 BBT0 GXAR QUHK VGNF 39ET", HttpMessageHandlerStub.LatestRequestParams[0]);
-            Assert.AreEqual("", HttpMessageHandlerStub.LatestRequestParams[1]);
+            Assert.AreEqual("getBlockTemplate", Patcher.LatestRequestMethod);
+            Assert.AreEqual("NQ46 NTNU QX94 MVD0 BBT0 GXAR QUHK VGNF 39ET", Patcher.LatestRequestParams[0]);
+            Assert.AreEqual("", Patcher.LatestRequestParams[1]);
 
             Assert.AreEqual(901883, result.Header.Height);
             Assert.AreEqual(503371226, result.Target);
@@ -786,24 +783,24 @@ namespace NimiqClientTest
         [TestMethod]
         public void TestSubmitBlock()
         {
-            HttpMessageHandlerStub.TestData = BlockFixtures.SubmitBlock();
+            Patcher.TestData = BlockFixtures.SubmitBlock();
 
             var blockHex = "000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000f6ba2bbf7e1478a209057000471d73fbdc28df0b717747d929cfde829c4120f62e02da3d162e20fa982029dbde9cc20f6b431ab05df1764f34af4c62a4f2b33f1f010000000000015ac3185f000134990001000000000000000000000000000000000000000007546573744e657400000000";
 
             client.SubmitBlock(blockHex);
 
-            Assert.AreEqual("submitBlock", HttpMessageHandlerStub.LatestRequestMethod);
-            Assert.AreEqual(blockHex, HttpMessageHandlerStub.LatestRequestParams[0]);
+            Assert.AreEqual("submitBlock", Patcher.LatestRequestMethod);
+            Assert.AreEqual(blockHex, Patcher.LatestRequestParams[0]);
         }
 
         [TestMethod]
         public void TestAccounts()
         {
-            HttpMessageHandlerStub.TestData = AccountFixtures.Accounts();
+            Patcher.TestData = AccountFixtures.Accounts();
 
             var result = client.Accounts();
 
-            Assert.AreEqual(HttpMessageHandlerStub.LatestRequestMethod, "accounts");
+            Assert.AreEqual(Patcher.LatestRequestMethod, "accounts");
 
             Assert.AreEqual(3, result.Length);
 
@@ -847,11 +844,11 @@ namespace NimiqClientTest
         [TestMethod]
         public void TestCreateAccount()
         {
-            HttpMessageHandlerStub.TestData = AccountFixtures.CreateAccount();
+            Patcher.TestData = AccountFixtures.CreateAccount();
 
             var result = client.CreateAccount();
 
-            Assert.AreEqual("createAccount", HttpMessageHandlerStub.LatestRequestMethod);
+            Assert.AreEqual("createAccount", Patcher.LatestRequestMethod);
 
             Assert.IsNotNull(result);
             Assert.AreEqual("b6edcc7924af5a05af6087959c7233ec2cf1a5db", result.Id);
@@ -862,12 +859,12 @@ namespace NimiqClientTest
         [TestMethod]
         public void TestGetBalance()
         {
-            HttpMessageHandlerStub.TestData = AccountFixtures.GetBalance();
+            Patcher.TestData = AccountFixtures.GetBalance();
 
             var result = client.GetBalance("NQ46 NTNU QX94 MVD0 BBT0 GXAR QUHK VGNF 39ET");
 
-            Assert.AreEqual("getBalance", HttpMessageHandlerStub.LatestRequestMethod);
-            Assert.AreEqual("NQ46 NTNU QX94 MVD0 BBT0 GXAR QUHK VGNF 39ET", HttpMessageHandlerStub.LatestRequestParams[0]);
+            Assert.AreEqual("getBalance", Patcher.LatestRequestMethod);
+            Assert.AreEqual("NQ46 NTNU QX94 MVD0 BBT0 GXAR QUHK VGNF 39ET", Patcher.LatestRequestParams[0]);
 
             Assert.AreEqual(1200000, result);
         }
@@ -875,12 +872,12 @@ namespace NimiqClientTest
         [TestMethod]
         public void TestGetAccount()
         {
-            HttpMessageHandlerStub.TestData = AccountFixtures.GetAccountBasic();
+            Patcher.TestData = AccountFixtures.GetAccountBasic();
 
             var result = client.GetAccount("NQ46 NTNU QX94 MVD0 BBT0 GXAR QUHK VGNF 39ET");
 
-            Assert.AreEqual("getAccount", HttpMessageHandlerStub.LatestRequestMethod);
-            Assert.AreEqual("NQ46 NTNU QX94 MVD0 BBT0 GXAR QUHK VGNF 39ET", HttpMessageHandlerStub.LatestRequestParams[0]);
+            Assert.AreEqual("getAccount", Patcher.LatestRequestMethod);
+            Assert.AreEqual("NQ46 NTNU QX94 MVD0 BBT0 GXAR QUHK VGNF 39ET", Patcher.LatestRequestParams[0]);
 
             Assert.IsTrue(result is Account);
             var account = (Account)result;
@@ -893,12 +890,12 @@ namespace NimiqClientTest
         [TestMethod]
         public void TestGetAccountForVestingContract()
         {
-            HttpMessageHandlerStub.TestData = AccountFixtures.GetAccountVesting();
+            Patcher.TestData = AccountFixtures.GetAccountVesting();
 
             var result = client.GetAccount("NQ09 VF5Y 1PKV MRM4 5LE1 55KV P6R2 GXYJ XYQF");
 
-            Assert.AreEqual("getAccount", HttpMessageHandlerStub.LatestRequestMethod);
-            Assert.AreEqual("NQ09 VF5Y 1PKV MRM4 5LE1 55KV P6R2 GXYJ XYQF", HttpMessageHandlerStub.LatestRequestParams[0]);
+            Assert.AreEqual("getAccount", Patcher.LatestRequestMethod);
+            Assert.AreEqual("NQ09 VF5Y 1PKV MRM4 5LE1 55KV P6R2 GXYJ XYQF", Patcher.LatestRequestParams[0]);
 
             Assert.IsTrue(result is VestingContract);
             var contract = (VestingContract)result;
@@ -917,12 +914,12 @@ namespace NimiqClientTest
         [TestMethod]
         public void TestGetAccountForHashedTimeLockedContract()
         {
-            HttpMessageHandlerStub.TestData = AccountFixtures.GetAccountVestingHtlc();
+            Patcher.TestData = AccountFixtures.GetAccountVestingHtlc();
 
             var result = client.GetAccount("NQ46 NTNU QX94 MVD0 BBT0 GXAR QUHK VGNF 39ET");
 
-            Assert.AreEqual("getAccount", HttpMessageHandlerStub.LatestRequestMethod);
-            Assert.AreEqual("NQ46 NTNU QX94 MVD0 BBT0 GXAR QUHK VGNF 39ET", HttpMessageHandlerStub.LatestRequestParams[0]);
+            Assert.AreEqual("getAccount", Patcher.LatestRequestMethod);
+            Assert.AreEqual("NQ46 NTNU QX94 MVD0 BBT0 GXAR QUHK VGNF 39ET", Patcher.LatestRequestParams[0]);
 
             Assert.IsTrue(result is HTLC);
             var contract = (HTLC)result;
@@ -944,11 +941,11 @@ namespace NimiqClientTest
         [TestMethod]
         public void TestBlockNumber()
         {
-            HttpMessageHandlerStub.TestData = BlockFixtures.BlockNumber();
+            Patcher.TestData = BlockFixtures.BlockNumber();
 
             var result = client.BlockNumber();
 
-            Assert.AreEqual("blockNumber", HttpMessageHandlerStub.LatestRequestMethod);
+            Assert.AreEqual("blockNumber", Patcher.LatestRequestMethod);
 
             Assert.AreEqual(748883, result);
         }
@@ -956,12 +953,12 @@ namespace NimiqClientTest
         [TestMethod]
         public void TestGetBlockTransactionCountByHash()
         {
-            HttpMessageHandlerStub.TestData = BlockFixtures.BlockTransactionCountFound();
+            Patcher.TestData = BlockFixtures.BlockTransactionCountFound();
 
             var result = client.GetBlockTransactionCountByHash("bc3945d22c9f6441409a6e539728534a4fc97859bda87333071fad9dad942786");
 
-            Assert.AreEqual("getBlockTransactionCountByHash", HttpMessageHandlerStub.LatestRequestMethod);
-            Assert.AreEqual("bc3945d22c9f6441409a6e539728534a4fc97859bda87333071fad9dad942786", HttpMessageHandlerStub.LatestRequestParams[0]);
+            Assert.AreEqual("getBlockTransactionCountByHash", Patcher.LatestRequestMethod);
+            Assert.AreEqual("bc3945d22c9f6441409a6e539728534a4fc97859bda87333071fad9dad942786", Patcher.LatestRequestParams[0]);
 
             Assert.AreEqual(2, result);
         }
@@ -969,12 +966,12 @@ namespace NimiqClientTest
         [TestMethod]
         public void TestGetBlockTransactionCountByHashWhenNotFound()
         {
-            HttpMessageHandlerStub.TestData = BlockFixtures.BlockTransactionCountNotFound();
+            Patcher.TestData = BlockFixtures.BlockTransactionCountNotFound();
 
             var result = client.GetBlockTransactionCountByHash("bc3945d22c9f6441409a6e539728534a4fc97859bda87333071fad9dad942786");
 
-            Assert.AreEqual("getBlockTransactionCountByHash", HttpMessageHandlerStub.LatestRequestMethod);
-            Assert.AreEqual("bc3945d22c9f6441409a6e539728534a4fc97859bda87333071fad9dad942786", HttpMessageHandlerStub.LatestRequestParams[0]);
+            Assert.AreEqual("getBlockTransactionCountByHash", Patcher.LatestRequestMethod);
+            Assert.AreEqual("bc3945d22c9f6441409a6e539728534a4fc97859bda87333071fad9dad942786", Patcher.LatestRequestParams[0]);
 
             Assert.AreEqual(null, result);
         }
@@ -982,12 +979,12 @@ namespace NimiqClientTest
         [TestMethod]
         public void TestGetBlockTransactionCountByNumber()
         {
-            HttpMessageHandlerStub.TestData = BlockFixtures.BlockTransactionCountFound();
+            Patcher.TestData = BlockFixtures.BlockTransactionCountFound();
 
             var result = client.GetBlockTransactionCountByNumber(11608);
 
-            Assert.AreEqual("getBlockTransactionCountByNumber", HttpMessageHandlerStub.LatestRequestMethod);
-            Assert.AreEqual(11608, HttpMessageHandlerStub.LatestRequestParams[0]);
+            Assert.AreEqual("getBlockTransactionCountByNumber", Patcher.LatestRequestMethod);
+            Assert.AreEqual(11608, Patcher.LatestRequestParams[0]);
 
             Assert.AreEqual(2, result);
         }
@@ -995,12 +992,12 @@ namespace NimiqClientTest
         [TestMethod]
         public void TestGetBlockTransactionCountByNumberWhenNotFound()
         {
-            HttpMessageHandlerStub.TestData = BlockFixtures.BlockTransactionCountNotFound();
+            Patcher.TestData = BlockFixtures.BlockTransactionCountNotFound();
 
             var result = client.GetBlockTransactionCountByNumber(11608);
 
-            Assert.AreEqual("getBlockTransactionCountByNumber", HttpMessageHandlerStub.LatestRequestMethod);
-            Assert.AreEqual(11608, HttpMessageHandlerStub.LatestRequestParams[0]);
+            Assert.AreEqual("getBlockTransactionCountByNumber", Patcher.LatestRequestMethod);
+            Assert.AreEqual(11608, Patcher.LatestRequestParams[0]);
 
             Assert.AreEqual(null, result);
         }
@@ -1008,13 +1005,13 @@ namespace NimiqClientTest
         [TestMethod]
         public void TestGetBlockByHash()
         {
-            HttpMessageHandlerStub.TestData = BlockFixtures.GetBlockFound();
+            Patcher.TestData = BlockFixtures.GetBlockFound();
 
             var result = client.GetBlockByHash("bc3945d22c9f6441409a6e539728534a4fc97859bda87333071fad9dad942786");
 
-            Assert.AreEqual("getBlockByHash", HttpMessageHandlerStub.LatestRequestMethod);
-            Assert.AreEqual("bc3945d22c9f6441409a6e539728534a4fc97859bda87333071fad9dad942786", (string)HttpMessageHandlerStub.LatestRequestParams[0]);
-            Assert.AreEqual(1, HttpMessageHandlerStub.LatestRequestParams.Length);
+            Assert.AreEqual("getBlockByHash", Patcher.LatestRequestMethod);
+            Assert.AreEqual("bc3945d22c9f6441409a6e539728534a4fc97859bda87333071fad9dad942786", (string)Patcher.LatestRequestParams[0]);
+            Assert.AreEqual(1, Patcher.LatestRequestParams.Length);
 
             Assert.IsNotNull(result);
             Assert.AreEqual(11608, result.Number);
@@ -1029,13 +1026,13 @@ namespace NimiqClientTest
         [TestMethod]
         public void TestGetBlockByHashWithTransactions()
         {
-            HttpMessageHandlerStub.TestData = BlockFixtures.GetBlockWithTransactions();
+            Patcher.TestData = BlockFixtures.GetBlockWithTransactions();
 
             var result = client.GetBlockByHash("bc3945d22c9f6441409a6e539728534a4fc97859bda87333071fad9dad942786", true);
 
-            Assert.AreEqual("getBlockByHash", HttpMessageHandlerStub.LatestRequestMethod);
-            Assert.AreEqual("bc3945d22c9f6441409a6e539728534a4fc97859bda87333071fad9dad942786", HttpMessageHandlerStub.LatestRequestParams[0]);
-            Assert.AreEqual(true, HttpMessageHandlerStub.LatestRequestParams[1]);
+            Assert.AreEqual("getBlockByHash", Patcher.LatestRequestMethod);
+            Assert.AreEqual("bc3945d22c9f6441409a6e539728534a4fc97859bda87333071fad9dad942786", Patcher.LatestRequestParams[0]);
+            Assert.AreEqual(true, Patcher.LatestRequestParams[1]);
 
             Assert.IsNotNull(result);
             Assert.AreEqual(11608, result.Number);
@@ -1050,13 +1047,13 @@ namespace NimiqClientTest
         [TestMethod]
         public void TestGetBlockByHashNotFound()
         {
-            HttpMessageHandlerStub.TestData = BlockFixtures.GetBlockNotFound();
+            Patcher.TestData = BlockFixtures.GetBlockNotFound();
 
             var result = client.GetBlockByHash("bc3945d22c9f6441409a6e539728534a4fc97859bda87333071fad9dad942786");
 
-            Assert.AreEqual("getBlockByHash", HttpMessageHandlerStub.LatestRequestMethod);
-            Assert.AreEqual("bc3945d22c9f6441409a6e539728534a4fc97859bda87333071fad9dad942786", HttpMessageHandlerStub.LatestRequestParams[0]);
-            Assert.AreEqual(1, HttpMessageHandlerStub.LatestRequestParams.Length);
+            Assert.AreEqual("getBlockByHash", Patcher.LatestRequestMethod);
+            Assert.AreEqual("bc3945d22c9f6441409a6e539728534a4fc97859bda87333071fad9dad942786", Patcher.LatestRequestParams[0]);
+            Assert.AreEqual(1, Patcher.LatestRequestParams.Length);
 
             Assert.IsNull(result);
         }
@@ -1064,13 +1061,13 @@ namespace NimiqClientTest
         [TestMethod]
         public void TestGetBlockByNumber()
         {
-            HttpMessageHandlerStub.TestData = BlockFixtures.GetBlockFound();
+            Patcher.TestData = BlockFixtures.GetBlockFound();
 
             var result = client.GetBlockByNumber(11608);
 
-            Assert.AreEqual("getBlockByNumber", HttpMessageHandlerStub.LatestRequestMethod);
-            Assert.AreEqual(11608, HttpMessageHandlerStub.LatestRequestParams[0]);
-            Assert.AreEqual(1, HttpMessageHandlerStub.LatestRequestParams.Length);
+            Assert.AreEqual("getBlockByNumber", Patcher.LatestRequestMethod);
+            Assert.AreEqual(11608, Patcher.LatestRequestParams[0]);
+            Assert.AreEqual(1, Patcher.LatestRequestParams.Length);
 
             Assert.IsNotNull(result);
             Assert.AreEqual(11608, result.Number);
@@ -1085,13 +1082,13 @@ namespace NimiqClientTest
         [TestMethod]
         public void TestGetBlockByNumberWithTransactions()
         {
-            HttpMessageHandlerStub.TestData = BlockFixtures.GetBlockWithTransactions();
+            Patcher.TestData = BlockFixtures.GetBlockWithTransactions();
 
             var result = client.GetBlockByNumber(11608, true);
 
-            Assert.AreEqual("getBlockByNumber", HttpMessageHandlerStub.LatestRequestMethod);
-            Assert.AreEqual(11608, HttpMessageHandlerStub.LatestRequestParams[0]);
-            Assert.AreEqual(true, HttpMessageHandlerStub.LatestRequestParams[1]);
+            Assert.AreEqual("getBlockByNumber", Patcher.LatestRequestMethod);
+            Assert.AreEqual(11608, Patcher.LatestRequestParams[0]);
+            Assert.AreEqual(true, Patcher.LatestRequestParams[1]);
 
             Assert.IsNotNull(result);
             Assert.AreEqual(11608, result.Number);
@@ -1106,13 +1103,13 @@ namespace NimiqClientTest
         [TestMethod]
         public void TestGetBlockByNumberNotFound()
         {
-            HttpMessageHandlerStub.TestData = BlockFixtures.GetBlockNotFound();
+            Patcher.TestData = BlockFixtures.GetBlockNotFound();
 
             var result = client.GetBlockByNumber(11608);
 
-            Assert.AreEqual("getBlockByNumber", HttpMessageHandlerStub.LatestRequestMethod);
-            Assert.AreEqual(11608, HttpMessageHandlerStub.LatestRequestParams[0]);
-            Assert.AreEqual(1, HttpMessageHandlerStub.LatestRequestParams.Length);
+            Assert.AreEqual("getBlockByNumber", Patcher.LatestRequestMethod);
+            Assert.AreEqual(11608, Patcher.LatestRequestParams[0]);
+            Assert.AreEqual(1, Patcher.LatestRequestParams.Length);
 
             Assert.IsNull(result);
         }
@@ -1120,12 +1117,12 @@ namespace NimiqClientTest
         [TestMethod]
         public void TestConstant()
         {
-            HttpMessageHandlerStub.TestData = NodeFixtures.Constant();
+            Patcher.TestData = NodeFixtures.Constant();
 
             var result = client.Constant("BaseConsensus.MAX_ATTEMPTS_TO_FETCH");
 
-            Assert.AreEqual("constant", HttpMessageHandlerStub.LatestRequestMethod);
-            Assert.AreEqual("BaseConsensus.MAX_ATTEMPTS_TO_FETCH", HttpMessageHandlerStub.LatestRequestParams[0]);
+            Assert.AreEqual("constant", Patcher.LatestRequestMethod);
+            Assert.AreEqual("BaseConsensus.MAX_ATTEMPTS_TO_FETCH", Patcher.LatestRequestParams[0]);
 
             Assert.AreEqual(5, result);
         }
@@ -1133,13 +1130,13 @@ namespace NimiqClientTest
         [TestMethod]
         public void TestSetConstant()
         {
-            HttpMessageHandlerStub.TestData = NodeFixtures.Constant();
+            Patcher.TestData = NodeFixtures.Constant();
 
             var result = client.SetConstant("BaseConsensus.MAX_ATTEMPTS_TO_FETCH", 10);
 
-            Assert.AreEqual("constant", HttpMessageHandlerStub.LatestRequestMethod);
-            Assert.AreEqual("BaseConsensus.MAX_ATTEMPTS_TO_FETCH", HttpMessageHandlerStub.LatestRequestParams[0]);
-            Assert.AreEqual(10, HttpMessageHandlerStub.LatestRequestParams[1]);
+            Assert.AreEqual("constant", Patcher.LatestRequestMethod);
+            Assert.AreEqual("BaseConsensus.MAX_ATTEMPTS_TO_FETCH", Patcher.LatestRequestParams[0]);
+            Assert.AreEqual(10, Patcher.LatestRequestParams[1]);
 
             Assert.AreEqual(5, result);
         }
@@ -1147,13 +1144,13 @@ namespace NimiqClientTest
         [TestMethod]
         public void TestResetConstant()
         {
-            HttpMessageHandlerStub.TestData = NodeFixtures.Constant();
+            Patcher.TestData = NodeFixtures.Constant();
 
             var result = client.ResetConstant("BaseConsensus.MAX_ATTEMPTS_TO_FETCH");
 
-            Assert.AreEqual("constant", HttpMessageHandlerStub.LatestRequestMethod);
-            Assert.AreEqual("BaseConsensus.MAX_ATTEMPTS_TO_FETCH", HttpMessageHandlerStub.LatestRequestParams[0]);
-            Assert.AreEqual("reset", HttpMessageHandlerStub.LatestRequestParams[1]);
+            Assert.AreEqual("constant", Patcher.LatestRequestMethod);
+            Assert.AreEqual("BaseConsensus.MAX_ATTEMPTS_TO_FETCH", Patcher.LatestRequestParams[0]);
+            Assert.AreEqual("reset", Patcher.LatestRequestParams[1]);
 
             Assert.AreEqual(5, result);
         }
@@ -1161,13 +1158,13 @@ namespace NimiqClientTest
         [TestMethod]
         public void TestLog()
         {
-            HttpMessageHandlerStub.TestData = NodeFixtures.Log();
+            Patcher.TestData = NodeFixtures.Log();
 
             var result = client.SetLog("*", LogLevel.Verbose);
 
-            Assert.AreEqual("log", HttpMessageHandlerStub.LatestRequestMethod);
-            Assert.AreEqual("*", HttpMessageHandlerStub.LatestRequestParams[0]);
-            Assert.AreEqual("verbose", HttpMessageHandlerStub.LatestRequestParams[1]);
+            Assert.AreEqual("log", Patcher.LatestRequestMethod);
+            Assert.AreEqual("*", Patcher.LatestRequestParams[0]);
+            Assert.AreEqual("verbose", Patcher.LatestRequestParams[1]);
 
             Assert.AreEqual(true, result);
         }
