@@ -359,5 +359,8 @@ FodyWeavers.xsd
 # macOS
 .DS_Store
 
-# coverage
+# Coverage
 coverage
+
+# DocFX
+docfx*/

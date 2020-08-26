@@ -1,0 +1,35 @@
+{
+  "metadata": [
+    {
+      "src": [
+        {
+          "src": "NimiqClient",
+          "files": [ "**.csproj" ],
+          "exclude": [ "**/bin/**", "**/obj/**" ]
+        }
+      ],
+      "dest": "obj/api"
+    }
+  ],
+  "build": {
+    "fileMetadata": {
+      "htmlname": {
+        "README.md": "index.html"
+      },
+      "outputFileName": {
+        "README.md": "index.html"
+      }
+    },
+    "content": [
+      {
+        "files": [ "toc.yml", "README.md" ]
+      },
+      {
+        "src": "obj/api",
+        "files": [ "**/*.yml" ],
+        "dest": "api"
+      }
+    ],
+    "dest": "docs"
+  }
+}
