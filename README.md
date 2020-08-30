@@ -52,23 +52,43 @@ Refer to the [issue tracker](https://github.com/nimiq-community/csharp-client/is
 
 ### Develop
 
-After cloning the repository, open the solucion file `NimiqClientProjects.sln` located in the repository root folder on Visual Studio.
+After cloning the repository, open the solution file `NimiqClientProjects.sln` located in the repository root folder on Visual Studio.
 
 All done, happy coding!
 
 ### Testing
 
-Tests are stored in the `/NimiqClientTest` folder and can be run from the Visual Studio IDE.
+The project containing all the is in the folder `/NimiqClientTest` and can be run from the Visual Studio IDE. Alternatively you can run all the tests from the command line from the repository root directory:
+
+```sh
+$ dotnet test
+```
 
 ### Documentation
 
-The documentation is generated automatically running [Doxygen](https://www.doxygen.nl/download.html#srcbin).
+The documentation is generated automatically with [DocFX](https://dotnet.github.io/docfx/).
 
-To generate the documentation run `doxygen` with the configuration file `doxygenfile` from the repository root directory:
+Run all the commands from the repository root directory.
+
+First install the DocFX package:
 
 ```sh
-doxygen doxygenfile
+$ nuget install docfx.console -version 2.51.0
 ```
+
+Copy the file `README.md` with the name `index.md`:
+
+```sh
+$ cp -r README.md index.md
+```
+
+Run DocFX with the configuration file `docfx.json` via the mono command:
+
+```sh
+$ mono docfx.console.2.51.0/tools/docfx.exe docfx.json
+```
+
+Mono is distributed with the .Net SDK, if it isn't already installed download and install the tool from [here](https://www.mono-project.com/docs/tools+libraries/tools/).
 
 ## License
 

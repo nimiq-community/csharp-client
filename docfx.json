@@ -12,17 +12,9 @@
     }
   ],
   "build": {
-    "fileMetadata": {
-      "htmlname": {
-        "README.md": "index.html"
-      },
-      "outputFileName": {
-        "README.md": "index.html"
-      }
-    },
     "content": [
       {
-        "files": [ "toc.yml", "README.md" ]
+        "files": [ "toc.yml", "index.md" ]
       },
       {
         "src": "obj/api",

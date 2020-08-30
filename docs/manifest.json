@@ -1,0 +1,477 @@
+{
+  "homepages": [],
+  "source_base_path": "/Users/rhodylugo/Desktop/Nimiq/clients/csharp-client",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "log_codes": [
+        "InvalidFileLink"
+      ],
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html",
+          "hash": "E2JUNj1zM9lIfX0zOJfxAw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Nimiq.Config.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Nimiq.Config.html",
+          "hash": "EQEyz66UO89S8NXFomRBbQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Nimiq.InternalErrorException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Nimiq.InternalErrorException.html",
+          "hash": "ocHQhSq9zSjtXtOjjnT+lQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Nimiq.JsonElementExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Nimiq.JsonElementExtensions.html",
+          "hash": "dPYs98Sa8svNd+zvSl0TLQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Nimiq.JsonStringValue.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Nimiq.JsonStringValue.html",
+          "hash": "HKHmUM+9YSObo8Akim33pA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Nimiq.Models.Account.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Nimiq.Models.Account.html",
+          "hash": "QQzT/J7x80lEkcuYo8X+LQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Nimiq.Models.AccountType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Nimiq.Models.AccountType.html",
+          "hash": "GWKMMSI6sEQ2ZOBxRZiedg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Nimiq.Models.Block.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Nimiq.Models.Block.html",
+          "hash": "UonL4W4/V5RcjhJJMY03NQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Nimiq.Models.BlockTemplate.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Nimiq.Models.BlockTemplate.html",
+          "hash": "CuaugrghpHVXRGcegeFitg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Nimiq.Models.BlockTemplateBody.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Nimiq.Models.BlockTemplateBody.html",
+          "hash": "Ow15b/WKMK1g5rmwLnJzuQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Nimiq.Models.BlockTemplateHeader.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Nimiq.Models.BlockTemplateHeader.html",
+          "hash": "khg7KYPHbpH1NYG8FtEyJw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Nimiq.Models.ConsensusState.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Nimiq.Models.ConsensusState.html",
+          "hash": "m/HmVHtVIbs5r5Lo4uBYjA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Nimiq.Models.HTLC.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Nimiq.Models.HTLC.html",
+          "hash": "PE7+J5IpiBpfCSoQsdCxPA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Nimiq.Models.LogLevel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Nimiq.Models.LogLevel.html",
+          "hash": "mwhsY+PkK7nWV+TwLRHPnw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Nimiq.Models.MempoolInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Nimiq.Models.MempoolInfo.html",
+          "hash": "+tQiS39G8BsKe0JwkZtNjQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Nimiq.Models.OutgoingTransaction.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Nimiq.Models.OutgoingTransaction.html",
+          "hash": "/SmwXkbJcQtEd0wwyVCepQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Nimiq.Models.Peer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Nimiq.Models.Peer.html",
+          "hash": "ZkvwAerVTXYH4MEcHWGOYQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Nimiq.Models.PeerAddressState.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Nimiq.Models.PeerAddressState.html",
+          "hash": "jw/nxCUE90Ew0qBTIBVN0g=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Nimiq.Models.PeerConnectionState.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Nimiq.Models.PeerConnectionState.html",
+          "hash": "2bddD0LOHNiiG55nYOFgig=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Nimiq.Models.PeerStateCommand.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Nimiq.Models.PeerStateCommand.html",
+          "hash": "fyiwre/5rEFjeJYyhfRAgQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Nimiq.Models.PoolConnectionState.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Nimiq.Models.PoolConnectionState.html",
+          "hash": "lYkJcJh3er/CQH7D0XlufA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Nimiq.Models.SyncStatus.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Nimiq.Models.SyncStatus.html",
+          "hash": "ytMu6KcBBpS+cgZsXZVv9A=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Nimiq.Models.Transaction.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Nimiq.Models.Transaction.html",
+          "hash": "jPq+4JU/dyenes/2DA7lGA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Nimiq.Models.TransactionReceipt.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Nimiq.Models.TransactionReceipt.html",
+          "hash": "nnbp2XXQRe0ZuDvQ9JNTnw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Nimiq.Models.VestingContract.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Nimiq.Models.VestingContract.html",
+          "hash": "kzASLdDilCb1pGlY+eYe4g=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Nimiq.Models.Wallet.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Nimiq.Models.Wallet.html",
+          "hash": "/GE3fuNhxpnmvBGabvm8Jg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Nimiq.Models.WorkInstructions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Nimiq.Models.WorkInstructions.html",
+          "hash": "JahanCwdg9nppr1cft9qCQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Nimiq.Models.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Nimiq.Models.html",
+          "hash": "mazzRjpGOtMFhitYoV2kdw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Nimiq.NimiqClient.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Nimiq.NimiqClient.html",
+          "hash": "U2pr8Y8zqyCDfNEK390+NQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Nimiq.RemoteErrorException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Nimiq.RemoteErrorException.html",
+          "hash": "fi43djtNowSkBPtOV3c3/g=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Nimiq.StringEnumeration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Nimiq.StringEnumeration.html",
+          "hash": "fNjuSRi++9wcFpZlJA+LRg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Nimiq.StringEnumerationConverter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Nimiq.StringEnumerationConverter.html",
+          "hash": "udGq+pNc64oKHPHcgK/aKg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Nimiq.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Nimiq.html",
+          "hash": "JrQsYxmoW14CQNYt5TXh+Q=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "obj/api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html",
+          "hash": "iTQH+1XFaBr8xmIvfAPTJw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html",
+          "hash": "Fj+rkETda8EaYPcVO3piFA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    }
+  ],
+  "incremental_info": [
+    {
+      "status": {
+        "can_incremental": true,
+        "incrementalPhase": "build",
+        "total_file_count": 0,
+        "skipped_file_count": 0
+      },
+      "processors": {
+        "ConceptualDocumentProcessor": {
+          "can_incremental": true,
+          "incrementalPhase": "build",
+          "total_file_count": 1,
+          "skipped_file_count": 0
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": true,
+          "incrementalPhase": "build",
+          "total_file_count": 32,
+          "skipped_file_count": 32
+        },
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        }
+      }
+    },
+    {
+      "status": {
+        "can_incremental": true,
+        "details": "Can support incremental post processing.",
+        "incrementalPhase": "postProcessing",
+        "total_file_count": 0,
+        "skipped_file_count": 0
+      },
+      "processors": {}
+    }
+  ],
+  "version_info": {},
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

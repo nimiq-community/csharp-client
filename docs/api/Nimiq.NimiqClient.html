@@ -1,0 +1,2293 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class NimiqClient
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class NimiqClient
+   ">
+    <meta name="generator" content="docfx 2.51.0.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Nimiq.NimiqClient">
+  
+  
+  <h1 id="Nimiq_NimiqClient" data-uid="Nimiq.NimiqClient" class="text-break">Class NimiqClient
+  </h1>
+  <div class="markdown level0 summary"><p>Nimiq JSONRPC Client.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">NimiqClient</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Nimiq.html">Nimiq</a></h6>
+  <h6><strong>Assembly</strong>: NimiqClient.dll</h6>
+  <h5 id="Nimiq_NimiqClient_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class NimiqClient</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/rraallvv/csharp-client/new/master/apiSpec/new?filename=Nimiq_NimiqClient__ctor_Nimiq_Config_.md&amp;value=---%0Auid%3A%20Nimiq.NimiqClient.%23ctor(Nimiq.Config)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/rraallvv/csharp-client/blob/master/NimiqClient/NimiqClient.cs/#L104">View Source</a>
+  </span>
+  <a id="Nimiq_NimiqClient__ctor_" data-uid="Nimiq.NimiqClient.#ctor*"></a>
+  <h4 id="Nimiq_NimiqClient__ctor_Nimiq_Config_" data-uid="Nimiq.NimiqClient.#ctor(Nimiq.Config)">NimiqClient(Config)</h4>
+  <div class="markdown level1 summary"><p>Client initialization from a Config structure.
+When no parameter is given, it uses de default configuration in the server (<code><a href="http://:@127.0.0.1:8648">http://:@127.0.0.1:8648</a></code>).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public NimiqClient(Config config)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Nimiq.Config.html">Config</a></td>
+        <td><span class="parametername">config</span></td>
+        <td><p>Options used for the configuration.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/rraallvv/csharp-client/new/master/apiSpec/new?filename=Nimiq_NimiqClient__ctor_System_String_System_String_System_String_System_String_System_Int64_.md&amp;value=---%0Auid%3A%20Nimiq.NimiqClient.%23ctor(System.String%2CSystem.String%2CSystem.String%2CSystem.String%2CSystem.Int64)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/rraallvv/csharp-client/blob/master/NimiqClient/NimiqClient.cs/#L115">View Source</a>
+  </span>
+  <a id="Nimiq_NimiqClient__ctor_" data-uid="Nimiq.NimiqClient.#ctor*"></a>
+  <h4 id="Nimiq_NimiqClient__ctor_System_String_System_String_System_String_System_String_System_Int64_" data-uid="Nimiq.NimiqClient.#ctor(System.String,System.String,System.String,System.String,System.Int64)">NimiqClient(String, String, String, String, Int64)</h4>
+  <div class="markdown level1 summary"><p>Initialization.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public NimiqClient(string scheme = &quot;http&quot;, string user = &quot;&quot;, string password = &quot;&quot;, string host = &quot;127.0.0.1&quot;, long port = 8648L)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">scheme</span></td>
+        <td><p>Protocol squeme, <code>&quot;http&quot;</code> or <code>&quot;https&quot;</code>.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">user</span></td>
+        <td><p>Authorized user.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">password</span></td>
+        <td><p>Password for the authorized user.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">host</span></td>
+        <td><p>Host IP address.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int64</span></td>
+        <td><span class="parametername">port</span></td>
+        <td><p>Host port.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/rraallvv/csharp-client/new/master/apiSpec/new?filename=Nimiq_NimiqClient_Id.md&amp;value=---%0Auid%3A%20Nimiq.NimiqClient.Id%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/rraallvv/csharp-client/blob/master/NimiqClient/NimiqClient.cs/#L90">View Source</a>
+  </span>
+  <a id="Nimiq_NimiqClient_Id_" data-uid="Nimiq.NimiqClient.Id*"></a>
+  <h4 id="Nimiq_NimiqClient_Id" data-uid="Nimiq.NimiqClient.Id">Id</h4>
+  <div class="markdown level1 summary"><p>Number in the sequence for the next request.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public long Id { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int64</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/rraallvv/csharp-client/new/master/apiSpec/new?filename=Nimiq_NimiqClient_Accounts.md&amp;value=---%0Auid%3A%20Nimiq.NimiqClient.Accounts%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/rraallvv/csharp-client/blob/master/NimiqClient/NimiqClient.cs/#L180">View Source</a>
+  </span>
+  <a id="Nimiq_NimiqClient_Accounts_" data-uid="Nimiq.NimiqClient.Accounts*"></a>
+  <h4 id="Nimiq_NimiqClient_Accounts" data-uid="Nimiq.NimiqClient.Accounts">Accounts()</h4>
+  <div class="markdown level1 summary"><p>Returns a list of addresses owned by client.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Account[] Accounts()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Nimiq.Models.Account.html">Account</a>[]</td>
+        <td><p>Array of Accounts owned by the client.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/rraallvv/csharp-client/new/master/apiSpec/new?filename=Nimiq_NimiqClient_BlockNumber.md&amp;value=---%0Auid%3A%20Nimiq.NimiqClient.BlockNumber%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/rraallvv/csharp-client/blob/master/NimiqClient/NimiqClient.cs/#L187">View Source</a>
+  </span>
+  <a id="Nimiq_NimiqClient_BlockNumber_" data-uid="Nimiq.NimiqClient.BlockNumber*"></a>
+  <h4 id="Nimiq_NimiqClient_BlockNumber" data-uid="Nimiq.NimiqClient.BlockNumber">BlockNumber()</h4>
+  <div class="markdown level1 summary"><p>Returns the height of most recent block.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public long BlockNumber()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int64</span></td>
+        <td><p>The current block height the client is on.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/rraallvv/csharp-client/new/master/apiSpec/new?filename=Nimiq_NimiqClient_Consensus.md&amp;value=---%0Auid%3A%20Nimiq.NimiqClient.Consensus%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/rraallvv/csharp-client/blob/master/NimiqClient/NimiqClient.cs/#L194">View Source</a>
+  </span>
+  <a id="Nimiq_NimiqClient_Consensus_" data-uid="Nimiq.NimiqClient.Consensus*"></a>
+  <h4 id="Nimiq_NimiqClient_Consensus" data-uid="Nimiq.NimiqClient.Consensus">Consensus()</h4>
+  <div class="markdown level1 summary"><p>Returns information on the current consensus state.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ConsensusState Consensus()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Nimiq.Models.ConsensusState.html">ConsensusState</a></td>
+        <td><p>Consensus state. <code>&quot;established&quot;</code> is the value for a good state, other values indicate bad.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/rraallvv/csharp-client/new/master/apiSpec/new?filename=Nimiq_NimiqClient_Constant_System_String_.md&amp;value=---%0Auid%3A%20Nimiq.NimiqClient.Constant(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/rraallvv/csharp-client/blob/master/NimiqClient/NimiqClient.cs/#L202">View Source</a>
+  </span>
+  <a id="Nimiq_NimiqClient_Constant_" data-uid="Nimiq.NimiqClient.Constant*"></a>
+  <h4 id="Nimiq_NimiqClient_Constant_System_String_" data-uid="Nimiq.NimiqClient.Constant(System.String)">Constant(String)</h4>
+  <div class="markdown level1 summary"><p>Returns or a constant value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public long Constant(string constant)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">constant</span></td>
+        <td><p>The class and name of the constant (format should be <code>&quot;Class.CONSTANT&quot;</code>).</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int64</span></td>
+        <td><p>The value of the constant.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/rraallvv/csharp-client/new/master/apiSpec/new?filename=Nimiq_NimiqClient_CreateAccount.md&amp;value=---%0Auid%3A%20Nimiq.NimiqClient.CreateAccount%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/rraallvv/csharp-client/blob/master/NimiqClient/NimiqClient.cs/#L218">View Source</a>
+  </span>
+  <a id="Nimiq_NimiqClient_CreateAccount_" data-uid="Nimiq.NimiqClient.CreateAccount*"></a>
+  <h4 id="Nimiq_NimiqClient_CreateAccount" data-uid="Nimiq.NimiqClient.CreateAccount">CreateAccount()</h4>
+  <div class="markdown level1 summary"><p>Creates a new account and stores its private key in the client store.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Wallet CreateAccount()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Nimiq.Models.Wallet.html">Wallet</a></td>
+        <td><p>Information on the wallet that was created using the command.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/rraallvv/csharp-client/new/master/apiSpec/new?filename=Nimiq_NimiqClient_CreateRawTransaction_Nimiq_Models_OutgoingTransaction_.md&amp;value=---%0Auid%3A%20Nimiq.NimiqClient.CreateRawTransaction(Nimiq.Models.OutgoingTransaction)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/rraallvv/csharp-client/blob/master/NimiqClient/NimiqClient.cs/#L227">View Source</a>
+  </span>
+  <a id="Nimiq_NimiqClient_CreateRawTransaction_" data-uid="Nimiq.NimiqClient.CreateRawTransaction*"></a>
+  <h4 id="Nimiq_NimiqClient_CreateRawTransaction_Nimiq_Models_OutgoingTransaction_" data-uid="Nimiq.NimiqClient.CreateRawTransaction(Nimiq.Models.OutgoingTransaction)">CreateRawTransaction(OutgoingTransaction)</h4>
+  <div class="markdown level1 summary"><p>Creates and signs a transaction without sending it.
+The transaction can then be send via <code>sendRawTransaction()</code> without accidentally replaying it.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string CreateRawTransaction(OutgoingTransaction transaction)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Nimiq.Models.OutgoingTransaction.html">OutgoingTransaction</a></td>
+        <td><span class="parametername">transaction</span></td>
+        <td><p>The transaction object.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>Hex-encoded transaction.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/rraallvv/csharp-client/new/master/apiSpec/new?filename=Nimiq_NimiqClient_GetAccount_System_String_.md&amp;value=---%0Auid%3A%20Nimiq.NimiqClient.GetAccount(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/rraallvv/csharp-client/blob/master/NimiqClient/NimiqClient.cs/#L245">View Source</a>
+  </span>
+  <a id="Nimiq_NimiqClient_GetAccount_" data-uid="Nimiq.NimiqClient.GetAccount*"></a>
+  <h4 id="Nimiq_NimiqClient_GetAccount_System_String_" data-uid="Nimiq.NimiqClient.GetAccount(System.String)">GetAccount(String)</h4>
+  <div class="markdown level1 summary"><p>Returns details for the account of given address.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Account GetAccount(string address)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">address</span></td>
+        <td><p>Address to get account details.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Nimiq.Models.Account.html">Account</a></td>
+        <td><p>Details about the account. Returns the default empty basic account for non-existing accounts.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/rraallvv/csharp-client/new/master/apiSpec/new?filename=Nimiq_NimiqClient_GetBalance_System_String_.md&amp;value=---%0Auid%3A%20Nimiq.NimiqClient.GetBalance(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/rraallvv/csharp-client/blob/master/NimiqClient/NimiqClient.cs/#L253">View Source</a>
+  </span>
+  <a id="Nimiq_NimiqClient_GetBalance_" data-uid="Nimiq.NimiqClient.GetBalance*"></a>
+  <h4 id="Nimiq_NimiqClient_GetBalance_System_String_" data-uid="Nimiq.NimiqClient.GetBalance(System.String)">GetBalance(String)</h4>
+  <div class="markdown level1 summary"><p>Returns the balance of the account of given address.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public long GetBalance(string address)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">address</span></td>
+        <td><p>Address to check for balance.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int64</span></td>
+        <td><p>The current balance at the specified address (in smalest unit).</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/rraallvv/csharp-client/new/master/apiSpec/new?filename=Nimiq_NimiqClient_GetBlockByHash_System_String_System_Nullable_System_Boolean__.md&amp;value=---%0Auid%3A%20Nimiq.NimiqClient.GetBlockByHash(System.String%2CSystem.Nullable%7BSystem.Boolean%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/rraallvv/csharp-client/blob/master/NimiqClient/NimiqClient.cs/#L262">View Source</a>
+  </span>
+  <a id="Nimiq_NimiqClient_GetBlockByHash_" data-uid="Nimiq.NimiqClient.GetBlockByHash*"></a>
+  <h4 id="Nimiq_NimiqClient_GetBlockByHash_System_String_System_Nullable_System_Boolean__" data-uid="Nimiq.NimiqClient.GetBlockByHash(System.String,System.Nullable{System.Boolean})">GetBlockByHash(String, Nullable&lt;Boolean&gt;)</h4>
+  <div class="markdown level1 summary"><p>Returns information about a block by hash.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Block GetBlockByHash(string hash, bool? includeTransactions = default(bool? ))</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">hash</span></td>
+        <td><p>Hash of the block to gather information on.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
+        <td><span class="parametername">includeTransactions</span></td>
+        <td><p>If <code>true</code> it returns the full transaction objects, if <code>false</code> only the hashes of the transactions.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Nimiq.Models.Block.html">Block</a></td>
+        <td><p>A block object or <code>null</code> when no block was found.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/rraallvv/csharp-client/new/master/apiSpec/new?filename=Nimiq_NimiqClient_GetBlockByNumber_System_Int32_System_Nullable_System_Boolean__.md&amp;value=---%0Auid%3A%20Nimiq.NimiqClient.GetBlockByNumber(System.Int32%2CSystem.Nullable%7BSystem.Boolean%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/rraallvv/csharp-client/blob/master/NimiqClient/NimiqClient.cs/#L278">View Source</a>
+  </span>
+  <a id="Nimiq_NimiqClient_GetBlockByNumber_" data-uid="Nimiq.NimiqClient.GetBlockByNumber*"></a>
+  <h4 id="Nimiq_NimiqClient_GetBlockByNumber_System_Int32_System_Nullable_System_Boolean__" data-uid="Nimiq.NimiqClient.GetBlockByNumber(System.Int32,System.Nullable{System.Boolean})">GetBlockByNumber(Int32, Nullable&lt;Boolean&gt;)</h4>
+  <div class="markdown level1 summary"><p>Returns information about a block by block number.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Block GetBlockByNumber(int height, bool? includeTransactions = default(bool? ))</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">height</span></td>
+        <td><p>The height of the block to gather information on.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
+        <td><span class="parametername">includeTransactions</span></td>
+        <td><p>If <code>true</code> it returns the full transaction objects, if <code>false</code> only the hashes of the transactions.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Nimiq.Models.Block.html">Block</a></td>
+        <td><p>A block object or <code>null</code> when no block was found.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/rraallvv/csharp-client/new/master/apiSpec/new?filename=Nimiq_NimiqClient_GetBlockTemplate_System_String_System_String_.md&amp;value=---%0Auid%3A%20Nimiq.NimiqClient.GetBlockTemplate(System.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/rraallvv/csharp-client/blob/master/NimiqClient/NimiqClient.cs/#L296">View Source</a>
+  </span>
+  <a id="Nimiq_NimiqClient_GetBlockTemplate_" data-uid="Nimiq.NimiqClient.GetBlockTemplate*"></a>
+  <h4 id="Nimiq_NimiqClient_GetBlockTemplate_System_String_System_String_" data-uid="Nimiq.NimiqClient.GetBlockTemplate(System.String,System.String)">GetBlockTemplate(String, String)</h4>
+  <div class="markdown level1 summary"><p>Returns a template to build the next block for mining.
+This will consider pool instructions when connected to a pool.
+If <code>address</code> and <code>extraData</code> are provided the values are overriden.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public BlockTemplate GetBlockTemplate(string address = null, string extraData = &quot;&quot;)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">address</span></td>
+        <td><p>The address to use as a miner for this block. This overrides the address provided during startup or from the pool.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">extraData</span></td>
+        <td><p>Hex-encoded value for the extra data field. This overrides the extra data provided during startup or from the pool.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Nimiq.Models.BlockTemplate.html">BlockTemplate</a></td>
+        <td><p>A block template object.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/rraallvv/csharp-client/new/master/apiSpec/new?filename=Nimiq_NimiqClient_GetBlockTransactionCountByHash_System_String_.md&amp;value=---%0Auid%3A%20Nimiq.NimiqClient.GetBlockTransactionCountByHash(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/rraallvv/csharp-client/blob/master/NimiqClient/NimiqClient.cs/#L311">View Source</a>
+  </span>
+  <a id="Nimiq_NimiqClient_GetBlockTransactionCountByHash_" data-uid="Nimiq.NimiqClient.GetBlockTransactionCountByHash*"></a>
+  <h4 id="Nimiq_NimiqClient_GetBlockTransactionCountByHash_System_String_" data-uid="Nimiq.NimiqClient.GetBlockTransactionCountByHash(System.String)">GetBlockTransactionCountByHash(String)</h4>
+  <div class="markdown level1 summary"><p>Returns the number of transactions in a block from a block matching the given block hash.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public long? GetBlockTransactionCountByHash(string hash)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">hash</span></td>
+        <td><p>Hash of the block.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Int64</span>&gt;</td>
+        <td><p>Number of transactions in the block found, or <code>null</code>, when no block was found.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/rraallvv/csharp-client/new/master/apiSpec/new?filename=Nimiq_NimiqClient_GetBlockTransactionCountByNumber_System_Int64_.md&amp;value=---%0Auid%3A%20Nimiq.NimiqClient.GetBlockTransactionCountByNumber(System.Int64)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/rraallvv/csharp-client/blob/master/NimiqClient/NimiqClient.cs/#L319">View Source</a>
+  </span>
+  <a id="Nimiq_NimiqClient_GetBlockTransactionCountByNumber_" data-uid="Nimiq.NimiqClient.GetBlockTransactionCountByNumber*"></a>
+  <h4 id="Nimiq_NimiqClient_GetBlockTransactionCountByNumber_System_Int64_" data-uid="Nimiq.NimiqClient.GetBlockTransactionCountByNumber(System.Int64)">GetBlockTransactionCountByNumber(Int64)</h4>
+  <div class="markdown level1 summary"><p>Returns the number of transactions in a block matching the given block number.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public long? GetBlockTransactionCountByNumber(long height)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int64</span></td>
+        <td><span class="parametername">height</span></td>
+        <td><p>Height of the block.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Int64</span>&gt;</td>
+        <td><p>Number of transactions in the block found, or <code>null</code>, when no block was found.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/rraallvv/csharp-client/new/master/apiSpec/new?filename=Nimiq_NimiqClient_GetRawTransactionInfo_System_String_.md&amp;value=---%0Auid%3A%20Nimiq.NimiqClient.GetRawTransactionInfo(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/rraallvv/csharp-client/blob/master/NimiqClient/NimiqClient.cs/#L592">View Source</a>
+  </span>
+  <a id="Nimiq_NimiqClient_GetRawTransactionInfo_" data-uid="Nimiq.NimiqClient.GetRawTransactionInfo*"></a>
+  <h4 id="Nimiq_NimiqClient_GetRawTransactionInfo_System_String_" data-uid="Nimiq.NimiqClient.GetRawTransactionInfo(System.String)">GetRawTransactionInfo(String)</h4>
+  <div class="markdown level1 summary"><p>Deserializes hex-encoded transaction and returns a transaction object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Transaction GetRawTransactionInfo(string transaction)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">transaction</span></td>
+        <td><p>The hex encoded signed transaction.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Nimiq.Models.Transaction.html">Transaction</a></td>
+        <td><p>The transaction object.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/rraallvv/csharp-client/new/master/apiSpec/new?filename=Nimiq_NimiqClient_GetTransactionByBlockHashAndIndex_System_String_System_Int64_.md&amp;value=---%0Auid%3A%20Nimiq.NimiqClient.GetTransactionByBlockHashAndIndex(System.String%2CSystem.Int64)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/rraallvv/csharp-client/blob/master/NimiqClient/NimiqClient.cs/#L328">View Source</a>
+  </span>
+  <a id="Nimiq_NimiqClient_GetTransactionByBlockHashAndIndex_" data-uid="Nimiq.NimiqClient.GetTransactionByBlockHashAndIndex*"></a>
+  <h4 id="Nimiq_NimiqClient_GetTransactionByBlockHashAndIndex_System_String_System_Int64_" data-uid="Nimiq.NimiqClient.GetTransactionByBlockHashAndIndex(System.String,System.Int64)">GetTransactionByBlockHashAndIndex(String, Int64)</h4>
+  <div class="markdown level1 summary"><p>Returns information about a transaction by block hash and transaction index position.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Transaction GetTransactionByBlockHashAndIndex(string hash, long index)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">hash</span></td>
+        <td><p>Hash of the block containing the transaction.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int64</span></td>
+        <td><span class="parametername">index</span></td>
+        <td><p>Index of the transaction in the block.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Nimiq.Models.Transaction.html">Transaction</a></td>
+        <td><p>A transaction object or <code>null</code> when no transaction was found.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/rraallvv/csharp-client/new/master/apiSpec/new?filename=Nimiq_NimiqClient_GetTransactionByBlockNumberAndIndex_System_Int64_System_Int64_.md&amp;value=---%0Auid%3A%20Nimiq.NimiqClient.GetTransactionByBlockNumberAndIndex(System.Int64%2CSystem.Int64)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/rraallvv/csharp-client/blob/master/NimiqClient/NimiqClient.cs/#L337">View Source</a>
+  </span>
+  <a id="Nimiq_NimiqClient_GetTransactionByBlockNumberAndIndex_" data-uid="Nimiq.NimiqClient.GetTransactionByBlockNumberAndIndex*"></a>
+  <h4 id="Nimiq_NimiqClient_GetTransactionByBlockNumberAndIndex_System_Int64_System_Int64_" data-uid="Nimiq.NimiqClient.GetTransactionByBlockNumberAndIndex(System.Int64,System.Int64)">GetTransactionByBlockNumberAndIndex(Int64, Int64)</h4>
+  <div class="markdown level1 summary"><p>Returns information about a transaction by block number and transaction index position.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Transaction GetTransactionByBlockNumberAndIndex(long height, long index)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int64</span></td>
+        <td><span class="parametername">height</span></td>
+        <td><p>Height of the block containing the transaction.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int64</span></td>
+        <td><span class="parametername">index</span></td>
+        <td><p>Index of the transaction in the block.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Nimiq.Models.Transaction.html">Transaction</a></td>
+        <td><p>A transaction object or <code>null</code> when no transaction was found.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/rraallvv/csharp-client/new/master/apiSpec/new?filename=Nimiq_NimiqClient_GetTransactionByHash_System_String_.md&amp;value=---%0Auid%3A%20Nimiq.NimiqClient.GetTransactionByHash(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/rraallvv/csharp-client/blob/master/NimiqClient/NimiqClient.cs/#L345">View Source</a>
+  </span>
+  <a id="Nimiq_NimiqClient_GetTransactionByHash_" data-uid="Nimiq.NimiqClient.GetTransactionByHash*"></a>
+  <h4 id="Nimiq_NimiqClient_GetTransactionByHash_System_String_" data-uid="Nimiq.NimiqClient.GetTransactionByHash(System.String)">GetTransactionByHash(String)</h4>
+  <div class="markdown level1 summary"><p>Returns the information about a transaction requested by transaction hash.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Transaction GetTransactionByHash(string hash)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">hash</span></td>
+        <td><p>Hash of a transaction.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Nimiq.Models.Transaction.html">Transaction</a></td>
+        <td><p>A transaction object or <code>null</code> when no transaction was found.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/rraallvv/csharp-client/new/master/apiSpec/new?filename=Nimiq_NimiqClient_GetTransactionReceipt_System_String_.md&amp;value=---%0Auid%3A%20Nimiq.NimiqClient.GetTransactionReceipt(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/rraallvv/csharp-client/blob/master/NimiqClient/NimiqClient.cs/#L353">View Source</a>
+  </span>
+  <a id="Nimiq_NimiqClient_GetTransactionReceipt_" data-uid="Nimiq.NimiqClient.GetTransactionReceipt*"></a>
+  <h4 id="Nimiq_NimiqClient_GetTransactionReceipt_System_String_" data-uid="Nimiq.NimiqClient.GetTransactionReceipt(System.String)">GetTransactionReceipt(String)</h4>
+  <div class="markdown level1 summary"><p>Returns the receipt of a transaction by transaction hash.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TransactionReceipt GetTransactionReceipt(string hash)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">hash</span></td>
+        <td><p>Hash of a transaction.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Nimiq.Models.TransactionReceipt.html">TransactionReceipt</a></td>
+        <td><p>A transaction receipt object, or <code>null</code> when no receipt was found.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/rraallvv/csharp-client/new/master/apiSpec/new?filename=Nimiq_NimiqClient_GetTransactionsByAddress_System_String_System_Nullable_System_Int64__.md&amp;value=---%0Auid%3A%20Nimiq.NimiqClient.GetTransactionsByAddress(System.String%2CSystem.Nullable%7BSystem.Int64%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/rraallvv/csharp-client/blob/master/NimiqClient/NimiqClient.cs/#L363">View Source</a>
+  </span>
+  <a id="Nimiq_NimiqClient_GetTransactionsByAddress_" data-uid="Nimiq.NimiqClient.GetTransactionsByAddress*"></a>
+  <h4 id="Nimiq_NimiqClient_GetTransactionsByAddress_System_String_System_Nullable_System_Int64__" data-uid="Nimiq.NimiqClient.GetTransactionsByAddress(System.String,System.Nullable{System.Int64})">GetTransactionsByAddress(String, Nullable&lt;Int64&gt;)</h4>
+  <div class="markdown level1 summary"><p>Returns the latest transactions successfully performed by or for an address.
+Note that this information might change when blocks are rewinded on the local state due to forks.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Transaction[] GetTransactionsByAddress(string address, long? numberOfTransactions = default(long? ))</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">address</span></td>
+        <td><p>Address of which transactions should be gathered.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Int64</span>&gt;</td>
+        <td><span class="parametername">numberOfTransactions</span></td>
+        <td><p>Number of transactions that shall be returned.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Nimiq.Models.Transaction.html">Transaction</a>[]</td>
+        <td><p>Array of transactions linked to the requested address.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/rraallvv/csharp-client/new/master/apiSpec/new?filename=Nimiq_NimiqClient_GetWork_System_String_System_String_.md&amp;value=---%0Auid%3A%20Nimiq.NimiqClient.GetWork(System.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/rraallvv/csharp-client/blob/master/NimiqClient/NimiqClient.cs/#L379">View Source</a>
+  </span>
+  <a id="Nimiq_NimiqClient_GetWork_" data-uid="Nimiq.NimiqClient.GetWork*"></a>
+  <h4 id="Nimiq_NimiqClient_GetWork_System_String_System_String_" data-uid="Nimiq.NimiqClient.GetWork(System.String,System.String)">GetWork(String, String)</h4>
+  <div class="markdown level1 summary"><p>Returns instructions to mine the next block. This will consider pool instructions when connected to a pool.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public WorkInstructions GetWork(string address = null, string extraData = &quot;&quot;)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">address</span></td>
+        <td><p>The address to use as a miner for this block. This overrides the address provided during startup or from the pool.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">extraData</span></td>
+        <td><p>Hex-encoded value for the extra data field. This overrides the extra data provided during startup or from the pool.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Nimiq.Models.WorkInstructions.html">WorkInstructions</a></td>
+        <td><p>Mining work instructions.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/rraallvv/csharp-client/new/master/apiSpec/new?filename=Nimiq_NimiqClient_Hashrate.md&amp;value=---%0Auid%3A%20Nimiq.NimiqClient.Hashrate%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/rraallvv/csharp-client/blob/master/NimiqClient/NimiqClient.cs/#L393">View Source</a>
+  </span>
+  <a id="Nimiq_NimiqClient_Hashrate_" data-uid="Nimiq.NimiqClient.Hashrate*"></a>
+  <h4 id="Nimiq_NimiqClient_Hashrate" data-uid="Nimiq.NimiqClient.Hashrate">Hashrate()</h4>
+  <div class="markdown level1 summary"><p>Returns the number of hashes per second that the node is mining with.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double Hashrate()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td><p>Number of hashes per second.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/rraallvv/csharp-client/new/master/apiSpec/new?filename=Nimiq_NimiqClient_IsMining.md&amp;value=---%0Auid%3A%20Nimiq.NimiqClient.IsMining%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/rraallvv/csharp-client/blob/master/NimiqClient/NimiqClient.cs/#L468">View Source</a>
+  </span>
+  <a id="Nimiq_NimiqClient_IsMining_" data-uid="Nimiq.NimiqClient.IsMining*"></a>
+  <h4 id="Nimiq_NimiqClient_IsMining" data-uid="Nimiq.NimiqClient.IsMining">IsMining()</h4>
+  <div class="markdown level1 summary"><p>Returns true if client is actively mining new blocks.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsMining()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p><code>true</code> if the client is mining, otherwise <code>false</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/rraallvv/csharp-client/new/master/apiSpec/new?filename=Nimiq_NimiqClient_Mempool.md&amp;value=---%0Auid%3A%20Nimiq.NimiqClient.Mempool%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/rraallvv/csharp-client/blob/master/NimiqClient/NimiqClient.cs/#L409">View Source</a>
+  </span>
+  <a id="Nimiq_NimiqClient_Mempool_" data-uid="Nimiq.NimiqClient.Mempool*"></a>
+  <h4 id="Nimiq_NimiqClient_Mempool" data-uid="Nimiq.NimiqClient.Mempool">Mempool()</h4>
+  <div class="markdown level1 summary"><p>Returns information on the current mempool situation. This will provide an overview of the number of transactions sorted into buckets based on their fee per byte (in smallest unit).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MempoolInfo Mempool()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Nimiq.Models.MempoolInfo.html">MempoolInfo</a></td>
+        <td><p>Mempool information.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/rraallvv/csharp-client/new/master/apiSpec/new?filename=Nimiq_NimiqClient_MempoolContent_System_Nullable_System_Boolean__.md&amp;value=---%0Auid%3A%20Nimiq.NimiqClient.MempoolContent(System.Nullable%7BSystem.Boolean%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/rraallvv/csharp-client/blob/master/NimiqClient/NimiqClient.cs/#L417">View Source</a>
+  </span>
+  <a id="Nimiq_NimiqClient_MempoolContent_" data-uid="Nimiq.NimiqClient.MempoolContent*"></a>
+  <h4 id="Nimiq_NimiqClient_MempoolContent_System_Nullable_System_Boolean__" data-uid="Nimiq.NimiqClient.MempoolContent(System.Nullable{System.Boolean})">MempoolContent(Nullable&lt;Boolean&gt;)</h4>
+  <div class="markdown level1 summary"><p>Returns transactions that are currently in the mempool.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public object[] MempoolContent(bool? includeTransactions = default(bool? ))</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
+        <td><span class="parametername">includeTransactions</span></td>
+        <td><p>If <code>true</code> includes full transactions, if <code>false</code> includes only transaction hashes.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span>[]</td>
+        <td><p>Array of transactions (either represented by the transaction hash or a transaction object).</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/rraallvv/csharp-client/new/master/apiSpec/new?filename=Nimiq_NimiqClient_MinerAddress.md&amp;value=---%0Auid%3A%20Nimiq.NimiqClient.MinerAddress%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/rraallvv/csharp-client/blob/master/NimiqClient/NimiqClient.cs/#L431">View Source</a>
+  </span>
+  <a id="Nimiq_NimiqClient_MinerAddress_" data-uid="Nimiq.NimiqClient.MinerAddress*"></a>
+  <h4 id="Nimiq_NimiqClient_MinerAddress" data-uid="Nimiq.NimiqClient.MinerAddress">MinerAddress()</h4>
+  <div class="markdown level1 summary"><p>Returns the miner address.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string MinerAddress()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>The miner address configured on the node.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/rraallvv/csharp-client/new/master/apiSpec/new?filename=Nimiq_NimiqClient_MinerThreads.md&amp;value=---%0Auid%3A%20Nimiq.NimiqClient.MinerThreads%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/rraallvv/csharp-client/blob/master/NimiqClient/NimiqClient.cs/#L438">View Source</a>
+  </span>
+  <a id="Nimiq_NimiqClient_MinerThreads_" data-uid="Nimiq.NimiqClient.MinerThreads*"></a>
+  <h4 id="Nimiq_NimiqClient_MinerThreads" data-uid="Nimiq.NimiqClient.MinerThreads">MinerThreads()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int MinerThreads()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/rraallvv/csharp-client/new/master/apiSpec/new?filename=Nimiq_NimiqClient_MinFeePerByte.md&amp;value=---%0Auid%3A%20Nimiq.NimiqClient.MinFeePerByte%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/rraallvv/csharp-client/blob/master/NimiqClient/NimiqClient.cs/#L453">View Source</a>
+  </span>
+  <a id="Nimiq_NimiqClient_MinFeePerByte_" data-uid="Nimiq.NimiqClient.MinFeePerByte*"></a>
+  <h4 id="Nimiq_NimiqClient_MinFeePerByte" data-uid="Nimiq.NimiqClient.MinFeePerByte">MinFeePerByte()</h4>
+  <div class="markdown level1 summary"><p>Returns the minimum fee per byte.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int MinFeePerByte()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>The minimum fee per byte.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/rraallvv/csharp-client/new/master/apiSpec/new?filename=Nimiq_NimiqClient_PeerCount.md&amp;value=---%0Auid%3A%20Nimiq.NimiqClient.PeerCount%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/rraallvv/csharp-client/blob/master/NimiqClient/NimiqClient.cs/#L483">View Source</a>
+  </span>
+  <a id="Nimiq_NimiqClient_PeerCount_" data-uid="Nimiq.NimiqClient.PeerCount*"></a>
+  <h4 id="Nimiq_NimiqClient_PeerCount" data-uid="Nimiq.NimiqClient.PeerCount">PeerCount()</h4>
+  <div class="markdown level1 summary"><p>Returns number of peers currently connected to the client.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int PeerCount()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>Number of connected peers.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/rraallvv/csharp-client/new/master/apiSpec/new?filename=Nimiq_NimiqClient_PeerList.md&amp;value=---%0Auid%3A%20Nimiq.NimiqClient.PeerList%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/rraallvv/csharp-client/blob/master/NimiqClient/NimiqClient.cs/#L490">View Source</a>
+  </span>
+  <a id="Nimiq_NimiqClient_PeerList_" data-uid="Nimiq.NimiqClient.PeerList*"></a>
+  <h4 id="Nimiq_NimiqClient_PeerList" data-uid="Nimiq.NimiqClient.PeerList">PeerList()</h4>
+  <div class="markdown level1 summary"><p>Returns list of peers known to the client.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Peer[] PeerList()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Nimiq.Models.Peer.html">Peer</a>[]</td>
+        <td><p>The list of peers.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/rraallvv/csharp-client/new/master/apiSpec/new?filename=Nimiq_NimiqClient_PeerState_System_String_.md&amp;value=---%0Auid%3A%20Nimiq.NimiqClient.PeerState(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/rraallvv/csharp-client/blob/master/NimiqClient/NimiqClient.cs/#L498">View Source</a>
+  </span>
+  <a id="Nimiq_NimiqClient_PeerState_" data-uid="Nimiq.NimiqClient.PeerState*"></a>
+  <h4 id="Nimiq_NimiqClient_PeerState_System_String_" data-uid="Nimiq.NimiqClient.PeerState(System.String)">PeerState(String)</h4>
+  <div class="markdown level1 summary"><p>Returns the state of the peer.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Peer PeerState(string address)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">address</span></td>
+        <td><p>The address of the peer.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Nimiq.Models.Peer.html">Peer</a></td>
+        <td><p>The current state of the peer.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/rraallvv/csharp-client/new/master/apiSpec/new?filename=Nimiq_NimiqClient_Pool.md&amp;value=---%0Auid%3A%20Nimiq.NimiqClient.Pool%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/rraallvv/csharp-client/blob/master/NimiqClient/NimiqClient.cs/#L514">View Source</a>
+  </span>
+  <a id="Nimiq_NimiqClient_Pool_" data-uid="Nimiq.NimiqClient.Pool*"></a>
+  <h4 id="Nimiq_NimiqClient_Pool" data-uid="Nimiq.NimiqClient.Pool">Pool()</h4>
+  <div class="markdown level1 summary"><p>Returns mining pool.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Pool()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>The mining pool connection string, or <code>null</code> if not enabled.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/rraallvv/csharp-client/new/master/apiSpec/new?filename=Nimiq_NimiqClient_PoolConfirmedBalance.md&amp;value=---%0Auid%3A%20Nimiq.NimiqClient.PoolConfirmedBalance%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/rraallvv/csharp-client/blob/master/NimiqClient/NimiqClient.cs/#L529">View Source</a>
+  </span>
+  <a id="Nimiq_NimiqClient_PoolConfirmedBalance_" data-uid="Nimiq.NimiqClient.PoolConfirmedBalance*"></a>
+  <h4 id="Nimiq_NimiqClient_PoolConfirmedBalance" data-uid="Nimiq.NimiqClient.PoolConfirmedBalance">PoolConfirmedBalance()</h4>
+  <div class="markdown level1 summary"><p>Returns the confirmed mining pool balance.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int PoolConfirmedBalance()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>The confirmed mining pool balance (in smallest unit).</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/rraallvv/csharp-client/new/master/apiSpec/new?filename=Nimiq_NimiqClient_PoolConnectionState.md&amp;value=---%0Auid%3A%20Nimiq.NimiqClient.PoolConnectionState%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/rraallvv/csharp-client/blob/master/NimiqClient/NimiqClient.cs/#L536">View Source</a>
+  </span>
+  <a id="Nimiq_NimiqClient_PoolConnectionState_" data-uid="Nimiq.NimiqClient.PoolConnectionState*"></a>
+  <h4 id="Nimiq_NimiqClient_PoolConnectionState" data-uid="Nimiq.NimiqClient.PoolConnectionState">PoolConnectionState()</h4>
+  <div class="markdown level1 summary"><p>Returns the connection state to mining pool.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public PoolConnectionState PoolConnectionState()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Nimiq.Models.PoolConnectionState.html">PoolConnectionState</a></td>
+        <td><p>The mining pool connection state.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/rraallvv/csharp-client/new/master/apiSpec/new?filename=Nimiq_NimiqClient_ResetConstant_System_String_.md&amp;value=---%0Auid%3A%20Nimiq.NimiqClient.ResetConstant(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/rraallvv/csharp-client/blob/master/NimiqClient/NimiqClient.cs/#L600">View Source</a>
+  </span>
+  <a id="Nimiq_NimiqClient_ResetConstant_" data-uid="Nimiq.NimiqClient.ResetConstant*"></a>
+  <h4 id="Nimiq_NimiqClient_ResetConstant_System_String_" data-uid="Nimiq.NimiqClient.ResetConstant(System.String)">ResetConstant(String)</h4>
+  <div class="markdown level1 summary"><p>Resets the constant to default value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public long ResetConstant(string constant)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">constant</span></td>
+        <td><p>Name of the constant.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int64</span></td>
+        <td><p>The new value of the constant.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/rraallvv/csharp-client/new/master/apiSpec/new?filename=Nimiq_NimiqClient_SendRawTransaction_System_String_.md&amp;value=---%0Auid%3A%20Nimiq.NimiqClient.SendRawTransaction(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/rraallvv/csharp-client/blob/master/NimiqClient/NimiqClient.cs/#L544">View Source</a>
+  </span>
+  <a id="Nimiq_NimiqClient_SendRawTransaction_" data-uid="Nimiq.NimiqClient.SendRawTransaction*"></a>
+  <h4 id="Nimiq_NimiqClient_SendRawTransaction_System_String_" data-uid="Nimiq.NimiqClient.SendRawTransaction(System.String)">SendRawTransaction(String)</h4>
+  <div class="markdown level1 summary"><p>Sends a signed message call transaction or a contract creation, if the data field contains code.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string SendRawTransaction(string transaction)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">transaction</span></td>
+        <td><p>The hex encoded signed transaction</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>The Hex-encoded transaction hash.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/rraallvv/csharp-client/new/master/apiSpec/new?filename=Nimiq_NimiqClient_SendTransaction_Nimiq_Models_OutgoingTransaction_.md&amp;value=---%0Auid%3A%20Nimiq.NimiqClient.SendTransaction(Nimiq.Models.OutgoingTransaction)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/rraallvv/csharp-client/blob/master/NimiqClient/NimiqClient.cs/#L552">View Source</a>
+  </span>
+  <a id="Nimiq_NimiqClient_SendTransaction_" data-uid="Nimiq.NimiqClient.SendTransaction*"></a>
+  <h4 id="Nimiq_NimiqClient_SendTransaction_Nimiq_Models_OutgoingTransaction_" data-uid="Nimiq.NimiqClient.SendTransaction(Nimiq.Models.OutgoingTransaction)">SendTransaction(OutgoingTransaction)</h4>
+  <div class="markdown level1 summary"><p>Creates new message call transaction or a contract creation, if the data field contains code.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string SendTransaction(OutgoingTransaction transaction)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Nimiq.Models.OutgoingTransaction.html">OutgoingTransaction</a></td>
+        <td><span class="parametername">transaction</span></td>
+        <td><p>The hex encoded signed transaction</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>The Hex-encoded transaction hash.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/rraallvv/csharp-client/new/master/apiSpec/new?filename=Nimiq_NimiqClient_SetConstant_System_String_System_Int64_.md&amp;value=---%0Auid%3A%20Nimiq.NimiqClient.SetConstant(System.String%2CSystem.Int64)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/rraallvv/csharp-client/blob/master/NimiqClient/NimiqClient.cs/#L211">View Source</a>
+  </span>
+  <a id="Nimiq_NimiqClient_SetConstant_" data-uid="Nimiq.NimiqClient.SetConstant*"></a>
+  <h4 id="Nimiq_NimiqClient_SetConstant_System_String_System_Int64_" data-uid="Nimiq.NimiqClient.SetConstant(System.String,System.Int64)">SetConstant(String, Int64)</h4>
+  <div class="markdown level1 summary"><p>Sets the constant to the given value. To reset the constant use <code>ResetConstant()</code> instead.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public long SetConstant(string constant, long value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">constant</span></td>
+        <td><p>The class and name of the constant (format should be <code>&quot;Class.CONSTANT&quot;</code>).</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int64</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The new value of the constant.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int64</span></td>
+        <td><p>The value of the constant.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/rraallvv/csharp-client/new/master/apiSpec/new?filename=Nimiq_NimiqClient_SetLog_System_String_Nimiq_Models_LogLevel_.md&amp;value=---%0Auid%3A%20Nimiq.NimiqClient.SetLog(System.String%2CNimiq.Models.LogLevel)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/rraallvv/csharp-client/blob/master/NimiqClient/NimiqClient.cs/#L402">View Source</a>
+  </span>
+  <a id="Nimiq_NimiqClient_SetLog_" data-uid="Nimiq.NimiqClient.SetLog*"></a>
+  <h4 id="Nimiq_NimiqClient_SetLog_System_String_Nimiq_Models_LogLevel_" data-uid="Nimiq.NimiqClient.SetLog(System.String,Nimiq.Models.LogLevel)">SetLog(String, LogLevel)</h4>
+  <div class="markdown level1 summary"><p>Sets the log level of the node.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool SetLog(string tag, LogLevel level)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">tag</span></td>
+        <td><p>Tag: If <code>&quot;*&quot;</code> the log level is set globally, otherwise the log level is applied only on this tag.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Nimiq.Models.LogLevel.html">LogLevel</a></td>
+        <td><span class="parametername">level</span></td>
+        <td><p>Minimum log level to display.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p><code>true</code> if the log level was changed, <code>false</code> otherwise.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/rraallvv/csharp-client/new/master/apiSpec/new?filename=Nimiq_NimiqClient_SetMinerThreads_System_Int64_.md&amp;value=---%0Auid%3A%20Nimiq.NimiqClient.SetMinerThreads(System.Int64)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/rraallvv/csharp-client/blob/master/NimiqClient/NimiqClient.cs/#L446">View Source</a>
+  </span>
+  <a id="Nimiq_NimiqClient_SetMinerThreads_" data-uid="Nimiq.NimiqClient.SetMinerThreads*"></a>
+  <h4 id="Nimiq_NimiqClient_SetMinerThreads_System_Int64_" data-uid="Nimiq.NimiqClient.SetMinerThreads(System.Int64)">SetMinerThreads(Int64)</h4>
+  <div class="markdown level1 summary"><p>Sets the number of CPU threads for the miner.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int SetMinerThreads(long threads)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int64</span></td>
+        <td><span class="parametername">threads</span></td>
+        <td><p>The new number of threads to allocate for mining.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>The number of threads allocated for mining.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/rraallvv/csharp-client/new/master/apiSpec/new?filename=Nimiq_NimiqClient_SetMinFeePerByte_System_Int32_.md&amp;value=---%0Auid%3A%20Nimiq.NimiqClient.SetMinFeePerByte(System.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/rraallvv/csharp-client/blob/master/NimiqClient/NimiqClient.cs/#L461">View Source</a>
+  </span>
+  <a id="Nimiq_NimiqClient_SetMinFeePerByte_" data-uid="Nimiq.NimiqClient.SetMinFeePerByte*"></a>
+  <h4 id="Nimiq_NimiqClient_SetMinFeePerByte_System_Int32_" data-uid="Nimiq.NimiqClient.SetMinFeePerByte(System.Int32)">SetMinFeePerByte(Int32)</h4>
+  <div class="markdown level1 summary"><p>Sets the minimum fee per byte.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int SetMinFeePerByte(int fee)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">fee</span></td>
+        <td><p>The new minimum fee per byte.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>The new minimum fee per byte.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/rraallvv/csharp-client/new/master/apiSpec/new?filename=Nimiq_NimiqClient_SetMining_System_Boolean_.md&amp;value=---%0Auid%3A%20Nimiq.NimiqClient.SetMining(System.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/rraallvv/csharp-client/blob/master/NimiqClient/NimiqClient.cs/#L476">View Source</a>
+  </span>
+  <a id="Nimiq_NimiqClient_SetMining_" data-uid="Nimiq.NimiqClient.SetMining*"></a>
+  <h4 id="Nimiq_NimiqClient_SetMining_System_Boolean_" data-uid="Nimiq.NimiqClient.SetMining(System.Boolean)">SetMining(Boolean)</h4>
+  <div class="markdown level1 summary"><p>Sets the current mining state to that value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool SetMining(bool state)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">state</span></td>
+        <td><p>The new state to be set.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p><code>true</code> if the client is mining, otherwise <code>false</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/rraallvv/csharp-client/new/master/apiSpec/new?filename=Nimiq_NimiqClient_SetPeerState_System_String_Nimiq_Models_PeerStateCommand_.md&amp;value=---%0Auid%3A%20Nimiq.NimiqClient.SetPeerState(System.String%2CNimiq.Models.PeerStateCommand)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/rraallvv/csharp-client/blob/master/NimiqClient/NimiqClient.cs/#L507">View Source</a>
+  </span>
+  <a id="Nimiq_NimiqClient_SetPeerState_" data-uid="Nimiq.NimiqClient.SetPeerState*"></a>
+  <h4 id="Nimiq_NimiqClient_SetPeerState_System_String_Nimiq_Models_PeerStateCommand_" data-uid="Nimiq.NimiqClient.SetPeerState(System.String,Nimiq.Models.PeerStateCommand)">SetPeerState(String, PeerStateCommand)</h4>
+  <div class="markdown level1 summary"><p>Sets the state of the peer.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Peer SetPeerState(string address, PeerStateCommand command)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">address</span></td>
+        <td><p>The address of the peer.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Nimiq.Models.PeerStateCommand.html">PeerStateCommand</a></td>
+        <td><span class="parametername">command</span></td>
+        <td><p>The new command to send.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Nimiq.Models.Peer.html">Peer</a></td>
+        <td><p>The current state of the peer.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/rraallvv/csharp-client/new/master/apiSpec/new?filename=Nimiq_NimiqClient_SetPool_System_Object_.md&amp;value=---%0Auid%3A%20Nimiq.NimiqClient.SetPool(System.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/rraallvv/csharp-client/blob/master/NimiqClient/NimiqClient.cs/#L522">View Source</a>
+  </span>
+  <a id="Nimiq_NimiqClient_SetPool_" data-uid="Nimiq.NimiqClient.SetPool*"></a>
+  <h4 id="Nimiq_NimiqClient_SetPool_System_Object_" data-uid="Nimiq.NimiqClient.SetPool(System.Object)">SetPool(Object)</h4>
+  <div class="markdown level1 summary"><p>Sets the mining pool.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string SetPool(object address)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">address</span></td>
+        <td><p>The mining pool connection string (<code>url:port</code>) or boolean to enable/disable pool mining.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>The mining pool connection string, or <code>null</code> if not enabled.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/rraallvv/csharp-client/new/master/apiSpec/new?filename=Nimiq_NimiqClient_SubmitBlock_System_String_.md&amp;value=---%0Auid%3A%20Nimiq.NimiqClient.SubmitBlock(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/rraallvv/csharp-client/blob/master/NimiqClient/NimiqClient.cs/#L569">View Source</a>
+  </span>
+  <a id="Nimiq_NimiqClient_SubmitBlock_" data-uid="Nimiq.NimiqClient.SubmitBlock*"></a>
+  <h4 id="Nimiq_NimiqClient_SubmitBlock_System_String_" data-uid="Nimiq.NimiqClient.SubmitBlock(System.String)">SubmitBlock(String)</h4>
+  <div class="markdown level1 summary"><p>Submits a block to the node. When the block is valid, the node will forward it to other nodes in the network.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SubmitBlock(string block)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">block</span></td>
+        <td><p>Hex-encoded full block (including header, interlink and body). When submitting work from getWork, remember to include the suffix.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/rraallvv/csharp-client/new/master/apiSpec/new?filename=Nimiq_NimiqClient_Syncing.md&amp;value=---%0Auid%3A%20Nimiq.NimiqClient.Syncing%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/rraallvv/csharp-client/blob/master/NimiqClient/NimiqClient.cs/#L576">View Source</a>
+  </span>
+  <a id="Nimiq_NimiqClient_Syncing_" data-uid="Nimiq.NimiqClient.Syncing*"></a>
+  <h4 id="Nimiq_NimiqClient_Syncing" data-uid="Nimiq.NimiqClient.Syncing">Syncing()</h4>
+  <div class="markdown level1 summary"><p>Returns an object with data about the sync status or <code>false</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public object Syncing()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><p>An object with sync status data or <code>false</code>, when not syncing.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/rraallvv/csharp-client/new/master/apiSpec/new?filename=Nimiq_NimiqClient.md&amp;value=---%0Auid%3A%20Nimiq.NimiqClient%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/rraallvv/csharp-client/blob/master/NimiqClient/NimiqClient.cs/#L61" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>
