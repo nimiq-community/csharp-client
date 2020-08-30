@@ -12,6 +12,10 @@
     }
   ],
   "build": {
+    "postProcessors": [ "ExtractSearchIndex" ],
+    "globalMetadata": {
+      "_enableSearch": "true"
+    },
     "content": [
       {
         "files": [ "toc.yml", "index.md" ]
