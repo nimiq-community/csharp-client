@@ -1,11 +1,8 @@
-using System.Net.Http;
-using System.Threading.Tasks;
 using System.Text;
 using System.Text.Json;
 using System;
 using System.Collections.Generic;
 using System.Text.Json.Serialization;
-using System.Net.Http.Headers;
 using Nimiq.Models;
 using System.Net;
 
