@@ -13,6 +13,8 @@
     <Description>.Net implementation of the Nimiq RPC client specs.</Description>
     <PackageId>NimiqClient</PackageId>
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+    <PackageIcon>images\icon.png</PackageIcon>
+    <PackageIconUrl>https://raw.githubusercontent.com/nimiq-community/csharp-client/master/icon.png</PackageIconUrl>
   </PropertyGroup>
 
   <ItemGroup>
@@ -20,5 +22,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\icon.png" Pack="true" PackagePath="images\icon.png" />
   </ItemGroup>
 </Project>
