@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <PackageVersion>0.0.5</PackageVersion>
+    <PackageVersion>0.0.6</PackageVersion>
     <Authors>The Nimiq Foundation</Authors>
     <Copyright>Copyright (c) 2020 The Nimiq Foundation</Copyright>
     <Owners>The Nimiq Foundation</Owners>
@@ -19,6 +19,7 @@
 
   <ItemGroup>
     <PackageReference Include="System.Text.Json" Version="4.7.2" />
+    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" PrivateAssets="All" Version="1.0.0" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
