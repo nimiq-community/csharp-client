@@ -26,13 +26,19 @@ Note: When no `config` object is passed in the initialization it will use the de
 
 ## API
 
-The complete API documentation is available [here](https://rraallvv.github.io/csharp-client/).
+The complete API documentation is available [here](https://nimiq-community.github.io/csharp-client/).
 
 Check out the original [Nimiq RPC specs](https://github.com/nimiq/core-js/wiki/JSON-RPC-API) for the behind-the-scenes RPC calls.
 
 ## Installation
 
-Use Nuget to install `NimiqClient` as a dependency to your project in Visual Studio IDE.
+Use the Package Manager from Visual Studio IDE to install the `NimiqClient` package as a dependency to your project.
+
+Alternatively, you can install the package from the project folder using `dotnet` [from the command line](https://docs.microsoft.com/en-us/nuget/consume-packages/install-use-packages-dotnet-cli):
+
+```sh
+dotnet add package NimiqClient
+```
 
 ## Build
 
@@ -48,7 +54,7 @@ You need a start a Testnet Nimiq node:
 nodejs index.js --protocol=dumb --type=full --network=test --rpc
 ```
 
-The tests are stored in `/NimiqClientTest` and can be run from the Visual Studio IDE. Alternatively you can run all the tests from the command line from the repository root directory:
+The tests are stored in `\NimiqClientTest` and can be run from the Visual Studio IDE. Alternatively you can run all the tests from the command line from the repository root directory:
 
 ```sh
 dotnet test
@@ -64,10 +70,32 @@ First install the DocFX package:
 nuget install docfx.console -version 2.51.0
 ```
 
-Copy the file `README.md` with the name `index.md`:
+Copy the file `README.md` to the same folder with the name `index.md`:
+
+(Windows)
+
+```sh
+copy /y README.md index.md
+```
+
+(Unix-like)
 
 ```sh
 cp -r README.md index.md
+```
+
+Remove the old generated documentation:
+
+(Windows)
+
+```sh
+rmdir /s /q docs
+```
+
+(Unix-like)
+
+```sh
+rm -fr docs
 ```
 
 Run DocFX with the configuration file `docfx.json` via the mono command:
@@ -76,7 +104,21 @@ Run DocFX with the configuration file `docfx.json` via the mono command:
 mono docfx.console.2.51.0/tools/docfx.exe docfx.json
 ```
 
-Mono is distributed with the .Net SDK, if it isn't already installed download and install the tool from [here](https://www.mono-project.com/docs/tools+libraries/tools/).
+Note: Mono is distributed with the .Net SDK, if it isn't already installed on your system download and install the tool from [here](https://www.mono-project.com/docs/tools+libraries/tools/).
+
+Finally add a blank file in the `\docs` folder with the name `.nojekyll` for the documentation hosted on GitHub Pages:
+
+(Windows)
+
+```sh
+echo > docs\.nojekyll
+```
+
+(Unix-like)
+
+```sh
+echo > docs/.nojekyll
+```
 
 ## Contributions
 

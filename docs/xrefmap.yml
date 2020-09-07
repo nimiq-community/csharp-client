@@ -2563,11 +2563,11 @@ references:
   commentId: T:Nimiq.StringEnumerationConverter
   fullName: Nimiq.StringEnumerationConverter
   nameWithType: StringEnumerationConverter
-- uid: Nimiq.StringEnumerationConverter.CanConvert(System.Type)
+- uid: Nimiq.StringEnumerationConverter.CanConvert(Type)
   name: CanConvert(Type)
-  href: api/Nimiq.StringEnumerationConverter.html#Nimiq_StringEnumerationConverter_CanConvert_System_Type_
-  commentId: M:Nimiq.StringEnumerationConverter.CanConvert(System.Type)
-  fullName: Nimiq.StringEnumerationConverter.CanConvert(System.Type)
+  href: api/Nimiq.StringEnumerationConverter.html#Nimiq_StringEnumerationConverter_CanConvert_Type_
+  commentId: M:Nimiq.StringEnumerationConverter.CanConvert(Type)
+  fullName: Nimiq.StringEnumerationConverter.CanConvert(Type)
   nameWithType: StringEnumerationConverter.CanConvert(Type)
 - uid: Nimiq.StringEnumerationConverter.CanConvert*
   name: CanConvert
@@ -2576,13 +2576,13 @@ references:
   isSpec: "True"
   fullName: Nimiq.StringEnumerationConverter.CanConvert
   nameWithType: StringEnumerationConverter.CanConvert
-- uid: Nimiq.StringEnumerationConverter.Read(Utf8JsonReader@,System.Type,JsonSerializerOptions)
+- uid: Nimiq.StringEnumerationConverter.Read(Utf8JsonReader@,Type,JsonSerializerOptions)
   name: Read(ref Utf8JsonReader, Type, JsonSerializerOptions)
-  href: api/Nimiq.StringEnumerationConverter.html#Nimiq_StringEnumerationConverter_Read_Utf8JsonReader__System_Type_JsonSerializerOptions_
-  commentId: M:Nimiq.StringEnumerationConverter.Read(Utf8JsonReader@,System.Type,JsonSerializerOptions)
+  href: api/Nimiq.StringEnumerationConverter.html#Nimiq_StringEnumerationConverter_Read_Utf8JsonReader__Type_JsonSerializerOptions_
+  commentId: M:Nimiq.StringEnumerationConverter.Read(Utf8JsonReader@,Type,JsonSerializerOptions)
   name.vb: Read(ByRef Utf8JsonReader, Type, JsonSerializerOptions)
-  fullName: Nimiq.StringEnumerationConverter.Read(ref Utf8JsonReader, System.Type, JsonSerializerOptions)
-  fullName.vb: Nimiq.StringEnumerationConverter.Read(ByRef Utf8JsonReader, System.Type, JsonSerializerOptions)
+  fullName: Nimiq.StringEnumerationConverter.Read(ref Utf8JsonReader, Type, JsonSerializerOptions)
+  fullName.vb: Nimiq.StringEnumerationConverter.Read(ByRef Utf8JsonReader, Type, JsonSerializerOptions)
   nameWithType: StringEnumerationConverter.Read(ref Utf8JsonReader, Type, JsonSerializerOptions)
   nameWithType.vb: StringEnumerationConverter.Read(ByRef Utf8JsonReader, Type, JsonSerializerOptions)
 - uid: Nimiq.StringEnumerationConverter.Read*

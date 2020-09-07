@@ -1,6 +1,6 @@
 {
   "homepages": [],
-  "source_base_path": "/Users/rhodylugo/Desktop/Nimiq/clients/csharp-client",
+  "source_base_path": "/Users/rhodylugo/Desktop/Nimiq/repositories/clients/csharp-client",
   "xrefmap": "xrefmap.yml",
   "files": [
     {
@@ -21,7 +21,7 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "xaTkOe2OGOtGc5LqaNdurw=="
+          "hash": "mcejDG/NgBztcgsWZlOfJg=="
         }
       },
       "is_incremental": false,
@@ -33,7 +33,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Nimiq.Config.html",
-          "hash": "qrVSUlWEG6FizfT4hiSOxg=="
+          "hash": "RNz0LEPF/BUJoLvdBflbfg=="
         }
       },
       "is_incremental": false,
@@ -45,7 +45,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Nimiq.InternalErrorException.html",
-          "hash": "akErzB9/SCfpNv2nT1OkRg=="
+          "hash": "egBVC/uO86dSDLHLq5/rvQ=="
         }
       },
       "is_incremental": false,
@@ -57,7 +57,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Nimiq.JsonElementExtensions.html",
-          "hash": "+KJQ1Y/J5GrQ6whOBufCNQ=="
+          "hash": "0rbOubKdcdTY5ndfvkyFqA=="
         }
       },
       "is_incremental": false,
@@ -69,7 +69,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Nimiq.JsonStringValue.html",
-          "hash": "ToNYlpyjdQWR52/sex+loA=="
+          "hash": "oKEVjiaaO+mKTU/roJZMiQ=="
         }
       },
       "is_incremental": false,
@@ -81,7 +81,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Nimiq.Models.Account.html",
-          "hash": "8wSmh298k5F1ZA3JFAn+MQ=="
+          "hash": "W4nZbHchFnAs6aWmM0Q+6Q=="
         }
       },
       "is_incremental": false,
@@ -93,7 +93,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Nimiq.Models.AccountType.html",
-          "hash": "wjNwxsuebci/CnCVdGaeXQ=="
+          "hash": "9Jc7nRtCOgpU5t3WiHu/Uw=="
         }
       },
       "is_incremental": false,
@@ -105,7 +105,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Nimiq.Models.Block.html",
-          "hash": "or6ZEBnAA9VJyLdQ+S2guQ=="
+          "hash": "ZZaBPAy78lxb8t9nslyFEQ=="
         }
       },
       "is_incremental": false,
@@ -117,7 +117,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Nimiq.Models.BlockTemplate.html",
-          "hash": "9koXzcvTYzsquC5LpD4RcQ=="
+          "hash": "LrTsVyD3kLLZzyIB+usYqA=="
         }
       },
       "is_incremental": false,
@@ -129,7 +129,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Nimiq.Models.BlockTemplateBody.html",
-          "hash": "p3QbCwuU5OaXcetEbqLozA=="
+          "hash": "vF22gyIxeCqESkGqHT0l/Q=="
         }
       },
       "is_incremental": false,
@@ -141,7 +141,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Nimiq.Models.BlockTemplateHeader.html",
-          "hash": "6r9vvizOcNYIXHqACfn7vA=="
+          "hash": "dcwGJZpmzVj1mDFwVV4uzg=="
         }
       },
       "is_incremental": false,
@@ -153,7 +153,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Nimiq.Models.ConsensusState.html",
-          "hash": "B6SXmUKeQDFgNQgvZNmUmg=="
+          "hash": "sTtc4gm6dic3dNDwbeTQ6g=="
         }
       },
       "is_incremental": false,
@@ -165,7 +165,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Nimiq.Models.HTLC.html",
-          "hash": "n9VATdOyW+DnQzGXNa8Wog=="
+          "hash": "IO/ITxZmNYw/ema+wff7jA=="
         }
       },
       "is_incremental": false,
@@ -177,7 +177,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Nimiq.Models.LogLevel.html",
-          "hash": "CXxA12rO/trIKess6RvsFQ=="
+          "hash": "8704f0DldPdj9kj9S7VTSA=="
         }
       },
       "is_incremental": false,
@@ -189,7 +189,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Nimiq.Models.MempoolInfo.html",
-          "hash": "RUUmEBWLs/CgWkNZZxblcg=="
+          "hash": "Fn5h5yDj4zyOx8tn4Y2yJQ=="
         }
       },
       "is_incremental": false,
@@ -201,7 +201,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Nimiq.Models.OutgoingTransaction.html",
-          "hash": "V8TXnnjRA1rtZFG1Y9200A=="
+          "hash": "xhO2Z9wv+pNK/GOnPmYFyw=="
         }
       },
       "is_incremental": false,
@@ -213,7 +213,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Nimiq.Models.Peer.html",
-          "hash": "nmWPDqwtwOTDqUUI7RUkAg=="
+          "hash": "q3Hnut5iIXZ/tZz4ecOd3A=="
         }
       },
       "is_incremental": false,
@@ -225,7 +225,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Nimiq.Models.PeerAddressState.html",
-          "hash": "uZJ3rxizY8I4Pl7fTR8pvw=="
+          "hash": "2pWwlYGBk/Pkj23p6jvEBg=="
         }
       },
       "is_incremental": false,
@@ -237,7 +237,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Nimiq.Models.PeerConnectionState.html",
-          "hash": "XSk7TGDzTTgQIUOvfMUejA=="
+          "hash": "PMEvSG9hUERdidrTxofcuQ=="
         }
       },
       "is_incremental": false,
@@ -249,7 +249,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Nimiq.Models.PeerStateCommand.html",
-          "hash": "AAOmzNbyXvXqqUl01DzIUQ=="
+          "hash": "yxZjXctdmaiNs2hUlzZVeQ=="
         }
       },
       "is_incremental": false,
@@ -261,7 +261,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Nimiq.Models.PoolConnectionState.html",
-          "hash": "Fifg9mVE7hPqEKAvstDMfA=="
+          "hash": "agvwV4jq/EEjFHUAbnJZrQ=="
         }
       },
       "is_incremental": false,
@@ -273,7 +273,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Nimiq.Models.SyncStatus.html",
-          "hash": "as2Qnrk6xcyfWwNZa+oipQ=="
+          "hash": "pgI7eA167R1SJ5H1x02DBw=="
         }
       },
       "is_incremental": false,
@@ -285,7 +285,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Nimiq.Models.Transaction.html",
-          "hash": "FdJrajRwnaSZZySqiUI6Vg=="
+          "hash": "k4VFplOA4vqOmt635BzbRg=="
         }
       },
       "is_incremental": false,
@@ -297,7 +297,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Nimiq.Models.TransactionReceipt.html",
-          "hash": "ZQMlsZ6oq2nytSs0pyfR1w=="
+          "hash": "S77ILxbhmBHXW6vaRH6hCA=="
         }
       },
       "is_incremental": false,
@@ -309,7 +309,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Nimiq.Models.VestingContract.html",
-          "hash": "ZhGXNVNh4IF16Oc0mtuwUw=="
+          "hash": "aG0BA8/RNrjRNwMUjZQ6rw=="
         }
       },
       "is_incremental": false,
@@ -321,7 +321,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Nimiq.Models.Wallet.html",
-          "hash": "nRCkyCDY6+KMlTSb0e66hg=="
+          "hash": "67XxaB9lkMX1N9EP8gQeUg=="
         }
       },
       "is_incremental": false,
@@ -333,7 +333,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Nimiq.Models.WorkInstructions.html",
-          "hash": "64AmiJYjVWfWrhXrZzRtUg=="
+          "hash": "rGkkRtPDPfPD/mnFDcUP0g=="
         }
       },
       "is_incremental": false,
@@ -357,7 +357,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Nimiq.NimiqClient.html",
-          "hash": "opyMwCEDyC4krf0vcctMVg=="
+          "hash": "YnbM8zQVToDcD/Tuxjo3AA=="
         }
       },
       "is_incremental": false,
@@ -369,7 +369,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Nimiq.RemoteErrorException.html",
-          "hash": "P/xVxso9ugETk4z9spNdcQ=="
+          "hash": "fj4zcLkz3aIdWL4E4VfgYQ=="
         }
       },
       "is_incremental": false,
@@ -381,7 +381,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Nimiq.StringEnumeration.html",
-          "hash": "8f6FZB4Csc1a+0Yw1DZsTQ=="
+          "hash": "lLZhqOXXut9C0PiFVSZDvA=="
         }
       },
       "is_incremental": false,
@@ -393,7 +393,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Nimiq.StringEnumerationConverter.html",
-          "hash": "1yHAfeO5CRRms8RyOcKjoA=="
+          "hash": "qljdNQzqq7CjBve4dbCxew=="
         }
       },
       "is_incremental": false,
@@ -449,7 +449,7 @@
           "can_incremental": true,
           "incrementalPhase": "build",
           "total_file_count": 1,
-          "skipped_file_count": 1
+          "skipped_file_count": 0
         },
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": true,
