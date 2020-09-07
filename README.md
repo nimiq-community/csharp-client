@@ -1,11 +1,10 @@
-Nimiq C# Client
-===============
+# Nimiq C# Client
 
 > C# implementation of the Nimiq RPC client specs.
 
 ## Usage
 
-Send requests to a Nimiq node with `NimiqClient` object.
+To get started sending requests to a Nimiq node, we create a `NimiqClient` object.
 
 ```c#
 var config = new Config(
@@ -16,80 +15,75 @@ var config = new Config(
     password: "moon"
 );
 
-var client = new NimiqClient(config)
-```
+var client = new NimiqClient(config);
 
-Once the client have been set up, we can call the methods with the appropiate arguments to make requests to the Nimiq node.
-
-When no `config` object is passed in the initialization it will use the default values in the Nimiq node.
-
-```c#
-var client = NimiqClient();
-
-// make rpc call to get the block number
+// make rpc call to get current block number
 var blockNumber = await client.blockNumber();
-
-Console.WriteLine(blockNumber) // displays the block number, for example 748883
+Console.WriteLine(blockNumber);
 ```
+
+Note: When no `config` object is passed in the initialization it will use the default values in the Nimiq node.
 
 ## API
 
 The complete API documentation is available [here](https://rraallvv.github.io/csharp-client/).
 
-Check out the [Nimiq RPC specs](https://github.com/nimiq/core-js/wiki/JSON-RPC-API) for behind the scene RPC calls.
+Check out the original [Nimiq RPC specs](https://github.com/nimiq/core-js/wiki/JSON-RPC-API) for the behind-the-scenes RPC calls.
 
 ## Installation
 
-To install NimiClient add the Nuget package as a dependency to your project from Visual Studio IDE.
+Use Nuget to install `NimiqClient` as a dependency to your project in Visual Studio IDE.
 
-## Contributions
+## Build
 
-This implementation was originally contributed by [rraallvv](https://github.com/rraallvv/).
-
-Please send your contributions as pull requests.
-
-Refer to the [issue tracker](https://github.com/nimiq-community/csharp-client/issues) for ideas.
-
-### Develop
-
-After cloning the repository, open the solution file `NimiqClientProjects.sln` located in the repository root folder on Visual Studio.
+After cloning the repository, open the solution file `NimiqClientProjects.sln` located in the repository root folder in Visual Studio.
 
 All done, happy coding!
 
-### Testing
+## Test
 
-The project containing all the is in the folder `/NimiqClientTest` and can be run from the Visual Studio IDE. Alternatively you can run all the tests from the command line from the repository root directory:
+You need a start a Testnet Nimiq node:
 
 ```sh
-$ dotnet test
+nodejs index.js --protocol=dumb --type=full --network=test --rpc
 ```
 
-### Documentation
+The tests are stored in `/NimiqClientTest` and can be run from the Visual Studio IDE. Alternatively you can run all the tests from the command line from the repository root directory:
 
-The documentation is generated automatically with [DocFX](https://dotnet.github.io/docfx/).
+```sh
+dotnet test
+```
 
-Run all the commands from the repository root directory.
+## Documentation
+
+The documentation is generated automatically with [DocFX](https://dotnet.github.io/docfx/). To create the documentation, run the following commands from the repository root directory.
 
 First install the DocFX package:
 
 ```sh
-$ nuget install docfx.console -version 2.51.0
+nuget install docfx.console -version 2.51.0
 ```
 
 Copy the file `README.md` with the name `index.md`:
 
 ```sh
-$ cp -r README.md index.md
+cp -r README.md index.md
 ```
 
 Run DocFX with the configuration file `docfx.json` via the mono command:
 
 ```sh
-$ mono docfx.console.2.51.0/tools/docfx.exe docfx.json
+mono docfx.console.2.51.0/tools/docfx.exe docfx.json
 ```
 
 Mono is distributed with the .Net SDK, if it isn't already installed download and install the tool from [here](https://www.mono-project.com/docs/tools+libraries/tools/).
 
+## Contributions
+
+This implementation was originally contributed by [rraallvv](https://github.com/rraallvv/).
+
+Bug reports and pull requests are welcome! Please refer to the [issue tracker](https://github.com/nimiq-community/csharp-client/issues) for ideas.
+
 ## License
 
-[Apache 2.0](LICENSE.md)
+[Apache 2.0](LICENSE)
