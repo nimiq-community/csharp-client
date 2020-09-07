@@ -1,0 +1,31 @@
+{
+  "metadata": [
+    {
+      "src": [
+        {
+          "src": "NimiqClient",
+          "files": [ "**.csproj" ],
+          "exclude": [ "**/bin/**", "**/obj/**" ]
+        }
+      ],
+      "dest": "obj/api"
+    }
+  ],
+  "build": {
+    "postProcessors": [ "ExtractSearchIndex" ],
+    "globalMetadata": {
+      "_enableSearch": "true"
+    },
+    "content": [
+      {
+        "files": [ "toc.yml", "index.md" ]
+      },
+      {
+        "src": "obj/api",
+        "files": [ "**/*.yml" ],
+        "dest": "api"
+      }
+    ],
+    "dest": "docs"
+  }
+}

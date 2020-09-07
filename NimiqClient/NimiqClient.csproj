@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <PackageVersion>0.0.6</PackageVersion>
+    <Authors>The Nimiq Foundation</Authors>
+    <Copyright>Copyright (c) 2020 The Nimiq Foundation</Copyright>
+    <Owners>The Nimiq Foundation</Owners>
+    <PackageProjectUrl>https://github.com/nimiq-community/csharp-client</PackageProjectUrl>
+    <Summary>https://github.com/nimiq-community/csharp-client/blob/master/README.md</Summary>
+    <PackageTags>Nimiq, JSON-RPC Client</PackageTags>
+    <Title>Nimiq Client</Title>
+    <Description>.Net implementation of the Nimiq RPC client specs.</Description>
+    <PackageId>NimiqClient</PackageId>
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+    <PackageIcon>images\icon.png</PackageIcon>
+    <PackageIconUrl>https://raw.githubusercontent.com/nimiq-community/csharp-client/master/icon.png</PackageIconUrl>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Text.Json" Version="4.7.2" />
+    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" PrivateAssets="All" Version="1.0.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\icon.png" Pack="true" PackagePath="images\icon.png" />
+  </ItemGroup>
+</Project>

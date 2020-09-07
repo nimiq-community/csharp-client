@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="-242.5 -244 512 512" enable-background="new -242.5 -244 512 512" xml:space="preserve">
+<radialGradient id="SVGID_1_" cx="-133.7383" cy="165.4018" r="18.8494" gradientTransform="matrix(-26.9977 0 0 24 -3342.7346 -3731.5)" gradientUnits="userSpaceOnUse">
+	<stop  offset="0" style="stop-color:#EC991C"/>
+	<stop  offset="1" style="stop-color:#E9B213"/>
+</radialGradient>
+<path fill="url(#SVGID_1_)" d="M261.729-9.699L155.702-193.48c-7.64-13.143-21.63-21.205-36.761-21.205H-93.114
+	c-15.122,0-29.121,8.062-36.686,21.205L-235.829-9.699c-7.556,13.143-7.556,29.269,0,42.412l106.028,183.781
+	c7.566,13.144,21.564,21.206,36.686,21.206h212.056c15.131,0,29.121-8.062,36.687-21.206L261.656,32.713
+	C269.295,19.57,269.295,3.445,261.729-9.699z"/>
+<g>
+	<radialGradient id="SVGID_2_" cx="92" cy="-137.5" r="282.158" gradientUnits="userSpaceOnUse">
+		<stop  offset="0" style="stop-color:#FFFFFF"/>
+		<stop  offset="0.5" style="stop-color:#FFFFFF;stop-opacity:0.85"/>
+		<stop  offset="1" style="stop-color:#FFFFFF;stop-opacity:0.6"/>
+	</radialGradient>
+	<ellipse fill="url(#SVGID_2_)" cx="-111.764" cy="-117.301" rx="26.212" ry="26.214"/>
+	<radialGradient id="SVGID_3_" cx="92" cy="-137.5" r="282.1572" gradientUnits="userSpaceOnUse">
+		<stop  offset="0" style="stop-color:#FFFFFF"/>
+		<stop  offset="0.5" style="stop-color:#FFFFFF;stop-opacity:0.85"/>
+		<stop  offset="1" style="stop-color:#FFFFFF;stop-opacity:0.6"/>
+	</radialGradient>
+	<path fill="url(#SVGID_3_)" d="M99.915-88.53h-87.83c-44.509,0-80.59,36.081-80.59,80.59v87.83c0,44.509,36.082,80.59,80.59,80.59
+		h87.83c44.509,0,80.59-36.081,80.59-80.59V-7.94C180.505-52.449,144.424-88.53,99.915-88.53z M-7.144,13.755
+		c-18.095,0-32.765-14.669-32.765-32.765s14.669-32.765,32.765-32.765S25.621-37.105,25.621-19.01S10.951,13.755-7.144,13.755z
+		 M97.428,133.919c-28.953,0-52.423-23.471-52.423-52.423c0-28.953,23.471-52.423,52.423-52.423
+		c28.953,0,52.423,23.471,52.423,52.423C149.851,110.448,126.38,133.919,97.428,133.919z"/>
+</g>
+</svg>
